@@ -21,13 +21,66 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-C:\Users\admin\Documents\STM32F401RETx\STM32F401RETx.uvprojx
-Project File Date:  10/09/2025
+Z:\STM32F401RETx\STM32F401RETx.uvprojx
+Project File Date:  10/12/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-".\Objects\STM32F401RETx.axf" - 0 Error(s), 0 Warning(s).
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(363): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_i2c.h(215): warning: padding struct 'I2C_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
+  __IO uint32_t              ErrorCode;      /*!< I2C Error code                           */
+                             ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(82): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                if(HAL_I2C_IsDeviceReady(&hi2c1, i << (uint16_t)1, 1, HAL_MAX_DELAY) == HAL_OK) {
+                   ~~~~~~~~~~~~~~~~~~~~~         ~~^~~~~~~~~~~~~~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(83): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        addr = i << (uint16_t)1;
+                             ~ ~~^~~~~~~~~~~~~~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(411): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_uart.h(182): warning: padding struct 'struct __UART_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
+  __IO uint32_t                 ErrorCode;        /*!< UART Error code                    */
+                                ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(183): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        TransmitCmd(0b10000000);
+                    ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(363): warning: function 'Error_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(46): warning: no previous extern declaration for non-static variable 'hi2c1' [-Wmissing-variable-declarations]
+I2C_HandleTypeDef hi2c1;
+                  ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(46): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+I2C_HandleTypeDef hi2c1;
+^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(287): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(148): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
+  void                       *Parent;                                                          /*!< Parent object state                    */ 
+                              ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(48): warning: no previous extern declaration for non-static variable 'huart2' [-Wmissing-variable-declarations]
+UART_HandleTypeDef huart2;
+                   ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(48): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+UART_HandleTypeDef huart2;
+^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(51): warning: unused variable 'i2c_scan_msg' [-Wunused-variable]
+static uint8_t i2c_scan_msg[] = "I2C bus scanning\r\n";
+               ^
+10 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=17440 RO-data=1044 RW-data=12 ZI-data=1804  
+FromELF: creating hex file...
+".\Objects\STM32F401RETx.axf" - 0 Error(s), 10 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -52,6 +105,7 @@ Package Vendor: Keil
    * Component: Cortex Version: 1.8.1
    * Component: DMA Version: 1.8.1
    * Component: GPIO Version: 1.8.1
+   * Component: I2C Version: 1.8.1
    * Component: PWR Version: 1.8.1
    * Component: RCC Version: 1.8.1
    * Component: UART Version: 1.8.1
@@ -91,6 +145,10 @@ Package Vendor: Keil
    * Component: Keil::Device:STM32Cube HAL:GPIO:1.8.1
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 
+   * Component: Keil::Device:STM32Cube HAL:I2C:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c
+
    * Component: Keil::Device:STM32Cube HAL:PWR:1.8.1
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
@@ -108,7 +166,7 @@ Package Vendor: Keil
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

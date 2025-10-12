@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +31,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define NewLineMssg HAL_UART_Transmit(&huart2, (uint8_t*)"\r\n", 2, HAL_MAX_DELAY);
+#define PIN_RS (1 << 0)
+#define PIN_EN (1 << 2)
+#define BACKLIGHT (1 << 3)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -40,25 +43,107 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-UART_HandleTypeDef huart2;
-static uint8_t one_s[] = "1s\r\n";
-static uint8_t button[] = "button\r\n";
-static uint8_t twenty_s[] = "1s\r\n";
-/* USER CODE BEGIN PV */
+I2C_HandleTypeDef hi2c1;
 
+UART_HandleTypeDef huart2;
+
+/* USER CODE BEGIN PV */
+static uint8_t i2c_scan_msg[] = "I2C bus scanning\r\n";
+static uint16_t addr = 0x00;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
-
+static void TransmitData(uint8_t data);
+static void TransmitCmd(uint8_t cmd);
+static void LCD_Init(void);
+static void Transmit(uint8_t data, uint8_t flags);
+static uint16_t FindAddress(void);
+void LCD_SendString(char *str);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void LCD_SendString(char *str) {
+    while(*str) {
+        TransmitData((uint8_t)(*str));
+        str++;
+    }
+}
 
+static uint16_t FindAddress(void) {
+	char msg[64] = {0};
+	uint16_t i;
+	for(i = 0; i < (uint16_t)128; i++) {
+		if(HAL_I2C_IsDeviceReady(&hi2c1, i << (uint16_t)1, 1, HAL_MAX_DELAY) == HAL_OK) {
+			addr = i << (uint16_t)1;
+			snprintf(msg, sizeof(msg), "0x%02X", i);
+			HAL_UART_Transmit(&huart2, (uint8_t*)msg, sizeof(msg)-1, HAL_MAX_DELAY);
+			//NewLineMssg
+			//HAL_UART_Transmit(&huart2, (uint8_t*)addr, sizeof(addr)-1, HAL_MAX_DELAY);
+			break;
+		}
+	}
+	NewLineMssg
+	return i;
+}
+
+static void Transmit(uint8_t data, uint8_t flags) {
+	uint8_t up = data & 0xF0;                         //first part, first step of transmittion
+	uint8_t lo = (data << 4) & 0xF0;                  //second part, second step of transmittion
+	
+	uint8_t data_arr[4];                              
+	data_arr[0] = up|flags|BACKLIGHT|PIN_EN; 
+	data_arr[1] = up|flags|BACKLIGHT;         
+	data_arr[2] = lo|flags|BACKLIGHT|PIN_EN;
+	data_arr[3] = lo|flags|BACKLIGHT;
+	HAL_I2C_Master_Transmit(&hi2c1, addr, data_arr, sizeof(data_arr), HAL_MAX_DELAY);
+	HAL_Delay(10);
+}
+
+static void TransmitData(uint8_t data) {
+	Transmit(data, PIN_RS);
+}
+
+static void TransmitCmd(uint8_t cmd) {
+	Transmit(cmd, 0);
+}
+
+static void LCD_Init(void) {
+  HAL_Delay(50);  // Wait >40ms after power-on
+
+  // Send 0x33 (nibbles 3,3) to initialize in 8-bit mode
+  TransmitCmd(0x33);
+  HAL_Delay(5);   // >4.1ms
+
+  // Repeat 0x32 (nibbles 3,2) to confirm and set 4-bit mode
+  TransmitCmd(0x32);
+  HAL_Delay(1);   // >100us
+
+  // Now in 4-bit mode, set interface: 4-bit, 2 lines, 5x8 font
+  TransmitCmd(0x28);
+  HAL_Delay(1);
+
+  // Display off
+  TransmitCmd(0x08);
+  HAL_Delay(1);
+
+  // Clear display
+  TransmitCmd(0x01);
+  HAL_Delay(2);   // Clear takes ~1.5ms
+
+  // Entry mode: cursor right, no shift
+  TransmitCmd(0x06);
+  HAL_Delay(1);
+
+  // Display on, cursor off, blink off
+  TransmitCmd(0x0C);
+  HAL_Delay(1);
+}
 /* USER CODE END 0 */
 
 /**
@@ -91,8 +176,12 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
+	FindAddress();
+	LCD_Init();
+	TransmitCmd(0b10000000);
+	LCD_SendString("mike");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -153,6 +242,40 @@ void SystemClock_Config(void)
 }
 
 /**
+  * @brief I2C1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_I2C1_Init(void)
+{
+
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
+
+}
+
+/**
   * @brief USART2 Initialization Function
   * @param None
   * @retval None
@@ -201,6 +324,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
