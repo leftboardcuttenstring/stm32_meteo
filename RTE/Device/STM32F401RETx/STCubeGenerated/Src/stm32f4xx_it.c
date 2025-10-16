@@ -242,7 +242,7 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-	HAL_UART_Transmit(&huart2, (const uint8_t*)"Processing the button pushing...\r\n", sizeof("Processing the button pushing...\r\n")-1, HAL_MAX_DELAY);
+	//HAL_UART_Transmit(&huart2, (const uint8_t*)"Processing the button pushing...\r\n", sizeof("Processing the button pushing...\r\n")-1, HAL_MAX_DELAY);
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 
@@ -253,7 +253,7 @@ void GetData(void)
 	{
 		SysTick_1Sec_Counter = 0;
 		//optionally
-		HAL_UART_Transmit(&huart2, (const uint8_t*)"Getting the data...\r\n", sizeof("Getting the data...\r\n")-1, HAL_MAX_DELAY);
+		//HAL_UART_Transmit(&huart2, (const uint8_t*)"Getting the data...\r\n", sizeof("Getting the data...\r\n")-1, HAL_MAX_DELAY);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 		for(int i=0; i<500000; i++);
 		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
@@ -267,7 +267,7 @@ void AveragingData(void)
 	{
 		SysTick_20Sec_Counter = 0;
 		//optionally
-		HAL_UART_Transmit(&huart2, (const uint8_t*)"Averaging the data...\r\n", sizeof("Averaging the data...\r\n")-1, HAL_MAX_DELAY);
+		//HAL_UART_Transmit(&huart2, (const uint8_t*)"Averaging the data...\r\n", sizeof("Averaging the data...\r\n")-1, HAL_MAX_DELAY);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
 		for(int i=0; i<500000; i++);
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
