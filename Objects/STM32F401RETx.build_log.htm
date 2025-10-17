@@ -41,33 +41,42 @@ C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4
 C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_uart.h(182): warning: padding struct 'struct __UART_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
   __IO uint32_t                 ErrorCode;        /*!< UART Error code                    */
                                 ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(88): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        if (HAL_I2C_Mem_Write(&hi2c1, gy_addr, 0xF4, 1, (const uint8_t*)0x2E, sizeof(0x2E), HAL_MAX_DELAY) == HAL_OK) {
-                                                        ^~~~~~~~~~~~~~~~~~~~
-C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_i2c.h(570): note: passing argument to parameter 'pData' here
-HAL_StatusTypeDef HAL_I2C_Mem_Write(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size, uint32_t Timeout);
-                                                                                                                                     ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(104): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(107): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
                 if(HAL_I2C_IsDeviceReady(&hi2c1, i << (uint16_t)1, 1, HAL_MAX_DELAY) == HAL_OK) {
                    ~~~~~~~~~~~~~~~~~~~~~         ~~^~~~~~~~~~~~~~
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(105): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(108): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
                         lcd_addr = i << (uint16_t)1;
                                  ~ ~~^~~~~~~~~~~~~~
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(216): warning: cast from function call of type 'double' to non-matching type 'int' [-Wbad-function-cast]
-        int32_t T = (B5 + 8) / (int)pow(2, 4);
-                                    ^~~~~~~~~
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(218): warning: implicit conversion from 'int32_t' (aka 'int') to 'float' may lose precision [-Wimplicit-int-float-conversion]
-        float temperature = ((T / 10.0f) - 32.0f) / 1.8f;
-                              ^ ~
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(219): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
-        sprintf(msg, "temperature = %f\r\n", temperature);
-        ~~~~~~~                              ^~~~~~~~~~~
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(250): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(236): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        uint8_t pressure_cmd = 0x34 + (OSS << 6);
+                ~~~~~~~~~~~~   ~~~~~^~~~~~~~~~~~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(253): warning: implicit conversion changes signedness: 'long' to 'unsigned long' [-Wsign-conversion]
+        unsigned long B7 = ((unsigned long)UP - B3) * (50000UL >> OSS);
+                                              ~ ^~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(256): warning: implicit conversion changes signedness: 'unsigned long' to 'long' [-Wsign-conversion]
+                        p = (B7 << 1) / B4;
+                          ~ ~~~~~~~~~~^~~~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(258): warning: implicit conversion changes signedness: 'unsigned long' to 'long' [-Wsign-conversion]
+                        p = (B7 / B4) << 1;
+                          ~ ~~~~~~~~~~^~~~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(266): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        sprintf(msg_lcd, "p = %.2f mmHg", p / 133.322f);
+        ~~~~~~~                           ~~^~~~~~~~~~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(266): warning: implicit conversion from 'long' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+        sprintf(msg_lcd, "p = %.2f mmHg", p / 133.322f);
+                                          ^ ~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(268): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
         TransmitCmd(0b10000000);
                     ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(196): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(198): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
         uint8_t calib_data[22];
                 ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(232): warning: unused variable 'T' [-Wunused-variable]
+        int32_t T = (B5 + 8) >> 4;
+                ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(241): warning: unused variable 'msg' [-Wunused-variable]
+        char msg[32];
+             ^
 RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
 ./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
 C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
@@ -75,7 +84,7 @@ C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4
 C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(148): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
   void                       *Parent;                                                          /*!< Parent object state                    */ 
                               ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(430): warning: function 'Error_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(449): warning: function 'Error_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
 {
 ^
 RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(48): warning: no previous extern declaration for non-static variable 'hi2c1' [-Wmissing-variable-declarations]
@@ -93,15 +102,18 @@ UART_HandleTypeDef huart2;
 RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(53): warning: unused variable 'i2c_scan_msg' [-Wunused-variable]
 static uint8_t i2c_scan_msg[] = "I2C bus scanning\r\n";
                ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(100): warning: unused function 'FindAddress' [-Wunused-function]
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(80): warning: unused function 'Barometer_GetData' [-Wunused-function]
+static void Barometer_GetData(bool Mode) {
+            ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(103): warning: unused function 'FindAddress' [-Wunused-function]
 static uint16_t FindAddress(void) {
                 ^
-16 warnings generated.
+21 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=27196 RO-data=1232 RW-data=16 ZI-data=1856  
+Program Size: Code=20560 RO-data=1072 RW-data=16 ZI-data=1832  
 FromELF: creating hex file...
-".\Objects\STM32F401RETx.axf" - 0 Error(s), 16 Warning(s).
+".\Objects\STM32F401RETx.axf" - 0 Error(s), 21 Warning(s).
 
 <h2>Software Packages used:</h2>
 
