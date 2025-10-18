@@ -21,9 +21,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "../../../../../init_peripherials.h"
+#include "../../../../../transmit_and_recieve_control.h"
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,7 +37,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define NewLineMssg HAL_UART_Transmit(&huart2, (uint8_t*)"\r\n", 2, HAL_MAX_DELAY);
+/*
+ * @brief next three defines below are
+ *        basic stuff for working with
+ *        lcd 1602 display
+ */
 #define PIN_RS (1 << 0)
 #define PIN_EN (1 << 2)
 #define BACKLIGHT (1 << 3)
@@ -50,13 +58,30 @@ I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-static uint8_t i2c_scan_msg[] = "I2C bus scanning\r\n";
-static uint16_t lcd_addr = 0x27 << (uint16_t)1;
-static uint16_t gy_addr = 0x77 << (uint16_t)1;
-static uint8_t t_buffer[2];
-static uint8_t p_buffer[3];
-static int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
-static uint16_t AC4, AC5, AC6;
+/*
+ * @brief a cople of reserved static addresses
+ *
+ **/
+uint16_t lcd1604_addr = 0x27 << (uint16_t)1;
+uint16_t bmp180_addr = 0x77 << (uint16_t)1;
+uint8_t calib_data[22];
+/*
+ * @brief a cople of reserved static addresses
+ *
+ **/
+static uint8_t temperature_buf[2];
+static uint8_t pressure_buf[3];
+
+/*
+ * @brief a lot of coeffs to work with
+ *        with bmp180
+ *
+ **/
+int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
+uint16_t AC4, AC5, AC6;
+char msg[32];
+char msg_lcd[32];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,95 +90,14 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
-static void TransmitData(uint8_t data);
-static void TransmitCmd(uint8_t cmd);
-static void LCD_Init(void);
-static void TransmitLCD(uint8_t data, uint8_t flags);
-//static uint16_t FindAddress(void);
-void LCD_SendString(char *str);
-static void Barometer_Init(void);
-static void Barometer_GetData(bool Mode);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-static void Barometer_GetData(bool Mode) {
-	if (Mode == true) {
-		HAL_I2C_Mem_Read(&hi2c1, gy_addr, 0xF6, 1, t_buffer, 2, HAL_MAX_DELAY);
-		HAL_UART_Transmit(&huart2, t_buffer, sizeof(t_buffer)-1, HAL_MAX_DELAY);
-		NewLineMssg
-	}
-}
 
-static void Barometer_Init(void) {
-	uint8_t cmd = 0x2E;
-	if (HAL_I2C_Mem_Write(&hi2c1, gy_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY) == HAL_OK) {
-		HAL_UART_Transmit(&huart2, (const uint8_t*)"Barometer init is done\r\n", sizeof("Barometer init is done\r\n")-1, HAL_MAX_DELAY);
-	}
-	HAL_Delay(5);
-}
 
-void LCD_SendString(char *str) {
-    while(*str) {
-        TransmitData((uint8_t)(*str));
-        str++;
-    }
-}
 
-static uint16_t FindAddress(void) {
-	char msg[64] = {0};
-	uint16_t i;
-	for(i = 0; i < (uint16_t)128; i++) {
-		if(HAL_I2C_IsDeviceReady(&hi2c1, i << (uint16_t)1, 1, HAL_MAX_DELAY) == HAL_OK) {
-			lcd_addr = i << (uint16_t)1;
-			snprintf(msg, sizeof(msg), "0x%02X", i);
-			HAL_UART_Transmit(&huart2, (uint8_t*)msg, sizeof(msg)-1, HAL_MAX_DELAY);
-			break;
-		}
-	}
-	NewLineMssg
-	return i;
-}
-
-static void TransmitLCD(uint8_t data, uint8_t flags) {
-	uint8_t up = data & 0xF0;
-	uint8_t lo = (data << 4) & 0xF0;
-	
-	uint8_t data_arr[4];                              
-	data_arr[0] = up|flags|BACKLIGHT|PIN_EN; 
-	data_arr[1] = up|flags|BACKLIGHT;         
-	data_arr[2] = lo|flags|BACKLIGHT|PIN_EN;
-	data_arr[3] = lo|flags|BACKLIGHT;
-	HAL_I2C_Master_Transmit(&hi2c1, lcd_addr, data_arr, sizeof(data_arr), HAL_MAX_DELAY);
-	HAL_Delay(10);
-}
-
-static void TransmitData(uint8_t data) {
-	TransmitLCD(data, PIN_RS);
-}
-
-static void TransmitCmd(uint8_t cmd) {
-	TransmitLCD(cmd, 0);
-}
-
-static void LCD_Init(void) {
-  HAL_Delay(50);
-  TransmitCmd(0x33);
-  HAL_Delay(5);
-  TransmitCmd(0x32);
-  HAL_Delay(1);
-  TransmitCmd(0x28);
-  HAL_Delay(1);
-  TransmitCmd(0x08);
-  HAL_Delay(1);
-  TransmitCmd(0x01);
-  HAL_Delay(2);
-  TransmitCmd(0x06);
-  HAL_Delay(1);
-  TransmitCmd(0x0C);
-  HAL_Delay(1);
-	HAL_UART_Transmit(&huart2, (const uint8_t*)"LCD init is done\r\n", sizeof("LCD init is done\r\n")-1, HAL_MAX_DELAY);
-}
 /* USER CODE END 0 */
 
 /**
@@ -188,43 +132,13 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-	LCD_Init();
+	
+	lcd1602_init();
 	HAL_Delay(500);
-	//let x1 = (rx_word as i32 - calib_coeffs.ac6 as i32) * (calib_coeffs.ac5 as i32) >> 15;
-	//int x1 = (int32_t)rx_buffer - 
-	//uint32_t UP_raw = ((uint32_t)rx_buffer[0] << 16) | ((uint32_t)rx_buffer[1] << 8) | rx_buffer[2];
-	//Barometer_GetData(true);
-	Barometer_Init();
-	uint8_t calib_data[22];
-	HAL_I2C_Mem_Read(&hi2c1, gy_addr, 0xAA, 1, calib_data, 22, HAL_MAX_DELAY);
+	bmp180_init();
 	
-	AC1 = (int16_t)((calib_data[0] << 8) | calib_data[1]);
-	AC2 = (int16_t)((calib_data[2] << 8) | calib_data[3]);
-	AC3 = (int16_t)((calib_data[4] << 8) | calib_data[5]);
-	AC4 = (uint16_t)((calib_data[6] << 8) | calib_data[7]);
-	AC5 = (uint16_t)((calib_data[8] << 8) | calib_data[9]);
-	AC6 = (uint16_t)((calib_data[10] << 8) | calib_data[11]);
-	B1  = (int16_t)((calib_data[12] << 8) | calib_data[13]);
-	B2  = (int16_t)((calib_data[14] << 8) | calib_data[15]);
-	MB  = (int16_t)((calib_data[16] << 8) | calib_data[17]);
-	MC  = (int16_t)((calib_data[18] << 8) | calib_data[19]);
-	MD  = (int16_t)((calib_data[20] << 8) | calib_data[21]);
-	
-	/*HAL_I2C_Mem_Read(&hi2c1, gy_addr, 0xF6, 1, t_buffer, 2, HAL_MAX_DELAY);
-	long UT = (t_buffer[0] << 8) + t_buffer[1];
-	int32_t X1 = ((UT-AC6)*AC5) >> 15;
-	int32_t X2 = (MC << 11) / (X1 + MD);
-	int32_t B5 = X1 + X2;
-	int32_t T = (B5 + 8) >> 4;
-	char msg[32];
-	char msg_lcd[32];
-	float temperature = T / 10.0f;
-	//sprintf(msg, "temperature = %f\r\n", temperature);
-	HAL_UART_Transmit(&huart2, (uint8_t*)msg, sizeof(msg)-1, HAL_MAX_DELAY);
-	sprintf(msg_lcd, "t = %f", temperature);*/
-	
-	HAL_I2C_Mem_Read(&hi2c1, gy_addr, 0xF6, 1, t_buffer, 2, HAL_MAX_DELAY);
-	long UT = (t_buffer[0] << 8) + t_buffer[1];
+	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY); //i forgot what the fuck it is
+	long UT = (temperature_buf[0] << 8) + temperature_buf[1];
 
 	int32_t X1 = ((UT-AC6)*AC5) >> 15;
 	int32_t X2 = (MC << 11) / (X1 + MD);
@@ -234,12 +148,10 @@ int main(void)
 	HAL_Delay(100);
 	uint8_t OSS = 0;
 	uint8_t pressure_cmd = 0x34 + (OSS << 6);
-	HAL_I2C_Mem_Write(&hi2c1, gy_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_DELAY);
+	HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_DELAY);
 	HAL_Delay(100);
-	HAL_I2C_Mem_Read(&hi2c1, gy_addr, 0xF6, 1, p_buffer, 3, HAL_MAX_DELAY);
-	long UP = (((long)p_buffer[0] << 16) | ((long)p_buffer[1] << 8) | (long)p_buffer[2]) >> 8;
-	char msg[32];
-	char msg_lcd[32];
+	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, pressure_buf, 3, HAL_MAX_DELAY);
+	long UP = (((long)pressure_buf[0] << 16) | ((long)pressure_buf[1] << 8) | (long)pressure_buf[2]) >> 8;
 	
 	long B6 = B5 - 4000;
 	X1 = (B2 * ((B6 * B6) >> 12)) >> 11;
@@ -265,9 +177,9 @@ int main(void)
 	
 	sprintf(msg_lcd, "p = %.2f mmHg", p / 133.322f);
 	
-	TransmitCmd(0b10000000);
+	lcd1602_transmit_command(0b10000000);
 	//LCD_SendString("mike");
-	LCD_SendString(msg_lcd);
+	lcd1602_send_string(msg_lcd);
   /* USER CODE END 2 */
 
   /* Infinite loop */

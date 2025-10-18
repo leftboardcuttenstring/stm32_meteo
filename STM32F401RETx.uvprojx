@@ -383,7 +383,29 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>src</GroupName>
+          <Files>
+            <File>
+              <FileName>init_peripherials.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\init_peripherials.h</FilePath>
+            </File>
+            <File>
+              <FileName>init_peripherials.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\init_peripherials.c</FilePath>
+            </File>
+            <File>
+              <FileName>transmit_and_recieve_control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\transmit_and_recieve_control.h</FilePath>
+            </File>
+            <File>
+              <FileName>transmit_and_recieve_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\transmit_and_recieve_control.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>:STM32CubeMX:Common Sources</GroupName>
