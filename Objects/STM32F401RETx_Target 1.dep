@@ -1,10 +1,10 @@
 Dependencies for Project 'STM32F401RETx', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6190000::V6.19::ARMCLANG
-F (.\init_peripherials.h)(0x68F3A834)()
-F (.\init_peripherials.c)(0x68F3A816)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F401RETx-I./RTE/Device/STM32F401RETx/STCubeGenerated-I./RTE/Device/STM32F401RETx/STCubeGenerated/Inc-I./RTE/_Target_1-IC:/Users/admin/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F401xE -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/init_peripherials.o -MD)
+F (.\init_peripherials.h)(0x68F3AC74)()
+F (.\init_peripherials.c)(0x68F3B6D8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F401RETx-I./RTE/Device/STM32F401RETx/STCubeGenerated-I./RTE/Device/STM32F401RETx/STCubeGenerated/Inc-I./RTE/_Target_1-IC:/Users/admin/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F401xE -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/init_peripherials.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x68EB4FD7)
-I (init_peripherials.h)(0x68F3A834)
-I (transmit_and_recieve_control.h)(0x68F3A771)
+I (init_peripherials.h)(0x68F3AC74)
+I (transmit_and_recieve_control.h)(0x68F3BDAE)
 I (RTE\Device\STM32F401RETx\STCubeGenerated\Inc\main.h)(0x68EB4FD7)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x63749076)
 I (RTE\Device\STM32F401RETx\STCubeGenerated\Inc\stm32f4xx_hal_conf.h)(0x68EB60FF)
@@ -36,10 +36,10 @@ I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM3
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x63749076)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x63749076)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x63749076)
-F (.\transmit_and_recieve_control.h)(0x68F3A771)()
-F (.\transmit_and_recieve_control.c)(0x68F3A773)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F401RETx-I./RTE/Device/STM32F401RETx/STCubeGenerated-I./RTE/Device/STM32F401RETx/STCubeGenerated/Inc-I./RTE/_Target_1-IC:/Users/admin/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F401xE -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/transmit_and_recieve_control.o -MD)
+F (.\transmit_and_recieve_control.h)(0x68F3BDAE)()
+F (.\transmit_and_recieve_control.c)(0x68F3BDB4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F401RETx-I./RTE/Device/STM32F401RETx/STCubeGenerated-I./RTE/Device/STM32F401RETx/STCubeGenerated/Inc-I./RTE/_Target_1-IC:/Users/admin/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F401xE -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/transmit_and_recieve_control.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x68EB4FD7)
-I (transmit_and_recieve_control.h)(0x68F3A771)
+I (transmit_and_recieve_control.h)(0x68F3BDAE)
 I (RTE\Device\STM32F401RETx\STCubeGenerated\Inc\main.h)(0x68EB4FD7)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x63749076)
 I (RTE\Device\STM32F401RETx\STCubeGenerated\Inc\stm32f4xx_hal_conf.h)(0x68EB60FF)
@@ -71,7 +71,7 @@ I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM3
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x63749076)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x63749076)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x63749076)
-F (.\RTE\Device\STM32F401RETx\STCubeGenerated\Src\main.c)(0x68F3A8B1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F401RETx-I./RTE/Device/STM32F401RETx/STCubeGenerated-I./RTE/Device/STM32F401RETx/STCubeGenerated/Inc-I./RTE/_Target_1-IC:/Users/admin/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F401xE -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/main.o -MD)
+F (.\RTE\Device\STM32F401RETx\STCubeGenerated\Src\main.c)(0x68F3BDF9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F401RETx-I./RTE/Device/STM32F401RETx/STCubeGenerated-I./RTE/Device/STM32F401RETx/STCubeGenerated/Inc-I./RTE/_Target_1-IC:/Users/admin/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-IC:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F401xE -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/main.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x68EB4FD7)
 I (RTE\Device\STM32F401RETx\STCubeGenerated\Inc\main.h)(0x68EB4FD7)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x63749076)
@@ -104,9 +104,9 @@ I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM3
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h)(0x63749076)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h)(0x63749076)
 I (C:\Users\admin\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x63749076)
-I (RTE\Device\STM32F401RETx\STCubeGenerated\Src\..\..\..\..\..\init_peripherials.h)(0x68F3A834)
-I (transmit_and_recieve_control.h)(0x68F3A771)
-I (RTE\Device\STM32F401RETx\STCubeGenerated\Src\..\..\..\..\..\transmit_and_recieve_control.h)(0x68F3A771)
+I (RTE\Device\STM32F401RETx\STCubeGenerated\Src\..\..\..\..\..\init_peripherials.h)(0x68F3AC74)
+I (transmit_and_recieve_control.h)(0x68F3BDAE)
+I (RTE\Device\STM32F401RETx\STCubeGenerated\Src\..\..\..\..\..\transmit_and_recieve_control.h)(0x68F3BDAE)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63888F58)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63888F58)
 I (C:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x63888F58)

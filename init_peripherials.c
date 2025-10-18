@@ -1,19 +1,6 @@
 #include "init_peripherials.h"
 
-void lcd1602_init(void) {
-	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xAA, 1, calib_data, 22, HAL_MAX_DELAY);
-	AC1 = (int16_t)((calib_data[0] << 8) | calib_data[1]);
-	AC2 = (int16_t)((calib_data[2] << 8) | calib_data[3]);
-	AC3 = (int16_t)((calib_data[4] << 8) | calib_data[5]);
-	AC4 = (uint16_t)((calib_data[6] << 8) | calib_data[7]);
-	AC5 = (uint16_t)((calib_data[8] << 8) | calib_data[9]);
-	AC6 = (uint16_t)((calib_data[10] << 8) | calib_data[11]);
-	B1  = (int16_t)((calib_data[12] << 8) | calib_data[13]);
-	B2  = (int16_t)((calib_data[14] << 8) | calib_data[15]);
-	MB  = (int16_t)((calib_data[16] << 8) | calib_data[17]);
-	MC  = (int16_t)((calib_data[18] << 8) | calib_data[19]);
-	MD  = (int16_t)((calib_data[20] << 8) | calib_data[21]);
-	
+void lcd1602_init(void) {	
   HAL_Delay(50);
   lcd1602_transmit_command(0x33);
   HAL_Delay(5);

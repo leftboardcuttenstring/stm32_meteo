@@ -69,8 +69,8 @@ uint8_t calib_data[22];
  * @brief a cople of reserved static addresses
  *
  **/
-static uint8_t temperature_buf[2];
-static uint8_t pressure_buf[3];
+uint8_t temperature_buf[2];
+uint8_t pressure_buf[3];
 
 /*
  * @brief a lot of coeffs to work with
@@ -79,8 +79,14 @@ static uint8_t pressure_buf[3];
  **/
 int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
 uint16_t AC4, AC5, AC6;
+int32_t X1 = 0;
+int32_t X2 = 0;
+int32_t B5 = 0; //global stuff
+
 char msg[32];
 char msg_lcd[32];
+static int32_t temperature = 0;
+static int32_t pressure = 0;
 
 /* USER CODE END PV */
 
@@ -90,13 +96,26 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
-
+void bmp180_get_global_coefficients(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-
+void bmp180_get_global_coefficients(void) {
+	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xAA, 1, calib_data, 22, HAL_MAX_DELAY);
+	AC1 = (int16_t)((calib_data[0] << 8) | calib_data[1]);
+	AC2 = (int16_t)((calib_data[2] << 8) | calib_data[3]);
+	AC3 = (int16_t)((calib_data[4] << 8) | calib_data[5]);
+	AC4 = (uint16_t)((calib_data[6] << 8) | calib_data[7]);
+	AC5 = (uint16_t)((calib_data[8] << 8) | calib_data[9]);
+	AC6 = (uint16_t)((calib_data[10] << 8) | calib_data[11]);
+	B1  = (int16_t)((calib_data[12] << 8) | calib_data[13]);
+	B2  = (int16_t)((calib_data[14] << 8) | calib_data[15]);
+	MB  = (int16_t)((calib_data[16] << 8) | calib_data[17]);
+	MC  = (int16_t)((calib_data[18] << 8) | calib_data[19]);
+	MD  = (int16_t)((calib_data[20] << 8) | calib_data[21]);
+}
 
 /* USER CODE END 0 */
 
@@ -108,7 +127,6 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -134,51 +152,22 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	
 	lcd1602_init();
-	HAL_Delay(500);
-	bmp180_init();
-	
-	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY); //i forgot what the fuck it is
-	long UT = (temperature_buf[0] << 8) + temperature_buf[1];
-
-	int32_t X1 = ((UT-AC6)*AC5) >> 15;
-	int32_t X2 = (MC << 11) / (X1 + MD);
-	int32_t B5 = X1 + X2;
-	int32_t T = (B5 + 8) >> 4;
-
-	HAL_Delay(100);
-	uint8_t OSS = 0;
-	uint8_t pressure_cmd = 0x34 + (OSS << 6);
-	HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_DELAY);
-	HAL_Delay(100);
-	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, pressure_buf, 3, HAL_MAX_DELAY);
-	long UP = (((long)pressure_buf[0] << 16) | ((long)pressure_buf[1] << 8) | (long)pressure_buf[2]) >> 8;
-	
-	long B6 = B5 - 4000;
-	X1 = (B2 * ((B6 * B6) >> 12)) >> 11;
-	X2 = (AC2 * B6) >> 11;
-	long X3 = X1 + X2;
-	long B3 = ((((long)AC1 * 4 + X3) << OSS) + 2) >> 2;
-	X1 = (AC3 * B6) >> 13;
-	X2 = (B1 * ((B6 * B6) >> 12)) >> 16;
-	X3 = ((X1 + X2) + 2) >> 2;
-	unsigned long B4 = (AC4 * (unsigned long)(X3 + 32768)) >> 15;
-	unsigned long B7 = ((unsigned long)UP - B3) * (50000UL >> OSS);
-	long p;
-	if (B7 < 0x80000000)
-			p = (B7 << 1) / B4;
-	else
-			p = (B7 / B4) << 1;
-
-	X1 = (p >> 8) * (p >> 8);
-	X1 = (X1 * 3038L) >> 16;
-	X2 = (-7357L * p) >> 16;
-	p = p + ((X1 + X2 + 3791L) >> 4);
-	
-	
-	sprintf(msg_lcd, "p = %.2f mmHg", p / 133.322f);
-	
 	lcd1602_transmit_command(0b10000000);
-	//LCD_SendString("mike");
+	bmp180_init();
+	HAL_Delay(200);
+
+	/* MEASURING!!! */
+	bmp180_get_global_coefficients();
+	HAL_Delay(5);
+	temperature = bmp180_get_temperature();
+	sprintf(msg_lcd, "t = %.1f", temperature / 10.0);
+	lcd1602_send_string(msg_lcd);
+	
+	HAL_Delay(1000);
+
+	pressure = bmp180_get_pressure();
+	sprintf(msg_lcd, "p = %.2f mmHg", pressure / 133.322f);
+	lcd1602_transmit_command(0b10000000);
 	lcd1602_send_string(msg_lcd);
   /* USER CODE END 2 */
 

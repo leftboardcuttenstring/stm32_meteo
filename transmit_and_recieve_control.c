@@ -27,3 +27,44 @@ int lcd1602_transmit_data(uint8_t data) {
 int lcd1602_transmit_command(uint8_t cmd) {
 	lcd1602_transmit(cmd, 0);
 }
+
+int32_t bmp180_get_temperature(void) {
+	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY); //i forgot what the fuck it is
+	int32_t UT = (temperature_buf[0] << 8) + temperature_buf[1];
+	X1 = ((UT-AC6)*AC5) >> 15;
+	X2 = (MC << 11) / (X1 + MD);
+	B5 = X1 + X2;
+	int32_t T = (B5 + 8) >> 4;
+	return T;
+}
+
+int32_t bmp180_get_pressure(void) {
+	uint32_t pressure_cmd = 0x34 + (OSS << 6);
+	
+	HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_DELAY);
+	HAL_Delay(100);
+	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, pressure_buf, 3, HAL_MAX_DELAY);
+	long UP = (((long)pressure_buf[0] << 16) | ((long)pressure_buf[1] << 8) | (long)pressure_buf[2]) >> 8;
+	
+	long B6 = B5 - 4000;
+	X1 = (B2 * ((B6 * B6) >> 12)) >> 11;
+	X2 = (AC2 * B6) >> 11;
+	long X3 = X1 + X2;
+	long B3 = ((((long)AC1 * 4 + X3) << OSS) + 2) >> 2;
+	X1 = (AC3 * B6) >> 13;
+	X2 = (B1 * ((B6 * B6) >> 12)) >> 16;
+	X3 = ((X1 + X2) + 2) >> 2;
+	unsigned long B4 = (AC4 * (unsigned long)(X3 + 32768)) >> 15;
+	unsigned long B7 = ((unsigned long)UP - B3) * (50000UL >> OSS);
+	long p;
+	if (B7 < 0x80000000)
+			p = (B7 << 1) / B4;
+	else
+			p = (B7 / B4) << 1;
+
+	X1 = (p >> 8) * (p >> 8);
+	X1 = (X1 * 3038L) >> 16;
+	X2 = (-7357L * p) >> 16;
+	p = p + ((X1 + X2 + 3791L) >> 4);
+	return p;
+}

@@ -3,11 +3,17 @@
 #define PIN_RS (1 << 0)
 #define PIN_EN (1 << 2)
 #define BACKLIGHT (1 << 3)
+#define OSS 0
 
 extern I2C_HandleTypeDef hi2c1;
 extern UART_HandleTypeDef huart2;
 extern uint16_t lcd1604_addr;
 extern uint16_t bmp180_addr;
+extern uint8_t temperature_buf[2];
+extern uint8_t pressure_buf[3];
+extern int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
+extern uint16_t AC4, AC5, AC6;
+extern int32_t X1, X2, B5;
 
 /*
  * @brief function for transmitting
@@ -43,3 +49,7 @@ void lcd1602_transmit(uint8_t data, uint8_t flags);
  * @return void
  */
 void lcd1602_send_string(char *str);
+
+int32_t bmp180_get_temperature(void);
+
+int32_t bmp180_get_pressure(void);
