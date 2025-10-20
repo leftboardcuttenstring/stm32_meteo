@@ -22,17 +22,14 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "../../../../../date.h"
+//#include "../../../../../date.h"
 #include "../../../../../transmit_and_recieve_control.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-typedef struct {
-	short Temperature;
-	float Pressure;
-	unsigned short Humdity;
-} Data;
+
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -57,18 +54,23 @@ typedef struct {
 /* USER CODE BEGIN PV */
 static unsigned int SysTick_1Sec_Counter = 0;
 static unsigned int SysTick_20Sec_Counter = 0;
-static unsigned int SysTick_1Minute_Counter = 0;
+//static unsigned int SysTick_1Minute_Counter = 0;
 static Data Log[LOG_SIZE] = {0};
 static unsigned char LogCounter = 0;
 extern UART_HandleTypeDef huart2;
 extern char msg_time[32];
+extern Data journal[5];
+extern int count;
+extern int32_t temperature;
+extern int32_t pressure;
+char message_count[32] = {0};
 //unsigned int counter_1s = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
 void GetData(void);
-void AveragingData(void);
+int AveragingData(void);
 void LogData(Data Current);
 /* USER CODE END PFP */
 
@@ -206,32 +208,28 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
-	/*GetData();
-	AveragingData();*/
-	/*GetData();
-	AveragingData();*/
+	
   /* USER CODE END SysTick_IRQn 0 */
+	
+	
   HAL_IncTick();
+	
+	
   /* USER CODE BEGIN SysTick_IRQn 1 */
+	
+	
 	if(SysTick_1Sec_Counter == 1000) {
 		SysTick_1Sec_Counter = 0;
-		//HAL_UART_Transmit(&huart2, "1s\r\n", sizeof("1s\r\n")-1, HAL_MAX_DELAY);
-		GetData();
 	}
 	SysTick_1Sec_Counter++;	
 	if(SysTick_20Sec_Counter == 20000) {
-		SysTick_20Sec_Counter = 0;
-		//HAL_UART_Transmit(&huart2, "20s\r\n", sizeof("20s\r\n")-1, HAL_MAX_DELAY);
+		//SysTick_20Sec_Counter = 0;
 		AveragingData();
 	}
 	SysTick_20Sec_Counter++;
 	
-	/*if (SysTick_1Minute_Counter == 1000) {
-		rtc_get_time();
-		SysTick_1Sec_Counter = 0;
-	}
-	SysTick_1Minute_Counter++;*/
-
+	
+	
   /* USER CODE END SysTick_IRQn 1 */
 }
 
@@ -271,22 +269,38 @@ void GetData(void)
 	SysTick_1Sec_Counter++;
 }
 
-void AveragingData(void)
+int AveragingData(void)
 {
-	if (SysTick_20Sec_Counter == SYSTICK_20SEC_VALUE)
+	/*if (SysTick_20Sec_Counter == SYSTICK_20SEC_VALUE)
 	{
 		SysTick_20Sec_Counter = 0;
-		//optionally
-		//HAL_UART_Transmit(&huart2, (const uint8_t*)"Averaging the data...\r\n", sizeof("Averaging the data...\r\n")-1, HAL_MAX_DELAY);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
-		for(int i=0; i<500000; i++);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
+		sprintf(message_count, "Current element is: %d", count);
+		HAL_UART_Transmit(&huart2, (const uint8_t*)message_count, sizeof(message_count)-1, HAL_MAX_DELAY);
+		if (count % (5-1) == 0 && count / (5-1) != 0) {
+			count = 0;
+      return 0;
+    }
 	}
-	SysTick_20Sec_Counter++;
+	count++;
+	SysTick_20Sec_Counter++;*/
+	
+	SysTick_20Sec_Counter = 0;
+	sprintf(message_count, "Current element is: %d\r\n", count);
+	HAL_UART_Transmit(&huart2, (const uint8_t*)message_count, sizeof(message_count)-1, HAL_MAX_DELAY);
+	temperature = bmp180_get_temperature();
+	pressure = bmp180_get_pressure();
+	journal[count].Pressure = pressure / 133.322f;
+	journal[count].Temperature = temperature / 10.0;
+	if (count % (5-1) == 0 && count / (5-1) != 0) {
+		count = 0;
+    return 0;
+	}
+	count++;
+	
+	return 0;
 }
 
-void LogData(Data Current)
-{
+void LogData(Data Current) {
 	if (LogCounter > LOG_SIZE)
 	{
 		LogCounter = 0;

@@ -37,6 +37,12 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
+typedef struct {
+	short Temperature;
+	float Pressure;
+	unsigned short Humdity;
+} Data;
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

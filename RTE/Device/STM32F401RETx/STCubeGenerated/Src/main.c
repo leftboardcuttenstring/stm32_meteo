@@ -62,6 +62,10 @@ RTC_HandleTypeDef hrtc;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+//float journal[5][2] = {0};
+Data journal[5] = {0};
+int count = 0;
+
 /*
  * @brief a cople of reserved static addresses
  *
@@ -175,11 +179,12 @@ int main(void)
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
 	
-	if (rtc_set_time((uint8_t)2025, (uint8_t)10, (uint8_t)19, (uint8_t)11, (uint8_t)10, (uint8_t)30, (uint8_t)7) != 0) {
+	/*if (rtc_set_time((uint8_t)2025, (uint8_t)10, (uint8_t)19, (uint8_t)11, (uint8_t)10, (uint8_t)30, (uint8_t)7) != 0) {
 		return 1;
-	}
+	}*/
 	
 	//FindAddress();
+	bmp180_get_global_coefficients();
 	lcd1602_init();
 	HAL_Delay(100);
 	//lcd1602_transmit_command(0b10000000);
@@ -190,7 +195,7 @@ int main(void)
 	lcd1602_send_string(msg_time);*/
 	HAL_Delay(200);
 
-	bmp180_get_global_coefficients();
+	
 	HAL_Delay(5);
 	
 	/* MEASURING!!! */
@@ -202,7 +207,6 @@ int main(void)
 	HAL_Delay(1000);
 
 	pressure = bmp180_get_pressure();
-	
 	sprintf(msg_lcd, "p = %.2f mmHg", pressure / 133.322f);
 	lcd1602_transmit_command(0b10000000);
 	lcd1602_send_string(msg_lcd);
