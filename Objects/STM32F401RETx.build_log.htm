@@ -22,70 +22,12 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 Z:\STM32F401RETx\STM32F401RETx.uvprojx
-Project File Date:  10/18/2025
+Project File Date:  10/19/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(24): warning: In file included from...
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/../../../../../init_peripherials.h(1): warning: In file included from...
-./transmit_and_recieve_control.h(55): warning: no newline at end of file [-Wnewline-eof]
-int32_t bmp180_get_pressure(void);
-                                  ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
-./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
-C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
-./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(363): warning: In file included from...
-C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_i2c.h(215): warning: padding struct 'I2C_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
-  __IO uint32_t              ErrorCode;      /*!< I2C Error code                           */
-                             ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
-./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
-C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
-./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(287): warning: In file included from...
-C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(148): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
-  void                       *Parent;                                                          /*!< Parent object state                    */ 
-                              ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(155): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-        lcd1602_transmit_command(0b10000000);
-                                 ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(169): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
-        sprintf(msg_lcd, "p = %.2f mmHg", pressure / 133.322f);
-        ~~~~~~~                           ~~~~~~~~~^~~~~~~~~~
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(169): warning: implicit conversion from 'int32_t' (aka 'int') to 'float' may lose precision [-Wimplicit-int-float-conversion]
-        sprintf(msg_lcd, "p = %.2f mmHg", pressure / 133.322f);
-                                          ^~~~~~~~ ~
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(170): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
-        lcd1602_transmit_command(0b10000000);
-                                 ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
-./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
-C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
-./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(411): warning: In file included from...
-C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_uart.h(182): warning: padding struct 'struct __UART_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
-  __IO uint32_t                 ErrorCode;        /*!< UART Error code                    */
-                                ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(350): warning: function 'Error_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(86): warning: no previous extern declaration for non-static variable 'msg' [-Wmissing-variable-declarations]
-char msg[32];
-     ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(86): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-char msg[32];
-^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(87): warning: no previous extern declaration for non-static variable 'msg_lcd' [-Wmissing-variable-declarations]
-char msg_lcd[32];
-     ^
-RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(87): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-char msg_lcd[32];
-^
-11 warnings generated.
-compiling main.c...
-linking...
-Program Size: Code=21592 RO-data=1080 RW-data=16 ZI-data=1904  
-FromELF: creating hex file...
-".\Objects\STM32F401RETx.axf" - 0 Error(s), 11 Warning(s).
+".\Objects\STM32F401RETx.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -113,6 +55,7 @@ Package Vendor: Keil
    * Component: I2C Version: 1.8.1
    * Component: PWR Version: 1.8.1
    * Component: RCC Version: 1.8.1
+   * Component: RTC Version: 1.8.1
    * Component: UART Version: 1.8.1
    * Component: Startup Version: 2.6.3
 
@@ -162,6 +105,10 @@ Package Vendor: Keil
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 
+   * Component: Keil::Device:STM32Cube HAL:RTC:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c
+
    * Component: Keil::Device:STM32Cube HAL:UART:1.8.1
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 
@@ -171,7 +118,7 @@ Package Vendor: Keil
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

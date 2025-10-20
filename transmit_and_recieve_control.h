@@ -5,6 +5,11 @@
 #define BACKLIGHT (1 << 3)
 #define OSS 0
 
+#define MAX_TEMPERATURE 38
+#define MIN_TEMPERATURE -30
+#define MAX_PRESSURE 770
+#define MIN_PRESSURE 730
+
 extern I2C_HandleTypeDef hi2c1;
 extern UART_HandleTypeDef huart2;
 extern uint16_t lcd1604_addr;

@@ -23,10 +23,12 @@
 /* USER CODE BEGIN Includes */
 #include "../../../../../init_peripherials.h"
 #include "../../../../../transmit_and_recieve_control.h"
+#include "../../../../../date.h"
 
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
+#include <string.h>
 
 /* USER CODE END Includes */
 
@@ -54,6 +56,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
+
+RTC_HandleTypeDef hrtc;
 
 UART_HandleTypeDef huart2;
 
@@ -83,10 +87,15 @@ int32_t X1 = 0;
 int32_t X2 = 0;
 int32_t B5 = 0; //global stuff
 
-char msg[32];
-char msg_lcd[32];
+//static char msg[32];
+char msg_time[32];
+static char msg_lcd[32];
 static int32_t temperature = 0;
 static int32_t pressure = 0;
+
+RTC_TimeTypeDef time;
+RTC_DateTypeDef date;
+HAL_StatusTypeDef res;
 
 /* USER CODE END PV */
 
@@ -95,12 +104,26 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_RTC_Init(void);
 /* USER CODE BEGIN PFP */
 void bmp180_get_global_coefficients(void);
+void FindAddress(void);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void FindAddress(void) {
+	char msg_address[64] = {0};
+	uint16_t i;
+	for(i = 0; i < (uint16_t)128; i++) {
+		if(HAL_I2C_IsDeviceReady(&hi2c1, i << (uint16_t)1, 1, HAL_MAX_DELAY) == HAL_OK) {
+			snprintf(msg_address, sizeof(msg_address), "0x%02X", i);
+			HAL_UART_Transmit(&huart2, (uint8_t*)msg_address, sizeof(msg_address)-1, HAL_MAX_DELAY);
+		}
+	}
+}
 
 void bmp180_get_global_coefficients(void) {
 	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xAA, 1, calib_data, 22, HAL_MAX_DELAY);
@@ -149,26 +172,48 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_RTC_Init();
   /* USER CODE BEGIN 2 */
 	
+	if (rtc_set_time((uint8_t)2025, (uint8_t)10, (uint8_t)19, (uint8_t)11, (uint8_t)10, (uint8_t)30, (uint8_t)7) != 0) {
+		return 1;
+	}
+	
+	//FindAddress();
 	lcd1602_init();
-	lcd1602_transmit_command(0b10000000);
+	HAL_Delay(100);
+	//lcd1602_transmit_command(0b10000000);
+	HAL_Delay(1000);
 	bmp180_init();
+	
+	/*lcd1602_transmit_command(0b10000000);
+	lcd1602_send_string(msg_time);*/
 	HAL_Delay(200);
 
-	/* MEASURING!!! */
 	bmp180_get_global_coefficients();
 	HAL_Delay(5);
+	
+	/* MEASURING!!! */
 	temperature = bmp180_get_temperature();
 	sprintf(msg_lcd, "t = %.1f", temperature / 10.0);
+	lcd1602_transmit_command(0b10000000);
 	lcd1602_send_string(msg_lcd);
 	
 	HAL_Delay(1000);
 
 	pressure = bmp180_get_pressure();
+	
 	sprintf(msg_lcd, "p = %.2f mmHg", pressure / 133.322f);
 	lcd1602_transmit_command(0b10000000);
 	lcd1602_send_string(msg_lcd);
+	
+	/*lcd1602_transmit_command(0b10000000);
+	lcd1602_send_string(msg_time);*/
+	
+	/*rtc_get_time();
+	HAL_Delay(60000);
+	rtc_get_time();*/
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -199,7 +244,8 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSE;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
@@ -263,6 +309,76 @@ static void MX_I2C1_Init(void)
 }
 
 /**
+  * @brief RTC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_RTC_Init(void)
+{
+
+  /* USER CODE BEGIN RTC_Init 0 */
+
+  /* USER CODE END RTC_Init 0 */
+
+  RTC_TimeTypeDef sTime = {0};
+  RTC_DateTypeDef sDate = {0};
+
+  /* USER CODE BEGIN RTC_Init 1 */
+
+  /* USER CODE END RTC_Init 1 */
+
+  /** Initialize RTC Only
+  */
+  hrtc.Instance = RTC;
+  hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
+  hrtc.Init.AsynchPrediv = 127;
+  hrtc.Init.SynchPrediv = 255;
+  hrtc.Init.OutPut = RTC_OUTPUT_DISABLE;
+  hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
+  hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
+  if (HAL_RTC_Init(&hrtc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /* USER CODE BEGIN Check_RTC_BKUP */
+
+  /* USER CODE END Check_RTC_BKUP */
+
+  /** Initialize RTC and set the Time and Date
+  */
+  sTime.Hours = 0x0;
+  sTime.Minutes = 0x0;
+  sTime.Seconds = 0x0;
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
+  sDate.Month = RTC_MONTH_JANUARY;
+  sDate.Date = 0x1;
+  sDate.Year = 0x0;
+
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Enable the reference Clock input
+  */
+  if (HAL_RTCEx_SetRefClock(&hrtc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN RTC_Init 2 */
+
+  /* USER CODE END RTC_Init 2 */
+
+}
+
+/**
   * @brief USART2 Initialization Function
   * @param None
   * @retval None
@@ -316,6 +432,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
@@ -328,6 +447,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PB5 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);

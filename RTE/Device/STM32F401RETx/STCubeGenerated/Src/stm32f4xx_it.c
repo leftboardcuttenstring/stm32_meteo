@@ -22,6 +22,8 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "../../../../../date.h"
+#include "../../../../../transmit_and_recieve_control.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,11 +55,13 @@ typedef struct {
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-unsigned int SysTick_1Sec_Counter = 0;
-unsigned int SysTick_20Sec_Counter = 0;
-Data Log[LOG_SIZE] = {0};
-unsigned char LogCounter = 0;
+static unsigned int SysTick_1Sec_Counter = 0;
+static unsigned int SysTick_20Sec_Counter = 0;
+static unsigned int SysTick_1Minute_Counter = 0;
+static Data Log[LOG_SIZE] = {0};
+static unsigned char LogCounter = 0;
 extern UART_HandleTypeDef huart2;
+extern char msg_time[32];
 //unsigned int counter_1s = 0;
 /* USER CODE END PV */
 
@@ -210,17 +214,23 @@ void SysTick_Handler(void)
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
 	if(SysTick_1Sec_Counter == 1000) {
-		/*SysTick_1Sec_Counter = 0;
-		HAL_UART_Transmit(&huart2, "1s\r\n", sizeof("1s\r\n")-1, HAL_MAX_DELAY);*/
+		SysTick_1Sec_Counter = 0;
+		//HAL_UART_Transmit(&huart2, "1s\r\n", sizeof("1s\r\n")-1, HAL_MAX_DELAY);
 		GetData();
 	}
 	SysTick_1Sec_Counter++;	
 	if(SysTick_20Sec_Counter == 20000) {
-		/*SysTick_20Sec_Counter = 0;
-		HAL_UART_Transmit(&huart2, "20s\r\n", sizeof("20s\r\n")-1, HAL_MAX_DELAY);*/
+		SysTick_20Sec_Counter = 0;
+		//HAL_UART_Transmit(&huart2, "20s\r\n", sizeof("20s\r\n")-1, HAL_MAX_DELAY);
 		AveragingData();
 	}
 	SysTick_20Sec_Counter++;
+	
+	/*if (SysTick_1Minute_Counter == 1000) {
+		rtc_get_time();
+		SysTick_1Sec_Counter = 0;
+	}
+	SysTick_1Minute_Counter++;*/
 
   /* USER CODE END SysTick_IRQn 1 */
 }

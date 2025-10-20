@@ -1,6 +1,7 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\init_peripherials.o"
 ".\objects\transmit_and_recieve_control.o"
+".\objects\date.o"
 ".\objects\main.o"
 ".\objects\stm32f4xx_it.o"
 ".\objects\stm32f4xx_hal_msp.o"
@@ -15,6 +16,8 @@
 ".\objects\stm32f4xx_hal_pwr_ex.o"
 ".\objects\stm32f4xx_hal_rcc.o"
 ".\objects\stm32f4xx_hal_rcc_ex.o"
+".\objects\stm32f4xx_hal_rtc.o"
+".\objects\stm32f4xx_hal_rtc_ex.o"
 ".\objects\stm32f4xx_hal_uart.o"
 ".\objects\startup_stm32f401xe.o"
 ".\objects\system_stm32f4xx.o"
