@@ -285,12 +285,21 @@ int AveragingData(void)
 	SysTick_20Sec_Counter++;*/
 	
 	SysTick_20Sec_Counter = 0;
-	sprintf(message_count, "Current element is: %d\r\n", count);
+	char msg_data[50] = {0};
 	HAL_UART_Transmit(&huart2, (const uint8_t*)message_count, sizeof(message_count)-1, HAL_MAX_DELAY);
 	temperature = bmp180_get_temperature();
 	pressure = bmp180_get_pressure();
-	journal[count].Pressure = pressure / 133.322f;
-	journal[count].Temperature = temperature / 10.0;
+	if ((temperature / 10.0 > MAX_TEMPERATURE || temperature / 10.0 < MIN_TEMPERATURE) || (pressure / 133.322f > MAX_PRESSURE || temperature / 133.322f < MIN_PRESSURE)) {
+		journal[count].Pressure = pressure / 133.322f;
+		journal[count].Temperature = temperature / 10.0;
+		snprintf(msg_data, sizeof(msg_data), "WARNING: the value of one of the measurements has been exceeded: %f, %f\r\n", temperature / 10.0, pressure / 133.322f);
+		HAL_UART_Transmit(&huart2, (uint8_t*)msg_data, sizeof(msg_data)-1, HAL_MAX_DELAY);
+	}
+	snprintf(msg_data, sizeof(msg_data), "Current temperature is: %f\r\n", temperature / 10.0);
+	HAL_UART_Transmit(&huart2, (uint8_t*)msg_data, sizeof(msg_data)-1, HAL_MAX_DELAY);
+	
+	snprintf(msg_data, sizeof(msg_data), "Current pressure is: %f\r\n", pressure / 133.322f);
+	HAL_UART_Transmit(&huart2, (uint8_t*)msg_data, sizeof(msg_data)-1, HAL_MAX_DELAY);
 	if (count % (5-1) == 0 && count / (5-1) != 0) {
 		count = 0;
     return 0;
