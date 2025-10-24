@@ -27,7 +27,126 @@ Project File Date:  10/19/2025
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-".\Objects\STM32F401RETx.axf" - 0 Error(s), 0 Warning(s).
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(24): warning: In file included from...
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/../../../../../init_peripherials.h(1): warning: In file included from...
+./transmit_and_recieve_control.h(60): warning: no newline at end of file [-Wnewline-eof]
+int32_t bmp180_get_pressure(void);
+                                  ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(25): warning: In file included from...
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/../../../../../transmit_and_recieve_control.h(60): warning: no newline at end of file [-Wnewline-eof]
+int32_t bmp180_get_pressure(void);
+                                  ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(26): warning: In file included from...
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/../../../../../date.h(4): warning: In file included from...
+./transmit_and_recieve_control.h(60): warning: no newline at end of file [-Wnewline-eof]
+int32_t bmp180_get_pressure(void);
+                                  ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(26): warning: In file included from...
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/../../../../../date.h(16): warning: no newline at end of file [-Wnewline-eof]
+void rtc_get_time(void);
+                        ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(42): warning: padding struct 'Data' with 2 bytes to align 'Pressure' [-Wpadded]
+        float Pressure;
+              ^
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(40): warning: padding size of 'Data' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(66): warning: no previous extern declaration for non-static variable 'journal' [-Wmissing-variable-declarations]
+Data journal[5] = {0};
+     ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(66): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+Data journal[5] = {0};
+^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(67): warning: no previous extern declaration for non-static variable 'count' [-Wmissing-variable-declarations]
+int count = 0;
+    ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(67): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int count = 0;
+^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(97): warning: no previous extern declaration for non-static variable 'temperature' [-Wmissing-variable-declarations]
+int32_t temperature = 0;
+        ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(97): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int32_t temperature = 0;
+^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(98): warning: no previous extern declaration for non-static variable 'pressure' [-Wmissing-variable-declarations]
+int32_t pressure = 0;
+        ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(98): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int32_t pressure = 0;
+^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(363): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_i2c.h(215): warning: padding struct 'I2C_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
+  __IO uint32_t              ErrorCode;      /*!< I2C Error code                           */
+                             ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(125): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                if(HAL_I2C_IsDeviceReady(&hi2c1, i << (uint16_t)1, 1, HAL_MAX_DELAY) == HAL_OK) {
+                   ~~~~~~~~~~~~~~~~~~~~~         ~~^~~~~~~~~~~~~~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(411): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_uart.h(182): warning: padding struct 'struct __UART_HandleTypeDef' with 1 byte to align 'ErrorCode' [-Wpadded]
+  __IO uint32_t                 ErrorCode;        /*!< UART Error code                    */
+                                ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(287): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h(148): warning: padding struct 'struct __DMA_HandleTypeDef' with 2 bytes to align 'Parent' [-Wpadded]
+  void                       *Parent;                                                          /*!< Parent object state                    */ 
+                              ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(20): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\main.h(30): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx/STCubeGenerated/Inc\stm32f4xx_hal_conf.h(391): warning: In file included from...
+C:/Users/admin/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_rtc.h(165): warning: padding size of 'RTC_HandleTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(149): warning: no previous prototype for function 'init_rtc_once' [-Wmissing-prototypes]
+void init_rtc_once(void)
+     ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(149): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void init_rtc_once(void)
+^
+static 
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(245): warning: declaration shadows a variable in the global scope [-Wshadow]
+        RTC_TimeTypeDef time;
+                        ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(100): note: previous declaration is here
+RTC_TimeTypeDef time;
+                ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(246): warning: declaration shadows a variable in the global scope [-Wshadow]
+        RTC_DateTypeDef date;
+                        ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(101): note: previous declaration is here
+RTC_DateTypeDef date;
+                ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(273): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+    HAL_UART_Transmit(&huart2, (uint8_t*)buf, strlen(buf), HAL_MAX_DELAY);
+    ~~~~~~~~~~~~~~~~~                         ^~~~~~~~~~~
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(271): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+    char buf[64];
+         ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(245): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        RTC_TimeTypeDef time;
+                        ^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(527): warning: function 'Error_Handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+RTE/Device/STM32F401RETx/STCubeGenerated/Src/main.c(96): warning: unused variable 'msg_lcd' [-Wunused-variable]
+static char msg_lcd[32];
+            ^
+23 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=24664 RO-data=1440 RW-data=12 ZI-data=2012  
+FromELF: creating hex file...
+".\Objects\STM32F401RETx.axf" - 0 Error(s), 23 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -118,7 +237,7 @@ Package Vendor: Keil
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
