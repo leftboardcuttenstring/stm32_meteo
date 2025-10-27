@@ -168,9 +168,7 @@ void init_rtc_once(void)
   */
 int main(void)
 {
-
   /* USER CODE BEGIN 1 */
-	
 	__HAL_RCC_RTC_DISABLE();
 	__HAL_RCC_RTC_CONFIG(RCC_RTCCLKSOURCE_LSE);
 	__HAL_RCC_RTC_ENABLE();
@@ -199,65 +197,35 @@ int main(void)
   MX_I2C1_Init();
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
-	
-	/*if (rtc_set_time((uint8_t)2025, (uint8_t)10, (uint8_t)19, (uint8_t)11, (uint8_t)10, (uint8_t)30, (uint8_t)7) != 0) {
-		return 1;
-	}*/
-	
 	init_rtc_once();
-	
-	//FindAddress();
-	
-	/*if (__HAL_RCC_GET_FLAG(RCC_FLAG_LSERDY) == RESET) {
-    HAL_UART_Transmit(&huart2, (uint8_t*)"LSE FAIL\r\n", 10, HAL_MAX_DELAY);
-	} else {
-    HAL_UART_Transmit(&huart2, (uint8_t*)"LSE OK\r\n", 8, HAL_MAX_DELAY);
-	}*/
 
 	
-		//bmp180_get_global_coefficients();
-		//lcd1602_init();
-		//HAL_Delay(100);
-		//lcd1602_transmit_command(0b10000000);
-		//HAL_Delay(1000);
-		//bmp180_init();
-	
-	/*lcd1602_transmit_command(0b10000000);
-	lcd1602_send_string(msg_time);*/
-		//HAL_Delay(200);
+	bmp180_get_global_coefficients();
+	lcd1602_init();
+	HAL_Delay(100);
+	lcd1602_transmit_command(0b10000000);
+	HAL_Delay(1000);
+	bmp180_init();
 
-	
 	//HAL_Delay(5);
 	
 	/* MEASURING!!! */
-		//temperature = bmp180_get_temperature();
-		//sprintf(msg_lcd, "t = %.1f", temperature / 10.0);
-		//lcd1602_transmit_command(0b10000000);
-		//lcd1602_send_string(msg_lcd);
+	/*temperature = bmp180_get_temperature();
+	sprintf(msg_lcd, "t = %.1f", temperature / 10.0);
+	lcd1602_transmit_command(0b10000000);
+	lcd1602_send_string(msg_lcd);
+	HAL_Delay(1000);
+	pressure = bmp180_get_pressure();
+	sprintf(msg_lcd, "p = %.2f mmHg", pressure / 133.322f);
+	lcd1602_transmit_command(0b10000000);
+	lcd1602_send_string(msg_lcd);/*
 	
-		//HAL_Delay(1000);
-
-		//pressure = bmp180_get_pressure();
-		//sprintf(msg_lcd, "p = %.2f mmHg", pressure / 133.322f);
-		//lcd1602_transmit_command(0b10000000);
-		//lcd1602_send_string(msg_lcd);
+	HAL_Delay(3000);
 	
 	RTC_TimeTypeDef time;
 	RTC_DateTypeDef date;
-
-	HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
-	HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
-
-	snprintf(msg_time, sizeof(msg_time), "%02d:%02d:%02d", time.Hours, time.Minutes, time.Seconds);
-
 	
-	/*lcd1602_transmit_command(0b10000000);
-	lcd1602_send_string(msg_time);*/
-	
-	/*rtc_get_time();
-	HAL_Delay(60000);
-	rtc_get_time();*/
-	
+	lcd1602_transmit_command(0b10000000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -268,11 +236,32 @@ int main(void)
 		HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
     HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
 
-    char buf[64];
-    snprintf(buf, sizeof(buf), "time: %02d:%02d:%02d\r\n", time.Hours, time.Minutes, time.Seconds);
-    HAL_UART_Transmit(&huart2, (uint8_t*)buf, strlen(buf), HAL_MAX_DELAY);
-
-    HAL_Delay(1000);
+		char buf[64];
+    char buf_lcd_first_line[64];
+		char buf_lcd_second_line[64];
+		//snprintf(buf, sizeof(buf), "%02d:%02d:%02d\r\n", time.Hours, time.Minutes, time.Seconds);
+    snprintf(buf_lcd_first_line, sizeof(buf_lcd_first_line), "%02d:%02d:%02d", time.Hours, time.Minutes, time.Seconds);
+    //HAL_UART_Transmit(&huart2, (uint8_t*)buf, sizeof(buf)-1, HAL_MAX_DELAY);
+		lcd1602_transmit_command(0b10000000);
+		lcd1602_send_string(buf_lcd_first_line);
+		lcd1602_transmit_command(0b11000000);
+		HAL_Delay(1000);
+		/*temperature = bmp180_get_temperature();
+		pressure = bmp180_get_pressure();
+		sprintf(buf_lcd_second_line, "%.2f, %.1f", pressure / 133.322f, temperature / 10.0);
+		lcd1602_send_string(buf_lcd_second_line);
+    HAL_Delay(1000);*/
+		
+		temperature = bmp180_get_temperature();
+		sprintf(msg_lcd, "t = %.1f", temperature / 10.0);
+		lcd1602_transmit_command(0b10000000);
+		lcd1602_send_string(msg_lcd);
+		HAL_Delay(1000);
+		pressure = bmp180_get_pressure();
+		sprintf(msg_lcd, "p = %.2f mmHg", pressure / 133.322f);
+		lcd1602_transmit_command(0b10000000);
+		lcd1602_send_string(msg_lcd);
+		HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

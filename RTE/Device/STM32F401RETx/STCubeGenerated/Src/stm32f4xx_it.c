@@ -55,8 +55,8 @@
 static unsigned int SysTick_1Sec_Counter = 0;
 static unsigned int SysTick_20Sec_Counter = 0;
 //static unsigned int SysTick_1Minute_Counter = 0;
-static Data Log[LOG_SIZE] = {0};
-static unsigned char LogCounter = 0;
+//static Data Log[LOG_SIZE] = {0};
+//static unsigned char LogCounter = 0;
 extern UART_HandleTypeDef huart2;
 extern char msg_time[32];
 extern Data journal[5];
@@ -218,17 +218,15 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 1 */
 	
 	
-	if(SysTick_1Sec_Counter == 1000) {
+	/*if(SysTick_1Sec_Counter == 1000) {
 		SysTick_1Sec_Counter = 0;
 	}
 	SysTick_1Sec_Counter++;	
 	if(SysTick_20Sec_Counter == 20000) {
-		//SysTick_20Sec_Counter = 0;
-		AveragingData();
+		SysTick_20Sec_Counter = 0;
+		//AveragingData();
 	}
-	SysTick_20Sec_Counter++;
-	
-	
+	SysTick_20Sec_Counter++;*/
 	
   /* USER CODE END SysTick_IRQn 1 */
 }
@@ -309,7 +307,7 @@ int AveragingData(void)
 	return 0;
 }
 
-void LogData(Data Current) {
+/*void LogData(Data Current) {
 	if (LogCounter > LOG_SIZE)
 	{
 		LogCounter = 0;
@@ -318,5 +316,5 @@ void LogData(Data Current) {
 	Log[LogCounter].Pressure = Current.Pressure;
 	Log[LogCounter].Temperature = Current.Temperature;
 	LogCounter++;
-}
+}*/
 /* USER CODE END 1 */
