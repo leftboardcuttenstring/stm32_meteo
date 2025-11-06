@@ -1,0 +1,276 @@
+ARM GAS  /tmp/cck10Ym1.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"init_peripherials.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/init_peripherials/init_peripherials.c"
+  20              		.section	.rodata.lcd1602_init.str1.4,"aMS",%progbits,1
+  21              		.align	2
+  22              	.LC0:
+  23 0000 4C434420 		.ascii	"LCD init is done\015\012\000"
+  23      696E6974 
+  23      20697320 
+  23      646F6E65 
+  23      0D0A00
+  24              		.section	.text.lcd1602_init,"ax",%progbits
+  25              		.align	1
+  26              		.global	lcd1602_init
+  27              		.syntax unified
+  28              		.thumb
+  29              		.thumb_func
+  31              	lcd1602_init:
+  32              	.LFB134:
+   1:Core/Src/init_peripherials/init_peripherials.c **** #include "init_peripherials.h"
+   2:Core/Src/init_peripherials/init_peripherials.c **** 
+   3:Core/Src/init_peripherials/init_peripherials.c **** void lcd1602_init(void) {	
+  33              		.loc 1 3 25 view -0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+  37 0000 08B5     		push	{r3, lr}
+  38              	.LCFI0:
+  39              		.cfi_def_cfa_offset 8
+  40              		.cfi_offset 3, -8
+  41              		.cfi_offset 14, -4
+   4:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(50);
+  42              		.loc 1 4 3 view .LVU1
+  43 0002 3220     		movs	r0, #50
+  44 0004 FFF7FEFF 		bl	HAL_Delay
+  45              	.LVL0:
+   5:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x33);
+  46              		.loc 1 5 3 view .LVU2
+  47 0008 3320     		movs	r0, #51
+  48 000a FFF7FEFF 		bl	lcd1602_transmit_command
+  49              	.LVL1:
+ARM GAS  /tmp/cck10Ym1.s 			page 2
+
+
+   6:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(5);
+  50              		.loc 1 6 3 view .LVU3
+  51 000e 0520     		movs	r0, #5
+  52 0010 FFF7FEFF 		bl	HAL_Delay
+  53              	.LVL2:
+   7:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x32);
+  54              		.loc 1 7 3 view .LVU4
+  55 0014 3220     		movs	r0, #50
+  56 0016 FFF7FEFF 		bl	lcd1602_transmit_command
+  57              	.LVL3:
+   8:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
+  58              		.loc 1 8 3 view .LVU5
+  59 001a 0120     		movs	r0, #1
+  60 001c FFF7FEFF 		bl	HAL_Delay
+  61              	.LVL4:
+   9:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x28);
+  62              		.loc 1 9 3 view .LVU6
+  63 0020 2820     		movs	r0, #40
+  64 0022 FFF7FEFF 		bl	lcd1602_transmit_command
+  65              	.LVL5:
+  10:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
+  66              		.loc 1 10 3 view .LVU7
+  67 0026 0120     		movs	r0, #1
+  68 0028 FFF7FEFF 		bl	HAL_Delay
+  69              	.LVL6:
+  11:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x08);
+  70              		.loc 1 11 3 view .LVU8
+  71 002c 0820     		movs	r0, #8
+  72 002e FFF7FEFF 		bl	lcd1602_transmit_command
+  73              	.LVL7:
+  12:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
+  74              		.loc 1 12 3 view .LVU9
+  75 0032 0120     		movs	r0, #1
+  76 0034 FFF7FEFF 		bl	HAL_Delay
+  77              	.LVL8:
+  13:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x01);
+  78              		.loc 1 13 3 view .LVU10
+  79 0038 0120     		movs	r0, #1
+  80 003a FFF7FEFF 		bl	lcd1602_transmit_command
+  81              	.LVL9:
+  14:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(2);
+  82              		.loc 1 14 3 view .LVU11
+  83 003e 0220     		movs	r0, #2
+  84 0040 FFF7FEFF 		bl	HAL_Delay
+  85              	.LVL10:
+  15:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x06);
+  86              		.loc 1 15 3 view .LVU12
+  87 0044 0620     		movs	r0, #6
+  88 0046 FFF7FEFF 		bl	lcd1602_transmit_command
+  89              	.LVL11:
+  16:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
+  90              		.loc 1 16 3 view .LVU13
+  91 004a 0120     		movs	r0, #1
+  92 004c FFF7FEFF 		bl	HAL_Delay
+  93              	.LVL12:
+  17:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x0C);
+  94              		.loc 1 17 3 view .LVU14
+ARM GAS  /tmp/cck10Ym1.s 			page 3
+
+
+  95 0050 0C20     		movs	r0, #12
+  96 0052 FFF7FEFF 		bl	lcd1602_transmit_command
+  97              	.LVL13:
+  18:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
+  98              		.loc 1 18 3 view .LVU15
+  99 0056 0120     		movs	r0, #1
+ 100 0058 FFF7FEFF 		bl	HAL_Delay
+ 101              	.LVL14:
+  19:Core/Src/init_peripherials/init_peripherials.c **** 	HAL_UART_Transmit(&huart2, (const uint8_t*)"LCD init is done\r\n", sizeof("LCD init is done\r\n")-
+ 102              		.loc 1 19 2 view .LVU16
+ 103 005c 4FF0FF33 		mov	r3, #-1
+ 104 0060 1222     		movs	r2, #18
+ 105 0062 0249     		ldr	r1, .L3
+ 106 0064 0248     		ldr	r0, .L3+4
+ 107 0066 FFF7FEFF 		bl	HAL_UART_Transmit
+ 108              	.LVL15:
+  20:Core/Src/init_peripherials/init_peripherials.c **** }
+ 109              		.loc 1 20 1 is_stmt 0 view .LVU17
+ 110 006a 08BD     		pop	{r3, pc}
+ 111              	.L4:
+ 112              		.align	2
+ 113              	.L3:
+ 114 006c 00000000 		.word	.LC0
+ 115 0070 00000000 		.word	huart2
+ 116              		.cfi_endproc
+ 117              	.LFE134:
+ 119              		.section	.rodata.bmp180_init.str1.4,"aMS",%progbits,1
+ 120              		.align	2
+ 121              	.LC1:
+ 122 0000 4261726F 		.ascii	"Barometer init is done\015\012\000"
+ 122      6D657465 
+ 122      7220696E 
+ 122      69742069 
+ 122      7320646F 
+ 123              		.section	.text.bmp180_init,"ax",%progbits
+ 124              		.align	1
+ 125              		.global	bmp180_init
+ 126              		.syntax unified
+ 127              		.thumb
+ 128              		.thumb_func
+ 130              	bmp180_init:
+ 131              	.LFB135:
+  21:Core/Src/init_peripherials/init_peripherials.c **** 
+  22:Core/Src/init_peripherials/init_peripherials.c **** void bmp180_init(void) {
+ 132              		.loc 1 22 24 is_stmt 1 view -0
+ 133              		.cfi_startproc
+ 134              		@ args = 0, pretend = 0, frame = 8
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136 0000 00B5     		push	{lr}
+ 137              	.LCFI1:
+ 138              		.cfi_def_cfa_offset 4
+ 139              		.cfi_offset 14, -4
+ 140 0002 87B0     		sub	sp, sp, #28
+ 141              	.LCFI2:
+ 142              		.cfi_def_cfa_offset 32
+  23:Core/Src/init_peripherials/init_peripherials.c **** 	uint8_t cmd = 0x2E;
+ 143              		.loc 1 23 2 view .LVU19
+ARM GAS  /tmp/cck10Ym1.s 			page 4
+
+
+ 144              		.loc 1 23 10 is_stmt 0 view .LVU20
+ 145 0004 2E23     		movs	r3, #46
+ 146 0006 8DF81730 		strb	r3, [sp, #23]
+  24:Core/Src/init_peripherials/init_peripherials.c **** 	if (HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY) == HAL_OK) {
+ 147              		.loc 1 24 2 is_stmt 1 view .LVU21
+ 148              		.loc 1 24 6 is_stmt 0 view .LVU22
+ 149 000a 4FF0FF33 		mov	r3, #-1
+ 150 000e 0293     		str	r3, [sp, #8]
+ 151 0010 0123     		movs	r3, #1
+ 152 0012 0193     		str	r3, [sp, #4]
+ 153 0014 0DF11702 		add	r2, sp, #23
+ 154 0018 0092     		str	r2, [sp]
+ 155 001a F422     		movs	r2, #244
+ 156 001c 0949     		ldr	r1, .L9
+ 157 001e 0988     		ldrh	r1, [r1]
+ 158 0020 0948     		ldr	r0, .L9+4
+ 159 0022 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 160              	.LVL16:
+ 161              		.loc 1 24 5 discriminator 1 view .LVU23
+ 162 0026 28B1     		cbz	r0, .L8
+ 163              	.L6:
+  25:Core/Src/init_peripherials/init_peripherials.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"Barometer init is done\r\n", sizeof("Barometer init i
+  26:Core/Src/init_peripherials/init_peripherials.c **** 	}
+  27:Core/Src/init_peripherials/init_peripherials.c **** 	HAL_Delay(5);
+ 164              		.loc 1 27 2 is_stmt 1 view .LVU24
+ 165 0028 0520     		movs	r0, #5
+ 166 002a FFF7FEFF 		bl	HAL_Delay
+ 167              	.LVL17:
+  28:Core/Src/init_peripherials/init_peripherials.c **** }...
+ 168              		.loc 1 28 1 is_stmt 0 view .LVU25
+ 169 002e 07B0     		add	sp, sp, #28
+ 170              	.LCFI3:
+ 171              		.cfi_remember_state
+ 172              		.cfi_def_cfa_offset 4
+ 173              		@ sp needed
+ 174 0030 5DF804FB 		ldr	pc, [sp], #4
+ 175              	.L8:
+ 176              	.LCFI4:
+ 177              		.cfi_restore_state
+  25:Core/Src/init_peripherials/init_peripherials.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"Barometer init is done\r\n", sizeof("Barometer init i
+ 178              		.loc 1 25 3 is_stmt 1 view .LVU26
+ 179 0034 4FF0FF33 		mov	r3, #-1
+ 180 0038 1822     		movs	r2, #24
+ 181 003a 0449     		ldr	r1, .L9+8
+ 182 003c 0448     		ldr	r0, .L9+12
+ 183 003e FFF7FEFF 		bl	HAL_UART_Transmit
+ 184              	.LVL18:
+ 185 0042 F1E7     		b	.L6
+ 186              	.L10:
+ 187              		.align	2
+ 188              	.L9:
+ 189 0044 00000000 		.word	bmp180_addr
+ 190 0048 00000000 		.word	hi2c1
+ 191 004c 00000000 		.word	.LC1
+ 192 0050 00000000 		.word	huart2
+ 193              		.cfi_endproc
+ 194              	.LFE135:
+ARM GAS  /tmp/cck10Ym1.s 			page 5
+
+
+ 196              		.text
+ 197              	.Letext0:
+ 198              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
+ 199              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
+ 200              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
+ 201              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 202              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 203              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 204              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 205              		.file 9 "Core/Src/init_peripherials/../transmit_and_recieve_control/transmit_and_recieve_control.h
+ 206              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/cck10Ym1.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 init_peripherials.c
+     /tmp/cck10Ym1.s:21     .rodata.lcd1602_init.str1.4:00000000 $d
+     /tmp/cck10Ym1.s:25     .text.lcd1602_init:00000000 $t
+     /tmp/cck10Ym1.s:31     .text.lcd1602_init:00000000 lcd1602_init
+     /tmp/cck10Ym1.s:114    .text.lcd1602_init:0000006c $d
+     /tmp/cck10Ym1.s:120    .rodata.bmp180_init.str1.4:00000000 $d
+     /tmp/cck10Ym1.s:124    .text.bmp180_init:00000000 $t
+     /tmp/cck10Ym1.s:130    .text.bmp180_init:00000000 bmp180_init
+     /tmp/cck10Ym1.s:189    .text.bmp180_init:00000044 $d
+
+UNDEFINED SYMBOLS
+HAL_Delay
+lcd1602_transmit_command
+HAL_UART_Transmit
+huart2
+HAL_I2C_Mem_Write
+bmp180_addr
+hi2c1
