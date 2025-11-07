@@ -1,5 +1,7 @@
 #include "init_peripherials.h"
 
+uint8_t cmd = 0x2E;
+
 void lcd1602_init(void) {	
   HAL_Delay(50);
   lcd1602_transmit_command(0x33);
@@ -20,9 +22,7 @@ void lcd1602_init(void) {
 }
 
 void bmp180_init(void) {
-	uint8_t cmd = 0x2E;
 	if (HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY) == HAL_OK) {
 		HAL_UART_Transmit(&huart2, (const uint8_t*)"Barometer init is done\r\n", sizeof("Barometer init is done\r\n")-1, HAL_MAX_DELAY);
 	}
-	HAL_Delay(5);
 }

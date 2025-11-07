@@ -17,7 +17,6 @@ void lcd1602_transmit(uint8_t data, uint8_t flags) {
 	data_arr[2] = lo|flags|BACKLIGHT|PIN_EN;
 	data_arr[3] = lo|flags|BACKLIGHT;
 	HAL_I2C_Master_Transmit(&hi2c1, lcd1604_addr, data_arr, sizeof(data_arr), HAL_MAX_DELAY);
-	HAL_Delay(10);
 }
 
 void lcd1602_transmit_data(uint8_t data) {
@@ -30,13 +29,14 @@ void lcd1602_transmit_command(uint8_t cmd) {
 
 int32_t bmp180_get_temperature(void) {
 	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY); //i forgot what the fuck it is
+	HAL_UART_Transmit(&huart2, (uint8_t*)"Data getting process is started\n", sizeof("Data getting process is started\n")-1, HAL_MAX_DELAY);
 	int32_t UT = (temperature_buf[0] << 8) + temperature_buf[1];
 	X1 = ((UT-AC6)*AC5) >> 15;
 	X2 = (MC << 11) / (X1 + MD);
 	B5 = X1 + X2;
-	int32_t T = ((B5 + 8) >> 4);
+	int32_t T = ((B5 + 8) >> 4) / 10.0;
 	
-	if (T / 10.0 > MAX_TEMPERATURE) {
+	/*if (T / 10.0 > MAX_TEMPERATURE) {
 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is above the maximum! (38 celsius)\r\n", \
 			sizeof("The temperature is above the maximum! (38 celsius)\r\n")-1, HAL_MAX_DELAY);
 		return T;
@@ -44,7 +44,7 @@ int32_t bmp180_get_temperature(void) {
 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is below the minimum! (-40 celsius)\r\n", \
 			sizeof("The temperature is below the minimum! (-40 celsius)\r\n")-1, HAL_MAX_DELAY);
 		return T;
-	}
+	}*/
 	
 	return T;
 }

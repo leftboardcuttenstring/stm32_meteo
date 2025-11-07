@@ -23,7 +23,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
-
+#include <stdbool.h>
+#include <stdio.h>
+#include "transmit_and_recieve_control/transmit_and_recieve_control.h"
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
 
@@ -31,7 +33,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define BAROMETER_PUT 19970
+#define BAROMETER_GET 20000
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -41,12 +44,31 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+static unsigned int SysTick_20Sec_Counter = 0;
+//static unsigned int SysTick_1Minute_Counter = 0;
+//static Data Log[LOG_SIZE] = {0};
+//static unsigned char LogCounter = 0;
+extern UART_HandleTypeDef huart2;
+extern char msg_time[32];
+extern Data journal[5];
+extern int count;
+extern int32_t temperature;
+extern int32_t pressure;
+extern I2C_HandleTypeDef hi2c1;
+char message_count[32] = {0};
+bool current_state_is_write = false;
+extern uint8_t cmd;
+extern uint16_t lcd1604_addr;
+extern uint16_t bmp180_addr;
+extern char GLOBAL_MESSAGE_BUFFER[30];
+//unsigned int counter_1s = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
-
+void GetData(void);
+int AveragingData(void);
+void LogData(Data Current);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -188,6 +210,35 @@ void SysTick_Handler(void)
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
 
+  if (SysTick_20Sec_Counter == BAROMETER_PUT) {
+    HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
+  }
+  if (SysTick_20Sec_Counter == BAROMETER_GET) {
+    SysTick_20Sec_Counter = 0;
+    int32_t temperature_result = bmp180_get_temperature();
+    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld", temperature_result);
+    lcd1602_transmit_command(0b10000000);
+    lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+  }
+  SysTick_20Sec_Counter++;
+  
+  /*if (SysTick_20Sec_Counter == 3000) {
+    if (SysTick_BMP180_Temperature_Delay == 10) {
+      current_state_is_write = true;
+      SysTick_BMP180_Temperature_Delay = 0;
+      HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
+    } else {
+      current_state_is_write = true;
+      SysTick_BMP180_Temperature_Delay++;
+      int32_t temperature_result = bmp180_get_temperature();
+      char msg_temperature[20] = {0};
+      snprintf(msg_temperature, sizeof(msg_temperature), "%.2d", temperature_result);
+      lcd1602_send_string(msg_temperature);
+    }
+    current_state_is_write = false;
+  }
+  SysTick_20Sec_Counter++;*/
+
   /* USER CODE END SysTick_IRQn 1 */
 }
 
@@ -199,5 +250,15 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /* USER CODE BEGIN 1 */
-
+/*void GetData(void)
+{
+	if (SysTick_1Sec_Counter == SYSTICK_1SEC_VALUE)
+	{
+		SysTick_1Sec_Counter = 0;
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+		for(int i=0; i<500000; i++);
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
+	}
+	SysTick_1Sec_Counter++;
+}*/
 /* USER CODE END 1 */

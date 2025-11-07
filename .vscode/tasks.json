@@ -26,6 +26,32 @@
                     "detail": "Build"
                 }
             }
+        },
+        {
+            "label": "build",
+            "group": "build",
+            "type": "shell",
+            "command": "cp -r /mnt/sda1/mcu_vs/vs_out/STM32F401RETx /mnt/sda1/mcu_vs/vs_out/STM32F401RETx_backup/$(date +%Y-%m-%d_%H-%M)",
+            "options": {
+                "statusbar": {
+                    "color": "#003cff",
+                    "label": "$(code) Backup",
+                    "detail": "Build"
+                }
+            }
+        },
+        {
+            "label": "build",
+            "group": "build",
+            "type": "shell",
+            "command": "st-flash write build/smeteo.bin 0x08000000",
+            "options": {
+                "statusbar": {
+                    "color": "#fbff00",
+                    "label": "$(code) Flash",
+                    "detail": "Build"
+                }
+            }
         }
     ]
 }

@@ -51,28 +51,16 @@ RTC_HandleTypeDef hrtc;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+extern uint8_t cmd;
+
 Data journal[5] = {0};
 int count = 0;
-
-/*
- * @brief a cople of reserved static addresses
- *
- **/
 uint16_t lcd1604_addr = 0x27 << (uint16_t)1;
 uint16_t bmp180_addr = 0x77 << (uint16_t)1;
 uint8_t calib_data[22];
-/*
- * @brief a cople of reserved static addresses
- *
- **/
 uint8_t temperature_buf[2];
 uint8_t pressure_buf[3];
-
-/*
- * @brief a lot of coeffs to work with
- *        with bmp180
- *
- **/
+char GLOBAL_MESSAGE_BUFFER[30] = {0};
 int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
 uint16_t AC4, AC5, AC6;
 int32_t X1 = 0;
@@ -84,8 +72,6 @@ char msg_time[32];
 //static char msg_lcd[32];
 int32_t temperature = 0;
 int32_t pressure = 0;
-
-
 
 RTC_TimeTypeDef time;
 RTC_DateTypeDef date;
@@ -184,6 +170,12 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   lcd1602_init();
+  bmp180_get_global_coefficients();
+  //HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
+  //HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY);
+
+  //FindAddress();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
