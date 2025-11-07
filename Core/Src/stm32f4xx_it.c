@@ -48,9 +48,13 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 static unsigned int SysTick_20Sec_Counter = 0;
+static unsigned int SysTick_1Sec_Counter = 0;
 //static unsigned int SysTick_1Minute_Counter = 0;
 //static Data Log[LOG_SIZE] = {0};
 //static unsigned char LogCounter = 0;
+extern RTC_TimeTypeDef time;
+extern RTC_DateTypeDef date;
+extern RTC_HandleTypeDef hrtc;
 extern UART_HandleTypeDef huart2;
 extern char msg_time[32];
 extern Data journal[5];
@@ -237,30 +241,25 @@ void SysTick_Handler(void)
     SysTick_20Sec_Counter = 0;
     //HAL_UART_Transmit(&huart2, (uint8_t*)"getting: presure", sizeof("getting: presure")-1, HAL_MAX_DELAY);
     pressure_result = bmp180_get_pressure() / 133.322f;
-    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld", pressure_result, temperature_result);
-    //HAL_UART_Transmit(&huart2, (uint8_t*)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER)-1, HAL_MAX_DELAY);
+    /*snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld", pressure_result, temperature_result);
+    HAL_UART_Transmit(&huart2, (uint8_t*)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER)-1, HAL_MAX_DELAY);
     lcd1602_transmit_command(0b10000000);
-    lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+    lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);*/
   }
   SysTick_20Sec_Counter++;
   
-  /*if (SysTick_20Sec_Counter == 3000) {
-    if (SysTick_BMP180_Temperature_Delay == 10) {
-      current_state_is_write = true;
-      SysTick_BMP180_Temperature_Delay = 0;
-      HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
-    } else {
-      current_state_is_write = true;
-      SysTick_BMP180_Temperature_Delay++;
-      int32_t temperature_result = bmp180_get_temperature();
-      char msg_temperature[20] = {0};
-      snprintf(msg_temperature, sizeof(msg_temperature), "%.2d", temperature_result);
-      lcd1602_send_string(msg_temperature);
-    }
-    current_state_is_write = false;
+  if (SysTick_1Sec_Counter == 1000) {
+    SysTick_1Sec_Counter = 0;
+    HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
+    lcd1602_transmit_command(0b10000000);
+    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%02d:%02d:%02d", time.Hours, time.Minutes, time.Seconds);
+    lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+    lcd1602_transmit_command(0b11000000);
+    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld", pressure_result, temperature_result);
+    lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
   }
-  SysTick_20Sec_Counter++;*/
-
+  SysTick_1Sec_Counter++;
   /* USER CODE END SysTick_IRQn 1 */
 }
 

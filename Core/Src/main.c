@@ -75,7 +75,6 @@ int32_t pressure = 0;
 
 RTC_TimeTypeDef time;
 RTC_DateTypeDef date;
-HAL_StatusTypeDef res;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -173,7 +172,7 @@ int main(void)
   bmp180_get_global_coefficients();
   //HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
   //HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY);
-
+  init_rtc_once();
   //FindAddress();
 
   /* USER CODE END 2 */
