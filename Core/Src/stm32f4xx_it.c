@@ -33,8 +33,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BAROMETER_PUT 19970
-#define BAROMETER_GET 20000
+#define BAROMETER_TEMPERATURE_PUT 19950
+#define BAROMETER_TEMPERATURE_GET 19969
+
+#define BAROMETER_PRESSURE_PUT 19970
+#define BAROMETER_PRESSURE_GET 20000
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -61,6 +64,8 @@ extern uint8_t cmd;
 extern uint16_t lcd1604_addr;
 extern uint16_t bmp180_addr;
 extern char GLOBAL_MESSAGE_BUFFER[30];
+int32_t temperature_result = 0;
+int32_t pressure_result = 0;
 //unsigned int counter_1s = 0;
 /* USER CODE END PV */
 
@@ -210,13 +215,30 @@ void SysTick_Handler(void)
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
 
-  if (SysTick_20Sec_Counter == BAROMETER_PUT) {
+  if (SysTick_20Sec_Counter == BAROMETER_TEMPERATURE_PUT) {
     HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
+    //HAL_UART_Transmit(&huart2, (uint8_t*)"temperature: measuring...", sizeof("temperature: measuring...")-1, HAL_MAX_DELAY);
   }
-  if (SysTick_20Sec_Counter == BAROMETER_GET) {
+  if (SysTick_20Sec_Counter == BAROMETER_TEMPERATURE_GET) {
+    //HAL_UART_Transmit(&huart2, (uint8_t*)"getting: temperature", sizeof("getting: temperature")-1, HAL_MAX_DELAY);
+    temperature_result = bmp180_get_temperature();
+    /*snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld", temperature_result);
+    lcd1602_transmit_command(0b10000000);
+    lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);*/
+    /*snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld", temperature_result);
+    lcd1602_transmit_command(0b10000000);
+    lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);*/
+  }
+  if (SysTick_20Sec_Counter == BAROMETER_PRESSURE_PUT) {
+    uint8_t pressure_cmd = 0x34 + (OSS << 6);
+    HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_DELAY);
+  }
+  if (SysTick_20Sec_Counter == BAROMETER_PRESSURE_GET) {
     SysTick_20Sec_Counter = 0;
-    int32_t temperature_result = bmp180_get_temperature();
-    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld", temperature_result);
+    //HAL_UART_Transmit(&huart2, (uint8_t*)"getting: presure", sizeof("getting: presure")-1, HAL_MAX_DELAY);
+    pressure_result = bmp180_get_pressure() / 133.322f;
+    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld", pressure_result, temperature_result);
+    //HAL_UART_Transmit(&huart2, (uint8_t*)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER)-1, HAL_MAX_DELAY);
     lcd1602_transmit_command(0b10000000);
     lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
   }

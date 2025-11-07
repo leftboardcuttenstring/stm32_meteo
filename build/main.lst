@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccuzV1bx.s 			page 1
+ARM GAS  /tmp/ccXFbBwp.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
   29:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
   30:Core/Src/main.c **** /* USER CODE BEGIN PTD */
   31:Core/Src/main.c **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 2
+ARM GAS  /tmp/ccXFbBwp.s 			page 2
 
 
   32:Core/Src/main.c **** /* USER CODE END PTD */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
   86:Core/Src/main.c **** static void MX_USART2_UART_Init(void);
   87:Core/Src/main.c **** /* USER CODE BEGIN PFP */
   88:Core/Src/main.c **** void bmp180_get_global_coefficients(void);
-ARM GAS  /tmp/ccuzV1bx.s 			page 3
+ARM GAS  /tmp/ccXFbBwp.s 			page 3
 
 
   89:Core/Src/main.c **** void FindAddress(void);
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  143:Core/Src/main.c **** int main(void)
  144:Core/Src/main.c **** {
  145:Core/Src/main.c **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 4
+ARM GAS  /tmp/ccXFbBwp.s 			page 4
 
 
  146:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  200:Core/Src/main.c **** 
  201:Core/Src/main.c ****   /** Configure the main internal regulator output voltage
  202:Core/Src/main.c ****   */
-ARM GAS  /tmp/ccuzV1bx.s 			page 5
+ARM GAS  /tmp/ccXFbBwp.s 			page 5
 
 
  203:Core/Src/main.c ****   __HAL_RCC_PWR_CLK_ENABLE();
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  257:Core/Src/main.c ****   hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
  258:Core/Src/main.c ****   if (HAL_I2C_Init(&hi2c1) != HAL_OK)
  259:Core/Src/main.c ****   {
-ARM GAS  /tmp/ccuzV1bx.s 			page 6
+ARM GAS  /tmp/ccXFbBwp.s 			page 6
 
 
  260:Core/Src/main.c ****     Error_Handler();
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  314:Core/Src/main.c **** 
  315:Core/Src/main.c ****   /* USER CODE BEGIN USART2_Init 1 */
  316:Core/Src/main.c **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 7
+ARM GAS  /tmp/ccXFbBwp.s 			page 7
 
 
  317:Core/Src/main.c ****   /* USER CODE END USART2_Init 1 */
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
   50              		.loc 1 348 3 view .LVU5
   51 0018 0099     		ldr	r1, [sp]
   52              	.LBE4:
-ARM GAS  /tmp/ccuzV1bx.s 			page 8
+ARM GAS  /tmp/ccXFbBwp.s 			page 8
 
 
   53              		.loc 1 348 3 view .LVU6
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  354:Core/Src/main.c **** 
  355:Core/Src/main.c ****   /* USER CODE END MX_GPIO_Init_2 */
  356:Core/Src/main.c **** }
-ARM GAS  /tmp/ccuzV1bx.s 			page 9
+ARM GAS  /tmp/ccXFbBwp.s 			page 9
 
 
  102              		.loc 1 356 1 is_stmt 0 view .LVU25
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  151 000e 0024     		movs	r4, #0
   98:Core/Src/main.c **** 		if(HAL_I2C_IsDeviceReady(&hi2c1, i << (uint16_t)1, 1, HAL_MAX_DELAY) == HAL_OK) {
  152              		.loc 1 98 2 view .LVU32
-ARM GAS  /tmp/ccuzV1bx.s 			page 10
+ARM GAS  /tmp/ccXFbBwp.s 			page 10
 
 
  153 0010 01E0     		b	.L6
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  198              		@ sp needed
  199 004c 30BD     		pop	{r4, r5, pc}
  200              	.LVL7:
-ARM GAS  /tmp/ccuzV1bx.s 			page 11
+ARM GAS  /tmp/ccXFbBwp.s 			page 11
 
 
  201              	.L12:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  108:Core/Src/main.c **** 	AC2 = (int16_t)((calib_data[2] << 8) | calib_data[3]);
  251              		.loc 1 108 8 view .LVU48
  252 0024 43EA0223 		orr	r3, r3, r2, lsl #8
-ARM GAS  /tmp/ccuzV1bx.s 			page 12
+ARM GAS  /tmp/ccXFbBwp.s 			page 12
 
 
  108:Core/Src/main.c **** 	AC2 = (int16_t)((calib_data[2] << 8) | calib_data[3]);
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  112:Core/Src/main.c **** 	AC6 = (uint16_t)((calib_data[10] << 8) | calib_data[11]);
  289              		.loc 1 112 52 view .LVU67
  290 0052 637A     		ldrb	r3, [r4, #9]	@ zero_extendqisi2
-ARM GAS  /tmp/ccuzV1bx.s 			page 13
+ARM GAS  /tmp/ccXFbBwp.s 			page 13
 
 
  112:Core/Src/main.c **** 	AC6 = (uint16_t)((calib_data[10] << 8) | calib_data[11]);
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  116:Core/Src/main.c **** 	MC  = (int16_t)((calib_data[18] << 8) | calib_data[19]);
  327              		.loc 1 116 29 is_stmt 0 view .LVU86
  328 0080 227C     		ldrb	r2, [r4, #16]	@ zero_extendqisi2
-ARM GAS  /tmp/ccuzV1bx.s 			page 14
+ARM GAS  /tmp/ccXFbBwp.s 			page 14
 
 
  116:Core/Src/main.c **** 	MC  = (int16_t)((calib_data[18] << 8) | calib_data[19]);
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  369 00b8 00000000 		.word	AC2
  370 00bc 00000000 		.word	AC3
  371 00c0 00000000 		.word	AC4
-ARM GAS  /tmp/ccuzV1bx.s 			page 15
+ARM GAS  /tmp/ccXFbBwp.s 			page 15
 
 
  372 00c4 00000000 		.word	AC5
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  423              	.LCFI11:
  424              		.cfi_restore_state
  425              	.LBB8:
-ARM GAS  /tmp/ccuzV1bx.s 			page 16
+ARM GAS  /tmp/ccXFbBwp.s 			page 16
 
 
  126:Core/Src/main.c ****         RTC_DateTypeDef sDate = { .WeekDay = RTC_WEEKDAY_SUNDAY, .Month = RTC_MONTH_OCTOBER,
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  472              		.cfi_endproc
  473              	.LFE139:
  475              		.section	.text.Error_Handler,"ax",%progbits
-ARM GAS  /tmp/ccuzV1bx.s 			page 17
+ARM GAS  /tmp/ccXFbBwp.s 			page 17
 
 
  476              		.align	1
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
   24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
   26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
-ARM GAS  /tmp/ccuzV1bx.s 			page 18
+ARM GAS  /tmp/ccXFbBwp.s 			page 18
 
 
   27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
   81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
   83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
-ARM GAS  /tmp/ccuzV1bx.s 			page 19
+ARM GAS  /tmp/ccXFbBwp.s 			page 19
 
 
   84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
  139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
  140:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 20
+ARM GAS  /tmp/ccXFbBwp.s 			page 20
 
 
  141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  195:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __TZ_STACK_SEAL_VALUE     0xFEF5EDA5FEF5EDA5ULL
  196:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  197:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 21
+ARM GAS  /tmp/ccXFbBwp.s 			page 21
 
 
  198:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  252:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  253:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Instruction Synchronization Barrier
  254:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Instruction Synchronization Barrier flushes the pipeline in the processor,
-ARM GAS  /tmp/ccuzV1bx.s 			page 22
+ARM GAS  /tmp/ccXFbBwp.s 			page 22
 
 
  255:Drivers/CMSIS/Include/cmsis_gcc.h ****            so that all instructions following the ISB are fetched from cache or memory,
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  309:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Reversed value
  310:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  311:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __REV16(uint32_t value)
-ARM GAS  /tmp/ccuzV1bx.s 			page 23
+ARM GAS  /tmp/ccXFbBwp.s 			page 23
 
 
  312:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  366:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  367:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  368:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Reverse bit order of value
-ARM GAS  /tmp/ccuzV1bx.s 			page 24
+ARM GAS  /tmp/ccXFbBwp.s 			page 24
 
 
  369:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Reverses the bit order of the given value.
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  423:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
  424:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
  425:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    )
-ARM GAS  /tmp/ccuzV1bx.s 			page 25
+ARM GAS  /tmp/ccXFbBwp.s 			page 25
 
 
  426:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  480:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
  481:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
  482:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  /tmp/ccuzV1bx.s 			page 26
+ARM GAS  /tmp/ccXFbBwp.s 			page 26
 
 
  483:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  537:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Remove the exclusive lock
  538:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Removes the exclusive lock which is created by LDREX.
  539:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  /tmp/ccuzV1bx.s 			page 27
+ARM GAS  /tmp/ccXFbBwp.s 			page 27
 
 
  540:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __CLREX(void)
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  594:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  595:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  596:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 28
+ARM GAS  /tmp/ccXFbBwp.s 			page 28
 
 
  597:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("rrx %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  651:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  652:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDRT(volatile uint32_t *ptr)
  653:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  /tmp/ccuzV1bx.s 			page 29
+ARM GAS  /tmp/ccXFbBwp.s 			page 29
 
 
  654:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t result;
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  708:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  709:Drivers/CMSIS/Include/cmsis_gcc.h ****   if ((sat >= 1U) && (sat <= 32U))
  710:Drivers/CMSIS/Include/cmsis_gcc.h ****   {
-ARM GAS  /tmp/ccuzV1bx.s 			page 30
+ARM GAS  /tmp/ccXFbBwp.s 			page 30
 
 
  711:Drivers/CMSIS/Include/cmsis_gcc.h ****     const int32_t max = (int32_t)((1U << (sat - 1U)) - 1U);
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  765:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  766:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldab %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
  767:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);
-ARM GAS  /tmp/ccuzV1bx.s 			page 31
+ARM GAS  /tmp/ccXFbBwp.s 			page 31
 
 
  768:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  822:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  823:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  824:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 32
+ARM GAS  /tmp/ccXFbBwp.s 			page 32
 
 
  825:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  879:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  880:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  881:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 33
+ARM GAS  /tmp/ccXFbBwp.s 			page 33
 
 
  882:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  936:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  937:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  938:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
-ARM GAS  /tmp/ccuzV1bx.s 			page 34
+ARM GAS  /tmp/ccXFbBwp.s 			page 34
 
 
  939:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  521              		.loc 1 240 1 view -0
  522              		.cfi_startproc
  523              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccuzV1bx.s 			page 35
+ARM GAS  /tmp/ccXFbBwp.s 			page 35
 
 
  524              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  560              		.loc 1 257 28 is_stmt 0 view .LVU139
  561 001e 0362     		str	r3, [r0, #32]
  258:Core/Src/main.c ****   {
-ARM GAS  /tmp/ccuzV1bx.s 			page 36
+ARM GAS  /tmp/ccXFbBwp.s 			page 36
 
 
  562              		.loc 1 258 3 is_stmt 1 view .LVU140
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  288:Core/Src/main.c ****   hrtc.Init.SynchPrediv = 255;
  609              		.loc 1 288 3 is_stmt 1 view .LVU150
  288:Core/Src/main.c ****   hrtc.Init.SynchPrediv = 255;
-ARM GAS  /tmp/ccuzV1bx.s 			page 37
+ARM GAS  /tmp/ccXFbBwp.s 			page 37
 
 
  610              		.loc 1 288 26 is_stmt 0 view .LVU151
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  653              	.LFB144:
  309:Core/Src/main.c **** 
  654              		.loc 1 309 1 view -0
-ARM GAS  /tmp/ccuzV1bx.s 			page 38
+ARM GAS  /tmp/ccXFbBwp.s 			page 38
 
 
  655              		.cfi_startproc
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  692              		.loc 1 326 3 is_stmt 1 view .LVU182
  326:Core/Src/main.c ****   {
  693              		.loc 1 326 7 is_stmt 0 view .LVU183
-ARM GAS  /tmp/ccuzV1bx.s 			page 39
+ARM GAS  /tmp/ccXFbBwp.s 			page 39
 
 
  694 001e FFF7FEFF 		bl	HAL_UART_Init
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  742              		.loc 1 199 22 is_stmt 0 view .LVU191
  743 0010 0023     		movs	r3, #0
  744 0012 0393     		str	r3, [sp, #12]
-ARM GAS  /tmp/ccuzV1bx.s 			page 40
+ARM GAS  /tmp/ccXFbBwp.s 			page 40
 
 
  745 0014 0493     		str	r3, [sp, #16]
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  785              		.loc 1 209 36 is_stmt 0 view .LVU205
  786 004c 0A22     		movs	r2, #10
  787 004e 0892     		str	r2, [sp, #32]
-ARM GAS  /tmp/ccuzV1bx.s 			page 41
+ARM GAS  /tmp/ccXFbBwp.s 			page 41
 
 
  210:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  226:Core/Src/main.c **** 
  823              		.loc 1 226 3 is_stmt 1 view .LVU225
  226:Core/Src/main.c **** 
-ARM GAS  /tmp/ccuzV1bx.s 			page 42
+ARM GAS  /tmp/ccXFbBwp.s 			page 42
 
 
  824              		.loc 1 226 36 is_stmt 0 view .LVU226
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  873              	.LCFI19:
  874              		.cfi_def_cfa_offset 8
  875              		.cfi_offset 3, -8
-ARM GAS  /tmp/ccuzV1bx.s 			page 43
+ARM GAS  /tmp/ccXFbBwp.s 			page 43
 
 
  876              		.cfi_offset 14, -4
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  924              		.align	2
  927              	time:
  928 0000 00000000 		.space	20
-ARM GAS  /tmp/ccuzV1bx.s 			page 44
+ARM GAS  /tmp/ccXFbBwp.s 			page 44
 
 
  928      00000000 
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  993              		.section	.bss.MD,"aw",%nobits
  994              		.align	1
  997              	MD:
-ARM GAS  /tmp/ccuzV1bx.s 			page 45
+ARM GAS  /tmp/ccXFbBwp.s 			page 45
 
 
  998 0000 0000     		.space	2
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  1068 0000 0000     		.space	2
  1069              		.global	calib_data
  1070              		.section	.bss.calib_data,"aw",%nobits
-ARM GAS  /tmp/ccuzV1bx.s 			page 46
+ARM GAS  /tmp/ccXFbBwp.s 			page 46
 
 
  1071              		.align	2
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  1124      00000000 
  1124      00000000 
  1124      00000000 
-ARM GAS  /tmp/ccuzV1bx.s 			page 47
+ARM GAS  /tmp/ccXFbBwp.s 			page 47
 
 
  1124      00000000 
@@ -2790,106 +2790,106 @@ ARM GAS  /tmp/ccuzV1bx.s 			page 1
  1150              		.file 18 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
  1151              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  1152              		.file 20 "<built-in>"
-ARM GAS  /tmp/ccuzV1bx.s 			page 48
+ARM GAS  /tmp/ccXFbBwp.s 			page 48
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/ccuzV1bx.s:21     .text.MX_GPIO_Init:00000000 $t
-     /tmp/ccuzV1bx.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-     /tmp/ccuzV1bx.s:111    .text.MX_GPIO_Init:0000005c $d
-     /tmp/ccuzV1bx.s:116    .rodata.FindAddress.str1.4:00000000 $d
-     /tmp/ccuzV1bx.s:120    .text.FindAddress:00000000 $t
-     /tmp/ccuzV1bx.s:126    .text.FindAddress:00000000 FindAddress
-     /tmp/ccuzV1bx.s:205    .text.FindAddress:00000050 $d
-     /tmp/ccuzV1bx.s:1123   .bss.hi2c1:00000000 hi2c1
-     /tmp/ccuzV1bx.s:1109   .bss.huart2:00000000 huart2
-     /tmp/ccuzV1bx.s:212    .text.bmp180_get_global_coefficients:00000000 $t
-     /tmp/ccuzV1bx.s:218    .text.bmp180_get_global_coefficients:00000000 bmp180_get_global_coefficients
-     /tmp/ccuzV1bx.s:365    .text.bmp180_get_global_coefficients:000000a8 $d
-     /tmp/ccuzV1bx.s:1074   .bss.calib_data:00000000 calib_data
-     /tmp/ccuzV1bx.s:1081   .data.bmp180_addr:00000000 bmp180_addr
-     /tmp/ccuzV1bx.s:1046   .bss.AC1:00000000 AC1
-     /tmp/ccuzV1bx.s:1039   .bss.AC2:00000000 AC2
-     /tmp/ccuzV1bx.s:1032   .bss.AC3:00000000 AC3
-     /tmp/ccuzV1bx.s:990    .bss.AC4:00000000 AC4
-     /tmp/ccuzV1bx.s:983    .bss.AC5:00000000 AC5
-     /tmp/ccuzV1bx.s:976    .bss.AC6:00000000 AC6
-     /tmp/ccuzV1bx.s:1025   .bss.B1:00000000 B1
-     /tmp/ccuzV1bx.s:1018   .bss.B2:00000000 B2
-     /tmp/ccuzV1bx.s:1011   .bss.MB:00000000 MB
-     /tmp/ccuzV1bx.s:1004   .bss.MC:00000000 MC
-     /tmp/ccuzV1bx.s:997    .bss.MD:00000000 MD
-     /tmp/ccuzV1bx.s:383    .text.init_rtc_once:00000000 $t
-     /tmp/ccuzV1bx.s:389    .text.init_rtc_once:00000000 init_rtc_once
-     /tmp/ccuzV1bx.s:470    .text.init_rtc_once:00000060 $d
-     /tmp/ccuzV1bx.s:1116   .bss.hrtc:00000000 hrtc
-     /tmp/ccuzV1bx.s:476    .text.Error_Handler:00000000 $t
-     /tmp/ccuzV1bx.s:482    .text.Error_Handler:00000000 Error_Handler
-     /tmp/ccuzV1bx.s:514    .text.MX_I2C1_Init:00000000 $t
-     /tmp/ccuzV1bx.s:519    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
-     /tmp/ccuzV1bx.s:577    .text.MX_I2C1_Init:0000002c $d
-     /tmp/ccuzV1bx.s:584    .text.MX_RTC_Init:00000000 $t
-     /tmp/ccuzV1bx.s:589    .text.MX_RTC_Init:00000000 MX_RTC_Init
-     /tmp/ccuzV1bx.s:641    .text.MX_RTC_Init:00000028 $d
-     /tmp/ccuzV1bx.s:647    .text.MX_USART2_UART_Init:00000000 $t
-     /tmp/ccuzV1bx.s:652    .text.MX_USART2_UART_Init:00000000 MX_USART2_UART_Init
-     /tmp/ccuzV1bx.s:707    .text.MX_USART2_UART_Init:0000002c $d
-     /tmp/ccuzV1bx.s:713    .text.SystemClock_Config:00000000 $t
-     /tmp/ccuzV1bx.s:719    .text.SystemClock_Config:00000000 SystemClock_Config
-     /tmp/ccuzV1bx.s:853    .text.SystemClock_Config:00000088 $d
-     /tmp/ccuzV1bx.s:859    .text.main:00000000 $t
-     /tmp/ccuzV1bx.s:865    .text.main:00000000 main
-     /tmp/ccuzV1bx.s:913    .bss.res:00000000 res
-     /tmp/ccuzV1bx.s:914    .bss.res:00000000 $d
-     /tmp/ccuzV1bx.s:920    .bss.date:00000000 date
-     /tmp/ccuzV1bx.s:917    .bss.date:00000000 $d
-     /tmp/ccuzV1bx.s:927    .bss.time:00000000 time
-     /tmp/ccuzV1bx.s:924    .bss.time:00000000 $d
-     /tmp/ccuzV1bx.s:934    .bss.pressure:00000000 pressure
-     /tmp/ccuzV1bx.s:931    .bss.pressure:00000000 $d
-     /tmp/ccuzV1bx.s:941    .bss.temperature:00000000 temperature
-     /tmp/ccuzV1bx.s:938    .bss.temperature:00000000 $d
-ARM GAS  /tmp/ccuzV1bx.s 			page 49
+     /tmp/ccXFbBwp.s:21     .text.MX_GPIO_Init:00000000 $t
+     /tmp/ccXFbBwp.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+     /tmp/ccXFbBwp.s:111    .text.MX_GPIO_Init:0000005c $d
+     /tmp/ccXFbBwp.s:116    .rodata.FindAddress.str1.4:00000000 $d
+     /tmp/ccXFbBwp.s:120    .text.FindAddress:00000000 $t
+     /tmp/ccXFbBwp.s:126    .text.FindAddress:00000000 FindAddress
+     /tmp/ccXFbBwp.s:205    .text.FindAddress:00000050 $d
+     /tmp/ccXFbBwp.s:1123   .bss.hi2c1:00000000 hi2c1
+     /tmp/ccXFbBwp.s:1109   .bss.huart2:00000000 huart2
+     /tmp/ccXFbBwp.s:212    .text.bmp180_get_global_coefficients:00000000 $t
+     /tmp/ccXFbBwp.s:218    .text.bmp180_get_global_coefficients:00000000 bmp180_get_global_coefficients
+     /tmp/ccXFbBwp.s:365    .text.bmp180_get_global_coefficients:000000a8 $d
+     /tmp/ccXFbBwp.s:1074   .bss.calib_data:00000000 calib_data
+     /tmp/ccXFbBwp.s:1081   .data.bmp180_addr:00000000 bmp180_addr
+     /tmp/ccXFbBwp.s:1046   .bss.AC1:00000000 AC1
+     /tmp/ccXFbBwp.s:1039   .bss.AC2:00000000 AC2
+     /tmp/ccXFbBwp.s:1032   .bss.AC3:00000000 AC3
+     /tmp/ccXFbBwp.s:990    .bss.AC4:00000000 AC4
+     /tmp/ccXFbBwp.s:983    .bss.AC5:00000000 AC5
+     /tmp/ccXFbBwp.s:976    .bss.AC6:00000000 AC6
+     /tmp/ccXFbBwp.s:1025   .bss.B1:00000000 B1
+     /tmp/ccXFbBwp.s:1018   .bss.B2:00000000 B2
+     /tmp/ccXFbBwp.s:1011   .bss.MB:00000000 MB
+     /tmp/ccXFbBwp.s:1004   .bss.MC:00000000 MC
+     /tmp/ccXFbBwp.s:997    .bss.MD:00000000 MD
+     /tmp/ccXFbBwp.s:383    .text.init_rtc_once:00000000 $t
+     /tmp/ccXFbBwp.s:389    .text.init_rtc_once:00000000 init_rtc_once
+     /tmp/ccXFbBwp.s:470    .text.init_rtc_once:00000060 $d
+     /tmp/ccXFbBwp.s:1116   .bss.hrtc:00000000 hrtc
+     /tmp/ccXFbBwp.s:476    .text.Error_Handler:00000000 $t
+     /tmp/ccXFbBwp.s:482    .text.Error_Handler:00000000 Error_Handler
+     /tmp/ccXFbBwp.s:514    .text.MX_I2C1_Init:00000000 $t
+     /tmp/ccXFbBwp.s:519    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+     /tmp/ccXFbBwp.s:577    .text.MX_I2C1_Init:0000002c $d
+     /tmp/ccXFbBwp.s:584    .text.MX_RTC_Init:00000000 $t
+     /tmp/ccXFbBwp.s:589    .text.MX_RTC_Init:00000000 MX_RTC_Init
+     /tmp/ccXFbBwp.s:641    .text.MX_RTC_Init:00000028 $d
+     /tmp/ccXFbBwp.s:647    .text.MX_USART2_UART_Init:00000000 $t
+     /tmp/ccXFbBwp.s:652    .text.MX_USART2_UART_Init:00000000 MX_USART2_UART_Init
+     /tmp/ccXFbBwp.s:707    .text.MX_USART2_UART_Init:0000002c $d
+     /tmp/ccXFbBwp.s:713    .text.SystemClock_Config:00000000 $t
+     /tmp/ccXFbBwp.s:719    .text.SystemClock_Config:00000000 SystemClock_Config
+     /tmp/ccXFbBwp.s:853    .text.SystemClock_Config:00000088 $d
+     /tmp/ccXFbBwp.s:859    .text.main:00000000 $t
+     /tmp/ccXFbBwp.s:865    .text.main:00000000 main
+     /tmp/ccXFbBwp.s:913    .bss.res:00000000 res
+     /tmp/ccXFbBwp.s:914    .bss.res:00000000 $d
+     /tmp/ccXFbBwp.s:920    .bss.date:00000000 date
+     /tmp/ccXFbBwp.s:917    .bss.date:00000000 $d
+     /tmp/ccXFbBwp.s:927    .bss.time:00000000 time
+     /tmp/ccXFbBwp.s:924    .bss.time:00000000 $d
+     /tmp/ccXFbBwp.s:934    .bss.pressure:00000000 pressure
+     /tmp/ccXFbBwp.s:931    .bss.pressure:00000000 $d
+     /tmp/ccXFbBwp.s:941    .bss.temperature:00000000 temperature
+     /tmp/ccXFbBwp.s:938    .bss.temperature:00000000 $d
+ARM GAS  /tmp/ccXFbBwp.s 			page 49
 
 
-     /tmp/ccuzV1bx.s:948    .bss.msg_time:00000000 msg_time
-     /tmp/ccuzV1bx.s:945    .bss.msg_time:00000000 $d
-     /tmp/ccuzV1bx.s:955    .bss.B5:00000000 B5
-     /tmp/ccuzV1bx.s:952    .bss.B5:00000000 $d
-     /tmp/ccuzV1bx.s:962    .bss.X2:00000000 X2
-     /tmp/ccuzV1bx.s:959    .bss.X2:00000000 $d
-     /tmp/ccuzV1bx.s:969    .bss.X1:00000000 X1
-     /tmp/ccuzV1bx.s:966    .bss.X1:00000000 $d
-     /tmp/ccuzV1bx.s:973    .bss.AC6:00000000 $d
-     /tmp/ccuzV1bx.s:980    .bss.AC5:00000000 $d
-     /tmp/ccuzV1bx.s:987    .bss.AC4:00000000 $d
-     /tmp/ccuzV1bx.s:994    .bss.MD:00000000 $d
-     /tmp/ccuzV1bx.s:1001   .bss.MC:00000000 $d
-     /tmp/ccuzV1bx.s:1008   .bss.MB:00000000 $d
-     /tmp/ccuzV1bx.s:1015   .bss.B2:00000000 $d
-     /tmp/ccuzV1bx.s:1022   .bss.B1:00000000 $d
-     /tmp/ccuzV1bx.s:1029   .bss.AC3:00000000 $d
-     /tmp/ccuzV1bx.s:1036   .bss.AC2:00000000 $d
-     /tmp/ccuzV1bx.s:1043   .bss.AC1:00000000 $d
-     /tmp/ccuzV1bx.s:1053   .bss.GLOBAL_MESSAGE_BUFFER:00000000 GLOBAL_MESSAGE_BUFFER
-     /tmp/ccuzV1bx.s:1050   .bss.GLOBAL_MESSAGE_BUFFER:00000000 $d
-     /tmp/ccuzV1bx.s:1060   .bss.pressure_buf:00000000 pressure_buf
-     /tmp/ccuzV1bx.s:1057   .bss.pressure_buf:00000000 $d
-     /tmp/ccuzV1bx.s:1067   .bss.temperature_buf:00000000 temperature_buf
-     /tmp/ccuzV1bx.s:1064   .bss.temperature_buf:00000000 $d
-     /tmp/ccuzV1bx.s:1071   .bss.calib_data:00000000 $d
-     /tmp/ccuzV1bx.s:1078   .data.bmp180_addr:00000000 $d
-     /tmp/ccuzV1bx.s:1088   .data.lcd1604_addr:00000000 lcd1604_addr
-     /tmp/ccuzV1bx.s:1085   .data.lcd1604_addr:00000000 $d
-     /tmp/ccuzV1bx.s:1095   .bss.count:00000000 count
-     /tmp/ccuzV1bx.s:1092   .bss.count:00000000 $d
-     /tmp/ccuzV1bx.s:1102   .bss.journal:00000000 journal
-     /tmp/ccuzV1bx.s:1099   .bss.journal:00000000 $d
-     /tmp/ccuzV1bx.s:1106   .bss.huart2:00000000 $d
-     /tmp/ccuzV1bx.s:1113   .bss.hrtc:00000000 $d
-     /tmp/ccuzV1bx.s:1120   .bss.hi2c1:00000000 $d
-     /tmp/ccuzV1bx.s:1126   .rodata:00000000 $d
+     /tmp/ccXFbBwp.s:948    .bss.msg_time:00000000 msg_time
+     /tmp/ccXFbBwp.s:945    .bss.msg_time:00000000 $d
+     /tmp/ccXFbBwp.s:955    .bss.B5:00000000 B5
+     /tmp/ccXFbBwp.s:952    .bss.B5:00000000 $d
+     /tmp/ccXFbBwp.s:962    .bss.X2:00000000 X2
+     /tmp/ccXFbBwp.s:959    .bss.X2:00000000 $d
+     /tmp/ccXFbBwp.s:969    .bss.X1:00000000 X1
+     /tmp/ccXFbBwp.s:966    .bss.X1:00000000 $d
+     /tmp/ccXFbBwp.s:973    .bss.AC6:00000000 $d
+     /tmp/ccXFbBwp.s:980    .bss.AC5:00000000 $d
+     /tmp/ccXFbBwp.s:987    .bss.AC4:00000000 $d
+     /tmp/ccXFbBwp.s:994    .bss.MD:00000000 $d
+     /tmp/ccXFbBwp.s:1001   .bss.MC:00000000 $d
+     /tmp/ccXFbBwp.s:1008   .bss.MB:00000000 $d
+     /tmp/ccXFbBwp.s:1015   .bss.B2:00000000 $d
+     /tmp/ccXFbBwp.s:1022   .bss.B1:00000000 $d
+     /tmp/ccXFbBwp.s:1029   .bss.AC3:00000000 $d
+     /tmp/ccXFbBwp.s:1036   .bss.AC2:00000000 $d
+     /tmp/ccXFbBwp.s:1043   .bss.AC1:00000000 $d
+     /tmp/ccXFbBwp.s:1053   .bss.GLOBAL_MESSAGE_BUFFER:00000000 GLOBAL_MESSAGE_BUFFER
+     /tmp/ccXFbBwp.s:1050   .bss.GLOBAL_MESSAGE_BUFFER:00000000 $d
+     /tmp/ccXFbBwp.s:1060   .bss.pressure_buf:00000000 pressure_buf
+     /tmp/ccXFbBwp.s:1057   .bss.pressure_buf:00000000 $d
+     /tmp/ccXFbBwp.s:1067   .bss.temperature_buf:00000000 temperature_buf
+     /tmp/ccXFbBwp.s:1064   .bss.temperature_buf:00000000 $d
+     /tmp/ccXFbBwp.s:1071   .bss.calib_data:00000000 $d
+     /tmp/ccXFbBwp.s:1078   .data.bmp180_addr:00000000 $d
+     /tmp/ccXFbBwp.s:1088   .data.lcd1604_addr:00000000 lcd1604_addr
+     /tmp/ccXFbBwp.s:1085   .data.lcd1604_addr:00000000 $d
+     /tmp/ccXFbBwp.s:1095   .bss.count:00000000 count
+     /tmp/ccXFbBwp.s:1092   .bss.count:00000000 $d
+     /tmp/ccXFbBwp.s:1102   .bss.journal:00000000 journal
+     /tmp/ccXFbBwp.s:1099   .bss.journal:00000000 $d
+     /tmp/ccXFbBwp.s:1106   .bss.huart2:00000000 $d
+     /tmp/ccXFbBwp.s:1113   .bss.hrtc:00000000 $d
+     /tmp/ccXFbBwp.s:1120   .bss.hi2c1:00000000 $d
+     /tmp/ccXFbBwp.s:1126   .rodata:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
