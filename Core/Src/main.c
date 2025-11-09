@@ -57,10 +57,20 @@ Data journal[5] = {0};
 int count = 0;
 uint16_t lcd1604_addr = 0x27 << (uint16_t)1;
 uint16_t bmp180_addr = 0x77 << (uint16_t)1;
+uint16_t aht10_addr = 0x38 << (uint16_t)1;
+uint8_t AHT10_RX_Data[6] = {0};
+uint32_t AHT10_ADC_Raw;
+float AHT10_Temperature; 
+float AHT10_Humidity = 0.0;
+//uint8_t AHT10_MeasCmd[3] = {0xAC, 0x33, 0x00};
+//uint8_t AHT10_InitCmd[3] = {0xE1, 0x08, 0x00};
+
+uint8_t AHT10_TmpHum_Cmd[3] = {0xAC, 0x33, 0x00};
+
 uint8_t calib_data[22];
 uint8_t temperature_buf[2];
 uint8_t pressure_buf[3];
-char GLOBAL_MESSAGE_BUFFER[30] = {0};
+char GLOBAL_MESSAGE_BUFFER[60] = {0};
 int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
 uint16_t AC4, AC5, AC6;
 int32_t X1 = 0;
@@ -75,6 +85,10 @@ int32_t pressure = 0;
 
 RTC_TimeTypeDef time;
 RTC_DateTypeDef date;
+
+char aht10_initialization_command = 0b11100001;
+char aht10_trigger_measurment_command = 0b01101100;
+char aht10_soft_reset_command = 0b10111010;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -143,7 +157,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+  //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -167,13 +181,39 @@ int main(void)
   MX_I2C1_Init();
   MX_RTC_Init();
   MX_USART2_UART_Init();
+  //MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  lcd1602_init();
-  bmp180_get_global_coefficients();
-  //HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
-  //HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY);
-  init_rtc_once();
-  //FindAddress();
+  //lcd1602_init();
+  //bmp180_get_global_coefficients();
+  //aht10_init();
+  HAL_UART_Transmit(&huart2, (uint8_t*)"Hello\r\n", 7, HAL_MAX_DELAY);
+  //HAL_Delay(1000);
+
+
+
+	uint8_t Init[] = {0xe1};
+  uint8_t Measure[] = {0xac, 0x33, 0x00};
+
+  HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)Init, 1, HAL_MAX_DELAY);
+  HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)Measure, 3, HAL_MAX_DELAY);
+  HAL_Delay(100);
+  HAL_I2C_Master_Receive(&hi2c1, aht10_addr, AHT10_RX_Data, 6, HAL_MAX_DELAY);
+  snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2d %.2d %.2d %.2d %.2d %.2d\n", 
+           AHT10_RX_Data[0], AHT10_RX_Data[1], AHT10_RX_Data[2], AHT10_RX_Data[3], AHT10_RX_Data[4], AHT10_RX_Data[5]);
+  HAL_UART_Transmit(&huart2, (uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_BUFFER), HAL_MAX_DELAY);
+
+  /*HUMIDITY IS:
+    second byte,
+    third byte,
+    first hald of fourth one
+    DO NOT FUCKING BELIEVE TO EVERYONE ELSE
+    IF HE'S TELLING YOU SOMETHING ELSE ABOUT
+    THAT YOU CAN BREAK HIS FACE WITH A BRICK */
+
+  AHT10_ADC_Raw = ((uint32_t)AHT10_RX_Data[1] << 12) | ((uint32_t)AHT10_RX_Data[2] << 4) | (AHT10_RX_Data[3] >> 4);
+
+  snprintf((char*)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "hum: %.1f\n", ((float)AHT10_ADC_Raw / 1048576.0) * 100.0);
+  HAL_UART_Transmit(&huart2, (uint8_t*)GLOBAL_MESSAGE_BUFFER, strlen((char*)GLOBAL_MESSAGE_BUFFER), HAL_MAX_DELAY);
 
   /* USER CODE END 2 */
 

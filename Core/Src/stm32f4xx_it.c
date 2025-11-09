@@ -25,6 +25,7 @@
 /* USER CODE END Includes */
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 #include "transmit_and_recieve_control/transmit_and_recieve_control.h"
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
@@ -70,6 +71,15 @@ extern uint16_t bmp180_addr;
 extern char GLOBAL_MESSAGE_BUFFER[30];
 int32_t temperature_result = 0;
 int32_t pressure_result = 0;
+
+extern uint16_t aht10_addr;
+extern uint8_t AHT10_RX_Data[6];
+extern uint32_t AHT10_ADC_Raw;
+extern float AHT10_Temperature;
+extern float AHT10_Humidity;
+extern uint8_t AHT10_MeasCmd[3];
+extern uint8_t AHT10_InitCmd[3];
+
 //unsigned int counter_1s = 0;
 /* USER CODE END PV */
 
@@ -220,12 +230,18 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 1 */
 
   if (SysTick_20Sec_Counter == BAROMETER_TEMPERATURE_PUT) {
-    HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
+    //HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     //HAL_UART_Transmit(&huart2, (uint8_t*)"temperature: measuring...", sizeof("temperature: measuring...")-1, HAL_MAX_DELAY);
   }
   if (SysTick_20Sec_Counter == BAROMETER_TEMPERATURE_GET) {
+    //temperature_result = bmp180_get_temperature();
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     //HAL_UART_Transmit(&huart2, (uint8_t*)"getting: temperature", sizeof("getting: temperature")-1, HAL_MAX_DELAY);
-    temperature_result = bmp180_get_temperature();
     /*snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld", temperature_result);
     lcd1602_transmit_command(0b10000000);
     lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);*/
@@ -234,13 +250,25 @@ void SysTick_Handler(void)
     lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);*/
   }
   if (SysTick_20Sec_Counter == BAROMETER_PRESSURE_PUT) {
-    uint8_t pressure_cmd = 0x34 + (OSS << 6);
-    HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_DELAY);
+    //HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, AHT10_InitCmd, 3, HAL_MAX_DELAY);
+    /*uint8_t pressure_cmd = 0x34 + (OSS << 6);
+    HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_DELAY);*/
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   }
   if (SysTick_20Sec_Counter == BAROMETER_PRESSURE_GET) {
     SysTick_20Sec_Counter = 0;
+    //pressure_result = bmp180_get_pressure() / 133.322f;
+
+    /*HAL_I2C_Master_Receive(&hi2c1, aht10_addr, (uint8_t*)AHT10_RX_Data, 6, HAL_MAX_DELAY);
+    AHT10_ADC_Raw = ((uint32_t)AHT10_RX_Data[1] << 12) | ((uint32_t)AHT10_RX_Data[2] << 4) | (AHT10_RX_Data[3] >> 4);
+    AHT10_Humidity = (float)(AHT10_ADC_Raw*100.00/1048576.00);
+    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "hum: %.2f\r\n", AHT10_Humidity);
+    HAL_UART_Transmit(&huart2, (uint8_t*)GLOBAL_MESSAGE_BUFFER, strlen(GLOBAL_MESSAGE_BUFFER), HAL_MAX_DELAY);*/
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     //HAL_UART_Transmit(&huart2, (uint8_t*)"getting: presure", sizeof("getting: presure")-1, HAL_MAX_DELAY);
-    pressure_result = bmp180_get_pressure() / 133.322f;
     /*snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld", pressure_result, temperature_result);
     HAL_UART_Transmit(&huart2, (uint8_t*)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER)-1, HAL_MAX_DELAY);
     lcd1602_transmit_command(0b10000000);
@@ -248,7 +276,7 @@ void SysTick_Handler(void)
   }
   SysTick_20Sec_Counter++;
   
-  if (SysTick_1Sec_Counter == 1000) {
+  /*if (SysTick_1Sec_Counter == 1000) {
     SysTick_1Sec_Counter = 0;
     HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
     HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
@@ -258,7 +286,7 @@ void SysTick_Handler(void)
     lcd1602_transmit_command(0b11000000);
     snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld", pressure_result, temperature_result);
     lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
-  }
+  }*/
   SysTick_1Sec_Counter++;
   /* USER CODE END SysTick_IRQn 1 */
 }

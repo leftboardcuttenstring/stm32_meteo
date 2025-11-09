@@ -16,7 +16,9 @@
   *
   ******************************************************************************
   */
+#ifndef STM32F401xE
 #define STM32F401xE
+#endif
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/

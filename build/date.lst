@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccJ9L1nI.s 			page 1
+ARM GAS  /tmp/ccOMZwDv.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,353 +20,280 @@ ARM GAS  /tmp/ccJ9L1nI.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "Core/Src/date/date.c"
-  20              		.section	.rodata.rtc_set_time.str1.4,"aMS",%progbits,1
-  21              		.align	2
-  22              	.LC0:
-  23 0000 54696D65 		.ascii	"Time set error\000"
-  23      20736574 
-  23      20657272 
-  23      6F7200
-  24              		.section	.text.rtc_set_time,"ax",%progbits
-  25              		.align	1
-  26              		.global	rtc_set_time
-  27              		.syntax unified
-  28              		.thumb
-  29              		.thumb_func
-  31              	rtc_set_time:
-  32              	.LVL0:
-  33              	.LFB137:
+  20              		.section	.text.rtc_set_time,"ax",%progbits
+  21              		.align	1
+  22              		.global	rtc_set_time
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	rtc_set_time:
+  28              	.LVL0:
+  29              	.LFB137:
    1:Core/Src/date/date.c **** #include "date.h"
    2:Core/Src/date/date.c **** 
    3:Core/Src/date/date.c **** int rtc_set_time(
    4:Core/Src/date/date.c ****         uint8_t year, uint8_t month, uint8_t day,
    5:Core/Src/date/date.c ****         uint8_t hour, uint8_t min, uint8_t sec,
    6:Core/Src/date/date.c ****         uint8_t dow) {
-  34              		.loc 1 6 22 view -0
-  35              		.cfi_startproc
-  36              		@ args = 12, pretend = 0, frame = 24
-  37              		@ frame_needed = 0, uses_anonymous_args = 0
-  38              		.loc 1 6 22 is_stmt 0 view .LVU1
-  39 0000 10B5     		push	{r4, lr}
-  40              	.LCFI0:
-  41              		.cfi_def_cfa_offset 8
-  42              		.cfi_offset 4, -8
-  43              		.cfi_offset 14, -4
-  44 0002 86B0     		sub	sp, sp, #24
-  45              	.LCFI1:
-  46              		.cfi_def_cfa_offset 32
-  47 0004 9646     		mov	lr, r2
-  48 0006 1C46     		mov	r4, r3
+  30              		.loc 1 6 22 view -0
+  31              		.cfi_startproc
+  32              		@ args = 12, pretend = 0, frame = 24
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 6 22 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 4, -8
+  39              		.cfi_offset 14, -4
+  40 0002 86B0     		sub	sp, sp, #24
+  41              	.LCFI1:
+  42              		.cfi_def_cfa_offset 32
+  43 0004 9646     		mov	lr, r2
+  44 0006 1C46     		mov	r4, r3
    7:Core/Src/date/date.c ****     HAL_StatusTypeDef res;
-ARM GAS  /tmp/ccJ9L1nI.s 			page 2
-
-
-  49              		.loc 1 7 5 is_stmt 1 view .LVU2
+  45              		.loc 1 7 5 is_stmt 1 view .LVU2
    8:Core/Src/date/date.c ****     RTC_TimeTypeDef time;
-  50              		.loc 1 8 5 view .LVU3
+  46              		.loc 1 8 5 view .LVU3
    9:Core/Src/date/date.c ****     RTC_DateTypeDef date;
-  51              		.loc 1 9 5 view .LVU4
+  47              		.loc 1 9 5 view .LVU4
   10:Core/Src/date/date.c **** 
   11:Core/Src/date/date.c ****     memset(&time, 0, sizeof(time));
-  52              		.loc 1 11 5 view .LVU5
-  53 0008 0022     		movs	r2, #0
-  54              	.LVL1:
-  55              		.loc 1 11 5 is_stmt 0 view .LVU6
-  56 000a 0192     		str	r2, [sp, #4]
-  57 000c 0292     		str	r2, [sp, #8]
-  58 000e 0392     		str	r2, [sp, #12]
-  59 0010 0492     		str	r2, [sp, #16]
-  60 0012 0592     		str	r2, [sp, #20]
+ARM GAS  /tmp/ccOMZwDv.s 			page 2
+
+
+  48              		.loc 1 11 5 view .LVU5
+  49 0008 0022     		movs	r2, #0
+  50              	.LVL1:
+  51              		.loc 1 11 5 is_stmt 0 view .LVU6
+  52 000a 0192     		str	r2, [sp, #4]
+  53 000c 0292     		str	r2, [sp, #8]
+  54 000e 0392     		str	r2, [sp, #12]
+  55 0010 0492     		str	r2, [sp, #16]
+  56 0012 0592     		str	r2, [sp, #20]
   12:Core/Src/date/date.c ****     memset(&date, 0, sizeof(date));
-  61              		.loc 1 12 5 is_stmt 1 view .LVU7
-  62 0014 0092     		str	r2, [sp]
+  57              		.loc 1 12 5 is_stmt 1 view .LVU7
+  58 0014 0092     		str	r2, [sp]
   13:Core/Src/date/date.c **** 
   14:Core/Src/date/date.c ****     date.WeekDay = dow;
-  63              		.loc 1 14 5 view .LVU8
-  64              		.loc 1 14 18 is_stmt 0 view .LVU9
-  65 0016 9DF82830 		ldrb	r3, [sp, #40]	@ zero_extendqisi2
-  66              	.LVL2:
-  67              		.loc 1 14 18 view .LVU10
-  68 001a 8DF80030 		strb	r3, [sp]
+  59              		.loc 1 14 5 view .LVU8
+  60              		.loc 1 14 18 is_stmt 0 view .LVU9
+  61 0016 9DF82830 		ldrb	r3, [sp, #40]	@ zero_extendqisi2
+  62              	.LVL2:
+  63              		.loc 1 14 18 view .LVU10
+  64 001a 8DF80030 		strb	r3, [sp]
   15:Core/Src/date/date.c ****     date.Year = year;
-  69              		.loc 1 15 5 is_stmt 1 view .LVU11
-  70              		.loc 1 15 15 is_stmt 0 view .LVU12
-  71 001e 8DF80300 		strb	r0, [sp, #3]
+  65              		.loc 1 15 5 is_stmt 1 view .LVU11
+  66              		.loc 1 15 15 is_stmt 0 view .LVU12
+  67 001e 8DF80300 		strb	r0, [sp, #3]
   16:Core/Src/date/date.c ****     date.Month = month;
-  72              		.loc 1 16 5 is_stmt 1 view .LVU13
-  73              		.loc 1 16 16 is_stmt 0 view .LVU14
-  74 0022 8DF80110 		strb	r1, [sp, #1]
+  68              		.loc 1 16 5 is_stmt 1 view .LVU13
+  69              		.loc 1 16 16 is_stmt 0 view .LVU14
+  70 0022 8DF80110 		strb	r1, [sp, #1]
   17:Core/Src/date/date.c ****     date.Date = day;
-  75              		.loc 1 17 5 is_stmt 1 view .LVU15
-  76              		.loc 1 17 15 is_stmt 0 view .LVU16
-  77 0026 8DF802E0 		strb	lr, [sp, #2]
+  71              		.loc 1 17 5 is_stmt 1 view .LVU15
+  72              		.loc 1 17 15 is_stmt 0 view .LVU16
+  73 0026 8DF802E0 		strb	lr, [sp, #2]
   18:Core/Src/date/date.c ****     res = HAL_RTC_SetDate(&hrtc, &date, RTC_FORMAT_BIN);
-  78              		.loc 1 18 5 is_stmt 1 view .LVU17
-  79              		.loc 1 18 11 is_stmt 0 view .LVU18
-  80 002a 6946     		mov	r1, sp
-  81              	.LVL3:
-  82              		.loc 1 18 11 view .LVU19
-  83 002c 1548     		ldr	r0, .L8
-  84              	.LVL4:
-  85              		.loc 1 18 11 view .LVU20
-  86 002e FFF7FEFF 		bl	HAL_RTC_SetDate
-  87              	.LVL5:
+  74              		.loc 1 18 5 is_stmt 1 view .LVU17
+  75              		.loc 1 18 11 is_stmt 0 view .LVU18
+  76 002a 6946     		mov	r1, sp
+  77              	.LVL3:
+  78              		.loc 1 18 11 view .LVU19
+  79 002c 0D48     		ldr	r0, .L6
+  80              	.LVL4:
+  81              		.loc 1 18 11 view .LVU20
+  82 002e FFF7FEFF 		bl	HAL_RTC_SetDate
+  83              	.LVL5:
   19:Core/Src/date/date.c ****     if(res != HAL_OK) {
-  88              		.loc 1 19 5 is_stmt 1 view .LVU21
-  89              		.loc 1 19 7 is_stmt 0 view .LVU22
-  90 0032 90B9     		cbnz	r0, .L6
-  20:Core/Src/date/date.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"Time set error", sizeof("Time set error")-1, HAL_MAX_
+  84              		.loc 1 19 5 is_stmt 1 view .LVU21
+  85              		.loc 1 19 7 is_stmt 0 view .LVU22
+  86 0032 88B9     		cbnz	r0, .L3
+  20:Core/Src/date/date.c ****         //HAL_UART_Transmit(&huart2, (uint8_t*)"Time set error", sizeof("Time set error")-1, HAL_MA
   21:Core/Src/date/date.c ****         return -1;
   22:Core/Src/date/date.c ****     }
-ARM GAS  /tmp/ccJ9L1nI.s 			page 3
-
-
   23:Core/Src/date/date.c ****     time.Hours = hour;
-  91              		.loc 1 23 5 is_stmt 1 view .LVU23
-  92              		.loc 1 23 16 is_stmt 0 view .LVU24
-  93 0034 8DF80440 		strb	r4, [sp, #4]
+  87              		.loc 1 23 5 is_stmt 1 view .LVU23
+  88              		.loc 1 23 16 is_stmt 0 view .LVU24
+  89 0034 8DF80440 		strb	r4, [sp, #4]
   24:Core/Src/date/date.c ****     time.Minutes = min;
-  94              		.loc 1 24 5 is_stmt 1 view .LVU25
-  95              		.loc 1 24 18 is_stmt 0 view .LVU26
-  96 0038 9DF82030 		ldrb	r3, [sp, #32]	@ zero_extendqisi2
-  97 003c 8DF80530 		strb	r3, [sp, #5]
+  90              		.loc 1 24 5 is_stmt 1 view .LVU25
+  91              		.loc 1 24 18 is_stmt 0 view .LVU26
+ARM GAS  /tmp/ccOMZwDv.s 			page 3
+
+
+  92 0038 9DF82030 		ldrb	r3, [sp, #32]	@ zero_extendqisi2
+  93 003c 8DF80530 		strb	r3, [sp, #5]
   25:Core/Src/date/date.c ****     time.Seconds = sec;
-  98              		.loc 1 25 5 is_stmt 1 view .LVU27
-  99              		.loc 1 25 18 is_stmt 0 view .LVU28
- 100 0040 9DF82430 		ldrb	r3, [sp, #36]	@ zero_extendqisi2
- 101 0044 8DF80630 		strb	r3, [sp, #6]
+  94              		.loc 1 25 5 is_stmt 1 view .LVU27
+  95              		.loc 1 25 18 is_stmt 0 view .LVU28
+  96 0040 9DF82430 		ldrb	r3, [sp, #36]	@ zero_extendqisi2
+  97 0044 8DF80630 		strb	r3, [sp, #6]
   26:Core/Src/date/date.c **** 
   27:Core/Src/date/date.c ****     res = HAL_RTC_SetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 102              		.loc 1 27 5 is_stmt 1 view .LVU29
- 103              		.loc 1 27 11 is_stmt 0 view .LVU30
- 104 0048 0022     		movs	r2, #0
- 105 004a 01A9     		add	r1, sp, #4
- 106 004c 0D48     		ldr	r0, .L8
- 107              	.LVL6:
- 108              		.loc 1 27 11 view .LVU31
- 109 004e FFF7FEFF 		bl	HAL_RTC_SetTime
- 110              	.LVL7:
+  98              		.loc 1 27 5 is_stmt 1 view .LVU29
+  99              		.loc 1 27 11 is_stmt 0 view .LVU30
+ 100 0048 0022     		movs	r2, #0
+ 101 004a 01A9     		add	r1, sp, #4
+ 102 004c 0548     		ldr	r0, .L6
+ 103              	.LVL6:
+ 104              		.loc 1 27 11 view .LVU31
+ 105 004e FFF7FEFF 		bl	HAL_RTC_SetTime
+ 106              	.LVL7:
   28:Core/Src/date/date.c ****     if(res != HAL_OK) {
- 111              		.loc 1 28 5 is_stmt 1 view .LVU32
- 112              		.loc 1 28 7 is_stmt 0 view .LVU33
- 113 0052 60B9     		cbnz	r0, .L7
-  29:Core/Src/date/date.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"Time set error", sizeof("Time set error")-1, HAL_MAX_
+ 107              		.loc 1 28 5 is_stmt 1 view .LVU32
+ 108              		.loc 1 28 7 is_stmt 0 view .LVU33
+ 109 0052 20B9     		cbnz	r0, .L4
+ 110              	.LVL8:
+ 111              	.L1:
+  29:Core/Src/date/date.c ****         //HAL_UART_Transmit(&huart2, (uint8_t*)"Time set error", sizeof("Time set error")-1, HAL_MA
   30:Core/Src/date/date.c ****         return -2;
   31:Core/Src/date/date.c ****     }
   32:Core/Src/date/date.c **** 
   33:Core/Src/date/date.c ****     return 0;
- 114              		.loc 1 33 12 view .LVU34
- 115 0054 0020     		movs	r0, #0
- 116              	.LVL8:
- 117              	.L1:
   34:Core/Src/date/date.c **** }
- 118              		.loc 1 34 1 view .LVU35
- 119 0056 06B0     		add	sp, sp, #24
- 120              	.LCFI2:
- 121              		.cfi_remember_state
- 122              		.cfi_def_cfa_offset 8
- 123              		@ sp needed
- 124 0058 10BD     		pop	{r4, pc}
- 125              	.LVL9:
- 126              	.L6:
- 127              	.LCFI3:
- 128              		.cfi_restore_state
-  20:Core/Src/date/date.c ****         return -1;
- 129              		.loc 1 20 9 is_stmt 1 view .LVU36
- 130 005a 4FF0FF33 		mov	r3, #-1
- 131 005e 0E22     		movs	r2, #14
- 132 0060 0949     		ldr	r1, .L8+4
- 133 0062 0A48     		ldr	r0, .L8+8
- 134              	.LVL10:
-ARM GAS  /tmp/ccJ9L1nI.s 			page 4
-
-
-  20:Core/Src/date/date.c ****         return -1;
- 135              		.loc 1 20 9 is_stmt 0 view .LVU37
- 136 0064 FFF7FEFF 		bl	HAL_UART_Transmit
- 137              	.LVL11:
+ 112              		.loc 1 34 1 view .LVU34
+ 113 0054 06B0     		add	sp, sp, #24
+ 114              	.LCFI2:
+ 115              		.cfi_remember_state
+ 116              		.cfi_def_cfa_offset 8
+ 117              		@ sp needed
+ 118 0056 10BD     		pop	{r4, pc}
+ 119              	.LVL9:
+ 120              	.L3:
+ 121              	.LCFI3:
+ 122              		.cfi_restore_state
   21:Core/Src/date/date.c ****     }
- 138              		.loc 1 21 9 is_stmt 1 view .LVU38
+ 123              		.loc 1 21 16 view .LVU35
+ 124 0058 4FF0FF30 		mov	r0, #-1
+ 125              	.LVL10:
   21:Core/Src/date/date.c ****     }
- 139              		.loc 1 21 16 is_stmt 0 view .LVU39
- 140 0068 4FF0FF30 		mov	r0, #-1
- 141 006c F3E7     		b	.L1
- 142              	.LVL12:
- 143              	.L7:
-  29:Core/Src/date/date.c ****         return -2;
- 144              		.loc 1 29 9 is_stmt 1 view .LVU40
- 145 006e 4FF0FF33 		mov	r3, #-1
- 146 0072 0E22     		movs	r2, #14
- 147 0074 0449     		ldr	r1, .L8+4
- 148 0076 0548     		ldr	r0, .L8+8
- 149              	.LVL13:
-  29:Core/Src/date/date.c ****         return -2;
- 150              		.loc 1 29 9 is_stmt 0 view .LVU41
- 151 0078 FFF7FEFF 		bl	HAL_UART_Transmit
- 152              	.LVL14:
+ 126              		.loc 1 21 16 view .LVU36
+ 127 005c FAE7     		b	.L1
+ 128              	.LVL11:
+ 129              	.L4:
   30:Core/Src/date/date.c ****     }
- 153              		.loc 1 30 9 is_stmt 1 view .LVU42
+ 130              		.loc 1 30 16 view .LVU37
+ 131 005e 6FF00100 		mvn	r0, #1
+ 132              	.LVL12:
   30:Core/Src/date/date.c ****     }
- 154              		.loc 1 30 16 is_stmt 0 view .LVU43
- 155 007c 6FF00100 		mvn	r0, #1
- 156 0080 E9E7     		b	.L1
- 157              	.L9:
- 158 0082 00BF     		.align	2
- 159              	.L8:
- 160 0084 00000000 		.word	hrtc
- 161 0088 00000000 		.word	.LC0
- 162 008c 00000000 		.word	huart2
- 163              		.cfi_endproc
- 164              	.LFE137:
- 166              		.section	.rodata.rtc_get_time.str1.4,"aMS",%progbits,1
- 167              		.align	2
- 168              	.LC1:
- 169 0000 54696D65 		.ascii	"Time getting...\000"
- 169      20676574 
- 169      74696E67 
- 169      2E2E2E00 
- 170              		.align	2
- 171              	.LC2:
- 172 0010 54696D65 		.ascii	"Time get error\000"
- 172      20676574 
- 172      20657272 
- 172      6F7200
- 173 001f 00       		.align	2
- 174              	.LC3:
- 175 0020 25643A25 		.ascii	"%d:%d\000"
- 175      6400
- 176              		.section	.text.rtc_get_time,"ax",%progbits
- 177              		.align	1
- 178              		.global	rtc_get_time
-ARM GAS  /tmp/ccJ9L1nI.s 			page 5
+ 133              		.loc 1 30 16 view .LVU38
+ 134 0062 F7E7     		b	.L1
+ARM GAS  /tmp/ccOMZwDv.s 			page 4
 
 
- 179              		.syntax unified
- 180              		.thumb
- 181              		.thumb_func
- 183              	rtc_get_time:
- 184              	.LFB138:
+ 135              	.L7:
+ 136              		.align	2
+ 137              	.L6:
+ 138 0064 00000000 		.word	hrtc
+ 139              		.cfi_endproc
+ 140              	.LFE137:
+ 142              		.section	.rodata.rtc_get_time.str1.4,"aMS",%progbits,1
+ 143              		.align	2
+ 144              	.LC0:
+ 145 0000 25643A25 		.ascii	"%d:%d\000"
+ 145      6400
+ 146              		.section	.text.rtc_get_time,"ax",%progbits
+ 147              		.align	1
+ 148              		.global	rtc_get_time
+ 149              		.syntax unified
+ 150              		.thumb
+ 151              		.thumb_func
+ 153              	rtc_get_time:
+ 154              	.LFB138:
   35:Core/Src/date/date.c **** 
   36:Core/Src/date/date.c **** void rtc_get_time(void) {
- 185              		.loc 1 36 25 is_stmt 1 view -0
- 186              		.cfi_startproc
- 187              		@ args = 0, pretend = 0, frame = 0
- 188              		@ frame_needed = 0, uses_anonymous_args = 0
- 189 0000 10B5     		push	{r4, lr}
- 190              	.LCFI4:
- 191              		.cfi_def_cfa_offset 8
- 192              		.cfi_offset 4, -8
- 193              		.cfi_offset 14, -4
-  37:Core/Src/date/date.c **** 	HAL_UART_Transmit(&huart2, (uint8_t*)"Time getting...", sizeof("Time getting...")-1, HAL_MAX_DELAY
- 194              		.loc 1 37 2 view .LVU45
- 195 0002 4FF0FF33 		mov	r3, #-1
- 196 0006 0F22     		movs	r2, #15
- 197 0008 1149     		ldr	r1, .L14
- 198 000a 1248     		ldr	r0, .L14+4
- 199 000c FFF7FEFF 		bl	HAL_UART_Transmit
- 200              	.LVL15:
+ 155              		.loc 1 36 25 is_stmt 1 view -0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159 0000 38B5     		push	{r3, r4, r5, lr}
+ 160              	.LCFI4:
+ 161              		.cfi_def_cfa_offset 16
+ 162              		.cfi_offset 3, -16
+ 163              		.cfi_offset 4, -12
+ 164              		.cfi_offset 5, -8
+ 165              		.cfi_offset 14, -4
+  37:Core/Src/date/date.c **** 	//HAL_UART_Transmit(&huart2, (uint8_t*)"Time getting...", sizeof("Time getting...")-1, HAL_MAX_DEL
   38:Core/Src/date/date.c **** 	res = HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 201              		.loc 1 38 2 view .LVU46
- 202              		.loc 1 38 8 is_stmt 0 view .LVU47
- 203 0010 0022     		movs	r2, #0
- 204 0012 1149     		ldr	r1, .L14+8
- 205 0014 1148     		ldr	r0, .L14+12
- 206 0016 FFF7FEFF 		bl	HAL_RTC_GetTime
- 207              	.LVL16:
- 208              		.loc 1 38 6 discriminator 1 view .LVU48
- 209 001a 114B     		ldr	r3, .L14+16
- 210 001c 1870     		strb	r0, [r3]
+ 166              		.loc 1 38 2 view .LVU40
+ 167              		.loc 1 38 8 is_stmt 0 view .LVU41
+ 168 0002 0B4C     		ldr	r4, .L10
+ 169 0004 0022     		movs	r2, #0
+ 170 0006 2146     		mov	r1, r4
+ 171 0008 0A48     		ldr	r0, .L10+4
+ 172 000a FFF7FEFF 		bl	HAL_RTC_GetTime
+ 173              	.LVL13:
+ 174              		.loc 1 38 6 discriminator 1 view .LVU42
+ 175 000e 0A4B     		ldr	r3, .L10+8
+ 176 0010 1870     		strb	r0, [r3]
   39:Core/Src/date/date.c **** 	if(res != HAL_OK) {
- 211              		.loc 1 39 2 is_stmt 1 view .LVU49
- 212              		.loc 1 39 4 is_stmt 0 view .LVU50
- 213 001e 70B9     		cbnz	r0, .L13
- 214              	.L11:
-  40:Core/Src/date/date.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)"Time get error", sizeof("Time get error")-1, HAL_MAX_DELA
+ 177              		.loc 1 39 2 is_stmt 1 view .LVU43
+  40:Core/Src/date/date.c ****     //HAL_UART_Transmit(&huart2, (uint8_t*)"Time get error", sizeof("Time get error")-1, HAL_MAX_DE
   41:Core/Src/date/date.c **** 	}
+ 178              		.loc 1 41 2 view .LVU44
   42:Core/Src/date/date.c **** 	sprintf(msg_time, "%d:%d", time.Hours, time.Minutes);
- 215              		.loc 1 42 2 is_stmt 1 view .LVU51
- 216              		.loc 1 42 33 is_stmt 0 view .LVU52
- 217 0020 0D4A     		ldr	r2, .L14+8
- 218              		.loc 1 42 2 view .LVU53
- 219 0022 104C     		ldr	r4, .L14+20
- 220 0024 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
- 221 0026 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
- 222 0028 0F49     		ldr	r1, .L14+24
- 223 002a 2046     		mov	r0, r4
- 224 002c FFF7FEFF 		bl	sprintf
- 225              	.LVL17:
+ 179              		.loc 1 42 2 view .LVU45
+ 180 0012 0A4D     		ldr	r5, .L10+12
+ 181 0014 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 182 0016 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 183 0018 0949     		ldr	r1, .L10+16
+ 184 001a 2846     		mov	r0, r5
+ARM GAS  /tmp/ccOMZwDv.s 			page 5
+
+
+ 185 001c FFF7FEFF 		bl	sprintf
+ 186              	.LVL14:
   43:Core/Src/date/date.c **** 	lcd1602_transmit_command(0b10000000);
- 226              		.loc 1 43 2 is_stmt 1 view .LVU54
- 227 0030 8020     		movs	r0, #128
-ARM GAS  /tmp/ccJ9L1nI.s 			page 6
-
-
- 228 0032 FFF7FEFF 		bl	lcd1602_transmit_command
- 229              	.LVL18:
+ 187              		.loc 1 43 2 view .LVU46
+ 188 0020 8020     		movs	r0, #128
+ 189 0022 FFF7FEFF 		bl	lcd1602_transmit_command
+ 190              	.LVL15:
   44:Core/Src/date/date.c **** 	lcd1602_send_string(msg_time);
- 230              		.loc 1 44 2 view .LVU55
- 231 0036 2046     		mov	r0, r4
- 232 0038 FFF7FEFF 		bl	lcd1602_send_string
- 233              	.LVL19:
+ 191              		.loc 1 44 2 view .LVU47
+ 192 0026 2846     		mov	r0, r5
+ 193 0028 FFF7FEFF 		bl	lcd1602_send_string
+ 194              	.LVL16:
   45:Core/Src/date/date.c **** }...
- 234              		.loc 1 45 1 is_stmt 0 view .LVU56
- 235 003c 10BD     		pop	{r4, pc}
- 236              	.L13:
-  40:Core/Src/date/date.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)"Time get error", sizeof("Time get error")-1, HAL_MAX_DELA
- 237              		.loc 1 40 5 is_stmt 1 view .LVU57
- 238 003e 4FF0FF33 		mov	r3, #-1
- 239 0042 0E22     		movs	r2, #14
- 240 0044 0949     		ldr	r1, .L14+28
- 241 0046 0348     		ldr	r0, .L14+4
- 242 0048 FFF7FEFF 		bl	HAL_UART_Transmit
- 243              	.LVL20:
- 244 004c E8E7     		b	.L11
- 245              	.L15:
- 246 004e 00BF     		.align	2
- 247              	.L14:
- 248 0050 00000000 		.word	.LC1
- 249 0054 00000000 		.word	huart2
- 250 0058 00000000 		.word	time
- 251 005c 00000000 		.word	hrtc
- 252 0060 00000000 		.word	res
- 253 0064 00000000 		.word	msg_time
- 254 0068 20000000 		.word	.LC3
- 255 006c 10000000 		.word	.LC2
- 256              		.cfi_endproc
- 257              	.LFE138:
- 259              		.text
- 260              	.Letext0:
- 261              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
- 262              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
- 263              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
- 264              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 265              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 266              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h"
- 267              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 268              		.file 9 "Core/Src/date/../transmit_and_recieve_control/transmit_and_recieve_control.h"
- 269              		.file 10 "Core/Src/date/date.h"
- 270              		.file 11 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
- 271              		.file 12 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
-ARM GAS  /tmp/ccJ9L1nI.s 			page 7
+ 195              		.loc 1 45 1 is_stmt 0 view .LVU48
+ 196 002c 38BD     		pop	{r3, r4, r5, pc}
+ 197              	.L11:
+ 198 002e 00BF     		.align	2
+ 199              	.L10:
+ 200 0030 00000000 		.word	time
+ 201 0034 00000000 		.word	hrtc
+ 202 0038 00000000 		.word	res
+ 203 003c 00000000 		.word	msg_time
+ 204 0040 00000000 		.word	.LC0
+ 205              		.cfi_endproc
+ 206              	.LFE138:
+ 208              		.text
+ 209              	.Letext0:
+ 210              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
+ 211              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
+ 212              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
+ 213              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 214              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h"
+ 215              		.file 7 "Core/Src/date/date.h"
+ 216              		.file 8 "Core/Src/date/../transmit_and_recieve_control/transmit_and_recieve_control.h"
+ 217              		.file 9 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/std
+ 218              		.file 10 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
+ARM GAS  /tmp/ccOMZwDv.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 date.c
-     /tmp/ccJ9L1nI.s:21     .rodata.rtc_set_time.str1.4:00000000 $d
-     /tmp/ccJ9L1nI.s:25     .text.rtc_set_time:00000000 $t
-     /tmp/ccJ9L1nI.s:31     .text.rtc_set_time:00000000 rtc_set_time
-     /tmp/ccJ9L1nI.s:160    .text.rtc_set_time:00000084 $d
-     /tmp/ccJ9L1nI.s:167    .rodata.rtc_get_time.str1.4:00000000 $d
-     /tmp/ccJ9L1nI.s:177    .text.rtc_get_time:00000000 $t
-     /tmp/ccJ9L1nI.s:183    .text.rtc_get_time:00000000 rtc_get_time
-     /tmp/ccJ9L1nI.s:248    .text.rtc_get_time:00000050 $d
+     /tmp/ccOMZwDv.s:21     .text.rtc_set_time:00000000 $t
+     /tmp/ccOMZwDv.s:27     .text.rtc_set_time:00000000 rtc_set_time
+     /tmp/ccOMZwDv.s:138    .text.rtc_set_time:00000064 $d
+     /tmp/ccOMZwDv.s:143    .rodata.rtc_get_time.str1.4:00000000 $d
+     /tmp/ccOMZwDv.s:147    .text.rtc_get_time:00000000 $t
+     /tmp/ccOMZwDv.s:153    .text.rtc_get_time:00000000 rtc_get_time
+     /tmp/ccOMZwDv.s:200    .text.rtc_get_time:00000030 $d
 
 UNDEFINED SYMBOLS
 HAL_RTC_SetDate
 HAL_RTC_SetTime
-HAL_UART_Transmit
 hrtc
-huart2
 HAL_RTC_GetTime
 sprintf
 lcd1602_transmit_command

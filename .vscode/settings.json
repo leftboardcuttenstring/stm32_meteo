@@ -2,6 +2,7 @@
     "files.associations": {
         "compare": "c",
         "cstdint": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "transmit_and_recieve_control.h": "c"
     }
 }
