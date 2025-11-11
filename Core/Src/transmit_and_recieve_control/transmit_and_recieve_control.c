@@ -8,6 +8,9 @@ void lcd1602_send_string(char *str) {
 }
 
 void lcd1602_transmit(uint8_t data, uint8_t flags) {
+	/*if (data == NULL) {
+		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is below the minimum! (-40 celsius)\r\n", sizeof("The temperature is below the minimum! (-40 celsius)\r\n")-1, HAL_MAX_DELAY);
+	}*/
 	uint8_t up = data & 0xF0;
 	uint8_t lo = (data << 4) & 0xF0;
 	

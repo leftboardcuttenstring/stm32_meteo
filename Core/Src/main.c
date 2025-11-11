@@ -51,6 +51,9 @@ RTC_HandleTypeDef hrtc;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+uint8_t aht10_init_command[1] = {0xe1};
+uint8_t aht10_measurement_command[3] = {0xac, 0x33, 0x00};
+
 extern uint8_t cmd;
 
 Data journal[5] = {0};
@@ -183,24 +186,14 @@ int main(void)
   MX_USART2_UART_Init();
   //MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  //lcd1602_init();
-  //bmp180_get_global_coefficients();
+  lcd1602_init();
+  init_rtc_once();
+  bmp180_get_global_coefficients();
   //aht10_init();
-  HAL_UART_Transmit(&huart2, (uint8_t*)"Hello\r\n", 7, HAL_MAX_DELAY);
+  //HAL_UART_Transmit(&huart2, (uint8_t*)"Hello\r\n", 7, HAL_MAX_DELAY);
   //HAL_Delay(1000);
-
-
-
-	uint8_t Init[] = {0xe1};
-  uint8_t Measure[] = {0xac, 0x33, 0x00};
-
-  HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)Init, 1, HAL_MAX_DELAY);
-  HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)Measure, 3, HAL_MAX_DELAY);
-  HAL_Delay(100);
-  HAL_I2C_Master_Receive(&hi2c1, aht10_addr, AHT10_RX_Data, 6, HAL_MAX_DELAY);
-  snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2d %.2d %.2d %.2d %.2d %.2d\n", 
-           AHT10_RX_Data[0], AHT10_RX_Data[1], AHT10_RX_Data[2], AHT10_RX_Data[3], AHT10_RX_Data[4], AHT10_RX_Data[5]);
-  HAL_UART_Transmit(&huart2, (uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_BUFFER), HAL_MAX_DELAY);
+  lcd1602_transmit_command(0b10000000);
+  HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)aht10_init_command, 1, HAL_MAX_DELAY);
 
   /*HUMIDITY IS:
     second byte,
@@ -209,11 +202,6 @@ int main(void)
     DO NOT FUCKING BELIEVE TO EVERYONE ELSE
     IF HE'S TELLING YOU SOMETHING ELSE ABOUT
     THAT YOU CAN BREAK HIS FACE WITH A BRICK */
-
-  AHT10_ADC_Raw = ((uint32_t)AHT10_RX_Data[1] << 12) | ((uint32_t)AHT10_RX_Data[2] << 4) | (AHT10_RX_Data[3] >> 4);
-
-  snprintf((char*)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "hum: %.1f\n", ((float)AHT10_ADC_Raw / 1048576.0) * 100.0);
-  HAL_UART_Transmit(&huart2, (uint8_t*)GLOBAL_MESSAGE_BUFFER, strlen((char*)GLOBAL_MESSAGE_BUFFER), HAL_MAX_DELAY);
 
   /* USER CODE END 2 */
 

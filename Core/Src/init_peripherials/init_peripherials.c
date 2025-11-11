@@ -29,7 +29,6 @@ void bmp180_init(void) {
 
 int aht10_init(void) {
   if (HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t *)aht10_initialization_command, sizeof(aht10_initialization_command), HAL_MAX_DELAY) == HAL_OK) {
-    //HAL_Delay(5);
     if (HAL_I2C_IsDeviceReady(&hi2c1, aht10_addr, 3, 100) == HAL_OK) {
       snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Success: AHT10 initalization is done\n");
       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_BUFFER), HAL_MAX_DELAY);
