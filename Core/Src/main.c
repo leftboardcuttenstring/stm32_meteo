@@ -184,15 +184,15 @@ int main(void)
   MX_I2C1_Init();
   MX_RTC_Init();
   MX_USART2_UART_Init();
-  //MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   lcd1602_init();
   init_rtc_once();
   bmp180_get_global_coefficients();
+
   //aht10_init();
   //HAL_UART_Transmit(&huart2, (uint8_t*)"Hello\r\n", 7, HAL_MAX_DELAY);
   //HAL_Delay(1000);
-  lcd1602_transmit_command(0b10000000);
+  //lcd1602_transmit_command(0b10000000);
   HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)aht10_init_command, 1, HAL_MAX_DELAY);
 
   /*HUMIDITY IS:
@@ -367,6 +367,7 @@ static void MX_USART2_UART_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */
 
   /* USER CODE END MX_GPIO_Init_1 */
@@ -377,8 +378,18 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  /* USER CODE BEGIN MX_GPIO_Init_2 */
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 15, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+  
   /* USER CODE END MX_GPIO_Init_2 */
 }
 

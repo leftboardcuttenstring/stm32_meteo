@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccuQJm3v.s 			page 1
+ARM GAS  /tmp/ccx8WWL1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccuQJm3v.s 			page 1
   27:Core/Src/sysmem.c **** 
   28:Core/Src/sysmem.c **** /**
   29:Core/Src/sysmem.c ****  * Pointer to the current high watermark of the heap usage
-ARM GAS  /tmp/ccuQJm3v.s 			page 2
+ARM GAS  /tmp/ccx8WWL1.s 			page 2
 
 
   30:Core/Src/sysmem.c ****  */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccuQJm3v.s 			page 1
   51              		.loc 1 61 3 is_stmt 1 view .LVU8
   62:Core/Src/sysmem.c **** 
   63:Core/Src/sysmem.c ****   /* Initialize heap end at first call */
-ARM GAS  /tmp/ccuQJm3v.s 			page 3
+ARM GAS  /tmp/ccx8WWL1.s 			page 3
 
 
   64:Core/Src/sysmem.c ****   if (NULL == __sbrk_heap_end)
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccuQJm3v.s 			page 1
   87 0022 084C     		ldr	r4, .L8+12
   88 0024 0460     		str	r4, [r0]
   89 0026 F2E7     		b	.L2
-ARM GAS  /tmp/ccuQJm3v.s 			page 4
+ARM GAS  /tmp/ccx8WWL1.s 			page 4
 
 
   90              	.LVL8:
@@ -216,16 +216,16 @@ ARM GAS  /tmp/ccuQJm3v.s 			page 1
  121              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
  122              		.file 4 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
  123              		.file 5 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
-ARM GAS  /tmp/ccuQJm3v.s 			page 5
+ARM GAS  /tmp/ccx8WWL1.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sysmem.c
-     /tmp/ccuQJm3v.s:21     .text._sbrk:00000000 $t
-     /tmp/ccuQJm3v.s:27     .text._sbrk:00000000 _sbrk
-     /tmp/ccuQJm3v.s:105    .text._sbrk:00000038 $d
-     /tmp/ccuQJm3v.s:116    .bss.__sbrk_heap_end:00000000 __sbrk_heap_end
-     /tmp/ccuQJm3v.s:113    .bss.__sbrk_heap_end:00000000 $d
+     /tmp/ccx8WWL1.s:21     .text._sbrk:00000000 $t
+     /tmp/ccx8WWL1.s:27     .text._sbrk:00000000 _sbrk
+     /tmp/ccx8WWL1.s:105    .text._sbrk:00000038 $d
+     /tmp/ccx8WWL1.s:116    .bss.__sbrk_heap_end:00000000 __sbrk_heap_end
+     /tmp/ccx8WWL1.s:113    .bss.__sbrk_heap_end:00000000 $d
 
 UNDEFINED SYMBOLS
 __errno
