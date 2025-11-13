@@ -11,7 +11,7 @@ extern int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
 extern uint16_t AC4, AC5, AC6;
 extern char GLOBAL_MESSAGE_BUFFER[60];
 extern uint16_t aht10_addr;
-extern char aht10_initialization_command;
+extern uint8_t aht10_init_command[1];
 
 /*
  * @brief function for init 1602 lcd
@@ -27,7 +27,7 @@ void lcd1602_init(void);
  * @param void
  * @return void
  */
-void bmp180_init(void);
+int bmp180_init(void);
 
 /*
  * @brief function of init a aht10

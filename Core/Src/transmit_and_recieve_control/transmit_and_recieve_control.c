@@ -8,9 +8,6 @@ void lcd1602_send_string(char *str) {
 }
 
 void lcd1602_transmit(uint8_t data, uint8_t flags) {
-	/*if (data == NULL) {
-		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is below the minimum! (-40 celsius)\r\n", sizeof("The temperature is below the minimum! (-40 celsius)\r\n")-1, HAL_MAX_DELAY);
-	}*/
 	uint8_t up = data & 0xF0;
 	uint8_t lo = (data << 4) & 0xF0;
 	
@@ -32,14 +29,13 @@ void lcd1602_transmit_command(uint8_t cmd) {
 
 int32_t bmp180_get_temperature(void) {
 	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY); //i forgot what the fuck it is
-	//HAL_UART_Transmit(&huart2, (uint8_t*)"Data getting process is started\n", sizeof("Data getting process is started\n")-1, HAL_MAX_DELAY);
 	int32_t UT = (temperature_buf[0] << 8) + temperature_buf[1];
 	X1 = ((UT-AC6)*AC5) >> 15;
 	X2 = (MC << 11) / (X1 + MD);
 	B5 = X1 + X2;
 	int32_t T = ((B5 + 8) >> 4) / 10.0;
 
-	/*if (T / 10.0 > MAX_TEMPERATURE) {
+	if (T / 10.0 > MAX_TEMPERATURE) {
 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is above the maximum! (38 celsius)\r\n", \
 			sizeof("The temperature is above the maximum! (38 celsius)\r\n")-1, HAL_MAX_DELAY);
 		return T;
@@ -47,13 +43,12 @@ int32_t bmp180_get_temperature(void) {
 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is below the minimum! (-40 celsius)\r\n", \
 			sizeof("The temperature is below the minimum! (-40 celsius)\r\n")-1, HAL_MAX_DELAY);
 		return T;
-	}*/
+	}
 	
 	return T;
 }
 
 int32_t bmp180_get_pressure(void) {
-	//HAL_Delay(100);
 	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, pressure_buf, 3, HAL_MAX_DELAY);
 	long UP = (((long)pressure_buf[0] << 16) | ((long)pressure_buf[1] << 8) | (long)pressure_buf[2]) >> 8;
 	
@@ -78,7 +73,7 @@ int32_t bmp180_get_pressure(void) {
 	X2 = (-7357L * p) >> 16;
 	p = p + ((X1 + X2 + 3791L) >> 4);
 	
-	/*if (p / 133.322f > MAX_PRESSURE) {
+	if (p / 133.322f > MAX_PRESSURE) {
 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The pressure is above the maximum! (770 millimeters of mercury)\r\n", \
 			sizeof("The pressure is above the maximum! (770 millimeters of mercury)\r\n")-1, HAL_MAX_DELAY);
 		return p;
@@ -86,7 +81,7 @@ int32_t bmp180_get_pressure(void) {
 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The pressure is below the minimum! (730 millimeters of mercury)\r\n", \
 			sizeof("The pressure is below the minimum! (730 millimeters of mercury)\r\n")-1, HAL_MAX_DELAY);
 		return p;
-	}*/
+	}
 	
 	return p;
 }

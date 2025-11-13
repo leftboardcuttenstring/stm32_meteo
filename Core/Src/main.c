@@ -65,8 +65,6 @@ uint8_t AHT10_RX_Data[6] = {0};
 uint32_t AHT10_ADC_Raw;
 float AHT10_Temperature; 
 float AHT10_Humidity = 0.0;
-//uint8_t AHT10_MeasCmd[3] = {0xAC, 0x33, 0x00};
-//uint8_t AHT10_InitCmd[3] = {0xE1, 0x08, 0x00};
 
 uint8_t AHT10_TmpHum_Cmd[3] = {0xAC, 0x33, 0x00};
 
@@ -101,8 +99,10 @@ static void MX_I2C1_Init(void);
 static void MX_RTC_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
+
 void bmp180_get_global_coefficients(void);
 void FindAddress(void);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -138,16 +138,16 @@ void bmp180_get_global_coefficients(void) {
 
 void init_rtc_once(void)
 {
-    if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1) != RTC_INIT_MAGIC) {
-        RTC_TimeTypeDef sTime = { .Hours = 11, .Minutes = 10, .Seconds = 30 };
-        RTC_DateTypeDef sDate = { .WeekDay = RTC_WEEKDAY_SUNDAY, .Month = RTC_MONTH_OCTOBER,
-                                  .Date = 19, .Year = 25 };
+  if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1) != RTC_INIT_MAGIC) {
+      RTC_TimeTypeDef sTime = { .Hours = 11, .Minutes = 10, .Seconds = 30 };
+      RTC_DateTypeDef sDate = { .WeekDay = RTC_WEEKDAY_SUNDAY, .Month = RTC_MONTH_OCTOBER,
+                                .Date = 19, .Year = 25 };
 
-        HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-        HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+      HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+      HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 
-        HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, RTC_INIT_MAGIC);
-    }
+      HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, RTC_INIT_MAGIC);
+  }
 }
 
 /* USER CODE END 0 */
@@ -160,7 +160,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-  //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET);
+  
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -185,23 +185,13 @@ int main(void)
   MX_RTC_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+
   lcd1602_init();
+  bmp180_init();
+  aht10_init(); //strange stuff
   init_rtc_once();
+  
   bmp180_get_global_coefficients();
-
-  //aht10_init();
-  //HAL_UART_Transmit(&huart2, (uint8_t*)"Hello\r\n", 7, HAL_MAX_DELAY);
-  //HAL_Delay(1000);
-  //lcd1602_transmit_command(0b10000000);
-  HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)aht10_init_command, 1, HAL_MAX_DELAY);
-
-  /*HUMIDITY IS:
-    second byte,
-    third byte,
-    first hald of fourth one
-    DO NOT FUCKING BELIEVE TO EVERYONE ELSE
-    IF HE'S TELLING YOU SOMETHING ELSE ABOUT
-    THAT YOU CAN BREAK HIS FACE WITH A BRICK */
 
   /* USER CODE END 2 */
 

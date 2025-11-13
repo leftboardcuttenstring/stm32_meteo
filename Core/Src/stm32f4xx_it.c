@@ -200,6 +200,7 @@ void SVC_Handler(void)
   /* USER CODE BEGIN SVCall_IRQn 0 */
 
   /* USER CODE END SVCall_IRQn 0 */
+
   /* USER CODE BEGIN SVCall_IRQn 1 */
 
   /* USER CODE END SVCall_IRQn 1 */
@@ -213,6 +214,7 @@ void DebugMon_Handler(void)
   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
 
   /* USER CODE END DebugMonitor_IRQn 0 */
+
   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
 
   /* USER CODE END DebugMonitor_IRQn 1 */
@@ -226,6 +228,7 @@ void PendSV_Handler(void)
   /* USER CODE BEGIN PendSV_IRQn 0 */
 
   /* USER CODE END PendSV_IRQn 0 */
+
   /* USER CODE BEGIN PendSV_IRQn 1 */
 
   /* USER CODE END PendSV_IRQn 1 */
@@ -267,14 +270,15 @@ void SysTick_Handler(void)
     SysTick_20Sec_Counter++;
     if (SysTick_1Sec_Counter_mode0 == 1000) {
       SysTick_1Sec_Counter_mode0 = 0;
-      HAL_UART_Transmit(&huart2, (uint8_t*)"Zero mode\n", strlen((char *)"Zero mode\n"), HAL_MAX_DELAY);
       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
       HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
       lcd1602_transmit_command(0b10000000);
-      snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%02d:%02d:%02d", time.Hours, time.Minutes, time.Seconds);
+      snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%02d:%02d:%02d", \
+        time.Hours, time.Minutes, time.Seconds);
       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
       lcd1602_transmit_command(0b11000000);
-      snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld, %.2f", pressure_result, temperature_result, ((float)AHT10_ADC_Raw / 1048576.0) * 100.0);
+      snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld, %.2f", \
+        pressure_result, temperature_result, ((float)AHT10_ADC_Raw / 1048576.0) * 100.0);
       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
     }
     SysTick_1Sec_Counter_mode0++;
@@ -282,20 +286,22 @@ void SysTick_Handler(void)
   if (current_mode == 1) {
     if (SysTick_1Sec_Counter_mode1 == 1000) {
       SysTick_1Sec_Counter_mode1 = 0;
-      HAL_UART_Transmit(&huart2, (uint8_t*)"First mode\n", strlen((char *)"First mode\n"), HAL_MAX_DELAY);
       lcd1602_transmit_command(0b00000001);
       lcd1602_transmit_command(0b10000000);
-      lcd1602_send_string("  First mode");
+      HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+      snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Hours);
+      lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
     }
     SysTick_1Sec_Counter_mode1++;
   }
   if (current_mode == 2) {
     if (SysTick_1Sec_Counter_mode2 == 1000) {
       SysTick_1Sec_Counter_mode2 = 0;
-      HAL_UART_Transmit(&huart2, (uint8_t*)"Second mode\n", strlen((char *)"Second mode\n"), HAL_MAX_DELAY);
       lcd1602_transmit_command(0b00000001);
       lcd1602_transmit_command(0b10000000);
-      lcd1602_send_string("  Second mode");
+      HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+      snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Minutes);
+      lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
     }
     SysTick_1Sec_Counter_mode2++;
   }
@@ -320,6 +326,7 @@ void EXTI15_10_IRQHandler(void)
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
   current_mode++;
+  
   if (current_mode > 2) {
     current_mode = 0;
   }
