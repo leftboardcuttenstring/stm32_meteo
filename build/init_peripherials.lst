@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cckKt2DS.s 			page 1
+ARM GAS  /tmp/cc9FD0ft.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -23,11 +23,11 @@ ARM GAS  /tmp/cckKt2DS.s 			page 1
   20              		.section	.rodata.lcd1602_init.str1.4,"aMS",%progbits,1
   21              		.align	2
   22              	.LC0:
-  23 0000 4C434420 		.ascii	"LCD init is done\015\012\000"
-  23      696E6974 
-  23      20697320 
-  23      646F6E65 
-  23      0D0A00
+  23 0000 53756363 		.ascii	"Success: LCD1602 initalization is done\012\000"
+  23      6573733A 
+  23      204C4344 
+  23      31363032 
+  23      20696E69 
   24              		.section	.text.lcd1602_init,"ax",%progbits
   25              		.align	1
   26              		.global	lcd1602_init
@@ -45,648 +45,679 @@ ARM GAS  /tmp/cckKt2DS.s 			page 1
   34              		.cfi_startproc
   35              		@ args = 0, pretend = 0, frame = 0
   36              		@ frame_needed = 0, uses_anonymous_args = 0
-  37 0000 08B5     		push	{r3, lr}
+  37 0000 38B5     		push	{r3, r4, r5, lr}
   38              	.LCFI0:
-  39              		.cfi_def_cfa_offset 8
-  40              		.cfi_offset 3, -8
-  41              		.cfi_offset 14, -4
+  39              		.cfi_def_cfa_offset 16
+  40              		.cfi_offset 3, -16
+  41              		.cfi_offset 4, -12
+  42              		.cfi_offset 5, -8
+  43              		.cfi_offset 14, -4
    6:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(50);
-  42              		.loc 1 6 3 view .LVU1
-  43 0002 3220     		movs	r0, #50
-  44 0004 FFF7FEFF 		bl	HAL_Delay
-  45              	.LVL0:
+  44              		.loc 1 6 3 view .LVU1
+  45 0002 3220     		movs	r0, #50
+  46 0004 FFF7FEFF 		bl	HAL_Delay
+  47              	.LVL0:
    7:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x33);
-  46              		.loc 1 7 3 view .LVU2
-  47 0008 3320     		movs	r0, #51
-ARM GAS  /tmp/cckKt2DS.s 			page 2
+ARM GAS  /tmp/cc9FD0ft.s 			page 2
 
 
-  48 000a FFF7FEFF 		bl	lcd1602_transmit_command
-  49              	.LVL1:
+  48              		.loc 1 7 3 view .LVU2
+  49 0008 3320     		movs	r0, #51
+  50 000a FFF7FEFF 		bl	lcd1602_transmit_command
+  51              	.LVL1:
    8:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(5);
-  50              		.loc 1 8 3 view .LVU3
-  51 000e 0520     		movs	r0, #5
-  52 0010 FFF7FEFF 		bl	HAL_Delay
-  53              	.LVL2:
+  52              		.loc 1 8 3 view .LVU3
+  53 000e 0520     		movs	r0, #5
+  54 0010 FFF7FEFF 		bl	HAL_Delay
+  55              	.LVL2:
    9:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x32);
-  54              		.loc 1 9 3 view .LVU4
-  55 0014 3220     		movs	r0, #50
-  56 0016 FFF7FEFF 		bl	lcd1602_transmit_command
-  57              	.LVL3:
+  56              		.loc 1 9 3 view .LVU4
+  57 0014 3220     		movs	r0, #50
+  58 0016 FFF7FEFF 		bl	lcd1602_transmit_command
+  59              	.LVL3:
   10:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
-  58              		.loc 1 10 3 view .LVU5
-  59 001a 0120     		movs	r0, #1
-  60 001c FFF7FEFF 		bl	HAL_Delay
-  61              	.LVL4:
+  60              		.loc 1 10 3 view .LVU5
+  61 001a 0120     		movs	r0, #1
+  62 001c FFF7FEFF 		bl	HAL_Delay
+  63              	.LVL4:
   11:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x28);
-  62              		.loc 1 11 3 view .LVU6
-  63 0020 2820     		movs	r0, #40
-  64 0022 FFF7FEFF 		bl	lcd1602_transmit_command
-  65              	.LVL5:
+  64              		.loc 1 11 3 view .LVU6
+  65 0020 2820     		movs	r0, #40
+  66 0022 FFF7FEFF 		bl	lcd1602_transmit_command
+  67              	.LVL5:
   12:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
-  66              		.loc 1 12 3 view .LVU7
-  67 0026 0120     		movs	r0, #1
-  68 0028 FFF7FEFF 		bl	HAL_Delay
-  69              	.LVL6:
+  68              		.loc 1 12 3 view .LVU7
+  69 0026 0120     		movs	r0, #1
+  70 0028 FFF7FEFF 		bl	HAL_Delay
+  71              	.LVL6:
   13:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x08);
-  70              		.loc 1 13 3 view .LVU8
-  71 002c 0820     		movs	r0, #8
-  72 002e FFF7FEFF 		bl	lcd1602_transmit_command
-  73              	.LVL7:
+  72              		.loc 1 13 3 view .LVU8
+  73 002c 0820     		movs	r0, #8
+  74 002e FFF7FEFF 		bl	lcd1602_transmit_command
+  75              	.LVL7:
   14:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
-  74              		.loc 1 14 3 view .LVU9
-  75 0032 0120     		movs	r0, #1
-  76 0034 FFF7FEFF 		bl	HAL_Delay
-  77              	.LVL8:
+  76              		.loc 1 14 3 view .LVU9
+  77 0032 0120     		movs	r0, #1
+  78 0034 FFF7FEFF 		bl	HAL_Delay
+  79              	.LVL8:
   15:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x01);
-  78              		.loc 1 15 3 view .LVU10
-  79 0038 0120     		movs	r0, #1
-  80 003a FFF7FEFF 		bl	lcd1602_transmit_command
-  81              	.LVL9:
+  80              		.loc 1 15 3 view .LVU10
+  81 0038 0120     		movs	r0, #1
+  82 003a FFF7FEFF 		bl	lcd1602_transmit_command
+  83              	.LVL9:
   16:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(2);
-  82              		.loc 1 16 3 view .LVU11
-  83 003e 0220     		movs	r0, #2
-  84 0040 FFF7FEFF 		bl	HAL_Delay
-  85              	.LVL10:
+  84              		.loc 1 16 3 view .LVU11
+  85 003e 0220     		movs	r0, #2
+  86 0040 FFF7FEFF 		bl	HAL_Delay
+  87              	.LVL10:
   17:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x06);
-  86              		.loc 1 17 3 view .LVU12
-  87 0044 0620     		movs	r0, #6
-  88 0046 FFF7FEFF 		bl	lcd1602_transmit_command
-  89              	.LVL11:
+  88              		.loc 1 17 3 view .LVU12
+  89 0044 0620     		movs	r0, #6
+  90 0046 FFF7FEFF 		bl	lcd1602_transmit_command
+  91              	.LVL11:
   18:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
-  90              		.loc 1 18 3 view .LVU13
-  91 004a 0120     		movs	r0, #1
-  92 004c FFF7FEFF 		bl	HAL_Delay
-  93              	.LVL12:
-ARM GAS  /tmp/cckKt2DS.s 			page 3
+  92              		.loc 1 18 3 view .LVU13
+  93 004a 0120     		movs	r0, #1
+ARM GAS  /tmp/cc9FD0ft.s 			page 3
 
 
+  94 004c FFF7FEFF 		bl	HAL_Delay
+  95              	.LVL12:
   19:Core/Src/init_peripherials/init_peripherials.c ****   lcd1602_transmit_command(0x0C);
-  94              		.loc 1 19 3 view .LVU14
-  95 0050 0C20     		movs	r0, #12
-  96 0052 FFF7FEFF 		bl	lcd1602_transmit_command
-  97              	.LVL13:
+  96              		.loc 1 19 3 view .LVU14
+  97 0050 0C20     		movs	r0, #12
+  98 0052 FFF7FEFF 		bl	lcd1602_transmit_command
+  99              	.LVL13:
   20:Core/Src/init_peripherials/init_peripherials.c ****   HAL_Delay(1);
-  98              		.loc 1 20 3 view .LVU15
-  99 0056 0120     		movs	r0, #1
- 100 0058 FFF7FEFF 		bl	HAL_Delay
- 101              	.LVL14:
-  21:Core/Src/init_peripherials/init_peripherials.c **** 	HAL_UART_Transmit(&huart2, (const uint8_t*)"LCD init is done\r\n", sizeof("LCD init is done\r\n")-
- 102              		.loc 1 21 2 view .LVU16
- 103 005c 4FF0FF33 		mov	r3, #-1
- 104 0060 1222     		movs	r2, #18
- 105 0062 0249     		ldr	r1, .L3
- 106 0064 0248     		ldr	r0, .L3+4
- 107 0066 FFF7FEFF 		bl	HAL_UART_Transmit
- 108              	.LVL15:
-  22:Core/Src/init_peripherials/init_peripherials.c **** }
- 109              		.loc 1 22 1 is_stmt 0 view .LVU17
- 110 006a 08BD     		pop	{r3, pc}
- 111              	.L4:
- 112              		.align	2
- 113              	.L3:
- 114 006c 00000000 		.word	.LC0
- 115 0070 00000000 		.word	huart2
- 116              		.cfi_endproc
- 117              	.LFE137:
- 119              		.section	.rodata.bmp180_init.str1.4,"aMS",%progbits,1
- 120              		.align	2
- 121              	.LC1:
- 122 0000 4661696C 		.ascii	"Failure: BMP10 does not respond\012\000"
- 122      7572653A 
- 122      20424D50 
- 122      31302064 
- 122      6F657320 
- 123 0021 000000   		.align	2
- 124              	.LC2:
- 125 0024 4661696C 		.ascii	"Failure: error transmitting BMP10 initialization co"
- 125      7572653A 
- 125      20657272 
- 125      6F722074 
- 125      72616E73 
- 126 0057 6D6D616E 		.ascii	"mmand\012\000"
- 126      640A00
- 127 005e 0000     		.align	2
- 128              	.LC3:
- 129 0060 53756363 		.ascii	"Success: BMP10 initalization is done\012\000"
- 129      6573733A 
- 129      20424D50 
- 129      31302069 
- 129      6E697461 
- 130              		.section	.text.bmp180_init,"ax",%progbits
- 131              		.align	1
- 132              		.global	bmp180_init
- 133              		.syntax unified
- 134              		.thumb
-ARM GAS  /tmp/cckKt2DS.s 			page 4
+ 100              		.loc 1 20 3 view .LVU15
+ 101 0056 0120     		movs	r0, #1
+ 102 0058 FFF7FEFF 		bl	HAL_Delay
+ 103              	.LVL14:
+  21:Core/Src/init_peripherials/init_peripherials.c **** 	snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Success: LCD1602 initaliza
+ 104              		.loc 1 21 2 view .LVU16
+ 105 005c 0E4C     		ldr	r4, .L4
+ 106 005e 0F4D     		ldr	r5, .L4+4
+ 107 0060 04F1200E 		add	lr, r4, #32
+ 108              	.L2:
+ 109 0064 A446     		mov	ip, r4
+ 110 0066 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 111 006a 2860     		str	r0, [r5]	@ unaligned
+ 112 006c 6960     		str	r1, [r5, #4]	@ unaligned
+ 113 006e AA60     		str	r2, [r5, #8]	@ unaligned
+ 114 0070 EB60     		str	r3, [r5, #12]	@ unaligned
+ 115 0072 6446     		mov	r4, ip
+ 116 0074 1035     		adds	r5, r5, #16
+ 117 0076 F445     		cmp	ip, lr
+ 118 0078 F4D1     		bne	.L2
+ 119 007a 03CC     		ldmia	r4!, {r0, r1}
+ 120 007c 2860     		str	r0, [r5]	@ unaligned
+ 121 007e 6960     		str	r1, [r5, #4]	@ unaligned
+  22:Core/Src/init_peripherials/init_peripherials.c ****   HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_
+ 122              		.loc 1 22 3 view .LVU17
+ 123              		.loc 1 22 70 is_stmt 0 view .LVU18
+ 124 0080 064C     		ldr	r4, .L4+4
+ 125 0082 2046     		mov	r0, r4
+ 126 0084 FFF7FEFF 		bl	strlen
+ 127              	.LVL15:
+ 128              		.loc 1 22 3 discriminator 1 view .LVU19
+ 129 0088 4FF0FF33 		mov	r3, #-1
+ 130 008c 82B2     		uxth	r2, r0
+ 131 008e 2146     		mov	r1, r4
+ 132 0090 0348     		ldr	r0, .L4+8
+ 133 0092 FFF7FEFF 		bl	HAL_UART_Transmit
+ 134              	.LVL16:
+  23:Core/Src/init_peripherials/init_peripherials.c **** }
+ 135              		.loc 1 23 1 view .LVU20
+ 136 0096 38BD     		pop	{r3, r4, r5, pc}
+ 137              	.L5:
+ 138              		.align	2
+ 139              	.L4:
+ 140 0098 00000000 		.word	.LC0
+ 141 009c 00000000 		.word	GLOBAL_MESSAGE_BUFFER
+ 142 00a0 00000000 		.word	huart2
+ 143              		.cfi_endproc
+ 144              	.LFE137:
+ 146              		.section	.rodata.bmp180_init.str1.4,"aMS",%progbits,1
+ARM GAS  /tmp/cc9FD0ft.s 			page 4
 
 
- 135              		.thumb_func
- 137              	bmp180_init:
- 138              	.LFB138:
-  23:Core/Src/init_peripherials/init_peripherials.c **** 
-  24:Core/Src/init_peripherials/init_peripherials.c **** int bmp180_init(void) {
- 139              		.loc 1 24 23 is_stmt 1 view -0
- 140              		.cfi_startproc
- 141              		@ args = 0, pretend = 0, frame = 0
- 142              		@ frame_needed = 0, uses_anonymous_args = 0
- 143 0000 70B5     		push	{r4, r5, r6, lr}
- 144              	.LCFI1:
- 145              		.cfi_def_cfa_offset 16
- 146              		.cfi_offset 4, -16
- 147              		.cfi_offset 5, -12
- 148              		.cfi_offset 6, -8
- 149              		.cfi_offset 14, -4
- 150 0002 84B0     		sub	sp, sp, #16
- 151              	.LCFI2:
- 152              		.cfi_def_cfa_offset 32
-  25:Core/Src/init_peripherials/init_peripherials.c **** 	if (HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY) == HAL_OK) {
- 153              		.loc 1 25 2 view .LVU19
- 154              		.loc 1 25 6 is_stmt 0 view .LVU20
- 155 0004 4FF0FF33 		mov	r3, #-1
- 156 0008 0293     		str	r3, [sp, #8]
- 157 000a 0123     		movs	r3, #1
- 158 000c 0193     		str	r3, [sp, #4]
- 159 000e 394A     		ldr	r2, .L14
- 160 0010 0092     		str	r2, [sp]
- 161 0012 F422     		movs	r2, #244
- 162 0014 3849     		ldr	r1, .L14+4
- 163 0016 0988     		ldrh	r1, [r1]
- 164 0018 3848     		ldr	r0, .L14+8
- 165 001a FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 166              	.LVL16:
- 167              		.loc 1 25 5 discriminator 1 view .LVU21
- 168 001e 0028     		cmp	r0, #0
- 169 0020 47D1     		bne	.L6
-  26:Core/Src/init_peripherials/init_peripherials.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, bmp180_addr, 3, 100) != HAL_OK) {
- 170              		.loc 1 26 5 is_stmt 1 view .LVU22
- 171              		.loc 1 26 9 is_stmt 0 view .LVU23
- 172 0022 6423     		movs	r3, #100
- 173 0024 0322     		movs	r2, #3
- 174 0026 3449     		ldr	r1, .L14+4
- 175 0028 0988     		ldrh	r1, [r1]
- 176 002a 3448     		ldr	r0, .L14+8
- 177 002c FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
- 178              	.LVL17:
- 179              		.loc 1 26 8 discriminator 1 view .LVU24
- 180 0030 10BB     		cbnz	r0, .L13
-  27:Core/Src/init_peripherials/init_peripherials.c ****       snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: BMP10 does n
-  28:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
-  29:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
-  30:Core/Src/init_peripherials/init_peripherials.c ****     }
-  31:Core/Src/init_peripherials/init_peripherials.c **** 	} else {
-  32:Core/Src/init_peripherials/init_peripherials.c ****     snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: error transmit
-  33:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
-  34:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
-ARM GAS  /tmp/cckKt2DS.s 			page 5
+ 147              		.align	2
+ 148              	.LC1:
+ 149 0000 4661696C 		.ascii	"Failure: BMP10 does not respond\012\000"
+ 149      7572653A 
+ 149      20424D50 
+ 149      31302064 
+ 149      6F657320 
+ 150 0021 000000   		.align	2
+ 151              	.LC2:
+ 152 0024 4661696C 		.ascii	"Failure: error transmitting BMP10 initialization co"
+ 152      7572653A 
+ 152      20657272 
+ 152      6F722074 
+ 152      72616E73 
+ 153 0057 6D6D616E 		.ascii	"mmand\012\000"
+ 153      640A00
+ 154 005e 0000     		.align	2
+ 155              	.LC3:
+ 156 0060 53756363 		.ascii	"Success: BMP10 initalization is done\012\000"
+ 156      6573733A 
+ 156      20424D50 
+ 156      31302069 
+ 156      6E697461 
+ 157              		.section	.text.bmp180_init,"ax",%progbits
+ 158              		.align	1
+ 159              		.global	bmp180_init
+ 160              		.syntax unified
+ 161              		.thumb
+ 162              		.thumb_func
+ 164              	bmp180_init:
+ 165              	.LFB138:
+  24:Core/Src/init_peripherials/init_peripherials.c **** 
+  25:Core/Src/init_peripherials/init_peripherials.c **** int bmp180_init(void) {
+ 166              		.loc 1 25 23 is_stmt 1 view -0
+ 167              		.cfi_startproc
+ 168              		@ args = 0, pretend = 0, frame = 0
+ 169              		@ frame_needed = 0, uses_anonymous_args = 0
+ 170 0000 70B5     		push	{r4, r5, r6, lr}
+ 171              	.LCFI1:
+ 172              		.cfi_def_cfa_offset 16
+ 173              		.cfi_offset 4, -16
+ 174              		.cfi_offset 5, -12
+ 175              		.cfi_offset 6, -8
+ 176              		.cfi_offset 14, -4
+ 177 0002 84B0     		sub	sp, sp, #16
+ 178              	.LCFI2:
+ 179              		.cfi_def_cfa_offset 32
+  26:Core/Src/init_peripherials/init_peripherials.c **** 	if (HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY) == HAL_OK) {
+ 180              		.loc 1 26 2 view .LVU22
+ 181              		.loc 1 26 6 is_stmt 0 view .LVU23
+ 182 0004 4FF0FF33 		mov	r3, #-1
+ 183 0008 0293     		str	r3, [sp, #8]
+ 184 000a 0123     		movs	r3, #1
+ 185 000c 0193     		str	r3, [sp, #4]
+ 186 000e 394A     		ldr	r2, .L15
+ 187 0010 0092     		str	r2, [sp]
+ 188 0012 F422     		movs	r2, #244
+ARM GAS  /tmp/cc9FD0ft.s 			page 5
 
 
-  35:Core/Src/init_peripherials/init_peripherials.c ****   }
-  36:Core/Src/init_peripherials/init_peripherials.c ****   snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Success: BMP10 initalizat
- 181              		.loc 1 36 3 is_stmt 1 view .LVU25
- 182 0032 334D     		ldr	r5, .L14+12
- 183 0034 334C     		ldr	r4, .L14+16
- 184 0036 05F12006 		add	r6, r5, #32
- 185              	.L11:
- 186 003a AC46     		mov	ip, r5
- 187 003c BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 188 0040 2060     		str	r0, [r4]	@ unaligned
- 189 0042 6160     		str	r1, [r4, #4]	@ unaligned
- 190 0044 A260     		str	r2, [r4, #8]	@ unaligned
- 191 0046 E360     		str	r3, [r4, #12]	@ unaligned
- 192 0048 6546     		mov	r5, ip
- 193 004a 1034     		adds	r4, r4, #16
- 194 004c B445     		cmp	ip, r6
- 195 004e F4D1     		bne	.L11
- 196 0050 DCF80000 		ldr	r0, [ip]
- 197 0054 2060     		str	r0, [r4]	@ unaligned
- 198 0056 BCF80430 		ldrh	r3, [ip, #4]	@ unaligned
- 199 005a A380     		strh	r3, [r4, #4]	@ unaligned
-  37:Core/Src/init_peripherials/init_peripherials.c ****   HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_
- 200              		.loc 1 37 3 view .LVU26
- 201              		.loc 1 37 70 is_stmt 0 view .LVU27
- 202 005c 294C     		ldr	r4, .L14+16
- 203 005e 2046     		mov	r0, r4
- 204 0060 FFF7FEFF 		bl	strlen
+ 189 0014 3849     		ldr	r1, .L15+4
+ 190 0016 0988     		ldrh	r1, [r1]
+ 191 0018 3848     		ldr	r0, .L15+8
+ 192 001a FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 193              	.LVL17:
+ 194              		.loc 1 26 5 discriminator 1 view .LVU24
+ 195 001e 0028     		cmp	r0, #0
+ 196 0020 47D1     		bne	.L7
+  27:Core/Src/init_peripherials/init_peripherials.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, bmp180_addr, 3, 100) != HAL_OK) {
+ 197              		.loc 1 27 5 is_stmt 1 view .LVU25
+ 198              		.loc 1 27 9 is_stmt 0 view .LVU26
+ 199 0022 6423     		movs	r3, #100
+ 200 0024 0322     		movs	r2, #3
+ 201 0026 3449     		ldr	r1, .L15+4
+ 202 0028 0988     		ldrh	r1, [r1]
+ 203 002a 3448     		ldr	r0, .L15+8
+ 204 002c FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
  205              	.LVL18:
- 206              		.loc 1 37 3 discriminator 1 view .LVU28
- 207 0064 4FF0FF33 		mov	r3, #-1
- 208 0068 82B2     		uxth	r2, r0
- 209 006a 2146     		mov	r1, r4
- 210 006c 2648     		ldr	r0, .L14+20
- 211 006e FFF7FEFF 		bl	HAL_UART_Transmit
- 212              	.LVL19:
-  38:Core/Src/init_peripherials/init_peripherials.c ****   return 0;
- 213              		.loc 1 38 3 is_stmt 1 view .LVU29
- 214              		.loc 1 38 10 is_stmt 0 view .LVU30
- 215 0072 0020     		movs	r0, #0
- 216              	.L5:
-  39:Core/Src/init_peripherials/init_peripherials.c **** }
- 217              		.loc 1 39 1 view .LVU31
- 218 0074 04B0     		add	sp, sp, #16
- 219              	.LCFI3:
- 220              		.cfi_remember_state
- 221              		.cfi_def_cfa_offset 16
- 222              		@ sp needed
- 223 0076 70BD     		pop	{r4, r5, r6, pc}
- 224              	.L13:
- 225              	.LCFI4:
- 226              		.cfi_restore_state
-  27:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
- 227              		.loc 1 27 7 is_stmt 1 view .LVU32
- 228 0078 244E     		ldr	r6, .L14+24
- 229 007a 224C     		ldr	r4, .L14+16
- 230 007c 06F1200C 		add	ip, r6, #32
- 231              	.L8:
-ARM GAS  /tmp/cckKt2DS.s 			page 6
+ 206              		.loc 1 27 8 discriminator 1 view .LVU27
+ 207 0030 10BB     		cbnz	r0, .L14
+  28:Core/Src/init_peripherials/init_peripherials.c ****       snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: BMP10 does n
+  29:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
+  30:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
+  31:Core/Src/init_peripherials/init_peripherials.c ****     }
+  32:Core/Src/init_peripherials/init_peripherials.c **** 	} else {
+  33:Core/Src/init_peripherials/init_peripherials.c ****     snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: error transmit
+  34:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
+  35:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
+  36:Core/Src/init_peripherials/init_peripherials.c ****   }
+  37:Core/Src/init_peripherials/init_peripherials.c ****   snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Success: BMP10 initalizat
+ 208              		.loc 1 37 3 is_stmt 1 view .LVU28
+ 209 0032 334D     		ldr	r5, .L15+12
+ 210 0034 334C     		ldr	r4, .L15+16
+ 211 0036 05F12006 		add	r6, r5, #32
+ 212              	.L12:
+ 213 003a AC46     		mov	ip, r5
+ 214 003c BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 215 0040 2060     		str	r0, [r4]	@ unaligned
+ 216 0042 6160     		str	r1, [r4, #4]	@ unaligned
+ 217 0044 A260     		str	r2, [r4, #8]	@ unaligned
+ 218 0046 E360     		str	r3, [r4, #12]	@ unaligned
+ 219 0048 6546     		mov	r5, ip
+ 220 004a 1034     		adds	r4, r4, #16
+ 221 004c B445     		cmp	ip, r6
+ 222 004e F4D1     		bne	.L12
+ 223 0050 DCF80000 		ldr	r0, [ip]
+ 224 0054 2060     		str	r0, [r4]	@ unaligned
+ 225 0056 BCF80430 		ldrh	r3, [ip, #4]	@ unaligned
+ 226 005a A380     		strh	r3, [r4, #4]	@ unaligned
+  38:Core/Src/init_peripherials/init_peripherials.c ****   HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_
+ 227              		.loc 1 38 3 view .LVU29
+ 228              		.loc 1 38 70 is_stmt 0 view .LVU30
+ 229 005c 294C     		ldr	r4, .L15+16
+ 230 005e 2046     		mov	r0, r4
+ 231 0060 FFF7FEFF 		bl	strlen
+ 232              	.LVL19:
+ 233              		.loc 1 38 3 discriminator 1 view .LVU31
+ARM GAS  /tmp/cc9FD0ft.s 			page 6
 
 
- 232 0080 3546     		mov	r5, r6
- 233 0082 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
- 234 0084 2060     		str	r0, [r4]	@ unaligned
- 235 0086 6160     		str	r1, [r4, #4]	@ unaligned
- 236 0088 A260     		str	r2, [r4, #8]	@ unaligned
- 237 008a E360     		str	r3, [r4, #12]	@ unaligned
- 238 008c 2E46     		mov	r6, r5
- 239 008e 1034     		adds	r4, r4, #16
- 240 0090 6545     		cmp	r5, ip
- 241 0092 F5D1     		bne	.L8
- 242 0094 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
- 243 0096 2370     		strb	r3, [r4]
-  28:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
- 244              		.loc 1 28 7 view .LVU33
-  28:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
- 245              		.loc 1 28 74 is_stmt 0 view .LVU34
- 246 0098 1A4C     		ldr	r4, .L14+16
- 247 009a 2046     		mov	r0, r4
- 248 009c FFF7FEFF 		bl	strlen
- 249              	.LVL20:
-  28:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
- 250              		.loc 1 28 7 discriminator 1 view .LVU35
- 251 00a0 4FF0FF33 		mov	r3, #-1
- 252 00a4 82B2     		uxth	r2, r0
- 253 00a6 2146     		mov	r1, r4
- 254 00a8 1748     		ldr	r0, .L14+20
- 255 00aa FFF7FEFF 		bl	HAL_UART_Transmit
- 256              	.LVL21:
-  29:Core/Src/init_peripherials/init_peripherials.c ****     }
- 257              		.loc 1 29 7 is_stmt 1 view .LVU36
-  29:Core/Src/init_peripherials/init_peripherials.c ****     }
- 258              		.loc 1 29 14 is_stmt 0 view .LVU37
- 259 00ae 0120     		movs	r0, #1
- 260 00b0 E0E7     		b	.L5
- 261              	.L6:
-  32:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
- 262              		.loc 1 32 5 is_stmt 1 view .LVU38
- 263 00b2 174C     		ldr	r4, .L14+28
- 264 00b4 134D     		ldr	r5, .L14+16
- 265 00b6 04F13006 		add	r6, r4, #48
- 266              	.L10:
- 267 00ba A446     		mov	ip, r4
- 268 00bc BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 269 00c0 2860     		str	r0, [r5]	@ unaligned
- 270 00c2 6960     		str	r1, [r5, #4]	@ unaligned
- 271 00c4 AA60     		str	r2, [r5, #8]	@ unaligned
- 272 00c6 EB60     		str	r3, [r5, #12]	@ unaligned
- 273 00c8 6446     		mov	r4, ip
- 274 00ca 1035     		adds	r5, r5, #16
- 275 00cc B445     		cmp	ip, r6
- 276 00ce F4D1     		bne	.L10
- 277 00d0 03CC     		ldmia	r4!, {r0, r1}
- 278 00d2 2860     		str	r0, [r5]	@ unaligned
- 279 00d4 6960     		str	r1, [r5, #4]	@ unaligned
- 280 00d6 2388     		ldrh	r3, [r4]	@ unaligned
- 281 00d8 2B81     		strh	r3, [r5, #8]	@ unaligned
-  33:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
-ARM GAS  /tmp/cckKt2DS.s 			page 7
+ 234 0064 4FF0FF33 		mov	r3, #-1
+ 235 0068 82B2     		uxth	r2, r0
+ 236 006a 2146     		mov	r1, r4
+ 237 006c 2648     		ldr	r0, .L15+20
+ 238 006e FFF7FEFF 		bl	HAL_UART_Transmit
+ 239              	.LVL20:
+  39:Core/Src/init_peripherials/init_peripherials.c ****   return 0;
+ 240              		.loc 1 39 3 is_stmt 1 view .LVU32
+ 241              		.loc 1 39 10 is_stmt 0 view .LVU33
+ 242 0072 0020     		movs	r0, #0
+ 243              	.L6:
+  40:Core/Src/init_peripherials/init_peripherials.c **** }
+ 244              		.loc 1 40 1 view .LVU34
+ 245 0074 04B0     		add	sp, sp, #16
+ 246              	.LCFI3:
+ 247              		.cfi_remember_state
+ 248              		.cfi_def_cfa_offset 16
+ 249              		@ sp needed
+ 250 0076 70BD     		pop	{r4, r5, r6, pc}
+ 251              	.L14:
+ 252              	.LCFI4:
+ 253              		.cfi_restore_state
+  28:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
+ 254              		.loc 1 28 7 is_stmt 1 view .LVU35
+ 255 0078 244E     		ldr	r6, .L15+24
+ 256 007a 224C     		ldr	r4, .L15+16
+ 257 007c 06F1200C 		add	ip, r6, #32
+ 258              	.L9:
+ 259 0080 3546     		mov	r5, r6
+ 260 0082 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 261 0084 2060     		str	r0, [r4]	@ unaligned
+ 262 0086 6160     		str	r1, [r4, #4]	@ unaligned
+ 263 0088 A260     		str	r2, [r4, #8]	@ unaligned
+ 264 008a E360     		str	r3, [r4, #12]	@ unaligned
+ 265 008c 2E46     		mov	r6, r5
+ 266 008e 1034     		adds	r4, r4, #16
+ 267 0090 6545     		cmp	r5, ip
+ 268 0092 F5D1     		bne	.L9
+ 269 0094 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 270 0096 2370     		strb	r3, [r4]
+  29:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
+ 271              		.loc 1 29 7 view .LVU36
+  29:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
+ 272              		.loc 1 29 74 is_stmt 0 view .LVU37
+ 273 0098 1A4C     		ldr	r4, .L15+16
+ 274 009a 2046     		mov	r0, r4
+ 275 009c FFF7FEFF 		bl	strlen
+ 276              	.LVL21:
+  29:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
+ 277              		.loc 1 29 7 discriminator 1 view .LVU38
+ 278 00a0 4FF0FF33 		mov	r3, #-1
+ 279 00a4 82B2     		uxth	r2, r0
+ 280 00a6 2146     		mov	r1, r4
+ 281 00a8 1748     		ldr	r0, .L15+20
+ 282 00aa FFF7FEFF 		bl	HAL_UART_Transmit
+ 283              	.LVL22:
+  30:Core/Src/init_peripherials/init_peripherials.c ****     }
+ARM GAS  /tmp/cc9FD0ft.s 			page 7
 
 
- 282              		.loc 1 33 5 view .LVU39
-  33:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
- 283              		.loc 1 33 72 is_stmt 0 view .LVU40
- 284 00da 0A4C     		ldr	r4, .L14+16
- 285 00dc 2046     		mov	r0, r4
- 286 00de FFF7FEFF 		bl	strlen
- 287              	.LVL22:
-  33:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
- 288              		.loc 1 33 5 discriminator 1 view .LVU41
- 289 00e2 4FF0FF33 		mov	r3, #-1
- 290 00e6 82B2     		uxth	r2, r0
- 291 00e8 2146     		mov	r1, r4
- 292 00ea 0748     		ldr	r0, .L14+20
- 293 00ec FFF7FEFF 		bl	HAL_UART_Transmit
- 294              	.LVL23:
-  34:Core/Src/init_peripherials/init_peripherials.c ****   }
- 295              		.loc 1 34 5 is_stmt 1 view .LVU42
-  34:Core/Src/init_peripherials/init_peripherials.c ****   }
- 296              		.loc 1 34 12 is_stmt 0 view .LVU43
- 297 00f0 0120     		movs	r0, #1
- 298 00f2 BFE7     		b	.L5
- 299              	.L15:
- 300              		.align	2
- 301              	.L14:
- 302 00f4 00000000 		.word	cmd
- 303 00f8 00000000 		.word	bmp180_addr
- 304 00fc 00000000 		.word	hi2c1
- 305 0100 60000000 		.word	.LC3
- 306 0104 00000000 		.word	GLOBAL_MESSAGE_BUFFER
- 307 0108 00000000 		.word	huart2
- 308 010c 00000000 		.word	.LC1
- 309 0110 24000000 		.word	.LC2
- 310              		.cfi_endproc
- 311              	.LFE138:
- 313              		.section	.rodata.aht10_init.str1.4,"aMS",%progbits,1
- 314              		.align	2
- 315              	.LC4:
- 316 0000 4661696C 		.ascii	"Failure: AHT10 does not respond\012\000"
- 316      7572653A 
- 316      20414854 
- 316      31302064 
- 316      6F657320 
- 317 0021 000000   		.align	2
- 318              	.LC5:
- 319 0024 4661696C 		.ascii	"Failure: error transmitting AHT10 initialization co"
- 319      7572653A 
- 319      20657272 
- 319      6F722074 
- 319      72616E73 
- 320 0057 6D6D616E 		.ascii	"mmand\012\000"
- 320      640A00
- 321 005e 0000     		.align	2
- 322              	.LC6:
- 323 0060 53756363 		.ascii	"Success: AHT10 initalization is done\012\000"
- 323      6573733A 
- 323      20414854 
- 323      31302069 
-ARM GAS  /tmp/cckKt2DS.s 			page 8
+ 284              		.loc 1 30 7 is_stmt 1 view .LVU39
+  30:Core/Src/init_peripherials/init_peripherials.c ****     }
+ 285              		.loc 1 30 14 is_stmt 0 view .LVU40
+ 286 00ae 0120     		movs	r0, #1
+ 287 00b0 E0E7     		b	.L6
+ 288              	.L7:
+  33:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
+ 289              		.loc 1 33 5 is_stmt 1 view .LVU41
+ 290 00b2 174C     		ldr	r4, .L15+28
+ 291 00b4 134D     		ldr	r5, .L15+16
+ 292 00b6 04F13006 		add	r6, r4, #48
+ 293              	.L11:
+ 294 00ba A446     		mov	ip, r4
+ 295 00bc BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 296 00c0 2860     		str	r0, [r5]	@ unaligned
+ 297 00c2 6960     		str	r1, [r5, #4]	@ unaligned
+ 298 00c4 AA60     		str	r2, [r5, #8]	@ unaligned
+ 299 00c6 EB60     		str	r3, [r5, #12]	@ unaligned
+ 300 00c8 6446     		mov	r4, ip
+ 301 00ca 1035     		adds	r5, r5, #16
+ 302 00cc B445     		cmp	ip, r6
+ 303 00ce F4D1     		bne	.L11
+ 304 00d0 03CC     		ldmia	r4!, {r0, r1}
+ 305 00d2 2860     		str	r0, [r5]	@ unaligned
+ 306 00d4 6960     		str	r1, [r5, #4]	@ unaligned
+ 307 00d6 2388     		ldrh	r3, [r4]	@ unaligned
+ 308 00d8 2B81     		strh	r3, [r5, #8]	@ unaligned
+  34:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
+ 309              		.loc 1 34 5 view .LVU42
+  34:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
+ 310              		.loc 1 34 72 is_stmt 0 view .LVU43
+ 311 00da 0A4C     		ldr	r4, .L15+16
+ 312 00dc 2046     		mov	r0, r4
+ 313 00de FFF7FEFF 		bl	strlen
+ 314              	.LVL23:
+  34:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
+ 315              		.loc 1 34 5 discriminator 1 view .LVU44
+ 316 00e2 4FF0FF33 		mov	r3, #-1
+ 317 00e6 82B2     		uxth	r2, r0
+ 318 00e8 2146     		mov	r1, r4
+ 319 00ea 0748     		ldr	r0, .L15+20
+ 320 00ec FFF7FEFF 		bl	HAL_UART_Transmit
+ 321              	.LVL24:
+  35:Core/Src/init_peripherials/init_peripherials.c ****   }
+ 322              		.loc 1 35 5 is_stmt 1 view .LVU45
+  35:Core/Src/init_peripherials/init_peripherials.c ****   }
+ 323              		.loc 1 35 12 is_stmt 0 view .LVU46
+ 324 00f0 0120     		movs	r0, #1
+ 325 00f2 BFE7     		b	.L6
+ 326              	.L16:
+ 327              		.align	2
+ 328              	.L15:
+ 329 00f4 00000000 		.word	cmd
+ 330 00f8 00000000 		.word	bmp180_addr
+ 331 00fc 00000000 		.word	hi2c1
+ 332 0100 60000000 		.word	.LC3
+ 333 0104 00000000 		.word	GLOBAL_MESSAGE_BUFFER
+ARM GAS  /tmp/cc9FD0ft.s 			page 8
 
 
- 323      6E697461 
- 324              		.section	.text.aht10_init,"ax",%progbits
- 325              		.align	1
- 326              		.global	aht10_init
- 327              		.syntax unified
- 328              		.thumb
- 329              		.thumb_func
- 331              	aht10_init:
- 332              	.LFB139:
-  40:Core/Src/init_peripherials/init_peripherials.c **** 
-  41:Core/Src/init_peripherials/init_peripherials.c **** int aht10_init(void) {
- 333              		.loc 1 41 22 is_stmt 1 view -0
- 334              		.cfi_startproc
- 335              		@ args = 0, pretend = 0, frame = 0
- 336              		@ frame_needed = 0, uses_anonymous_args = 0
- 337 0000 70B5     		push	{r4, r5, r6, lr}
- 338              	.LCFI5:
- 339              		.cfi_def_cfa_offset 16
- 340              		.cfi_offset 4, -16
- 341              		.cfi_offset 5, -12
- 342              		.cfi_offset 6, -8
- 343              		.cfi_offset 14, -4
- 344 0002 82B0     		sub	sp, sp, #8
- 345              	.LCFI6:
- 346              		.cfi_def_cfa_offset 24
-  42:Core/Src/init_peripherials/init_peripherials.c ****   if (HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)aht10_init_command, 1, HAL_MAX_DELAY) =
- 347              		.loc 1 42 3 view .LVU45
- 348              		.loc 1 42 7 is_stmt 0 view .LVU46
- 349 0004 4FF0FF33 		mov	r3, #-1
- 350 0008 0093     		str	r3, [sp]
- 351 000a 0123     		movs	r3, #1
- 352 000c 384A     		ldr	r2, .L25
- 353 000e 3949     		ldr	r1, .L25+4
- 354 0010 0988     		ldrh	r1, [r1]
- 355 0012 3948     		ldr	r0, .L25+8
- 356 0014 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
- 357              	.LVL24:
- 358              		.loc 1 42 6 discriminator 1 view .LVU47
- 359 0018 0028     		cmp	r0, #0
- 360 001a 47D1     		bne	.L17
-  43:Core/Src/init_peripherials/init_peripherials.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, aht10_addr, 3, 100) != HAL_OK) {
- 361              		.loc 1 43 5 is_stmt 1 view .LVU48
- 362              		.loc 1 43 9 is_stmt 0 view .LVU49
- 363 001c 6423     		movs	r3, #100
- 364 001e 0322     		movs	r2, #3
- 365 0020 3449     		ldr	r1, .L25+4
- 366 0022 0988     		ldrh	r1, [r1]
- 367 0024 3448     		ldr	r0, .L25+8
- 368 0026 FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
- 369              	.LVL25:
- 370              		.loc 1 43 8 discriminator 1 view .LVU50
- 371 002a 10BB     		cbnz	r0, .L24
-  44:Core/Src/init_peripherials/init_peripherials.c ****       snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: AHT10 does n
-  45:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
-  46:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
-  47:Core/Src/init_peripherials/init_peripherials.c ****     }
-  48:Core/Src/init_peripherials/init_peripherials.c ****   } else {
-ARM GAS  /tmp/cckKt2DS.s 			page 9
+ 334 0108 00000000 		.word	huart2
+ 335 010c 00000000 		.word	.LC1
+ 336 0110 24000000 		.word	.LC2
+ 337              		.cfi_endproc
+ 338              	.LFE138:
+ 340              		.section	.rodata.aht10_init.str1.4,"aMS",%progbits,1
+ 341              		.align	2
+ 342              	.LC4:
+ 343 0000 4661696C 		.ascii	"Failure: AHT10 does not respond\012\000"
+ 343      7572653A 
+ 343      20414854 
+ 343      31302064 
+ 343      6F657320 
+ 344 0021 000000   		.align	2
+ 345              	.LC5:
+ 346 0024 4661696C 		.ascii	"Failure: error transmitting AHT10 initialization co"
+ 346      7572653A 
+ 346      20657272 
+ 346      6F722074 
+ 346      72616E73 
+ 347 0057 6D6D616E 		.ascii	"mmand\012\000"
+ 347      640A00
+ 348 005e 0000     		.align	2
+ 349              	.LC6:
+ 350 0060 53756363 		.ascii	"Success: AHT10 initalization is done\012\000"
+ 350      6573733A 
+ 350      20414854 
+ 350      31302069 
+ 350      6E697461 
+ 351              		.section	.text.aht10_init,"ax",%progbits
+ 352              		.align	1
+ 353              		.global	aht10_init
+ 354              		.syntax unified
+ 355              		.thumb
+ 356              		.thumb_func
+ 358              	aht10_init:
+ 359              	.LFB139:
+  41:Core/Src/init_peripherials/init_peripherials.c **** 
+  42:Core/Src/init_peripherials/init_peripherials.c **** int aht10_init(void) {
+ 360              		.loc 1 42 22 is_stmt 1 view -0
+ 361              		.cfi_startproc
+ 362              		@ args = 0, pretend = 0, frame = 0
+ 363              		@ frame_needed = 0, uses_anonymous_args = 0
+ 364 0000 70B5     		push	{r4, r5, r6, lr}
+ 365              	.LCFI5:
+ 366              		.cfi_def_cfa_offset 16
+ 367              		.cfi_offset 4, -16
+ 368              		.cfi_offset 5, -12
+ 369              		.cfi_offset 6, -8
+ 370              		.cfi_offset 14, -4
+ 371 0002 82B0     		sub	sp, sp, #8
+ 372              	.LCFI6:
+ 373              		.cfi_def_cfa_offset 24
+  43:Core/Src/init_peripherials/init_peripherials.c ****   if (HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)aht10_init_command, 1, HAL_MAX_DELAY) =
+ 374              		.loc 1 43 3 view .LVU48
+ 375              		.loc 1 43 7 is_stmt 0 view .LVU49
+ 376 0004 4FF0FF33 		mov	r3, #-1
+ARM GAS  /tmp/cc9FD0ft.s 			page 9
 
 
-  49:Core/Src/init_peripherials/init_peripherials.c ****     snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: error transmit
-  50:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
-  51:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
-  52:Core/Src/init_peripherials/init_peripherials.c ****   }
-  53:Core/Src/init_peripherials/init_peripherials.c ****   snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Success: AHT10 initalizat
- 372              		.loc 1 53 3 is_stmt 1 view .LVU51
- 373 002c 334D     		ldr	r5, .L25+12
- 374 002e 344C     		ldr	r4, .L25+16
- 375 0030 05F12006 		add	r6, r5, #32
- 376              	.L22:
- 377 0034 AC46     		mov	ip, r5
- 378 0036 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 379 003a 2060     		str	r0, [r4]	@ unaligned
- 380 003c 6160     		str	r1, [r4, #4]	@ unaligned
- 381 003e A260     		str	r2, [r4, #8]	@ unaligned
- 382 0040 E360     		str	r3, [r4, #12]	@ unaligned
- 383 0042 6546     		mov	r5, ip
- 384 0044 1034     		adds	r4, r4, #16
- 385 0046 B445     		cmp	ip, r6
- 386 0048 F4D1     		bne	.L22
- 387 004a DCF80000 		ldr	r0, [ip]
- 388 004e 2060     		str	r0, [r4]	@ unaligned
- 389 0050 BCF80430 		ldrh	r3, [ip, #4]	@ unaligned
- 390 0054 A380     		strh	r3, [r4, #4]	@ unaligned
-  54:Core/Src/init_peripherials/init_peripherials.c ****   HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_
- 391              		.loc 1 54 3 view .LVU52
- 392              		.loc 1 54 70 is_stmt 0 view .LVU53
- 393 0056 2A4C     		ldr	r4, .L25+16
- 394 0058 2046     		mov	r0, r4
- 395 005a FFF7FEFF 		bl	strlen
+ 377 0008 0093     		str	r3, [sp]
+ 378 000a 0123     		movs	r3, #1
+ 379 000c 384A     		ldr	r2, .L26
+ 380 000e 3949     		ldr	r1, .L26+4
+ 381 0010 0988     		ldrh	r1, [r1]
+ 382 0012 3948     		ldr	r0, .L26+8
+ 383 0014 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
+ 384              	.LVL25:
+ 385              		.loc 1 43 6 discriminator 1 view .LVU50
+ 386 0018 0028     		cmp	r0, #0
+ 387 001a 47D1     		bne	.L18
+  44:Core/Src/init_peripherials/init_peripherials.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, aht10_addr, 3, 100) != HAL_OK) {
+ 388              		.loc 1 44 5 is_stmt 1 view .LVU51
+ 389              		.loc 1 44 9 is_stmt 0 view .LVU52
+ 390 001c 6423     		movs	r3, #100
+ 391 001e 0322     		movs	r2, #3
+ 392 0020 3449     		ldr	r1, .L26+4
+ 393 0022 0988     		ldrh	r1, [r1]
+ 394 0024 3448     		ldr	r0, .L26+8
+ 395 0026 FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
  396              	.LVL26:
- 397              		.loc 1 54 3 discriminator 1 view .LVU54
- 398 005e 4FF0FF33 		mov	r3, #-1
- 399 0062 82B2     		uxth	r2, r0
- 400 0064 2146     		mov	r1, r4
- 401 0066 2748     		ldr	r0, .L25+20
- 402 0068 FFF7FEFF 		bl	HAL_UART_Transmit
- 403              	.LVL27:
-  55:Core/Src/init_peripherials/init_peripherials.c ****   return 0;
- 404              		.loc 1 55 3 is_stmt 1 view .LVU55
- 405              		.loc 1 55 10 is_stmt 0 view .LVU56
- 406 006c 0020     		movs	r0, #0
- 407              	.L16:
-  56:Core/Src/init_peripherials/init_peripherials.c **** }...
- 408              		.loc 1 56 1 view .LVU57
- 409 006e 02B0     		add	sp, sp, #8
- 410              	.LCFI7:
- 411              		.cfi_remember_state
- 412              		.cfi_def_cfa_offset 16
- 413              		@ sp needed
- 414 0070 70BD     		pop	{r4, r5, r6, pc}
- 415              	.L24:
- 416              	.LCFI8:
- 417              		.cfi_restore_state
-  44:Core/Src/init_peripherials/init_peripherials.c ****       snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: AHT10 does n
- 418              		.loc 1 44 7 is_stmt 1 view .LVU58
- 419 0072 254E     		ldr	r6, .L25+24
-ARM GAS  /tmp/cckKt2DS.s 			page 10
+ 397              		.loc 1 44 8 discriminator 1 view .LVU53
+ 398 002a 10BB     		cbnz	r0, .L25
+  45:Core/Src/init_peripherials/init_peripherials.c ****       snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: AHT10 does n
+  46:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
+  47:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
+  48:Core/Src/init_peripherials/init_peripherials.c ****     }
+  49:Core/Src/init_peripherials/init_peripherials.c ****   } else {
+  50:Core/Src/init_peripherials/init_peripherials.c ****     snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: error transmit
+  51:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
+  52:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
+  53:Core/Src/init_peripherials/init_peripherials.c ****   }
+  54:Core/Src/init_peripherials/init_peripherials.c ****   snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Success: AHT10 initalizat
+ 399              		.loc 1 54 3 is_stmt 1 view .LVU54
+ 400 002c 334D     		ldr	r5, .L26+12
+ 401 002e 344C     		ldr	r4, .L26+16
+ 402 0030 05F12006 		add	r6, r5, #32
+ 403              	.L23:
+ 404 0034 AC46     		mov	ip, r5
+ 405 0036 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 406 003a 2060     		str	r0, [r4]	@ unaligned
+ 407 003c 6160     		str	r1, [r4, #4]	@ unaligned
+ 408 003e A260     		str	r2, [r4, #8]	@ unaligned
+ 409 0040 E360     		str	r3, [r4, #12]	@ unaligned
+ 410 0042 6546     		mov	r5, ip
+ 411 0044 1034     		adds	r4, r4, #16
+ 412 0046 B445     		cmp	ip, r6
+ 413 0048 F4D1     		bne	.L23
+ 414 004a DCF80000 		ldr	r0, [ip]
+ 415 004e 2060     		str	r0, [r4]	@ unaligned
+ 416 0050 BCF80430 		ldrh	r3, [ip, #4]	@ unaligned
+ 417 0054 A380     		strh	r3, [r4, #4]	@ unaligned
+  55:Core/Src/init_peripherials/init_peripherials.c ****   HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_
+ 418              		.loc 1 55 3 view .LVU55
+ 419              		.loc 1 55 70 is_stmt 0 view .LVU56
+ 420 0056 2A4C     		ldr	r4, .L26+16
+ 421 0058 2046     		mov	r0, r4
+ARM GAS  /tmp/cc9FD0ft.s 			page 10
 
 
- 420 0074 224C     		ldr	r4, .L25+16
- 421 0076 06F1200C 		add	ip, r6, #32
- 422              	.L19:
- 423 007a 3546     		mov	r5, r6
- 424 007c 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
- 425 007e 2060     		str	r0, [r4]	@ unaligned
- 426 0080 6160     		str	r1, [r4, #4]	@ unaligned
- 427 0082 A260     		str	r2, [r4, #8]	@ unaligned
- 428 0084 E360     		str	r3, [r4, #12]	@ unaligned
- 429 0086 2E46     		mov	r6, r5
- 430 0088 1034     		adds	r4, r4, #16
- 431 008a 6545     		cmp	r5, ip
- 432 008c F5D1     		bne	.L19
- 433 008e 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
- 434 0090 2370     		strb	r3, [r4]
-  45:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
- 435              		.loc 1 45 7 view .LVU59
-  45:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
- 436              		.loc 1 45 74 is_stmt 0 view .LVU60
- 437 0092 1B4C     		ldr	r4, .L25+16
- 438 0094 2046     		mov	r0, r4
- 439 0096 FFF7FEFF 		bl	strlen
- 440              	.LVL28:
-  45:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
- 441              		.loc 1 45 7 discriminator 1 view .LVU61
- 442 009a 4FF0FF33 		mov	r3, #-1
- 443 009e 82B2     		uxth	r2, r0
- 444 00a0 2146     		mov	r1, r4
- 445 00a2 1848     		ldr	r0, .L25+20
- 446 00a4 FFF7FEFF 		bl	HAL_UART_Transmit
- 447              	.LVL29:
-  46:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
- 448              		.loc 1 46 7 is_stmt 1 view .LVU62
-  46:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
- 449              		.loc 1 46 14 is_stmt 0 view .LVU63
- 450 00a8 0120     		movs	r0, #1
- 451 00aa E0E7     		b	.L16
- 452              	.L17:
-  49:Core/Src/init_peripherials/init_peripherials.c ****     snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: error transmit
- 453              		.loc 1 49 5 is_stmt 1 view .LVU64
- 454 00ac 174C     		ldr	r4, .L25+28
- 455 00ae 144D     		ldr	r5, .L25+16
- 456 00b0 04F13006 		add	r6, r4, #48
- 457              	.L21:
- 458 00b4 A446     		mov	ip, r4
- 459 00b6 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 460 00ba 2860     		str	r0, [r5]	@ unaligned
- 461 00bc 6960     		str	r1, [r5, #4]	@ unaligned
- 462 00be AA60     		str	r2, [r5, #8]	@ unaligned
- 463 00c0 EB60     		str	r3, [r5, #12]	@ unaligned
- 464 00c2 6446     		mov	r4, ip
- 465 00c4 1035     		adds	r5, r5, #16
- 466 00c6 B445     		cmp	ip, r6
- 467 00c8 F4D1     		bne	.L21
- 468 00ca 03CC     		ldmia	r4!, {r0, r1}
- 469 00cc 2860     		str	r0, [r5]	@ unaligned
- 470 00ce 6960     		str	r1, [r5, #4]	@ unaligned
-ARM GAS  /tmp/cckKt2DS.s 			page 11
+ 422 005a FFF7FEFF 		bl	strlen
+ 423              	.LVL27:
+ 424              		.loc 1 55 3 discriminator 1 view .LVU57
+ 425 005e 4FF0FF33 		mov	r3, #-1
+ 426 0062 82B2     		uxth	r2, r0
+ 427 0064 2146     		mov	r1, r4
+ 428 0066 2748     		ldr	r0, .L26+20
+ 429 0068 FFF7FEFF 		bl	HAL_UART_Transmit
+ 430              	.LVL28:
+  56:Core/Src/init_peripherials/init_peripherials.c ****   return 0;
+ 431              		.loc 1 56 3 is_stmt 1 view .LVU58
+ 432              		.loc 1 56 10 is_stmt 0 view .LVU59
+ 433 006c 0020     		movs	r0, #0
+ 434              	.L17:
+  57:Core/Src/init_peripherials/init_peripherials.c **** }...
+ 435              		.loc 1 57 1 view .LVU60
+ 436 006e 02B0     		add	sp, sp, #8
+ 437              	.LCFI7:
+ 438              		.cfi_remember_state
+ 439              		.cfi_def_cfa_offset 16
+ 440              		@ sp needed
+ 441 0070 70BD     		pop	{r4, r5, r6, pc}
+ 442              	.L25:
+ 443              	.LCFI8:
+ 444              		.cfi_restore_state
+  45:Core/Src/init_peripherials/init_peripherials.c ****       snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: AHT10 does n
+ 445              		.loc 1 45 7 is_stmt 1 view .LVU61
+ 446 0072 254E     		ldr	r6, .L26+24
+ 447 0074 224C     		ldr	r4, .L26+16
+ 448 0076 06F1200C 		add	ip, r6, #32
+ 449              	.L20:
+ 450 007a 3546     		mov	r5, r6
+ 451 007c 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 452 007e 2060     		str	r0, [r4]	@ unaligned
+ 453 0080 6160     		str	r1, [r4, #4]	@ unaligned
+ 454 0082 A260     		str	r2, [r4, #8]	@ unaligned
+ 455 0084 E360     		str	r3, [r4, #12]	@ unaligned
+ 456 0086 2E46     		mov	r6, r5
+ 457 0088 1034     		adds	r4, r4, #16
+ 458 008a 6545     		cmp	r5, ip
+ 459 008c F5D1     		bne	.L20
+ 460 008e 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 461 0090 2370     		strb	r3, [r4]
+  46:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
+ 462              		.loc 1 46 7 view .LVU62
+  46:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
+ 463              		.loc 1 46 74 is_stmt 0 view .LVU63
+ 464 0092 1B4C     		ldr	r4, .L26+16
+ 465 0094 2046     		mov	r0, r4
+ 466 0096 FFF7FEFF 		bl	strlen
+ 467              	.LVL29:
+  46:Core/Src/init_peripherials/init_peripherials.c ****       HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESS
+ 468              		.loc 1 46 7 discriminator 1 view .LVU64
+ 469 009a 4FF0FF33 		mov	r3, #-1
+ 470 009e 82B2     		uxth	r2, r0
+ 471 00a0 2146     		mov	r1, r4
+ 472 00a2 1848     		ldr	r0, .L26+20
+ARM GAS  /tmp/cc9FD0ft.s 			page 11
 
 
- 471 00d0 2388     		ldrh	r3, [r4]	@ unaligned
- 472 00d2 2B81     		strh	r3, [r5, #8]	@ unaligned
-  50:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
- 473              		.loc 1 50 5 view .LVU65
-  50:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
- 474              		.loc 1 50 72 is_stmt 0 view .LVU66
- 475 00d4 0A4C     		ldr	r4, .L25+16
- 476 00d6 2046     		mov	r0, r4
- 477 00d8 FFF7FEFF 		bl	strlen
- 478              	.LVL30:
-  50:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
- 479              		.loc 1 50 5 discriminator 1 view .LVU67
- 480 00dc 4FF0FF33 		mov	r3, #-1
- 481 00e0 82B2     		uxth	r2, r0
- 482 00e2 2146     		mov	r1, r4
- 483 00e4 0748     		ldr	r0, .L25+20
- 484 00e6 FFF7FEFF 		bl	HAL_UART_Transmit
- 485              	.LVL31:
-  51:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
- 486              		.loc 1 51 5 is_stmt 1 view .LVU68
-  51:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
- 487              		.loc 1 51 12 is_stmt 0 view .LVU69
- 488 00ea 0120     		movs	r0, #1
- 489 00ec BFE7     		b	.L16
- 490              	.L26:
- 491 00ee 00BF     		.align	2
- 492              	.L25:
- 493 00f0 00000000 		.word	aht10_init_command
- 494 00f4 00000000 		.word	aht10_addr
- 495 00f8 00000000 		.word	hi2c1
- 496 00fc 60000000 		.word	.LC6
- 497 0100 00000000 		.word	GLOBAL_MESSAGE_BUFFER
- 498 0104 00000000 		.word	huart2
- 499 0108 00000000 		.word	.LC4
- 500 010c 24000000 		.word	.LC5
- 501              		.cfi_endproc
- 502              	.LFE139:
- 504              		.global	cmd
- 505              		.section	.data.cmd,"aw"
- 508              	cmd:
- 509 0000 2E       		.byte	46
- 510              		.text
- 511              	.Letext0:
- 512              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
- 513              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
- 514              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
- 515              		.file 5 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/lib/gcc/arm-none-eabi/14.
- 516              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 517              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 518              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 519              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 520              		.file 10 "Core/Src/init_peripherials/../transmit_and_recieve_control/transmit_and_recieve_control.
- 521              		.file 11 "Core/Src/init_peripherials/init_peripherials.h"
- 522              		.file 12 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
- 523              		.file 13 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
- 524              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  /tmp/cckKt2DS.s 			page 12
+ 473 00a4 FFF7FEFF 		bl	HAL_UART_Transmit
+ 474              	.LVL30:
+  47:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
+ 475              		.loc 1 47 7 is_stmt 1 view .LVU65
+  47:Core/Src/init_peripherials/init_peripherials.c ****       return 1;
+ 476              		.loc 1 47 14 is_stmt 0 view .LVU66
+ 477 00a8 0120     		movs	r0, #1
+ 478 00aa E0E7     		b	.L17
+ 479              	.L18:
+  50:Core/Src/init_peripherials/init_peripherials.c ****     snprintf((char *)GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "Failure: error transmit
+ 480              		.loc 1 50 5 is_stmt 1 view .LVU67
+ 481 00ac 174C     		ldr	r4, .L26+28
+ 482 00ae 144D     		ldr	r5, .L26+16
+ 483 00b0 04F13006 		add	r6, r4, #48
+ 484              	.L22:
+ 485 00b4 A446     		mov	ip, r4
+ 486 00b6 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 487 00ba 2860     		str	r0, [r5]	@ unaligned
+ 488 00bc 6960     		str	r1, [r5, #4]	@ unaligned
+ 489 00be AA60     		str	r2, [r5, #8]	@ unaligned
+ 490 00c0 EB60     		str	r3, [r5, #12]	@ unaligned
+ 491 00c2 6446     		mov	r4, ip
+ 492 00c4 1035     		adds	r5, r5, #16
+ 493 00c6 B445     		cmp	ip, r6
+ 494 00c8 F4D1     		bne	.L22
+ 495 00ca 03CC     		ldmia	r4!, {r0, r1}
+ 496 00cc 2860     		str	r0, [r5]	@ unaligned
+ 497 00ce 6960     		str	r1, [r5, #4]	@ unaligned
+ 498 00d0 2388     		ldrh	r3, [r4]	@ unaligned
+ 499 00d2 2B81     		strh	r3, [r5, #8]	@ unaligned
+  51:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
+ 500              		.loc 1 51 5 view .LVU68
+  51:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
+ 501              		.loc 1 51 72 is_stmt 0 view .LVU69
+ 502 00d4 0A4C     		ldr	r4, .L26+16
+ 503 00d6 2046     		mov	r0, r4
+ 504 00d8 FFF7FEFF 		bl	strlen
+ 505              	.LVL31:
+  51:Core/Src/init_peripherials/init_peripherials.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
+ 506              		.loc 1 51 5 discriminator 1 view .LVU70
+ 507 00dc 4FF0FF33 		mov	r3, #-1
+ 508 00e0 82B2     		uxth	r2, r0
+ 509 00e2 2146     		mov	r1, r4
+ 510 00e4 0748     		ldr	r0, .L26+20
+ 511 00e6 FFF7FEFF 		bl	HAL_UART_Transmit
+ 512              	.LVL32:
+  52:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
+ 513              		.loc 1 52 5 is_stmt 1 view .LVU71
+  52:Core/Src/init_peripherials/init_peripherials.c ****     return 1;
+ 514              		.loc 1 52 12 is_stmt 0 view .LVU72
+ 515 00ea 0120     		movs	r0, #1
+ 516 00ec BFE7     		b	.L17
+ 517              	.L27:
+ 518 00ee 00BF     		.align	2
+ 519              	.L26:
+ 520 00f0 00000000 		.word	aht10_init_command
+ 521 00f4 00000000 		.word	aht10_addr
+ARM GAS  /tmp/cc9FD0ft.s 			page 12
+
+
+ 522 00f8 00000000 		.word	hi2c1
+ 523 00fc 60000000 		.word	.LC6
+ 524 0100 00000000 		.word	GLOBAL_MESSAGE_BUFFER
+ 525 0104 00000000 		.word	huart2
+ 526 0108 00000000 		.word	.LC4
+ 527 010c 24000000 		.word	.LC5
+ 528              		.cfi_endproc
+ 529              	.LFE139:
+ 531              		.global	cmd
+ 532              		.section	.data.cmd,"aw"
+ 535              	cmd:
+ 536 0000 2E       		.byte	46
+ 537              		.text
+ 538              	.Letext0:
+ 539              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
+ 540              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
+ 541              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
+ 542              		.file 5 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/lib/gcc/arm-none-eabi/14.
+ 543              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 544              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 545              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 546              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 547              		.file 10 "Core/Src/init_peripherials/../transmit_and_recieve_control/transmit_and_recieve_control.
+ 548              		.file 11 "Core/Src/init_peripherials/init_peripherials.h"
+ 549              		.file 12 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
+ 550              		.file 13 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
+ 551              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/cc9FD0ft.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 init_peripherials.c
-     /tmp/cckKt2DS.s:21     .rodata.lcd1602_init.str1.4:00000000 $d
-     /tmp/cckKt2DS.s:25     .text.lcd1602_init:00000000 $t
-     /tmp/cckKt2DS.s:31     .text.lcd1602_init:00000000 lcd1602_init
-     /tmp/cckKt2DS.s:114    .text.lcd1602_init:0000006c $d
-     /tmp/cckKt2DS.s:120    .rodata.bmp180_init.str1.4:00000000 $d
-     /tmp/cckKt2DS.s:131    .text.bmp180_init:00000000 $t
-     /tmp/cckKt2DS.s:137    .text.bmp180_init:00000000 bmp180_init
-     /tmp/cckKt2DS.s:302    .text.bmp180_init:000000f4 $d
-     /tmp/cckKt2DS.s:508    .data.cmd:00000000 cmd
-     /tmp/cckKt2DS.s:314    .rodata.aht10_init.str1.4:00000000 $d
-     /tmp/cckKt2DS.s:325    .text.aht10_init:00000000 $t
-     /tmp/cckKt2DS.s:331    .text.aht10_init:00000000 aht10_init
-     /tmp/cckKt2DS.s:493    .text.aht10_init:000000f0 $d
+     /tmp/cc9FD0ft.s:21     .rodata.lcd1602_init.str1.4:00000000 $d
+     /tmp/cc9FD0ft.s:25     .text.lcd1602_init:00000000 $t
+     /tmp/cc9FD0ft.s:31     .text.lcd1602_init:00000000 lcd1602_init
+     /tmp/cc9FD0ft.s:140    .text.lcd1602_init:00000098 $d
+     /tmp/cc9FD0ft.s:147    .rodata.bmp180_init.str1.4:00000000 $d
+     /tmp/cc9FD0ft.s:158    .text.bmp180_init:00000000 $t
+     /tmp/cc9FD0ft.s:164    .text.bmp180_init:00000000 bmp180_init
+     /tmp/cc9FD0ft.s:329    .text.bmp180_init:000000f4 $d
+     /tmp/cc9FD0ft.s:535    .data.cmd:00000000 cmd
+     /tmp/cc9FD0ft.s:341    .rodata.aht10_init.str1.4:00000000 $d
+     /tmp/cc9FD0ft.s:352    .text.aht10_init:00000000 $t
+     /tmp/cc9FD0ft.s:358    .text.aht10_init:00000000 aht10_init
+     /tmp/cc9FD0ft.s:520    .text.aht10_init:000000f0 $d
 
 UNDEFINED SYMBOLS
 HAL_Delay
 lcd1602_transmit_command
+strlen
 HAL_UART_Transmit
+GLOBAL_MESSAGE_BUFFER
 huart2
 HAL_I2C_Mem_Write
 HAL_I2C_IsDeviceReady
-strlen
 bmp180_addr
 hi2c1
-GLOBAL_MESSAGE_BUFFER
 HAL_I2C_Master_Transmit
 aht10_init_command
 aht10_addr

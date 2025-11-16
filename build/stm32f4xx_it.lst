@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccbIBmss.s 			page 1
+ARM GAS  /tmp/ccnTxyD2.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
   28:Core/Src/stm32f4xx_it.c **** #include <string.h>
   29:Core/Src/stm32f4xx_it.c **** /* USER CODE END Includes */
   30:Core/Src/stm32f4xx_it.c **** 
-ARM GAS  /tmp/ccbIBmss.s 			page 2
+ARM GAS  /tmp/ccnTxyD2.s 			page 2
 
 
   31:Core/Src/stm32f4xx_it.c **** /* Private typedef -----------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
   85:Core/Src/stm32f4xx_it.c **** extern uint8_t AHT10_RX_Data[6];
   86:Core/Src/stm32f4xx_it.c **** extern uint32_t AHT10_ADC_Raw;
   87:Core/Src/stm32f4xx_it.c **** extern float AHT10_Temperature;
-ARM GAS  /tmp/ccbIBmss.s 			page 3
+ARM GAS  /tmp/ccnTxyD2.s 			page 3
 
 
   88:Core/Src/stm32f4xx_it.c **** extern float AHT10_Humidity;
@@ -145,7 +145,7 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  109:Core/Src/stm32f4xx_it.c **** /* USER CODE END 0 */
  110:Core/Src/stm32f4xx_it.c **** 
  111:Core/Src/stm32f4xx_it.c **** /* External variables --------------------------------------------------------*/
- 112:Core/Src/stm32f4xx_it.c **** 
+ 112:Core/Src/stm32f4xx_it.c **** extern TIM_HandleTypeDef htim3;
  113:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN EV */
  114:Core/Src/stm32f4xx_it.c **** 
  115:Core/Src/stm32f4xx_it.c **** /* USER CODE END EV */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
   38              		.loc 1 129 10 view .LVU3
   39 0000 FEE7     		b	.L2
   40              		.cfi_endproc
-ARM GAS  /tmp/ccbIBmss.s 			page 4
+ARM GAS  /tmp/ccnTxyD2.s 			page 4
 
 
   41              	.LFE137:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
   75              		.loc 1 154 1 view -0
   76              		.cfi_startproc
   77              		@ Volatile: function does not return.
-ARM GAS  /tmp/ccbIBmss.s 			page 5
+ARM GAS  /tmp/ccnTxyD2.s 			page 5
 
 
   78              		@ args = 0, pretend = 0, frame = 0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  109              		.cfi_endproc
  110              	.LFE140:
  112              		.section	.text.UsageFault_Handler,"ax",%progbits
-ARM GAS  /tmp/ccbIBmss.s 			page 6
+ARM GAS  /tmp/ccnTxyD2.s 			page 6
 
 
  113              		.align	1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  147              		@ frame_needed = 0, uses_anonymous_args = 0
  148              		@ link register save eliminated.
  200:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 0 */
-ARM GAS  /tmp/ccbIBmss.s 			page 7
+ARM GAS  /tmp/ccnTxyD2.s 			page 7
 
 
  201:Core/Src/stm32f4xx_it.c **** 
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  182              		.loc 1 225 1 view -0
  183              		.cfi_startproc
  184              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccbIBmss.s 			page 8
+ARM GAS  /tmp/ccnTxyD2.s 			page 8
 
 
  185              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -426,12 +426,11 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  226:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 0 */
  227:Core/Src/stm32f4xx_it.c **** 
  228:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 0 */
- 229:Core/Src/stm32f4xx_it.c ****   
- 230:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
- 231:Core/Src/stm32f4xx_it.c **** 
- 232:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
- 233:Core/Src/stm32f4xx_it.c **** }
- 187              		.loc 1 233 1 view .LVU25
+ 229:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
+ 230:Core/Src/stm32f4xx_it.c **** 
+ 231:Core/Src/stm32f4xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
+ 232:Core/Src/stm32f4xx_it.c **** }
+ 187              		.loc 1 232 1 view .LVU25
  188 0000 7047     		bx	lr
  189              		.cfi_endproc
  190              	.LFE144:
@@ -461,13 +460,13 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  207              		.thumb_func
  209              	SysTick_Handler:
  210              	.LFB145:
- 234:Core/Src/stm32f4xx_it.c **** 
- 235:Core/Src/stm32f4xx_it.c **** /**
- 236:Core/Src/stm32f4xx_it.c ****   * @brief This function handles System tick timer.
- 237:Core/Src/stm32f4xx_it.c ****   */
- 238:Core/Src/stm32f4xx_it.c **** void SysTick_Handler(void)
- 239:Core/Src/stm32f4xx_it.c **** {
- 211              		.loc 1 239 1 view -0
+ 233:Core/Src/stm32f4xx_it.c **** 
+ 234:Core/Src/stm32f4xx_it.c **** /**
+ 235:Core/Src/stm32f4xx_it.c ****   * @brief This function handles System tick timer.
+ 236:Core/Src/stm32f4xx_it.c ****   */
+ 237:Core/Src/stm32f4xx_it.c **** void SysTick_Handler(void)
+ 238:Core/Src/stm32f4xx_it.c **** {
+ 211              		.loc 1 238 1 view -0
  212              		.cfi_startproc
  213              		@ args = 0, pretend = 0, frame = 8
  214              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -478,189 +477,195 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  219              		.cfi_offset 5, -12
  220              		.cfi_offset 6, -8
  221              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccbIBmss.s 			page 9
-
-
  222 0002 86B0     		sub	sp, sp, #24
+ARM GAS  /tmp/ccnTxyD2.s 			page 9
+
+
  223              	.LCFI1:
  224              		.cfi_def_cfa_offset 40
- 240:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
- 241:Core/Src/stm32f4xx_it.c **** 
- 242:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
- 243:Core/Src/stm32f4xx_it.c ****   HAL_IncTick();
- 225              		.loc 1 243 3 view .LVU27
+ 239:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
+ 240:Core/Src/stm32f4xx_it.c **** 
+ 241:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
+ 242:Core/Src/stm32f4xx_it.c ****   HAL_IncTick();
+ 225              		.loc 1 242 3 view .LVU27
  226 0004 FFF7FEFF 		bl	HAL_IncTick
  227              	.LVL0:
- 244:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
- 245:Core/Src/stm32f4xx_it.c **** 
- 246:Core/Src/stm32f4xx_it.c ****   if (current_mode == 0) {
- 228              		.loc 1 246 3 view .LVU28
- 229              		.loc 1 246 20 is_stmt 0 view .LVU29
+ 243:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
+ 244:Core/Src/stm32f4xx_it.c **** 
+ 245:Core/Src/stm32f4xx_it.c ****   if (current_mode == 0) {
+ 228              		.loc 1 245 3 view .LVU28
+ 229              		.loc 1 245 20 is_stmt 0 view .LVU29
  230 0008 934B     		ldr	r3, .L39
  231 000a 1B68     		ldr	r3, [r3]
- 232              		.loc 1 246 6 view .LVU30
+ 232              		.loc 1 245 6 view .LVU30
  233 000c 002B     		cmp	r3, #0
  234 000e 30D1     		bne	.L15
- 247:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == HUMIDITY_PUT) {
- 235              		.loc 1 247 5 is_stmt 1 view .LVU31
- 236              		.loc 1 247 31 is_stmt 0 view .LVU32
+ 246:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == HUMIDITY_PUT) {
+ 235              		.loc 1 246 5 is_stmt 1 view .LVU31
+ 236              		.loc 1 246 31 is_stmt 0 view .LVU32
  237 0010 924B     		ldr	r3, .L39+4
  238 0012 1A68     		ldr	r2, [r3]
- 239              		.loc 1 247 8 view .LVU33
+ 239              		.loc 1 246 8 view .LVU33
  240 0014 44F68953 		movw	r3, #19849
  241 0018 9A42     		cmp	r2, r3
  242 001a 36D0     		beq	.L28
  243              	.L16:
- 248:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)aht10_measurement_command, 3, HAL_MAX_D
- 249:Core/Src/stm32f4xx_it.c ****     }
- 250:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == HUMIDITY_GET) {
- 244              		.loc 1 250 5 is_stmt 1 view .LVU34
- 245              		.loc 1 250 31 is_stmt 0 view .LVU35
+ 247:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)aht10_measurement_command, 3, HAL_MAX_D
+ 248:Core/Src/stm32f4xx_it.c ****     }
+ 249:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == HUMIDITY_GET) {
+ 244              		.loc 1 249 5 is_stmt 1 view .LVU34
+ 245              		.loc 1 249 31 is_stmt 0 view .LVU35
  246 001c 8F4B     		ldr	r3, .L39+4
  247 001e 1A68     		ldr	r2, [r3]
- 248              		.loc 1 250 8 view .LVU36
+ 248              		.loc 1 249 8 view .LVU36
  249 0020 44F6ED53 		movw	r3, #19949
  250 0024 9A42     		cmp	r2, r3
  251 0026 3BD0     		beq	.L29
  252              	.L17:
- 251:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Master_Receive(&hi2c1, aht10_addr, AHT10_RX_Data, 6, HAL_MAX_DELAY);
- 252:Core/Src/stm32f4xx_it.c ****       AHT10_ADC_Raw = ((uint32_t)AHT10_RX_Data[1] << 12) | ((uint32_t)AHT10_RX_Data[2] << 4) | (AHT
- 253:Core/Src/stm32f4xx_it.c ****     }
- 254:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == TEMPERATURE_PUT) {
- 253              		.loc 1 254 5 is_stmt 1 view .LVU37
- 254              		.loc 1 254 31 is_stmt 0 view .LVU38
+ 250:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Master_Receive(&hi2c1, aht10_addr, AHT10_RX_Data, 6, HAL_MAX_DELAY);
+ 251:Core/Src/stm32f4xx_it.c ****       AHT10_ADC_Raw = ((uint32_t)AHT10_RX_Data[1] << 12) | ((uint32_t)AHT10_RX_Data[2] << 4) | (AHT
+ 252:Core/Src/stm32f4xx_it.c ****     }
+ 253:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == TEMPERATURE_PUT) {
+ 253              		.loc 1 253 5 is_stmt 1 view .LVU37
+ 254              		.loc 1 253 31 is_stmt 0 view .LVU38
  255 0028 8C4B     		ldr	r3, .L39+4
  256 002a 1A68     		ldr	r2, [r3]
- 257              		.loc 1 254 8 view .LVU39
+ 257              		.loc 1 253 8 view .LVU39
  258 002c 44F6EE53 		movw	r3, #19950
  259 0030 9A42     		cmp	r2, r3
  260 0032 4BD0     		beq	.L30
  261              	.L18:
- 255:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
- 256:Core/Src/stm32f4xx_it.c ****     }
-ARM GAS  /tmp/ccbIBmss.s 			page 10
+ 254:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &cmd, 1, HAL_MAX_DELAY);
+ 255:Core/Src/stm32f4xx_it.c ****     }
+ 256:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == TEMPERATURE_GET) {
+ARM GAS  /tmp/ccnTxyD2.s 			page 10
 
 
- 257:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == TEMPERATURE_GET) {
- 262              		.loc 1 257 5 is_stmt 1 view .LVU40
- 263              		.loc 1 257 31 is_stmt 0 view .LVU41
+ 262              		.loc 1 256 5 is_stmt 1 view .LVU40
+ 263              		.loc 1 256 31 is_stmt 0 view .LVU41
  264 0034 894B     		ldr	r3, .L39+4
  265 0036 1A68     		ldr	r2, [r3]
- 266              		.loc 1 257 8 view .LVU42
+ 266              		.loc 1 256 8 view .LVU42
  267 0038 44F60163 		movw	r3, #19969
  268 003c 9A42     		cmp	r2, r3
  269 003e 53D0     		beq	.L31
  270              	.L19:
- 258:Core/Src/stm32f4xx_it.c ****       temperature_result = bmp180_get_temperature();
- 259:Core/Src/stm32f4xx_it.c ****     }
- 260:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == PRESSURE_PUT) {
- 271              		.loc 1 260 5 is_stmt 1 view .LVU43
- 272              		.loc 1 260 31 is_stmt 0 view .LVU44
+ 257:Core/Src/stm32f4xx_it.c ****       temperature_result = bmp180_get_temperature();
+ 258:Core/Src/stm32f4xx_it.c ****     }
+ 259:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == PRESSURE_PUT) {
+ 271              		.loc 1 259 5 is_stmt 1 view .LVU43
+ 272              		.loc 1 259 31 is_stmt 0 view .LVU44
  273 0040 864B     		ldr	r3, .L39+4
  274 0042 1A68     		ldr	r2, [r3]
- 275              		.loc 1 260 8 view .LVU45
+ 275              		.loc 1 259 8 view .LVU45
  276 0044 44F60263 		movw	r3, #19970
  277 0048 9A42     		cmp	r2, r3
  278 004a 52D0     		beq	.L32
  279              	.L20:
- 261:Core/Src/stm32f4xx_it.c ****       uint8_t pressure_cmd = 0x34 + (OSS << 6);
- 262:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_
- 263:Core/Src/stm32f4xx_it.c ****     }
- 264:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == PRESSURE_GET) {
- 280              		.loc 1 264 5 is_stmt 1 view .LVU46
- 281              		.loc 1 264 31 is_stmt 0 view .LVU47
+ 260:Core/Src/stm32f4xx_it.c ****       uint8_t pressure_cmd = 0x34 + (OSS << 6);
+ 261:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_
+ 262:Core/Src/stm32f4xx_it.c ****     }
+ 263:Core/Src/stm32f4xx_it.c ****     if (SysTick_20Sec_Counter == PRESSURE_GET) {
+ 280              		.loc 1 263 5 is_stmt 1 view .LVU46
+ 281              		.loc 1 263 31 is_stmt 0 view .LVU47
  282 004c 834B     		ldr	r3, .L39+4
  283 004e 1A68     		ldr	r2, [r3]
- 284              		.loc 1 264 8 view .LVU48
+ 284              		.loc 1 263 8 view .LVU48
  285 0050 44F62063 		movw	r3, #20000
  286 0054 9A42     		cmp	r2, r3
  287 0056 5ED0     		beq	.L33
  288              	.L21:
- 265:Core/Src/stm32f4xx_it.c ****       SysTick_20Sec_Counter = 0;
- 266:Core/Src/stm32f4xx_it.c ****       pressure_result = bmp180_get_pressure() / 133.322f;
- 267:Core/Src/stm32f4xx_it.c ****     }
- 268:Core/Src/stm32f4xx_it.c ****     SysTick_20Sec_Counter++;
- 289              		.loc 1 268 5 is_stmt 1 view .LVU49
- 290              		.loc 1 268 26 is_stmt 0 view .LVU50
+ 264:Core/Src/stm32f4xx_it.c ****       SysTick_20Sec_Counter = 0;
+ 265:Core/Src/stm32f4xx_it.c ****       pressure_result = bmp180_get_pressure() / 133.322f;
+ 266:Core/Src/stm32f4xx_it.c ****     }
+ 267:Core/Src/stm32f4xx_it.c ****     SysTick_20Sec_Counter++;
+ 289              		.loc 1 267 5 is_stmt 1 view .LVU49
+ 290              		.loc 1 267 26 is_stmt 0 view .LVU50
  291 0058 804A     		ldr	r2, .L39+4
  292 005a 1368     		ldr	r3, [r2]
  293 005c 0133     		adds	r3, r3, #1
  294 005e 1360     		str	r3, [r2]
- 269:Core/Src/stm32f4xx_it.c ****     if (SysTick_1Sec_Counter_mode0 == 1000) {
- 295              		.loc 1 269 5 is_stmt 1 view .LVU51
- 296              		.loc 1 269 36 is_stmt 0 view .LVU52
+ 268:Core/Src/stm32f4xx_it.c ****     if (SysTick_1Sec_Counter_mode0 == 1000) {
+ 295              		.loc 1 268 5 is_stmt 1 view .LVU51
+ 296              		.loc 1 268 36 is_stmt 0 view .LVU52
  297 0060 7F4B     		ldr	r3, .L39+8
  298 0062 1B68     		ldr	r3, [r3]
- 299              		.loc 1 269 8 view .LVU53
+ 299              		.loc 1 268 8 view .LVU53
  300 0064 B3F57A7F 		cmp	r3, #1000
  301 0068 68D0     		beq	.L34
  302              	.L22:
- 270:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode0 = 0;
- 271:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 272:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
-ARM GAS  /tmp/ccbIBmss.s 			page 11
+ 269:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode0 = 0;
+ 270:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 271:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
+ 272:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
+ARM GAS  /tmp/ccnTxyD2.s 			page 11
 
 
- 273:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
- 274:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%02d:%02d:%02d", time.Hours, 
+ 273:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%02d:%02d:%02d", \
+ 274:Core/Src/stm32f4xx_it.c ****         time.Hours, time.Minutes, time.Seconds);
  275:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
  276:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b11000000);
- 277:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld, %.2f", pressure
- 278:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 279:Core/Src/stm32f4xx_it.c ****     }
- 280:Core/Src/stm32f4xx_it.c ****     SysTick_1Sec_Counter_mode0++;
- 303              		.loc 1 280 5 is_stmt 1 view .LVU54
- 304              		.loc 1 280 31 is_stmt 0 view .LVU55
+ 277:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld, %.2f", \
+ 278:Core/Src/stm32f4xx_it.c ****         pressure_result, temperature_result, ((float)AHT10_ADC_Raw / 1048576.0) * 100.0);
+ 279:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 280:Core/Src/stm32f4xx_it.c ****     }
+ 281:Core/Src/stm32f4xx_it.c ****     SysTick_1Sec_Counter_mode0++;
+ 303              		.loc 1 281 5 is_stmt 1 view .LVU54
+ 304              		.loc 1 281 31 is_stmt 0 view .LVU55
  305 006a 7D4A     		ldr	r2, .L39+8
  306 006c 1368     		ldr	r3, [r2]
  307 006e 0133     		adds	r3, r3, #1
  308 0070 1360     		str	r3, [r2]
  309              	.L15:
- 281:Core/Src/stm32f4xx_it.c ****   } 
- 282:Core/Src/stm32f4xx_it.c ****   if (current_mode == 1) {
- 310              		.loc 1 282 3 is_stmt 1 view .LVU56
- 311              		.loc 1 282 20 is_stmt 0 view .LVU57
+ 282:Core/Src/stm32f4xx_it.c ****   } 
+ 283:Core/Src/stm32f4xx_it.c ****   if (current_mode == 1) {
+ 310              		.loc 1 283 3 is_stmt 1 view .LVU56
+ 311              		.loc 1 283 20 is_stmt 0 view .LVU57
  312 0072 794B     		ldr	r3, .L39
  313 0074 1B68     		ldr	r3, [r3]
- 314              		.loc 1 282 6 view .LVU58
+ 314              		.loc 1 283 6 view .LVU58
  315 0076 012B     		cmp	r3, #1
  316 0078 00F0A680 		beq	.L35
  317              	.L23:
- 283:Core/Src/stm32f4xx_it.c ****     if (SysTick_1Sec_Counter_mode1 == 1000) {
- 284:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode1 = 0;
- 285:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
- 286:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
- 287:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 288:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Hours);
- 289:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 290:Core/Src/stm32f4xx_it.c ****     }
- 291:Core/Src/stm32f4xx_it.c ****     SysTick_1Sec_Counter_mode1++;
- 292:Core/Src/stm32f4xx_it.c ****   }
- 293:Core/Src/stm32f4xx_it.c ****   if (current_mode == 2) {
- 318              		.loc 1 293 3 is_stmt 1 view .LVU59
- 319              		.loc 1 293 20 is_stmt 0 view .LVU60
+ 284:Core/Src/stm32f4xx_it.c ****     if (SysTick_1Sec_Counter_mode1 == 1000) {
+ 285:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode1 = 0;
+ 286:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
+ 287:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
+ 288:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 289:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Hours);
+ 290:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 291:Core/Src/stm32f4xx_it.c ****     }
+ 292:Core/Src/stm32f4xx_it.c ****     SysTick_1Sec_Counter_mode1++;
+ 293:Core/Src/stm32f4xx_it.c ****   }
+ 294:Core/Src/stm32f4xx_it.c ****   if (current_mode == 2) {
+ 318              		.loc 1 294 3 is_stmt 1 view .LVU59
+ 319              		.loc 1 294 20 is_stmt 0 view .LVU60
  320 007c 764B     		ldr	r3, .L39
  321 007e 1B68     		ldr	r3, [r3]
- 322              		.loc 1 293 6 view .LVU61
+ 322              		.loc 1 294 6 view .LVU61
  323 0080 022B     		cmp	r3, #2
  324 0082 00F0C580 		beq	.L36
  325              	.L14:
- 294:Core/Src/stm32f4xx_it.c ****     if (SysTick_1Sec_Counter_mode2 == 1000) {
- 295:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode2 = 0;
- 296:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
- 297:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
- 298:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 299:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Minutes);
- 300:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 301:Core/Src/stm32f4xx_it.c ****     }
- 302:Core/Src/stm32f4xx_it.c ****     SysTick_1Sec_Counter_mode2++;
- 303:Core/Src/stm32f4xx_it.c ****   }
- 304:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
- 305:Core/Src/stm32f4xx_it.c **** }
- 326              		.loc 1 305 1 view .LVU62
-ARM GAS  /tmp/ccbIBmss.s 			page 12
+ 295:Core/Src/stm32f4xx_it.c ****     if (SysTick_1Sec_Counter_mode2 == 1000) {
+ 296:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode2 = 0;
+ 297:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
+ 298:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
+ 299:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 300:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Minutes);
+ 301:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 302:Core/Src/stm32f4xx_it.c ****     }
+ 303:Core/Src/stm32f4xx_it.c ****     SysTick_1Sec_Counter_mode2++;
+ 304:Core/Src/stm32f4xx_it.c ****   }
+ 305:Core/Src/stm32f4xx_it.c **** 
+ 306:Core/Src/stm32f4xx_it.c ****   //CAUTION
+ARM GAS  /tmp/ccnTxyD2.s 			page 12
 
 
+ 307:Core/Src/stm32f4xx_it.c ****     //EVERYTHING WHAT'S BELOW IS...UM...COMMENTARIED?
+ 308:Core/Src/stm32f4xx_it.c **** 
+ 309:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
+ 310:Core/Src/stm32f4xx_it.c **** }
+ 326              		.loc 1 310 1 view .LVU62
  327 0086 06B0     		add	sp, sp, #24
  328              	.LCFI2:
  329              		.cfi_remember_state
@@ -670,8 +675,8 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  333              	.L28:
  334              	.LCFI3:
  335              		.cfi_restore_state
- 248:Core/Src/stm32f4xx_it.c ****     }
- 336              		.loc 1 248 7 is_stmt 1 view .LVU63
+ 247:Core/Src/stm32f4xx_it.c ****     }
+ 336              		.loc 1 247 7 is_stmt 1 view .LVU63
  337 008a 4FF0FF33 		mov	r3, #-1
  338 008e 0093     		str	r3, [sp]
  339 0090 0323     		movs	r3, #3
@@ -683,8 +688,8 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  345              	.LVL1:
  346 009e BDE7     		b	.L16
  347              	.L29:
- 251:Core/Src/stm32f4xx_it.c ****       AHT10_ADC_Raw = ((uint32_t)AHT10_RX_Data[1] << 12) | ((uint32_t)AHT10_RX_Data[2] << 4) | (AHT
- 348              		.loc 1 251 7 view .LVU64
+ 250:Core/Src/stm32f4xx_it.c ****       AHT10_ADC_Raw = ((uint32_t)AHT10_RX_Data[1] << 12) | ((uint32_t)AHT10_RX_Data[2] << 4) | (AHT
+ 348              		.loc 1 250 7 view .LVU64
  349 00a0 734C     		ldr	r4, .L39+24
  350 00a2 4FF0FF33 		mov	r3, #-1
  351 00a6 0093     		str	r3, [sp]
@@ -695,37 +700,37 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  356 00b0 6E48     		ldr	r0, .L39+20
  357 00b2 FFF7FEFF 		bl	HAL_I2C_Master_Receive
  358              	.LVL2:
- 252:Core/Src/stm32f4xx_it.c ****     }
- 359              		.loc 1 252 7 view .LVU65
- 252:Core/Src/stm32f4xx_it.c ****     }
- 360              		.loc 1 252 47 is_stmt 0 view .LVU66
+ 251:Core/Src/stm32f4xx_it.c ****     }
+ 359              		.loc 1 251 7 view .LVU65
+ 251:Core/Src/stm32f4xx_it.c ****     }
+ 360              		.loc 1 251 47 is_stmt 0 view .LVU66
  361 00b6 6278     		ldrb	r2, [r4, #1]	@ zero_extendqisi2
- 252:Core/Src/stm32f4xx_it.c ****     }
- 362              		.loc 1 252 84 view .LVU67
+ 251:Core/Src/stm32f4xx_it.c ****     }
+ 362              		.loc 1 251 84 view .LVU67
  363 00b8 A378     		ldrb	r3, [r4, #2]	@ zero_extendqisi2
- 252:Core/Src/stm32f4xx_it.c ****     }
- 364              		.loc 1 252 88 view .LVU68
+ 251:Core/Src/stm32f4xx_it.c ****     }
+ 364              		.loc 1 251 88 view .LVU68
  365 00ba 1B01     		lsls	r3, r3, #4
- 252:Core/Src/stm32f4xx_it.c ****     }
- 366              		.loc 1 252 58 view .LVU69
+ 251:Core/Src/stm32f4xx_it.c ****     }
+ 366              		.loc 1 251 58 view .LVU69
  367 00bc 43EA0233 		orr	r3, r3, r2, lsl #12
- 252:Core/Src/stm32f4xx_it.c ****     }
- 368              		.loc 1 252 110 view .LVU70
+ 251:Core/Src/stm32f4xx_it.c ****     }
+ 368              		.loc 1 251 110 view .LVU70
  369 00c0 E278     		ldrb	r2, [r4, #3]	@ zero_extendqisi2
- 252:Core/Src/stm32f4xx_it.c ****     }
- 370              		.loc 1 252 94 view .LVU71
+ 251:Core/Src/stm32f4xx_it.c ****     }
+ARM GAS  /tmp/ccnTxyD2.s 			page 13
+
+
+ 370              		.loc 1 251 94 view .LVU71
  371 00c2 43EA1213 		orr	r3, r3, r2, lsr #4
- 252:Core/Src/stm32f4xx_it.c ****     }
- 372              		.loc 1 252 21 view .LVU72
+ 251:Core/Src/stm32f4xx_it.c ****     }
+ 372              		.loc 1 251 21 view .LVU72
  373 00c6 6B4A     		ldr	r2, .L39+28
-ARM GAS  /tmp/ccbIBmss.s 			page 13
-
-
  374 00c8 1360     		str	r3, [r2]
  375 00ca ADE7     		b	.L17
  376              	.L30:
- 255:Core/Src/stm32f4xx_it.c ****     }
- 377              		.loc 1 255 7 is_stmt 1 view .LVU73
+ 254:Core/Src/stm32f4xx_it.c ****     }
+ 377              		.loc 1 254 7 is_stmt 1 view .LVU73
  378 00cc 4FF0FF33 		mov	r3, #-1
  379 00d0 0293     		str	r3, [sp, #8]
  380 00d2 0123     		movs	r3, #1
@@ -740,27 +745,27 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  389              	.LVL3:
  390 00e6 A5E7     		b	.L18
  391              	.L31:
- 258:Core/Src/stm32f4xx_it.c ****     }
- 392              		.loc 1 258 7 view .LVU74
- 258:Core/Src/stm32f4xx_it.c ****     }
- 393              		.loc 1 258 28 is_stmt 0 view .LVU75
+ 257:Core/Src/stm32f4xx_it.c ****     }
+ 392              		.loc 1 257 7 view .LVU74
+ 257:Core/Src/stm32f4xx_it.c ****     }
+ 393              		.loc 1 257 28 is_stmt 0 view .LVU75
  394 00e8 FFF7FEFF 		bl	bmp180_get_temperature
  395              	.LVL4:
- 258:Core/Src/stm32f4xx_it.c ****     }
- 396              		.loc 1 258 26 discriminator 1 view .LVU76
+ 257:Core/Src/stm32f4xx_it.c ****     }
+ 396              		.loc 1 257 26 discriminator 1 view .LVU76
  397 00ec 644B     		ldr	r3, .L39+40
  398 00ee 1860     		str	r0, [r3]
  399 00f0 A6E7     		b	.L19
  400              	.L32:
  401              	.LBB2:
- 261:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_
- 402              		.loc 1 261 7 is_stmt 1 view .LVU77
- 261:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_
- 403              		.loc 1 261 15 is_stmt 0 view .LVU78
+ 260:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_
+ 402              		.loc 1 260 7 is_stmt 1 view .LVU77
+ 260:Core/Src/stm32f4xx_it.c ****       HAL_I2C_Mem_Write(&hi2c1, bmp180_addr, 0xF4, 1, &pressure_cmd, sizeof(pressure_cmd), HAL_MAX_
+ 403              		.loc 1 260 15 is_stmt 0 view .LVU78
  404 00f2 3423     		movs	r3, #52
  405 00f4 8DF81730 		strb	r3, [sp, #23]
- 262:Core/Src/stm32f4xx_it.c ****     }
- 406              		.loc 1 262 7 is_stmt 1 view .LVU79
+ 261:Core/Src/stm32f4xx_it.c ****     }
+ 406              		.loc 1 261 7 is_stmt 1 view .LVU79
  407 00f8 4FF0FF33 		mov	r3, #-1
  408 00fc 0293     		str	r3, [sp, #8]
  409 00fe 0123     		movs	r3, #1
@@ -773,47 +778,47 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  416 010e 5748     		ldr	r0, .L39+20
  417 0110 FFF7FEFF 		bl	HAL_I2C_Mem_Write
  418              	.LVL5:
+ARM GAS  /tmp/ccnTxyD2.s 			page 14
+
+
  419 0114 9AE7     		b	.L20
  420              	.L33:
  421              	.LBE2:
- 265:Core/Src/stm32f4xx_it.c ****       pressure_result = bmp180_get_pressure() / 133.322f;
- 422              		.loc 1 265 7 view .LVU80
-ARM GAS  /tmp/ccbIBmss.s 			page 14
-
-
- 265:Core/Src/stm32f4xx_it.c ****       pressure_result = bmp180_get_pressure() / 133.322f;
- 423              		.loc 1 265 29 is_stmt 0 view .LVU81
+ 264:Core/Src/stm32f4xx_it.c ****       pressure_result = bmp180_get_pressure() / 133.322f;
+ 422              		.loc 1 264 7 view .LVU80
+ 264:Core/Src/stm32f4xx_it.c ****       pressure_result = bmp180_get_pressure() / 133.322f;
+ 423              		.loc 1 264 29 is_stmt 0 view .LVU81
  424 0116 514B     		ldr	r3, .L39+4
  425 0118 0022     		movs	r2, #0
  426 011a 1A60     		str	r2, [r3]
- 266:Core/Src/stm32f4xx_it.c ****     }
- 427              		.loc 1 266 7 is_stmt 1 view .LVU82
- 266:Core/Src/stm32f4xx_it.c ****     }
- 428              		.loc 1 266 25 is_stmt 0 view .LVU83
+ 265:Core/Src/stm32f4xx_it.c ****     }
+ 427              		.loc 1 265 7 is_stmt 1 view .LVU82
+ 265:Core/Src/stm32f4xx_it.c ****     }
+ 428              		.loc 1 265 25 is_stmt 0 view .LVU83
  429 011c FFF7FEFF 		bl	bmp180_get_pressure
  430              	.LVL6:
  431 0120 07EE100A 		vmov	s14, r0	@ int
- 266:Core/Src/stm32f4xx_it.c ****     }
- 432              		.loc 1 266 47 discriminator 1 view .LVU84
+ 265:Core/Src/stm32f4xx_it.c ****     }
+ 432              		.loc 1 265 47 discriminator 1 view .LVU84
  433 0124 B8EEC77A 		vcvt.f32.s32	s14, s14
  434 0128 DFED566A 		vldr.32	s13, .L39+44
  435 012c C7EE267A 		vdiv.f32	s15, s14, s13
- 266:Core/Src/stm32f4xx_it.c ****     }
- 436              		.loc 1 266 23 discriminator 1 view .LVU85
+ 265:Core/Src/stm32f4xx_it.c ****     }
+ 436              		.loc 1 265 23 discriminator 1 view .LVU85
  437 0130 FDEEE77A 		vcvt.s32.f32	s15, s15
  438 0134 544B     		ldr	r3, .L39+48
  439 0136 C3ED007A 		vstr.32	s15, [r3]	@ int
  440 013a 8DE7     		b	.L21
  441              	.L34:
- 270:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 442              		.loc 1 270 7 is_stmt 1 view .LVU86
- 270:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 443              		.loc 1 270 34 is_stmt 0 view .LVU87
+ 269:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 442              		.loc 1 269 7 is_stmt 1 view .LVU86
+ 269:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 443              		.loc 1 269 34 is_stmt 0 view .LVU87
  444 013c 0024     		movs	r4, #0
  445 013e 484B     		ldr	r3, .L39+8
  446 0140 1C60     		str	r4, [r3]
- 271:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
- 447              		.loc 1 271 7 is_stmt 1 view .LVU88
+ 270:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
+ 447              		.loc 1 270 7 is_stmt 1 view .LVU88
  448 0142 524D     		ldr	r5, .L39+52
  449 0144 524E     		ldr	r6, .L39+56
  450 0146 2246     		mov	r2, r4
@@ -821,31 +826,31 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  452 014a 3046     		mov	r0, r6
  453 014c FFF7FEFF 		bl	HAL_RTC_GetTime
  454              	.LVL7:
- 272:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
- 455              		.loc 1 272 7 view .LVU89
+ 271:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
+ 455              		.loc 1 271 7 view .LVU89
  456 0150 2246     		mov	r2, r4
  457 0152 5049     		ldr	r1, .L39+60
  458 0154 3046     		mov	r0, r6
  459 0156 FFF7FEFF 		bl	HAL_RTC_GetDate
  460              	.LVL8:
- 273:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%02d:%02d:%02d", time.Hours, 
- 461              		.loc 1 273 7 view .LVU90
+ 272:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%02d:%02d:%02d", \
+ 461              		.loc 1 272 7 view .LVU90
  462 015a 8020     		movs	r0, #128
  463 015c FFF7FEFF 		bl	lcd1602_transmit_command
  464              	.LVL9:
+ARM GAS  /tmp/ccnTxyD2.s 			page 15
+
+
+ 273:Core/Src/stm32f4xx_it.c ****         time.Hours, time.Minutes, time.Seconds);
+ 465              		.loc 1 273 7 view .LVU91
  274:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 465              		.loc 1 274 7 view .LVU91
- 274:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 466              		.loc 1 274 104 is_stmt 0 view .LVU92
+ 466              		.loc 1 274 25 is_stmt 0 view .LVU92
  467 0160 6B78     		ldrb	r3, [r5, #1]	@ zero_extendqisi2
-ARM GAS  /tmp/ccbIBmss.s 			page 15
-
-
  274:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 468              		.loc 1 274 118 view .LVU93
+ 468              		.loc 1 274 39 view .LVU93
  469 0162 AA78     		ldrb	r2, [r5, #2]	@ zero_extendqisi2
- 274:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 470              		.loc 1 274 7 view .LVU94
+ 273:Core/Src/stm32f4xx_it.c ****         time.Hours, time.Minutes, time.Seconds);
+ 470              		.loc 1 273 7 view .LVU94
  471 0164 4C4C     		ldr	r4, .L39+64
  472 0166 0192     		str	r2, [sp, #4]
  473 0168 0093     		str	r3, [sp]
@@ -860,15 +865,15 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  481 0176 2046     		mov	r0, r4
  482 0178 FFF7FEFF 		bl	lcd1602_send_string
  483              	.LVL11:
- 276:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld, %.2f", pressure
+ 276:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%.2ld, %.2ld, %.2f", \
  484              		.loc 1 276 7 view .LVU96
  485 017c C020     		movs	r0, #192
  486 017e FFF7FEFF 		bl	lcd1602_transmit_command
  487              	.LVL12:
- 277:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 277:Core/Src/stm32f4xx_it.c ****         pressure_result, temperature_result, ((float)AHT10_ADC_Raw / 1048576.0) * 100.0);
  488              		.loc 1 277 7 view .LVU97
- 277:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 489              		.loc 1 277 130 is_stmt 0 view .LVU98
+ 278:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 489              		.loc 1 278 47 is_stmt 0 view .LVU98
  490 0182 3C4B     		ldr	r3, .L39+28
  491 0184 1868     		ldr	r0, [r3]
  492 0186 07EE900A 		vmov	s15, r0	@ int
@@ -876,13 +881,13 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  494 018e 17EE900A 		vmov	r0, s15
  495 0192 FFF7FEFF 		bl	__aeabi_f2d
  496              	.LVL13:
- 277:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 497              		.loc 1 277 151 view .LVU99
+ 278:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 497              		.loc 1 278 68 view .LVU99
  498 0196 0022     		movs	r2, #0
  499 0198 414B     		ldr	r3, .L39+72
  500 019a FFF7FEFF 		bl	__aeabi_dmul
  501              	.LVL14:
- 277:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 277:Core/Src/stm32f4xx_it.c ****         pressure_result, temperature_result, ((float)AHT10_ADC_Raw / 1048576.0) * 100.0);
  502              		.loc 1 277 7 view .LVU100
  503 019e 3A4B     		ldr	r3, .L39+48
  504 01a0 1D68     		ldr	r5, [r3]
@@ -893,74 +898,74 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  509 01aa CDE90201 		strd	r0, [sp, #8]
  510 01ae 344B     		ldr	r3, .L39+40
  511 01b0 1B68     		ldr	r3, [r3]
+ARM GAS  /tmp/ccnTxyD2.s 			page 16
+
+
  512 01b2 0093     		str	r3, [sp]
  513 01b4 2B46     		mov	r3, r5
  514 01b6 3C4A     		ldr	r2, .L39+80
  515 01b8 1E21     		movs	r1, #30
  516 01ba 2046     		mov	r0, r4
-ARM GAS  /tmp/ccbIBmss.s 			page 16
-
-
  517 01bc FFF7FEFF 		bl	snprintf
  518              	.LVL16:
- 278:Core/Src/stm32f4xx_it.c ****     }
- 519              		.loc 1 278 7 is_stmt 1 view .LVU101
+ 279:Core/Src/stm32f4xx_it.c ****     }
+ 519              		.loc 1 279 7 is_stmt 1 view .LVU101
  520 01c0 2046     		mov	r0, r4
  521 01c2 FFF7FEFF 		bl	lcd1602_send_string
  522              	.LVL17:
  523 01c6 50E7     		b	.L22
  524              	.L35:
- 283:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode1 = 0;
- 525              		.loc 1 283 5 view .LVU102
- 283:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode1 = 0;
- 526              		.loc 1 283 36 is_stmt 0 view .LVU103
+ 284:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode1 = 0;
+ 525              		.loc 1 284 5 view .LVU102
+ 284:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode1 = 0;
+ 526              		.loc 1 284 36 is_stmt 0 view .LVU103
  527 01c8 384B     		ldr	r3, .L39+84
  528 01ca 1B68     		ldr	r3, [r3]
- 283:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode1 = 0;
- 529              		.loc 1 283 8 view .LVU104
+ 284:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode1 = 0;
+ 529              		.loc 1 284 8 view .LVU104
  530 01cc B3F57A7F 		cmp	r3, #1000
  531 01d0 04D0     		beq	.L37
  532              	.L24:
- 291:Core/Src/stm32f4xx_it.c ****   }
- 533              		.loc 1 291 5 is_stmt 1 view .LVU105
- 291:Core/Src/stm32f4xx_it.c ****   }
- 534              		.loc 1 291 31 is_stmt 0 view .LVU106
+ 292:Core/Src/stm32f4xx_it.c ****   }
+ 533              		.loc 1 292 5 is_stmt 1 view .LVU105
+ 292:Core/Src/stm32f4xx_it.c ****   }
+ 534              		.loc 1 292 31 is_stmt 0 view .LVU106
  535 01d2 364A     		ldr	r2, .L39+84
  536 01d4 1368     		ldr	r3, [r2]
  537 01d6 0133     		adds	r3, r3, #1
  538 01d8 1360     		str	r3, [r2]
  539 01da 4FE7     		b	.L23
  540              	.L37:
- 284:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
- 541              		.loc 1 284 7 is_stmt 1 view .LVU107
- 284:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
- 542              		.loc 1 284 34 is_stmt 0 view .LVU108
+ 285:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
+ 541              		.loc 1 285 7 is_stmt 1 view .LVU107
+ 285:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
+ 542              		.loc 1 285 34 is_stmt 0 view .LVU108
  543 01dc 0024     		movs	r4, #0
  544 01de 334B     		ldr	r3, .L39+84
  545 01e0 1C60     		str	r4, [r3]
- 285:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
- 546              		.loc 1 285 7 is_stmt 1 view .LVU109
+ 286:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
+ 546              		.loc 1 286 7 is_stmt 1 view .LVU109
  547 01e2 0120     		movs	r0, #1
  548 01e4 FFF7FEFF 		bl	lcd1602_transmit_command
  549              	.LVL18:
- 286:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 550              		.loc 1 286 7 view .LVU110
+ 287:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 550              		.loc 1 287 7 view .LVU110
  551 01e8 8020     		movs	r0, #128
  552 01ea FFF7FEFF 		bl	lcd1602_transmit_command
  553              	.LVL19:
- 287:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Hours);
- 554              		.loc 1 287 7 view .LVU111
+ 288:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Hours);
+ 554              		.loc 1 288 7 view .LVU111
  555 01ee 274D     		ldr	r5, .L39+52
  556 01f0 2246     		mov	r2, r4
  557 01f2 2946     		mov	r1, r5
+ARM GAS  /tmp/ccnTxyD2.s 			page 17
+
+
  558 01f4 2648     		ldr	r0, .L39+56
  559 01f6 FFF7FEFF 		bl	HAL_RTC_GetTime
  560              	.LVL20:
- 288:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 561              		.loc 1 288 7 view .LVU112
-ARM GAS  /tmp/ccbIBmss.s 			page 17
-
-
+ 289:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 561              		.loc 1 289 7 view .LVU112
  562 01fa 274C     		ldr	r4, .L39+64
  563 01fc 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
  564 01fe 2C4A     		ldr	r2, .L39+88
@@ -968,65 +973,65 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  566 0202 2046     		mov	r0, r4
  567 0204 FFF7FEFF 		bl	snprintf
  568              	.LVL21:
- 289:Core/Src/stm32f4xx_it.c ****     }
- 569              		.loc 1 289 7 view .LVU113
+ 290:Core/Src/stm32f4xx_it.c ****     }
+ 569              		.loc 1 290 7 view .LVU113
  570 0208 2046     		mov	r0, r4
  571 020a FFF7FEFF 		bl	lcd1602_send_string
  572              	.LVL22:
  573 020e E0E7     		b	.L24
  574              	.L36:
- 294:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode2 = 0;
- 575              		.loc 1 294 5 view .LVU114
- 294:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode2 = 0;
- 576              		.loc 1 294 36 is_stmt 0 view .LVU115
+ 295:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode2 = 0;
+ 575              		.loc 1 295 5 view .LVU114
+ 295:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode2 = 0;
+ 576              		.loc 1 295 36 is_stmt 0 view .LVU115
  577 0210 284B     		ldr	r3, .L39+92
  578 0212 1B68     		ldr	r3, [r3]
- 294:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode2 = 0;
- 579              		.loc 1 294 8 view .LVU116
+ 295:Core/Src/stm32f4xx_it.c ****       SysTick_1Sec_Counter_mode2 = 0;
+ 579              		.loc 1 295 8 view .LVU116
  580 0214 B3F57A7F 		cmp	r3, #1000
  581 0218 04D0     		beq	.L38
  582              	.L26:
- 302:Core/Src/stm32f4xx_it.c ****   }
- 583              		.loc 1 302 5 is_stmt 1 view .LVU117
- 302:Core/Src/stm32f4xx_it.c ****   }
- 584              		.loc 1 302 31 is_stmt 0 view .LVU118
+ 303:Core/Src/stm32f4xx_it.c ****   }
+ 583              		.loc 1 303 5 is_stmt 1 view .LVU117
+ 303:Core/Src/stm32f4xx_it.c ****   }
+ 584              		.loc 1 303 31 is_stmt 0 view .LVU118
  585 021a 264A     		ldr	r2, .L39+92
  586 021c 1368     		ldr	r3, [r2]
  587 021e 0133     		adds	r3, r3, #1
  588 0220 1360     		str	r3, [r2]
- 589              		.loc 1 305 1 view .LVU119
+ 589              		.loc 1 310 1 view .LVU119
  590 0222 30E7     		b	.L14
  591              	.L38:
- 295:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
- 592              		.loc 1 295 7 is_stmt 1 view .LVU120
- 295:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
- 593              		.loc 1 295 34 is_stmt 0 view .LVU121
+ 296:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
+ 592              		.loc 1 296 7 is_stmt 1 view .LVU120
+ 296:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b00000001);
+ 593              		.loc 1 296 34 is_stmt 0 view .LVU121
  594 0224 0024     		movs	r4, #0
  595 0226 234B     		ldr	r3, .L39+92
  596 0228 1C60     		str	r4, [r3]
- 296:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
- 597              		.loc 1 296 7 is_stmt 1 view .LVU122
+ 297:Core/Src/stm32f4xx_it.c ****       lcd1602_transmit_command(0b10000000);
+ 597              		.loc 1 297 7 is_stmt 1 view .LVU122
  598 022a 0120     		movs	r0, #1
  599 022c FFF7FEFF 		bl	lcd1602_transmit_command
  600              	.LVL23:
- 297:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
- 601              		.loc 1 297 7 view .LVU123
+ 298:Core/Src/stm32f4xx_it.c ****       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 601              		.loc 1 298 7 view .LVU123
  602 0230 8020     		movs	r0, #128
  603 0232 FFF7FEFF 		bl	lcd1602_transmit_command
+ARM GAS  /tmp/ccnTxyD2.s 			page 18
+
+
  604              	.LVL24:
- 298:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Minutes);
- 605              		.loc 1 298 7 view .LVU124
+ 299:Core/Src/stm32f4xx_it.c ****       snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Minutes);
+ 605              		.loc 1 299 7 view .LVU124
  606 0236 154D     		ldr	r5, .L39+52
  607 0238 2246     		mov	r2, r4
-ARM GAS  /tmp/ccbIBmss.s 			page 18
-
-
  608 023a 2946     		mov	r1, r5
  609 023c 1448     		ldr	r0, .L39+56
  610 023e FFF7FEFF 		bl	HAL_RTC_GetTime
  611              	.LVL25:
- 299:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
- 612              		.loc 1 299 7 view .LVU125
+ 300:Core/Src/stm32f4xx_it.c ****       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+ 612              		.loc 1 300 7 view .LVU125
  613 0242 154C     		ldr	r4, .L39+64
  614 0244 6B78     		ldrb	r3, [r5, #1]	@ zero_extendqisi2
  615 0246 1A4A     		ldr	r2, .L39+88
@@ -1034,8 +1039,8 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  617 024a 2046     		mov	r0, r4
  618 024c FFF7FEFF 		bl	snprintf
  619              	.LVL26:
- 300:Core/Src/stm32f4xx_it.c ****     }
- 620              		.loc 1 300 7 view .LVU126
+ 301:Core/Src/stm32f4xx_it.c ****     }
+ 620              		.loc 1 301 7 view .LVU126
  621 0250 2046     		mov	r0, r4
  622 0252 FFF7FEFF 		bl	lcd1602_send_string
  623              	.LVL27:
@@ -1069,31 +1074,31 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  651 02b4 00000000 		.word	SysTick_1Sec_Counter_mode2
  652              		.cfi_endproc
  653              	.LFE145:
- 655              		.section	.text.EXTI15_10_IRQHandler,"ax",%progbits
+ 655              		.section	.text.TIM3_IRQHandler,"ax",%progbits
  656              		.align	1
- 657              		.global	EXTI15_10_IRQHandler
+ 657              		.global	TIM3_IRQHandler
  658              		.syntax unified
+ARM GAS  /tmp/ccnTxyD2.s 			page 19
+
+
  659              		.thumb
  660              		.thumb_func
- 662              	EXTI15_10_IRQHandler:
+ 662              	TIM3_IRQHandler:
  663              	.LFB146:
- 306:Core/Src/stm32f4xx_it.c **** 
-ARM GAS  /tmp/ccbIBmss.s 			page 19
-
-
- 307:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
- 308:Core/Src/stm32f4xx_it.c **** /* STM32F4xx Peripheral Interrupt Handlers                                    */
- 309:Core/Src/stm32f4xx_it.c **** /* Add here the Interrupt Handlers for the used peripherals.                  */
- 310:Core/Src/stm32f4xx_it.c **** /* For the available peripheral interrupt handler names,                      */
- 311:Core/Src/stm32f4xx_it.c **** /* please refer to the startup file (startup_stm32f4xx.s).                    */
+ 311:Core/Src/stm32f4xx_it.c **** 
  312:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
- 313:Core/Src/stm32f4xx_it.c **** 
- 314:Core/Src/stm32f4xx_it.c **** /**
- 315:Core/Src/stm32f4xx_it.c ****   * @brief This function handles EXTI line[15:10] interrupts.
- 316:Core/Src/stm32f4xx_it.c ****   */
- 317:Core/Src/stm32f4xx_it.c **** void EXTI15_10_IRQHandler(void)
- 318:Core/Src/stm32f4xx_it.c **** {
- 664              		.loc 1 318 1 view -0
+ 313:Core/Src/stm32f4xx_it.c **** /* STM32F4xx Peripheral Interrupt Handlers                                    */
+ 314:Core/Src/stm32f4xx_it.c **** /* Add here the Interrupt Handlers for the used peripherals.                  */
+ 315:Core/Src/stm32f4xx_it.c **** /* For the available peripheral interrupt handler names,                      */
+ 316:Core/Src/stm32f4xx_it.c **** /* please refer to the startup file (startup_stm32f4xx.s).                    */
+ 317:Core/Src/stm32f4xx_it.c **** /******************************************************************************/
+ 318:Core/Src/stm32f4xx_it.c **** 
+ 319:Core/Src/stm32f4xx_it.c **** /**
+ 320:Core/Src/stm32f4xx_it.c ****   * @brief This function handles TIM3 global interrupt.
+ 321:Core/Src/stm32f4xx_it.c ****   */
+ 322:Core/Src/stm32f4xx_it.c **** void TIM3_IRQHandler(void)
+ 323:Core/Src/stm32f4xx_it.c **** {
+ 664              		.loc 1 323 1 view -0
  665              		.cfi_startproc
  666              		@ args = 0, pretend = 0, frame = 0
  667              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1102,158 +1107,352 @@ ARM GAS  /tmp/ccbIBmss.s 			page 1
  670              		.cfi_def_cfa_offset 8
  671              		.cfi_offset 3, -8
  672              		.cfi_offset 14, -4
- 319:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
- 320:Core/Src/stm32f4xx_it.c **** 
- 321:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 0 */
- 322:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
- 673              		.loc 1 322 3 view .LVU128
- 674 0002 4FF40050 		mov	r0, #8192
- 675 0006 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 324:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM3_IRQn 0 */
+ 325:Core/Src/stm32f4xx_it.c ****   
+ 326:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM3_IRQn 0 */
+ 327:Core/Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim3);
+ 673              		.loc 1 327 3 view .LVU128
+ 674 0002 0248     		ldr	r0, .L43
+ 675 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
  676              	.LVL28:
- 323:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
- 324:Core/Src/stm32f4xx_it.c ****   current_mode++;
- 677              		.loc 1 324 3 view .LVU129
- 678              		.loc 1 324 15 is_stmt 0 view .LVU130
- 679 000a 054A     		ldr	r2, .L44
- 680 000c 1368     		ldr	r3, [r2]
- 681 000e 0133     		adds	r3, r3, #1
- 682 0010 1360     		str	r3, [r2]
- 325:Core/Src/stm32f4xx_it.c ****   if (current_mode > 2) {
- 683              		.loc 1 325 3 is_stmt 1 view .LVU131
- 684              		.loc 1 325 6 is_stmt 0 view .LVU132
- 685 0012 022B     		cmp	r3, #2
- 686 0014 02D9     		bls	.L41
- 326:Core/Src/stm32f4xx_it.c ****     current_mode = 0;
- 687              		.loc 1 326 5 is_stmt 1 view .LVU133
- 688              		.loc 1 326 18 is_stmt 0 view .LVU134
- 689 0016 1346     		mov	r3, r2
- 690 0018 0022     		movs	r2, #0
- 691 001a 1A60     		str	r2, [r3]
- 692              	.L41:
- 327:Core/Src/stm32f4xx_it.c ****   }
- 328:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 1 */
- 329:Core/Src/stm32f4xx_it.c **** }
- 693              		.loc 1 329 1 view .LVU135
- 694 001c 08BD     		pop	{r3, pc}
- 695              	.L45:
- 696 001e 00BF     		.align	2
- 697              	.L44:
-ARM GAS  /tmp/ccbIBmss.s 			page 20
+ 328:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM3_IRQn 1 */
+ 329:Core/Src/stm32f4xx_it.c **** 
+ 330:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM3_IRQn 1 */
+ 331:Core/Src/stm32f4xx_it.c **** }
+ 677              		.loc 1 331 1 is_stmt 0 view .LVU129
+ 678 0008 08BD     		pop	{r3, pc}
+ 679              	.L44:
+ 680 000a 00BF     		.align	2
+ 681              	.L43:
+ 682 000c 00000000 		.word	htim3
+ 683              		.cfi_endproc
+ 684              	.LFE146:
+ 686              		.section	.text.EXTI15_10_IRQHandler,"ax",%progbits
+ 687              		.align	1
+ 688              		.global	EXTI15_10_IRQHandler
+ 689              		.syntax unified
+ 690              		.thumb
+ 691              		.thumb_func
+ 693              	EXTI15_10_IRQHandler:
+ 694              	.LFB147:
+ 332:Core/Src/stm32f4xx_it.c **** 
+ 333:Core/Src/stm32f4xx_it.c **** /**
+ 334:Core/Src/stm32f4xx_it.c ****   * @brief This function handles EXTI line[15:10] interrupts.
+ARM GAS  /tmp/ccnTxyD2.s 			page 20
 
 
- 698 0020 00000000 		.word	current_mode
- 699              		.cfi_endproc
- 700              	.LFE146:
- 702              		.section	.bss.current_mode,"aw",%nobits
- 703              		.align	2
- 706              	current_mode:
- 707 0000 00000000 		.space	4
- 708              		.global	pressure_result
- 709              		.section	.bss.pressure_result,"aw",%nobits
- 710              		.align	2
- 713              	pressure_result:
- 714 0000 00000000 		.space	4
- 715              		.global	temperature_result
- 716              		.section	.bss.temperature_result,"aw",%nobits
- 717              		.align	2
- 720              	temperature_result:
- 721 0000 00000000 		.space	4
- 722              		.global	current_state_is_write
- 723              		.section	.bss.current_state_is_write,"aw",%nobits
- 726              	current_state_is_write:
- 727 0000 00       		.space	1
- 728              		.global	message_count
- 729              		.section	.bss.message_count,"aw",%nobits
- 730              		.align	2
- 733              	message_count:
- 734 0000 00000000 		.space	32
- 734      00000000 
- 734      00000000 
- 734      00000000 
- 734      00000000 
- 735              		.section	.bss.SysTick_1Sec_Counter_mode2,"aw",%nobits
- 736              		.align	2
- 739              	SysTick_1Sec_Counter_mode2:
- 740 0000 00000000 		.space	4
- 741              		.section	.bss.SysTick_1Sec_Counter_mode1,"aw",%nobits
- 742              		.align	2
- 745              	SysTick_1Sec_Counter_mode1:
- 746 0000 00000000 		.space	4
- 747              		.section	.bss.SysTick_1Sec_Counter_mode0,"aw",%nobits
- 748              		.align	2
- 751              	SysTick_1Sec_Counter_mode0:
- 752 0000 00000000 		.space	4
- 753              		.section	.bss.SysTick_20Sec_Counter,"aw",%nobits
- 754              		.align	2
- 757              	SysTick_20Sec_Counter:
- 758 0000 00000000 		.space	4
- 759              		.text
- 760              	.Letext0:
- 761              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
- 762              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
- 763              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
- 764              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 765              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 766              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 767              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h"
- 768              		.file 9 "Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.h"
- 769              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
-ARM GAS  /tmp/ccbIBmss.s 			page 21
+ 335:Core/Src/stm32f4xx_it.c ****   */
+ 336:Core/Src/stm32f4xx_it.c **** void EXTI15_10_IRQHandler(void)
+ 337:Core/Src/stm32f4xx_it.c **** {
+ 695              		.loc 1 337 1 is_stmt 1 view -0
+ 696              		.cfi_startproc
+ 697              		@ args = 0, pretend = 0, frame = 0
+ 698              		@ frame_needed = 0, uses_anonymous_args = 0
+ 699 0000 08B5     		push	{r3, lr}
+ 700              	.LCFI5:
+ 701              		.cfi_def_cfa_offset 8
+ 702              		.cfi_offset 3, -8
+ 703              		.cfi_offset 14, -4
+ 338:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+ 339:Core/Src/stm32f4xx_it.c ****   
+ 340:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 0 */
+ 341:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+ 704              		.loc 1 341 3 view .LVU131
+ 705 0002 4FF40050 		mov	r0, #8192
+ 706 0006 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 707              	.LVL29:
+ 342:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+ 343:Core/Src/stm32f4xx_it.c **** 
+ 344:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 1 */
+ 345:Core/Src/stm32f4xx_it.c **** }
+ 708              		.loc 1 345 1 is_stmt 0 view .LVU132
+ 709 000a 08BD     		pop	{r3, pc}
+ 710              		.cfi_endproc
+ 711              	.LFE147:
+ 713              		.section	.rodata.HAL_TIM_PeriodElapsedCallback.str1.4,"aMS",%progbits,1
+ 714              		.align	2
+ 715              	.LC3:
+ 716 0000 25640A00 		.ascii	"%d\012\000"
+ 717              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 718              		.align	1
+ 719              		.global	HAL_TIM_PeriodElapsedCallback
+ 720              		.syntax unified
+ 721              		.thumb
+ 722              		.thumb_func
+ 724              	HAL_TIM_PeriodElapsedCallback:
+ 725              	.LVL30:
+ 726              	.LFB148:
+ 346:Core/Src/stm32f4xx_it.c **** 
+ 347:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN 1 */
+ 348:Core/Src/stm32f4xx_it.c **** 
+ 349:Core/Src/stm32f4xx_it.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+ 727              		.loc 1 349 61 is_stmt 1 view -0
+ 728              		.cfi_startproc
+ 729              		@ args = 0, pretend = 0, frame = 0
+ 730              		@ frame_needed = 0, uses_anonymous_args = 0
+ 350:Core/Src/stm32f4xx_it.c ****   if(htim->Instance == TIM3) {
+ 731              		.loc 1 350 3 view .LVU134
+ 732              		.loc 1 350 10 is_stmt 0 view .LVU135
+ 733 0000 0268     		ldr	r2, [r0]
+ 734              		.loc 1 350 5 view .LVU136
+ 735 0002 124B     		ldr	r3, .L55
+ 736 0004 9A42     		cmp	r2, r3
+ 737 0006 00D0     		beq	.L54
+ARM GAS  /tmp/ccnTxyD2.s 			page 21
 
 
- 770              		.file 11 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
- 771              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  /tmp/ccbIBmss.s 			page 22
+ 738 0008 7047     		bx	lr
+ 739              	.L54:
+ 349:Core/Src/stm32f4xx_it.c ****   if(htim->Instance == TIM3) {
+ 740              		.loc 1 349 61 view .LVU137
+ 741 000a 10B5     		push	{r4, lr}
+ 742              	.LCFI6:
+ 743              		.cfi_def_cfa_offset 8
+ 744              		.cfi_offset 4, -8
+ 745              		.cfi_offset 14, -4
+ 351:Core/Src/stm32f4xx_it.c ****     HAL_TIM_Base_Stop_IT(&htim3); 
+ 746              		.loc 1 351 5 is_stmt 1 view .LVU138
+ 747 000c 1048     		ldr	r0, .L55+4
+ 748              	.LVL31:
+ 749              		.loc 1 351 5 is_stmt 0 view .LVU139
+ 750 000e FFF7FEFF 		bl	HAL_TIM_Base_Stop_IT
+ 751              	.LVL32:
+ 352:Core/Src/stm32f4xx_it.c ****     current_mode++;
+ 752              		.loc 1 352 5 is_stmt 1 view .LVU140
+ 753              		.loc 1 352 17 is_stmt 0 view .LVU141
+ 754 0012 104A     		ldr	r2, .L55+8
+ 755 0014 1368     		ldr	r3, [r2]
+ 756 0016 0133     		adds	r3, r3, #1
+ 757 0018 1360     		str	r3, [r2]
+ 353:Core/Src/stm32f4xx_it.c ****     if (current_mode > 2) {
+ 758              		.loc 1 353 5 is_stmt 1 view .LVU142
+ 759              		.loc 1 353 8 is_stmt 0 view .LVU143
+ 760 001a 022B     		cmp	r3, #2
+ 761 001c 02D9     		bls	.L49
+ 354:Core/Src/stm32f4xx_it.c ****       current_mode = 0;
+ 762              		.loc 1 354 7 is_stmt 1 view .LVU144
+ 763              		.loc 1 354 20 is_stmt 0 view .LVU145
+ 764 001e 1346     		mov	r3, r2
+ 765 0020 0022     		movs	r2, #0
+ 766 0022 1A60     		str	r2, [r3]
+ 767              	.L49:
+ 355:Core/Src/stm32f4xx_it.c ****     }
+ 356:Core/Src/stm32f4xx_it.c ****     snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%d\n", current_mode);
+ 768              		.loc 1 356 5 is_stmt 1 view .LVU146
+ 769 0024 0C4C     		ldr	r4, .L55+12
+ 770 0026 0B4B     		ldr	r3, .L55+8
+ 771 0028 1B68     		ldr	r3, [r3]
+ 772 002a 0C4A     		ldr	r2, .L55+16
+ 773 002c 1E21     		movs	r1, #30
+ 774 002e 2046     		mov	r0, r4
+ 775 0030 FFF7FEFF 		bl	snprintf
+ 776              	.LVL33:
+ 357:Core/Src/stm32f4xx_it.c ****     HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAG
+ 777              		.loc 1 357 5 view .LVU147
+ 778              		.loc 1 357 72 is_stmt 0 view .LVU148
+ 779 0034 2046     		mov	r0, r4
+ 780 0036 FFF7FEFF 		bl	strlen
+ 781              	.LVL34:
+ 782              		.loc 1 357 5 discriminator 1 view .LVU149
+ 783 003a 4FF0FF33 		mov	r3, #-1
+ 784 003e 82B2     		uxth	r2, r0
+ 785 0040 2146     		mov	r1, r4
+ 786 0042 0748     		ldr	r0, .L55+20
+ARM GAS  /tmp/ccnTxyD2.s 			page 22
+
+
+ 787 0044 FFF7FEFF 		bl	HAL_UART_Transmit
+ 788              	.LVL35:
+ 358:Core/Src/stm32f4xx_it.c ****   }
+ 359:Core/Src/stm32f4xx_it.c **** }
+ 789              		.loc 1 359 1 view .LVU150
+ 790 0048 10BD     		pop	{r4, pc}
+ 791              	.L56:
+ 792 004a 00BF     		.align	2
+ 793              	.L55:
+ 794 004c 00040040 		.word	1073742848
+ 795 0050 00000000 		.word	htim3
+ 796 0054 00000000 		.word	current_mode
+ 797 0058 00000000 		.word	GLOBAL_MESSAGE_BUFFER
+ 798 005c 00000000 		.word	.LC3
+ 799 0060 00000000 		.word	huart2
+ 800              		.cfi_endproc
+ 801              	.LFE148:
+ 803              		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
+ 804              		.align	1
+ 805              		.global	HAL_GPIO_EXTI_Callback
+ 806              		.syntax unified
+ 807              		.thumb
+ 808              		.thumb_func
+ 810              	HAL_GPIO_EXTI_Callback:
+ 811              	.LVL36:
+ 812              	.LFB149:
+ 360:Core/Src/stm32f4xx_it.c **** 
+ 361:Core/Src/stm32f4xx_it.c **** void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+ 813              		.loc 1 361 48 is_stmt 1 view -0
+ 814              		.cfi_startproc
+ 815              		@ args = 0, pretend = 0, frame = 0
+ 816              		@ frame_needed = 0, uses_anonymous_args = 0
+ 362:Core/Src/stm32f4xx_it.c ****   if(GPIO_Pin == GPIO_PIN_13) {
+ 817              		.loc 1 362 3 view .LVU152
+ 818              		.loc 1 362 5 is_stmt 0 view .LVU153
+ 819 0000 B0F5005F 		cmp	r0, #8192
+ 820 0004 00D0     		beq	.L63
+ 821 0006 7047     		bx	lr
+ 822              	.L63:
+ 361:Core/Src/stm32f4xx_it.c ****   if(GPIO_Pin == GPIO_PIN_13) {
+ 823              		.loc 1 361 48 view .LVU154
+ 824 0008 08B5     		push	{r3, lr}
+ 825              	.LCFI7:
+ 826              		.cfi_def_cfa_offset 8
+ 827              		.cfi_offset 3, -8
+ 828              		.cfi_offset 14, -4
+ 363:Core/Src/stm32f4xx_it.c ****     HAL_TIM_Base_Start_IT(&htim3); 
+ 829              		.loc 1 363 5 is_stmt 1 view .LVU155
+ 830 000a 0248     		ldr	r0, .L64
+ 831              	.LVL37:
+ 832              		.loc 1 363 5 is_stmt 0 view .LVU156
+ 833 000c FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 834              	.LVL38:
+ 364:Core/Src/stm32f4xx_it.c ****   }
+ 365:Core/Src/stm32f4xx_it.c **** }
+ 835              		.loc 1 365 1 view .LVU157
+ 836 0010 08BD     		pop	{r3, pc}
+ARM GAS  /tmp/ccnTxyD2.s 			page 23
+
+
+ 837              	.L65:
+ 838 0012 00BF     		.align	2
+ 839              	.L64:
+ 840 0014 00000000 		.word	htim3
+ 841              		.cfi_endproc
+ 842              	.LFE149:
+ 844              		.section	.bss.current_mode,"aw",%nobits
+ 845              		.align	2
+ 848              	current_mode:
+ 849 0000 00000000 		.space	4
+ 850              		.global	pressure_result
+ 851              		.section	.bss.pressure_result,"aw",%nobits
+ 852              		.align	2
+ 855              	pressure_result:
+ 856 0000 00000000 		.space	4
+ 857              		.global	temperature_result
+ 858              		.section	.bss.temperature_result,"aw",%nobits
+ 859              		.align	2
+ 862              	temperature_result:
+ 863 0000 00000000 		.space	4
+ 864              		.global	current_state_is_write
+ 865              		.section	.bss.current_state_is_write,"aw",%nobits
+ 868              	current_state_is_write:
+ 869 0000 00       		.space	1
+ 870              		.global	message_count
+ 871              		.section	.bss.message_count,"aw",%nobits
+ 872              		.align	2
+ 875              	message_count:
+ 876 0000 00000000 		.space	32
+ 876      00000000 
+ 876      00000000 
+ 876      00000000 
+ 876      00000000 
+ 877              		.section	.bss.SysTick_1Sec_Counter_mode2,"aw",%nobits
+ 878              		.align	2
+ 881              	SysTick_1Sec_Counter_mode2:
+ 882 0000 00000000 		.space	4
+ 883              		.section	.bss.SysTick_1Sec_Counter_mode1,"aw",%nobits
+ 884              		.align	2
+ 887              	SysTick_1Sec_Counter_mode1:
+ 888 0000 00000000 		.space	4
+ 889              		.section	.bss.SysTick_1Sec_Counter_mode0,"aw",%nobits
+ 890              		.align	2
+ 893              	SysTick_1Sec_Counter_mode0:
+ 894 0000 00000000 		.space	4
+ 895              		.section	.bss.SysTick_20Sec_Counter,"aw",%nobits
+ 896              		.align	2
+ 899              	SysTick_20Sec_Counter:
+ 900 0000 00000000 		.space	4
+ 901              		.text
+ 902              	.Letext0:
+ 903              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
+ 904              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
+ 905              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
+ 906              		.file 5 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/lib/gcc/arm-none-eabi/14.
+ 907              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 908              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ARM GAS  /tmp/ccnTxyD2.s 			page 24
+
+
+ 909              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 910              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h"
+ 911              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 912              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 913              		.file 12 "Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.h"
+ 914              		.file 13 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
+ 915              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 916              		.file 15 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
+ 917              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/ccnTxyD2.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_it.c
-     /tmp/ccbIBmss.s:21     .text.NMI_Handler:00000000 $t
-     /tmp/ccbIBmss.s:27     .text.NMI_Handler:00000000 NMI_Handler
-     /tmp/ccbIBmss.s:44     .text.HardFault_Handler:00000000 $t
-     /tmp/ccbIBmss.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-     /tmp/ccbIBmss.s:67     .text.MemManage_Handler:00000000 $t
-     /tmp/ccbIBmss.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-     /tmp/ccbIBmss.s:90     .text.BusFault_Handler:00000000 $t
-     /tmp/ccbIBmss.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-     /tmp/ccbIBmss.s:113    .text.UsageFault_Handler:00000000 $t
-     /tmp/ccbIBmss.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-     /tmp/ccbIBmss.s:136    .text.SVC_Handler:00000000 $t
-     /tmp/ccbIBmss.s:142    .text.SVC_Handler:00000000 SVC_Handler
-     /tmp/ccbIBmss.s:155    .text.DebugMon_Handler:00000000 $t
-     /tmp/ccbIBmss.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
-     /tmp/ccbIBmss.s:174    .text.PendSV_Handler:00000000 $t
-     /tmp/ccbIBmss.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
-     /tmp/ccbIBmss.s:193    .rodata.SysTick_Handler.str1.4:00000000 $d
-     /tmp/ccbIBmss.s:203    .text.SysTick_Handler:00000000 $t
-     /tmp/ccbIBmss.s:209    .text.SysTick_Handler:00000000 SysTick_Handler
-     /tmp/ccbIBmss.s:628    .text.SysTick_Handler:00000258 $d
-     /tmp/ccbIBmss.s:706    .bss.current_mode:00000000 current_mode
-     /tmp/ccbIBmss.s:757    .bss.SysTick_20Sec_Counter:00000000 SysTick_20Sec_Counter
-     /tmp/ccbIBmss.s:751    .bss.SysTick_1Sec_Counter_mode0:00000000 SysTick_1Sec_Counter_mode0
-     /tmp/ccbIBmss.s:720    .bss.temperature_result:00000000 temperature_result
-     /tmp/ccbIBmss.s:713    .bss.pressure_result:00000000 pressure_result
-     /tmp/ccbIBmss.s:745    .bss.SysTick_1Sec_Counter_mode1:00000000 SysTick_1Sec_Counter_mode1
-     /tmp/ccbIBmss.s:739    .bss.SysTick_1Sec_Counter_mode2:00000000 SysTick_1Sec_Counter_mode2
-     /tmp/ccbIBmss.s:656    .text.EXTI15_10_IRQHandler:00000000 $t
-     /tmp/ccbIBmss.s:662    .text.EXTI15_10_IRQHandler:00000000 EXTI15_10_IRQHandler
-     /tmp/ccbIBmss.s:698    .text.EXTI15_10_IRQHandler:00000020 $d
-     /tmp/ccbIBmss.s:703    .bss.current_mode:00000000 $d
-     /tmp/ccbIBmss.s:710    .bss.pressure_result:00000000 $d
-     /tmp/ccbIBmss.s:717    .bss.temperature_result:00000000 $d
-     /tmp/ccbIBmss.s:726    .bss.current_state_is_write:00000000 current_state_is_write
-     /tmp/ccbIBmss.s:727    .bss.current_state_is_write:00000000 $d
-     /tmp/ccbIBmss.s:733    .bss.message_count:00000000 message_count
-     /tmp/ccbIBmss.s:730    .bss.message_count:00000000 $d
-     /tmp/ccbIBmss.s:736    .bss.SysTick_1Sec_Counter_mode2:00000000 $d
-     /tmp/ccbIBmss.s:742    .bss.SysTick_1Sec_Counter_mode1:00000000 $d
-     /tmp/ccbIBmss.s:748    .bss.SysTick_1Sec_Counter_mode0:00000000 $d
-     /tmp/ccbIBmss.s:754    .bss.SysTick_20Sec_Counter:00000000 $d
+     /tmp/ccnTxyD2.s:21     .text.NMI_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:27     .text.NMI_Handler:00000000 NMI_Handler
+     /tmp/ccnTxyD2.s:44     .text.HardFault_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
+     /tmp/ccnTxyD2.s:67     .text.MemManage_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
+     /tmp/ccnTxyD2.s:90     .text.BusFault_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
+     /tmp/ccnTxyD2.s:113    .text.UsageFault_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
+     /tmp/ccnTxyD2.s:136    .text.SVC_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:142    .text.SVC_Handler:00000000 SVC_Handler
+     /tmp/ccnTxyD2.s:155    .text.DebugMon_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
+     /tmp/ccnTxyD2.s:174    .text.PendSV_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
+     /tmp/ccnTxyD2.s:193    .rodata.SysTick_Handler.str1.4:00000000 $d
+     /tmp/ccnTxyD2.s:203    .text.SysTick_Handler:00000000 $t
+     /tmp/ccnTxyD2.s:209    .text.SysTick_Handler:00000000 SysTick_Handler
+     /tmp/ccnTxyD2.s:628    .text.SysTick_Handler:00000258 $d
+     /tmp/ccnTxyD2.s:848    .bss.current_mode:00000000 current_mode
+     /tmp/ccnTxyD2.s:899    .bss.SysTick_20Sec_Counter:00000000 SysTick_20Sec_Counter
+     /tmp/ccnTxyD2.s:893    .bss.SysTick_1Sec_Counter_mode0:00000000 SysTick_1Sec_Counter_mode0
+     /tmp/ccnTxyD2.s:862    .bss.temperature_result:00000000 temperature_result
+     /tmp/ccnTxyD2.s:855    .bss.pressure_result:00000000 pressure_result
+     /tmp/ccnTxyD2.s:887    .bss.SysTick_1Sec_Counter_mode1:00000000 SysTick_1Sec_Counter_mode1
+     /tmp/ccnTxyD2.s:881    .bss.SysTick_1Sec_Counter_mode2:00000000 SysTick_1Sec_Counter_mode2
+     /tmp/ccnTxyD2.s:656    .text.TIM3_IRQHandler:00000000 $t
+     /tmp/ccnTxyD2.s:662    .text.TIM3_IRQHandler:00000000 TIM3_IRQHandler
+     /tmp/ccnTxyD2.s:682    .text.TIM3_IRQHandler:0000000c $d
+     /tmp/ccnTxyD2.s:687    .text.EXTI15_10_IRQHandler:00000000 $t
+     /tmp/ccnTxyD2.s:693    .text.EXTI15_10_IRQHandler:00000000 EXTI15_10_IRQHandler
+     /tmp/ccnTxyD2.s:714    .rodata.HAL_TIM_PeriodElapsedCallback.str1.4:00000000 $d
+     /tmp/ccnTxyD2.s:718    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+     /tmp/ccnTxyD2.s:724    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+     /tmp/ccnTxyD2.s:794    .text.HAL_TIM_PeriodElapsedCallback:0000004c $d
+     /tmp/ccnTxyD2.s:804    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+     /tmp/ccnTxyD2.s:810    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+     /tmp/ccnTxyD2.s:840    .text.HAL_GPIO_EXTI_Callback:00000014 $d
+     /tmp/ccnTxyD2.s:845    .bss.current_mode:00000000 $d
+     /tmp/ccnTxyD2.s:852    .bss.pressure_result:00000000 $d
+     /tmp/ccnTxyD2.s:859    .bss.temperature_result:00000000 $d
+     /tmp/ccnTxyD2.s:868    .bss.current_state_is_write:00000000 current_state_is_write
+     /tmp/ccnTxyD2.s:869    .bss.current_state_is_write:00000000 $d
+     /tmp/ccnTxyD2.s:875    .bss.message_count:00000000 message_count
+     /tmp/ccnTxyD2.s:872    .bss.message_count:00000000 $d
+     /tmp/ccnTxyD2.s:878    .bss.SysTick_1Sec_Counter_mode2:00000000 $d
+     /tmp/ccnTxyD2.s:884    .bss.SysTick_1Sec_Counter_mode1:00000000 $d
+     /tmp/ccnTxyD2.s:890    .bss.SysTick_1Sec_Counter_mode0:00000000 $d
+     /tmp/ccnTxyD2.s:896    .bss.SysTick_20Sec_Counter:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
 HAL_I2C_Master_Transmit
 HAL_I2C_Master_Receive
+ARM GAS  /tmp/ccnTxyD2.s 			page 26
+
+
 HAL_I2C_Mem_Write
 bmp180_get_temperature
 bmp180_get_pressure
@@ -1263,9 +1462,6 @@ lcd1602_transmit_command
 snprintf
 lcd1602_send_string
 __aeabi_f2d
-ARM GAS  /tmp/ccbIBmss.s 			page 23
-
-
 __aeabi_dmul
 aht10_measurement_command
 aht10_addr
@@ -1278,4 +1474,11 @@ time
 hrtc
 date
 GLOBAL_MESSAGE_BUFFER
+HAL_TIM_IRQHandler
+htim3
 HAL_GPIO_EXTI_IRQHandler
+HAL_TIM_Base_Stop_IT
+strlen
+HAL_UART_Transmit
+huart2
+HAL_TIM_Base_Start_IT

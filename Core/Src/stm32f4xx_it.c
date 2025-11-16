@@ -109,7 +109,7 @@ void LogData(Data Current);
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-
+extern TIM_HandleTypeDef htim3;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -200,7 +200,6 @@ void SVC_Handler(void)
   /* USER CODE BEGIN SVCall_IRQn 0 */
 
   /* USER CODE END SVCall_IRQn 0 */
-
   /* USER CODE BEGIN SVCall_IRQn 1 */
 
   /* USER CODE END SVCall_IRQn 1 */
@@ -214,7 +213,6 @@ void DebugMon_Handler(void)
   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
 
   /* USER CODE END DebugMonitor_IRQn 0 */
-
   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
 
   /* USER CODE END DebugMonitor_IRQn 1 */
@@ -228,7 +226,6 @@ void PendSV_Handler(void)
   /* USER CODE BEGIN PendSV_IRQn 0 */
 
   /* USER CODE END PendSV_IRQn 0 */
-
   /* USER CODE BEGIN PendSV_IRQn 1 */
 
   /* USER CODE END PendSV_IRQn 1 */
@@ -305,6 +302,10 @@ void SysTick_Handler(void)
     }
     SysTick_1Sec_Counter_mode2++;
   }
+
+  //CAUTION
+    //EVERYTHING WHAT'S BELOW IS...UM...COMMENTARIED?
+
   /* USER CODE END SysTick_IRQn 1 */
 }
 
@@ -316,32 +317,51 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles TIM3 global interrupt.
+  */
+void TIM3_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM3_IRQn 0 */
+  
+  /* USER CODE END TIM3_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim3);
+  /* USER CODE BEGIN TIM3_IRQn 1 */
+
+  /* USER CODE END TIM3_IRQn 1 */
+}
+
+/**
   * @brief This function handles EXTI line[15:10] interrupts.
   */
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-
+  
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-  current_mode++;
-  
-  if (current_mode > 2) {
-    current_mode = 0;
-  }
+
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 
-/*void GetData(void)
-{
-	if (SysTick_1Sec_Counter == SYSTICK_1SEC_VALUE)
-	{
-		SysTick_1Sec_Counter = 0;
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-		for(int i=0; i<500000; i++);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
-	}
-	SysTick_1Sec_Counter++;
-}*/
+/* USER CODE BEGIN 1 */
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+  if(htim->Instance == TIM3) {
+    HAL_TIM_Base_Stop_IT(&htim3); 
+    current_mode++;
+    if (current_mode > 2) {
+      current_mode = 0;
+    }
+    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%d\n", current_mode);
+    HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_BUFFER), HAL_MAX_DELAY);
+  }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+  if(GPIO_Pin == GPIO_PIN_13) {
+    HAL_TIM_Base_Start_IT(&htim3); 
+  }
+}
+
 /* USER CODE END 1 */

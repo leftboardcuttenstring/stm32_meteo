@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccCWJzP2.s 			page 1
+ARM GAS  /tmp/ccuy40jU.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
   27:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****                ##### RTC and Backup Domain Operating Condition #####
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   ==============================================================================
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   [..] The real-time clock (RTC), the RTC backup registers, and the backup
-ARM GAS  /tmp/ccCWJzP2.s 			page 2
+ARM GAS  /tmp/ccuy40jU.s 			page 2
 
 
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****        SRAM (BKP SRAM) can be powered from the VBAT voltage when the main
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
   84:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         format using the HAL_RTC_Init() function.
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   *** Time and Date configuration ***
-ARM GAS  /tmp/ccCWJzP2.s 			page 3
+ARM GAS  /tmp/ccuy40jU.s 			page 3
 
 
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   ===================================
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  141:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     (+) WakeUpTimerEventCallback     : RTC WakeUpTimer Event callback.
  142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     (+) Tamper1EventCallback         : RTC Tamper 1 Event callback.
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     (+) Tamper2EventCallback         : RTC Tamper 2 Event callback. (*)
-ARM GAS  /tmp/ccCWJzP2.s 			page 4
+ARM GAS  /tmp/ccuy40jU.s 			page 4
 
 
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     (+) MspInitCallback              : RTC MspInit callback.
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @brief    RTC HAL module driver
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @{
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   */
-ARM GAS  /tmp/ccCWJzP2.s 			page 5
+ARM GAS  /tmp/ccuy40jU.s 			page 5
 
 
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  255:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** HAL_StatusTypeDef HAL_RTC_Init(RTC_HandleTypeDef *hrtc)
  256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** {
  257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   HAL_StatusTypeDef status;
-ARM GAS  /tmp/ccCWJzP2.s 			page 6
+ARM GAS  /tmp/ccuy40jU.s 			page 6
 
 
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  312:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Set RTC state */
  313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
  314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 7
+ARM GAS  /tmp/ccuy40jU.s 			page 7
 
 
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Check whether the calendar needs to be initialized */
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  369:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** HAL_StatusTypeDef HAL_RTC_DeInit(RTC_HandleTypeDef *hrtc)
  370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** {
  371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   HAL_StatusTypeDef status;
-ARM GAS  /tmp/ccCWJzP2.s 			page 8
+ARM GAS  /tmp/ccuy40jU.s 			page 8
 
 
  372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  426:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     hrtc->State = HAL_RTC_STATE_RESET;
  427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   }
  428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 9
+ARM GAS  /tmp/ccuy40jU.s 			page 9
 
 
  429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Release Lock */
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       case HAL_RTC_WAKEUPTIMER_EVENT_CB_ID :
  485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         hrtc->WakeUpTimerEventCallback = pCallback;
-ARM GAS  /tmp/ccCWJzP2.s 			page 10
+ARM GAS  /tmp/ccuy40jU.s 			page 10
 
 
  486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         break;
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  540:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** }
  541:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** /**
-ARM GAS  /tmp/ccCWJzP2.s 			page 11
+ARM GAS  /tmp/ccuy40jU.s 			page 11
 
 
  543:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @brief  Unregisters an RTC Callback
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  597:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  598:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       case HAL_RTC_MSPINIT_CB_ID :
  599:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         hrtc->MspInitCallback = HAL_RTC_MspInit;
-ARM GAS  /tmp/ccCWJzP2.s 			page 12
+ARM GAS  /tmp/ccuy40jU.s 			page 12
 
 
  600:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         break;
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34              		@ link register save eliminated.
  651:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Prevent unused argument(s) compilation warning */
-ARM GAS  /tmp/ccCWJzP2.s 			page 13
+ARM GAS  /tmp/ccuy40jU.s 			page 13
 
 
  652:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   UNUSED(hrtc);
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
   71              	.LFB144:
  674:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  675:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** /**
-ARM GAS  /tmp/ccCWJzP2.s 			page 14
+ARM GAS  /tmp/ccuy40jU.s 			page 14
 
 
  676:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @}
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  730:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       sTime->TimeFormat = 0x00U;
  731:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       assert_param(IS_RTC_HOUR24(sTime->Hours));
  732:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     }
-ARM GAS  /tmp/ccCWJzP2.s 			page 15
+ARM GAS  /tmp/ccuy40jU.s 			page 15
 
 
  733:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     assert_param(IS_RTC_MINUTES(sTime->Minutes));
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  787:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Enable the write protection for RTC registers */
  788:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   __HAL_RTC_WRITEPROTECTION_ENABLE(hrtc);
  789:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 16
+ARM GAS  /tmp/ccuy40jU.s 			page 16
 
 
  790:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Process Unlocked */
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  844:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   {
  845:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     /* Convert the time structure parameters to Binary format */
  846:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sTime->Hours = (uint8_t)RTC_Bcd2ToByte(sTime->Hours);
-ARM GAS  /tmp/ccCWJzP2.s 			page 17
+ARM GAS  /tmp/ccuy40jU.s 			page 17
 
 
  847:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sTime->Minutes = (uint8_t)RTC_Bcd2ToByte(sTime->Minutes);
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  901:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  902:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     datetmpreg = ((((uint32_t)sDate->Year)    << RTC_DR_YU_Pos) | \
  903:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****                   (((uint32_t)sDate->Month)   << RTC_DR_MU_Pos) | \
-ARM GAS  /tmp/ccCWJzP2.s 			page 18
+ARM GAS  /tmp/ccuy40jU.s 			page 18
 
 
  904:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****                   ((uint32_t) sDate->Date)                      | \
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  958:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Check the parameters */
  959:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   assert_param(IS_RTC_FORMAT(Format));
  960:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 19
+ARM GAS  /tmp/ccuy40jU.s 			page 19
 
 
  961:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Get the DR register */
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1015:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   uint32_t tmpreg = 0U;
 1016:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   uint32_t subsecondtmpreg = 0U;
 1017:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 20
+ARM GAS  /tmp/ccuy40jU.s 			page 20
 
 
 1018:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Check the parameters */
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1072:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     }
 1073:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     else
 1074:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     {
-ARM GAS  /tmp/ccCWJzP2.s 			page 21
+ARM GAS  /tmp/ccuy40jU.s 			page 21
 
 
 1075:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       sAlarm->AlarmTime.TimeFormat = 0x00U;
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         hrtc->State = HAL_RTC_STATE_TIMEOUT;
 1130:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
 1131:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         /* Process Unlocked */
-ARM GAS  /tmp/ccCWJzP2.s 			page 22
+ARM GAS  /tmp/ccuy40jU.s 			page 22
 
 
 1132:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         __HAL_UNLOCK(hrtc);
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1186:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
 1187:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Change RTC state back to READY */
 1188:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   hrtc->State = HAL_RTC_STATE_READY;
-ARM GAS  /tmp/ccCWJzP2.s 			page 23
+ARM GAS  /tmp/ccuy40jU.s 			page 23
 
 
 1189:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1243:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     }
 1244:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     assert_param(IS_RTC_MINUTES(sAlarm->AlarmTime.Minutes));
 1245:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     assert_param(IS_RTC_SECONDS(sAlarm->AlarmTime.Seconds));
-ARM GAS  /tmp/ccCWJzP2.s 			page 24
+ARM GAS  /tmp/ccuy40jU.s 			page 24
 
 
 1246:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1300:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****                                (uint32_t)(sAlarm->AlarmSubSecondMask));
 1301:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
 1302:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Disable the write protection for RTC registers */
-ARM GAS  /tmp/ccCWJzP2.s 			page 25
+ARM GAS  /tmp/ccuy40jU.s 			page 25
 
 
 1303:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   __HAL_RTC_WRITEPROTECTION_DISABLE(hrtc);
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1357:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         /* Enable the write protection for RTC registers */
 1358:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         __HAL_RTC_WRITEPROTECTION_ENABLE(hrtc);
 1359:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 26
+ARM GAS  /tmp/ccuy40jU.s 			page 26
 
 
 1360:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****         hrtc->State = HAL_RTC_STATE_TIMEOUT;
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
   79              		.cfi_def_cfa_offset 16
   80              		.cfi_offset 3, -16
   81              		.cfi_offset 4, -12
-ARM GAS  /tmp/ccCWJzP2.s 			page 27
+ARM GAS  /tmp/ccuy40jU.s 			page 27
 
 
   82              		.cfi_offset 5, -8
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     /* Get tick */
 1429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     tickstart = HAL_GetTick();
 1430:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 28
+ARM GAS  /tmp/ccuy40jU.s 			page 28
 
 
 1431:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     /* Wait till RTC ALRAWF flag is set and if timeout is reached exit */
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  139 0042 13F0020F 		tst	r3, #2
  140 0046 2DD1     		bne	.L8
 1461:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     {
-ARM GAS  /tmp/ccCWJzP2.s 			page 29
+ARM GAS  /tmp/ccuy40jU.s 			page 29
 
 
 1462:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       if ((HAL_GetTick() - tickstart) > RTC_TIMEOUT_VALUE)
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  181              		.loc 1 1429 17 is_stmt 0 view .LVU48
  182 0078 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  /tmp/ccCWJzP2.s 			page 30
+ARM GAS  /tmp/ccuy40jU.s 			page 30
 
 
  183              	.LVL8:
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1444:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       }
  220              		.loc 1 1444 9 view .LVU66
 1444:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       }
-ARM GAS  /tmp/ccCWJzP2.s 			page 31
+ARM GAS  /tmp/ccuy40jU.s 			page 31
 
 
  221              		.loc 1 1444 16 is_stmt 0 view .LVU67
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  261              	HAL_RTC_AlarmAEventCallback:
  262              	.LVL14:
  263              	.LFB147:
-ARM GAS  /tmp/ccCWJzP2.s 			page 32
+ARM GAS  /tmp/ccuy40jU.s 			page 32
 
 
 1487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1541:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sAlarm->AlarmTime.Seconds = RTC_Bcd2ToByte(sAlarm->AlarmTime.Seconds);
 1542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sAlarm->AlarmDateWeekDay  = RTC_Bcd2ToByte(sAlarm->AlarmDateWeekDay);
 1543:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   }
-ARM GAS  /tmp/ccCWJzP2.s 			page 33
+ARM GAS  /tmp/ccuy40jU.s 			page 33
 
 
 1544:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1598:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
 1599:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** /**
 1600:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @brief  Alarm A callback.
-ARM GAS  /tmp/ccCWJzP2.s 			page 34
+ARM GAS  /tmp/ccuy40jU.s 			page 34
 
 
 1601:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @param  hrtc pointer to a RTC_HandleTypeDef structure that contains
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  302 000c 0368     		ldr	r3, [r0]
  303 000e 9A68     		ldr	r2, [r3, #8]
 1560:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   {
-ARM GAS  /tmp/ccCWJzP2.s 			page 35
+ARM GAS  /tmp/ccuy40jU.s 			page 35
 
 
  304              		.loc 1 1560 6 view .LVU88
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  344              	.LVL18:
 1572:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** #endif /* USE_HAL_RTC_REGISTER_CALLBACKS */
  345              		.loc 1 1572 7 is_stmt 0 view .LVU103
-ARM GAS  /tmp/ccCWJzP2.s 			page 36
+ARM GAS  /tmp/ccuy40jU.s 			page 36
 
 
  346 0044 EBE7     		b	.L16
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  389              		.loc 1 1624 3 is_stmt 1 view .LVU108
  390              	.LVL21:
 1625:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 37
+ARM GAS  /tmp/ccuy40jU.s 			page 37
 
 
 1626:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Get tick */
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1640:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   }
 1641:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
 1642:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   /* Clear the Alarm flag */
-ARM GAS  /tmp/ccCWJzP2.s 			page 38
+ARM GAS  /tmp/ccuy40jU.s 			page 38
 
 
 1643:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   __HAL_RTC_ALARM_CLEAR_FLAG(hrtc, RTC_FLAG_ALRAF);
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1670:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
 1671:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** /**
 1672:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @brief  Waits until the RTC Time and Date registers (RTC_TR and RTC_DR) are
-ARM GAS  /tmp/ccCWJzP2.s 			page 39
+ARM GAS  /tmp/ccuy40jU.s 			page 39
 
 
 1673:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   *         synchronized with RTC APB clock.
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  489              	.L32:
  490              		.loc 1 1697 46 view .LVU144
  491              		.loc 1 1697 15 is_stmt 0 view .LVU145
-ARM GAS  /tmp/ccCWJzP2.s 			page 40
+ARM GAS  /tmp/ccuy40jU.s 			page 40
 
 
  492 0010 2368     		ldr	r3, [r4]
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1711:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @param  hrtc pointer to a RTC_HandleTypeDef structure that contains
 1712:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   *                the configuration information for RTC.
 1713:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   * @retval None
-ARM GAS  /tmp/ccCWJzP2.s 			page 41
+ARM GAS  /tmp/ccuy40jU.s 			page 41
 
 
 1714:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   */
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1729:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** void HAL_RTC_DST_Sub1Hour(RTC_HandleTypeDef *hrtc)
 1730:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** {
  576              		.loc 1 1730 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccCWJzP2.s 			page 42
+ARM GAS  /tmp/ccuy40jU.s 			page 42
 
 
  577              		.cfi_startproc
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  619              		@ args = 0, pretend = 0, frame = 0
  620              		@ frame_needed = 0, uses_anonymous_args = 0
  621              		@ link register save eliminated.
-ARM GAS  /tmp/ccCWJzP2.s 			page 43
+ARM GAS  /tmp/ccuy40jU.s 			page 43
 
 
 1745:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   __HAL_RTC_WRITEPROTECTION_DISABLE(hrtc);
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  664              		.loc 1 1758 3 view .LVU188
  665 0000 0368     		ldr	r3, [r0]
  666 0002 CA22     		movs	r2, #202
-ARM GAS  /tmp/ccCWJzP2.s 			page 44
+ARM GAS  /tmp/ccuy40jU.s 			page 44
 
 
  667 0004 5A62     		str	r2, [r3, #36]
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  710 0004 00F48020 		and	r0, r0, #262144
  711 0008 7047     		bx	lr
  712              		.cfi_endproc
-ARM GAS  /tmp/ccCWJzP2.s 			page 45
+ARM GAS  /tmp/ccuy40jU.s 			page 45
 
 
  713              	.LFE154:
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  741              		.global	RTC_EnterInitMode
  742              		.syntax unified
  743              		.thumb
-ARM GAS  /tmp/ccCWJzP2.s 			page 46
+ARM GAS  /tmp/ccuy40jU.s 			page 46
 
 
  744              		.thumb_func
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  770 000a 02D0     		beq	.L53
 1826:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   HAL_StatusTypeDef status = HAL_OK;
  771              		.loc 1 1826 21 view .LVU211
-ARM GAS  /tmp/ccCWJzP2.s 			page 47
+ARM GAS  /tmp/ccuy40jU.s 			page 47
 
 
  772 000c 0025     		movs	r5, #0
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1838:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     {
  799              		.loc 1 1838 65 is_stmt 1 view .LVU221
 1838:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     {
-ARM GAS  /tmp/ccCWJzP2.s 			page 48
+ARM GAS  /tmp/ccuy40jU.s 			page 48
 
 
  800              		.loc 1 1838 13 is_stmt 0 view .LVU222
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1857:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   */
 1858:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** HAL_StatusTypeDef RTC_ExitInitMode(RTC_HandleTypeDef *hrtc)
 1859:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** {
-ARM GAS  /tmp/ccCWJzP2.s 			page 49
+ARM GAS  /tmp/ccuy40jU.s 			page 49
 
 
  840              		.loc 1 1859 1 is_stmt 1 view -0
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1868:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     {
  873              		.loc 1 1868 9 is_stmt 0 view .LVU244
  874 001c FFF7FEFF 		bl	HAL_RTC_WaitForSynchro
-ARM GAS  /tmp/ccCWJzP2.s 			page 50
+ARM GAS  /tmp/ccuy40jU.s 			page 50
 
 
  875              	.LVL51:
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  920 0006 0446     		mov	r4, r0
  266:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   assert_param(IS_RTC_HOUR_FORMAT(hrtc->Init.HourFormat));
  921              		.loc 1 266 3 is_stmt 1 view .LVU258
-ARM GAS  /tmp/ccCWJzP2.s 			page 51
+ARM GAS  /tmp/ccuy40jU.s 			page 51
 
 
  267:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   assert_param(IS_RTC_ASYNCH_PREDIV(hrtc->Init.AsynchPrediv));
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  958              		.loc 1 305 5 is_stmt 1 view .LVU277
  305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 52
+ARM GAS  /tmp/ccuy40jU.s 			page 52
 
 
  959              		.loc 1 305 16 is_stmt 0 view .LVU278
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  997              		.loc 1 354 6 view .LVU294
  998 0046 E9E7     		b	.L65
  999              	.L75:
-ARM GAS  /tmp/ccCWJzP2.s 			page 53
+ARM GAS  /tmp/ccuy40jU.s 			page 53
 
 
  327:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       /* Set RTC_CR register */
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  333:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  1036              		.loc 1 333 11 is_stmt 0 view .LVU313
  1037 006e 2268     		ldr	r2, [r4]
-ARM GAS  /tmp/ccCWJzP2.s 			page 54
+ARM GAS  /tmp/ccuy40jU.s 			page 54
 
 
  333:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1076              		.cfi_def_cfa_offset 0
  1077              		.cfi_restore 4
  1078              		.cfi_restore 14
-ARM GAS  /tmp/ccCWJzP2.s 			page 55
+ARM GAS  /tmp/ccuy40jU.s 			page 55
 
 
  262:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   }
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1124 0012 5A62     		str	r2, [r3, #36]
  380:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  1125              		.loc 1 380 3 view .LVU341
-ARM GAS  /tmp/ccCWJzP2.s 			page 56
+ARM GAS  /tmp/ccuy40jU.s 			page 56
 
 
  383:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  389:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     hrtc->Instance->CR = 0x00000000U;
  1163              		.loc 1 389 5 is_stmt 1 view .LVU359
  389:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     hrtc->Instance->CR = 0x00000000U;
-ARM GAS  /tmp/ccCWJzP2.s 			page 57
+ARM GAS  /tmp/ccuy40jU.s 			page 57
 
 
  1164              		.loc 1 389 9 is_stmt 0 view .LVU360
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1199              		.loc 1 395 30 view .LVU379
  1200 0056 1362     		str	r3, [r2, #32]
  396:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     hrtc->Instance->SHIFTR   = 0x00000000U;
-ARM GAS  /tmp/ccCWJzP2.s 			page 58
+ARM GAS  /tmp/ccuy40jU.s 			page 58
 
 
  1201              		.loc 1 396 5 is_stmt 1 view .LVU380
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1237              		.loc 1 411 27 view .LVU398
  1238 0074 0026     		movs	r6, #0
  1239 0076 1E64     		str	r6, [r3, #64]
-ARM GAS  /tmp/ccCWJzP2.s 			page 59
+ARM GAS  /tmp/ccuy40jU.s 			page 59
 
 
  423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** #endif /* USE_HAL_RTC_REGISTER_CALLBACKS */
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1279              		.loc 1 1890 12 is_stmt 0 view .LVU408
  1280 0004 0133     		adds	r3, r3, #1
  1281              	.LVL76:
-ARM GAS  /tmp/ccCWJzP2.s 			page 60
+ARM GAS  /tmp/ccuy40jU.s 			page 60
 
 
 1891:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     number -= 10U;
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  717:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  1326              		.loc 1 717 3 view .LVU424
  717:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 61
+ARM GAS  /tmp/ccuy40jU.s 			page 61
 
 
  1327              		.loc 1 717 3 view .LVU425
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1366              		.loc 1 733 5 view .LVU440
  734:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  1367              		.loc 1 734 5 view .LVU441
-ARM GAS  /tmp/ccCWJzP2.s 			page 62
+ARM GAS  /tmp/ccuy40jU.s 			page 62
 
 
  736:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****                         ( (uint32_t)RTC_ByteToBcd2(sTime->Minutes) << RTC_TR_MNU_Pos) | \
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1406              		.loc 1 765 12 is_stmt 0 view .LVU457
  1407 0050 2046     		mov	r0, r4
  1408 0052 FFF7FEFF 		bl	RTC_EnterInitMode
-ARM GAS  /tmp/ccCWJzP2.s 			page 63
+ARM GAS  /tmp/ccuy40jU.s 			page 63
 
 
  1409              	.LVL87:
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1445              		.loc 1 753 5 view .LVU475
  754:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     tmpreg = (((uint32_t)(sTime->Hours)      << RTC_TR_HU_Pos)  | \
  1446              		.loc 1 754 5 view .LVU476
-ARM GAS  /tmp/ccCWJzP2.s 			page 64
+ARM GAS  /tmp/ccuy40jU.s 			page 64
 
 
  755:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****               ((uint32_t)(sTime->Minutes)    << RTC_TR_MNU_Pos) | \
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1483 0098 23F48023 		bic	r3, r3, #262144
  1484 009c 9360     		str	r3, [r2, #8]
  776:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 65
+ARM GAS  /tmp/ccuy40jU.s 			page 65
 
 
  1485              		.loc 1 776 5 is_stmt 1 view .LVU495
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1525              		.loc 1 794 1 view .LVU509
  1526 00be 7047     		bx	lr
  1527              		.cfi_endproc
-ARM GAS  /tmp/ccCWJzP2.s 			page 66
+ARM GAS  /tmp/ccuy40jU.s 			page 66
 
 
  1528              	.LFE138:
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1571              		.loc 1 878 6 is_stmt 0 view .LVU522
  1572 0014 CAB1     		cbz	r2, .L102
  883:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 67
+ARM GAS  /tmp/ccuy40jU.s 			page 67
 
 
  1573              		.loc 1 883 3 is_stmt 1 view .LVU523
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1608              		.loc 1 912 12 is_stmt 0 view .LVU542
  1609 0036 2046     		mov	r0, r4
  1610 0038 FFF7FEFF 		bl	RTC_EnterInitMode
-ARM GAS  /tmp/ccCWJzP2.s 			page 68
+ARM GAS  /tmp/ccuy40jU.s 			page 68
 
 
  1611              	.LVL98:
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1647              		.loc 1 885 3 view .LVU560
  887:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     assert_param(IS_RTC_MONTH(sDate->Month));
  1648              		.loc 1 887 5 view .LVU561
-ARM GAS  /tmp/ccCWJzP2.s 			page 69
+ARM GAS  /tmp/ccuy40jU.s 			page 69
 
 
  888:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     assert_param(IS_RTC_DATE(sDate->Date));
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  917:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  1687              		.loc 1 917 24 view .LVU578
  1688 0086 5D60     		str	r5, [r3, #4]
-ARM GAS  /tmp/ccCWJzP2.s 			page 70
+ARM GAS  /tmp/ccuy40jU.s 			page 70
 
 
  920:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   }
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1013:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   uint32_t tickstart = 0U;
  1735              		.loc 1 1013 1 is_stmt 0 view .LVU589
  1736 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
-ARM GAS  /tmp/ccCWJzP2.s 			page 71
+ARM GAS  /tmp/ccuy40jU.s 			page 71
 
 
  1737              	.LCFI13:
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1036:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     {
  1774              		.loc 1 1036 5 is_stmt 1 view .LVU607
 1036:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     {
-ARM GAS  /tmp/ccCWJzP2.s 			page 72
+ARM GAS  /tmp/ccuy40jU.s 			page 72
 
 
  1775              		.loc 1 1036 14 is_stmt 0 view .LVU608
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1059:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****               ((uint32_t)RTC_ByteToBcd2(sAlarm->AlarmTime.Seconds))                       | \
  1812              		.loc 1 1059 91 view .LVU626
  1813 0040 0543     		orrs	r5, r5, r0
-ARM GAS  /tmp/ccCWJzP2.s 			page 73
+ARM GAS  /tmp/ccuy40jU.s 			page 73
 
 
 1061:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****               ((uint32_t)RTC_ByteToBcd2(sAlarm->AlarmDateWeekDay)  << RTC_ALRMAR_DU_Pos)  | \
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1107:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   {
  1852              		.loc 1 1107 3 view .LVU643
 1107:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   {
-ARM GAS  /tmp/ccCWJzP2.s 			page 74
+ARM GAS  /tmp/ccuy40jU.s 			page 74
 
 
  1853              		.loc 1 1107 13 is_stmt 0 view .LVU644
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1894 00aa 801B     		subs	r0, r0, r6
 1162:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****       {
  1895              		.loc 1 1162 10 discriminator 1 view .LVU658
-ARM GAS  /tmp/ccCWJzP2.s 			page 75
+ARM GAS  /tmp/ccuy40jU.s 			page 75
 
 
  1896 00ac B0F57A7F 		cmp	r0, #1000
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1932              		.loc 1 1079 5 view .LVU676
 1080:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  1933              		.loc 1 1080 5 view .LVU677
-ARM GAS  /tmp/ccCWJzP2.s 			page 76
+ARM GAS  /tmp/ccuy40jU.s 			page 76
 
 
 1082:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     {
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  1969              		.loc 1 1110 5 is_stmt 1 view .LVU696
  1970 00f6 2268     		ldr	r2, [r4]
  1971 00f8 9368     		ldr	r3, [r2, #8]
-ARM GAS  /tmp/ccCWJzP2.s 			page 77
+ARM GAS  /tmp/ccuy40jU.s 			page 77
 
 
  1972 00fa 23F48073 		bic	r3, r3, #256
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2012 0134 FF22     		movs	r2, #255
  2013 0136 5A62     		str	r2, [r3, #36]
 1127:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 78
+ARM GAS  /tmp/ccuy40jU.s 			page 78
 
 
  2014              		.loc 1 1127 9 view .LVU711
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2050 0158 9F64     		str	r7, [r3, #72]
 1181:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   }
  2051              		.loc 1 1181 5 is_stmt 1 view .LVU730
-ARM GAS  /tmp/ccCWJzP2.s 			page 79
+ARM GAS  /tmp/ccuy40jU.s 			page 79
 
 
  2052 015a 2268     		ldr	r2, [r4]
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2096              	.LFB143:
 1211:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   __IO uint32_t count  = RTC_TIMEOUT_VALUE * (SystemCoreClock / 32U / 1000U);
  2097              		.loc 1 1211 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccCWJzP2.s 			page 80
+ARM GAS  /tmp/ccuy40jU.s 			page 80
 
 
  2098              		.cfi_startproc
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  2137              		.loc 1 1225 3 view .LVU759
  2138 001c 037F     		ldrb	r3, [r0, #28]	@ zero_extendqisi2
-ARM GAS  /tmp/ccCWJzP2.s 			page 81
+ARM GAS  /tmp/ccuy40jU.s 			page 81
 
 
  2139 001e 012B     		cmp	r3, #1
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****               ((uint32_t)RTC_ByteToBcd2(sAlarm->AlarmTime.Minutes) << RTC_ALRMAR_MNU_Pos) | \
  2174              		.loc 1 1256 26 is_stmt 0 view .LVU779
  2175 0040 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
-ARM GAS  /tmp/ccCWJzP2.s 			page 82
+ARM GAS  /tmp/ccuy40jU.s 			page 82
 
 
  2176              	.LVL134:
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1299:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****                                (uint32_t)(sAlarm->AlarmSubSecondMask));
  2215              		.loc 1 1299 60 is_stmt 0 view .LVU795
  2216 0074 6868     		ldr	r0, [r5, #4]
-ARM GAS  /tmp/ccCWJzP2.s 			page 83
+ARM GAS  /tmp/ccuy40jU.s 			page 83
 
 
 1300:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2257 00b0 4FF47A71 		mov	r1, #1000
  2258 00b4 01FB03F3 		mul	r3, r1, r3
 1349:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 84
+ARM GAS  /tmp/ccuy40jU.s 			page 84
 
 
  2259              		.loc 1 1349 11 view .LVU810
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2296 00de 9360     		str	r3, [r2, #8]
 1376:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   }
  2297              		.loc 1 1376 5 is_stmt 1 view .LVU828
-ARM GAS  /tmp/ccCWJzP2.s 			page 85
+ARM GAS  /tmp/ccuy40jU.s 			page 85
 
 
  2298 00e0 2268     		ldr	r2, [r4]
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2339              	.LVL144:
  2340              	.L131:
  2341              	.LCFI17:
-ARM GAS  /tmp/ccCWJzP2.s 			page 86
+ARM GAS  /tmp/ccuy40jU.s 			page 86
 
 
  2342              		.cfi_restore_state
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2376              		.loc 1 1292 44 view .LVU861
  2377 012a EB78     		ldrb	r3, [r5, #3]	@ zero_extendqisi2
 1291:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****               ((uint32_t)(sAlarm->AlarmTime.TimeFormat) << RTC_ALRMAR_PM_Pos)  | \
-ARM GAS  /tmp/ccCWJzP2.s 			page 87
+ARM GAS  /tmp/ccuy40jU.s 			page 87
 
 
  2378              		.loc 1 1291 80 view .LVU862
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2417              		.loc 1 1317 10 view .LVU877
  2418 0160 93B1     		cbz	r3, .L145
 1329:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
-ARM GAS  /tmp/ccCWJzP2.s 			page 88
+ARM GAS  /tmp/ccuy40jU.s 			page 88
 
 
  2419              		.loc 1 1329 62 is_stmt 1 view .LVU878
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1322:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  2458              		.loc 1 1322 21 is_stmt 0 view .LVU894
  2459 018e 0320     		movs	r0, #3
-ARM GAS  /tmp/ccCWJzP2.s 			page 89
+ARM GAS  /tmp/ccuy40jU.s 			page 89
 
 
  2460              	.LVL150:
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2496              	.L141:
 1225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  2497              		.loc 1 1225 3 discriminator 1 view .LVU913
-ARM GAS  /tmp/ccCWJzP2.s 			page 90
+ARM GAS  /tmp/ccuy40jU.s 			page 90
 
 
  2498 01a8 0220     		movs	r0, #2
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2541 0010 7047     		bx	lr
  2542              		.cfi_endproc
  2543              	.LFE159:
-ARM GAS  /tmp/ccCWJzP2.s 			page 91
+ARM GAS  /tmp/ccuy40jU.s 			page 91
 
 
  2545              		.section	.text.HAL_RTC_GetTime,"ax",%progbits
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2586              		.loc 1 834 3 is_stmt 1 view .LVU937
  834:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  2587              		.loc 1 834 27 is_stmt 0 view .LVU938
-ARM GAS  /tmp/ccCWJzP2.s 			page 92
+ARM GAS  /tmp/ccuy40jU.s 			page 92
 
 
  2588 0012 0368     		ldr	r3, [r0]
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  847:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sTime->Seconds = (uint8_t)RTC_Bcd2ToByte(sTime->Seconds);
  2624              		.loc 1 847 5 is_stmt 1 view .LVU957
  847:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sTime->Seconds = (uint8_t)RTC_Bcd2ToByte(sTime->Seconds);
-ARM GAS  /tmp/ccCWJzP2.s 			page 93
+ARM GAS  /tmp/ccuy40jU.s 			page 93
 
 
  2625              		.loc 1 847 31 is_stmt 0 view .LVU958
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2671              		.loc 1 959 3 view .LVU968
  962:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
  2672              		.loc 1 962 3 view .LVU969
-ARM GAS  /tmp/ccCWJzP2.s 			page 94
+ARM GAS  /tmp/ccuy40jU.s 			page 94
 
 
  962:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c **** 
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2708              		.loc 1 974 18 discriminator 1 view .LVU988
  2709 0026 E070     		strb	r0, [r4, #3]
  975:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sDate->Date  = (uint8_t)RTC_Bcd2ToByte(sDate->Date);
-ARM GAS  /tmp/ccCWJzP2.s 			page 95
+ARM GAS  /tmp/ccuy40jU.s 			page 95
 
 
  2710              		.loc 1 975 5 is_stmt 1 view .LVU989
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2757 0002 0C46     		mov	r4, r1
 1505:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   uint32_t subsecondtmpreg = 0U;
  2758              		.loc 1 1505 3 is_stmt 1 view .LVU999
-ARM GAS  /tmp/ccCWJzP2.s 			page 96
+ARM GAS  /tmp/ccuy40jU.s 			page 96
 
 
  2759              	.LVL178:
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2794              		.loc 1 1529 34 is_stmt 0 view .LVU1018
  2795 0020 C2F30627 		ubfx	r7, r2, #8, #7
 1529:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****   sAlarm->AlarmTime.Seconds    = (uint8_t) ( tmpreg & (RTC_ALRMAR_ST  | RTC_ALRMAR_SU));
-ARM GAS  /tmp/ccCWJzP2.s 			page 97
+ARM GAS  /tmp/ccuy40jU.s 			page 97
 
 
  2796              		.loc 1 1529 32 view .LVU1019
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
 1539:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sAlarm->AlarmTime.Minutes = RTC_Bcd2ToByte(sAlarm->AlarmTime.Minutes);
  2831              		.loc 1 1539 5 is_stmt 1 view .LVU1039
 1539:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     sAlarm->AlarmTime.Minutes = RTC_Bcd2ToByte(sAlarm->AlarmTime.Minutes);
-ARM GAS  /tmp/ccCWJzP2.s 			page 98
+ARM GAS  /tmp/ccuy40jU.s 			page 98
 
 
  2832              		.loc 1 1539 33 is_stmt 0 view .LVU1040
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2870 0070 0168     		ldr	r1, [r0]
  2871              	.LVL191:
 1516:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c ****     subsecondtmpreg = (uint32_t)((hrtc->Instance->ALRMASSR) & RTC_ALRMASSR_SS);
-ARM GAS  /tmp/ccCWJzP2.s 			page 99
+ARM GAS  /tmp/ccuy40jU.s 			page 99
 
 
  2872              		.loc 1 1516 12 view .LVU1057
@@ -5908,70 +5908,70 @@ ARM GAS  /tmp/ccCWJzP2.s 			page 1
  2893              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
  2894              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h"
  2895              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  /tmp/ccCWJzP2.s 			page 100
+ARM GAS  /tmp/ccuy40jU.s 			page 100
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_rtc.c
-     /tmp/ccCWJzP2.s:21     .text.HAL_RTC_MspInit:00000000 $t
-     /tmp/ccCWJzP2.s:27     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
-     /tmp/ccCWJzP2.s:42     .text.HAL_RTC_MspDeInit:00000000 $t
-     /tmp/ccCWJzP2.s:48     .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
-     /tmp/ccCWJzP2.s:63     .text.HAL_RTC_DeactivateAlarm:00000000 $t
-     /tmp/ccCWJzP2.s:69     .text.HAL_RTC_DeactivateAlarm:00000000 HAL_RTC_DeactivateAlarm
-     /tmp/ccCWJzP2.s:255    .text.HAL_RTC_AlarmAEventCallback:00000000 $t
-     /tmp/ccCWJzP2.s:261    .text.HAL_RTC_AlarmAEventCallback:00000000 HAL_RTC_AlarmAEventCallback
-     /tmp/ccCWJzP2.s:276    .text.HAL_RTC_AlarmIRQHandler:00000000 $t
-     /tmp/ccCWJzP2.s:282    .text.HAL_RTC_AlarmIRQHandler:00000000 HAL_RTC_AlarmIRQHandler
-     /tmp/ccCWJzP2.s:361    .text.HAL_RTC_AlarmIRQHandler:00000058 $d
-     /tmp/ccCWJzP2.s:366    .text.HAL_RTC_PollForAlarmAEvent:00000000 $t
-     /tmp/ccCWJzP2.s:372    .text.HAL_RTC_PollForAlarmAEvent:00000000 HAL_RTC_PollForAlarmAEvent
-     /tmp/ccCWJzP2.s:451    .text.HAL_RTC_WaitForSynchro:00000000 $t
-     /tmp/ccCWJzP2.s:457    .text.HAL_RTC_WaitForSynchro:00000000 HAL_RTC_WaitForSynchro
-     /tmp/ccCWJzP2.s:521    .text.HAL_RTC_WaitForSynchro:00000030 $d
-     /tmp/ccCWJzP2.s:526    .text.HAL_RTC_DST_Add1Hour:00000000 $t
-     /tmp/ccCWJzP2.s:532    .text.HAL_RTC_DST_Add1Hour:00000000 HAL_RTC_DST_Add1Hour
-     /tmp/ccCWJzP2.s:567    .text.HAL_RTC_DST_Sub1Hour:00000000 $t
-     /tmp/ccCWJzP2.s:573    .text.HAL_RTC_DST_Sub1Hour:00000000 HAL_RTC_DST_Sub1Hour
-     /tmp/ccCWJzP2.s:608    .text.HAL_RTC_DST_SetStoreOperation:00000000 $t
-     /tmp/ccCWJzP2.s:614    .text.HAL_RTC_DST_SetStoreOperation:00000000 HAL_RTC_DST_SetStoreOperation
-     /tmp/ccCWJzP2.s:649    .text.HAL_RTC_DST_ClearStoreOperation:00000000 $t
-     /tmp/ccCWJzP2.s:655    .text.HAL_RTC_DST_ClearStoreOperation:00000000 HAL_RTC_DST_ClearStoreOperation
-     /tmp/ccCWJzP2.s:690    .text.HAL_RTC_DST_ReadStoreOperation:00000000 $t
-     /tmp/ccCWJzP2.s:696    .text.HAL_RTC_DST_ReadStoreOperation:00000000 HAL_RTC_DST_ReadStoreOperation
-     /tmp/ccCWJzP2.s:716    .text.HAL_RTC_GetState:00000000 $t
-     /tmp/ccCWJzP2.s:722    .text.HAL_RTC_GetState:00000000 HAL_RTC_GetState
-     /tmp/ccCWJzP2.s:740    .text.RTC_EnterInitMode:00000000 $t
-     /tmp/ccCWJzP2.s:746    .text.RTC_EnterInitMode:00000000 RTC_EnterInitMode
-     /tmp/ccCWJzP2.s:831    .text.RTC_ExitInitMode:00000000 $t
-     /tmp/ccCWJzP2.s:837    .text.RTC_ExitInitMode:00000000 RTC_ExitInitMode
-     /tmp/ccCWJzP2.s:896    .text.HAL_RTC_Init:00000000 $t
-     /tmp/ccCWJzP2.s:902    .text.HAL_RTC_Init:00000000 HAL_RTC_Init
-     /tmp/ccCWJzP2.s:1088   .text.HAL_RTC_DeInit:00000000 $t
-     /tmp/ccCWJzP2.s:1094   .text.HAL_RTC_DeInit:00000000 HAL_RTC_DeInit
-     /tmp/ccCWJzP2.s:1251   .text.HAL_RTC_DeInit:00000084 $d
-     /tmp/ccCWJzP2.s:1256   .text.RTC_ByteToBcd2:00000000 $t
-     /tmp/ccCWJzP2.s:1262   .text.RTC_ByteToBcd2:00000000 RTC_ByteToBcd2
-     /tmp/ccCWJzP2.s:1308   .text.HAL_RTC_SetTime:00000000 $t
-     /tmp/ccCWJzP2.s:1314   .text.HAL_RTC_SetTime:00000000 HAL_RTC_SetTime
-     /tmp/ccCWJzP2.s:1531   .text.HAL_RTC_SetDate:00000000 $t
-     /tmp/ccCWJzP2.s:1537   .text.HAL_RTC_SetDate:00000000 HAL_RTC_SetDate
-     /tmp/ccCWJzP2.s:1722   .text.HAL_RTC_SetAlarm:00000000 $t
-     /tmp/ccCWJzP2.s:1728   .text.HAL_RTC_SetAlarm:00000000 HAL_RTC_SetAlarm
-     /tmp/ccCWJzP2.s:2088   .text.HAL_RTC_SetAlarm_IT:00000000 $t
-     /tmp/ccCWJzP2.s:2094   .text.HAL_RTC_SetAlarm_IT:00000000 HAL_RTC_SetAlarm_IT
-     /tmp/ccCWJzP2.s:2505   .text.HAL_RTC_SetAlarm_IT:000001ac $d
-     /tmp/ccCWJzP2.s:2512   .text.RTC_Bcd2ToByte:00000000 $t
-     /tmp/ccCWJzP2.s:2518   .text.RTC_Bcd2ToByte:00000000 RTC_Bcd2ToByte
-     /tmp/ccCWJzP2.s:2546   .text.HAL_RTC_GetTime:00000000 $t
-     /tmp/ccCWJzP2.s:2552   .text.HAL_RTC_GetTime:00000000 HAL_RTC_GetTime
-     /tmp/ccCWJzP2.s:2648   .text.HAL_RTC_GetDate:00000000 $t
-     /tmp/ccCWJzP2.s:2654   .text.HAL_RTC_GetDate:00000000 HAL_RTC_GetDate
-     /tmp/ccCWJzP2.s:2734   .text.HAL_RTC_GetAlarm:00000000 $t
-ARM GAS  /tmp/ccCWJzP2.s 			page 101
+     /tmp/ccuy40jU.s:21     .text.HAL_RTC_MspInit:00000000 $t
+     /tmp/ccuy40jU.s:27     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+     /tmp/ccuy40jU.s:42     .text.HAL_RTC_MspDeInit:00000000 $t
+     /tmp/ccuy40jU.s:48     .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+     /tmp/ccuy40jU.s:63     .text.HAL_RTC_DeactivateAlarm:00000000 $t
+     /tmp/ccuy40jU.s:69     .text.HAL_RTC_DeactivateAlarm:00000000 HAL_RTC_DeactivateAlarm
+     /tmp/ccuy40jU.s:255    .text.HAL_RTC_AlarmAEventCallback:00000000 $t
+     /tmp/ccuy40jU.s:261    .text.HAL_RTC_AlarmAEventCallback:00000000 HAL_RTC_AlarmAEventCallback
+     /tmp/ccuy40jU.s:276    .text.HAL_RTC_AlarmIRQHandler:00000000 $t
+     /tmp/ccuy40jU.s:282    .text.HAL_RTC_AlarmIRQHandler:00000000 HAL_RTC_AlarmIRQHandler
+     /tmp/ccuy40jU.s:361    .text.HAL_RTC_AlarmIRQHandler:00000058 $d
+     /tmp/ccuy40jU.s:366    .text.HAL_RTC_PollForAlarmAEvent:00000000 $t
+     /tmp/ccuy40jU.s:372    .text.HAL_RTC_PollForAlarmAEvent:00000000 HAL_RTC_PollForAlarmAEvent
+     /tmp/ccuy40jU.s:451    .text.HAL_RTC_WaitForSynchro:00000000 $t
+     /tmp/ccuy40jU.s:457    .text.HAL_RTC_WaitForSynchro:00000000 HAL_RTC_WaitForSynchro
+     /tmp/ccuy40jU.s:521    .text.HAL_RTC_WaitForSynchro:00000030 $d
+     /tmp/ccuy40jU.s:526    .text.HAL_RTC_DST_Add1Hour:00000000 $t
+     /tmp/ccuy40jU.s:532    .text.HAL_RTC_DST_Add1Hour:00000000 HAL_RTC_DST_Add1Hour
+     /tmp/ccuy40jU.s:567    .text.HAL_RTC_DST_Sub1Hour:00000000 $t
+     /tmp/ccuy40jU.s:573    .text.HAL_RTC_DST_Sub1Hour:00000000 HAL_RTC_DST_Sub1Hour
+     /tmp/ccuy40jU.s:608    .text.HAL_RTC_DST_SetStoreOperation:00000000 $t
+     /tmp/ccuy40jU.s:614    .text.HAL_RTC_DST_SetStoreOperation:00000000 HAL_RTC_DST_SetStoreOperation
+     /tmp/ccuy40jU.s:649    .text.HAL_RTC_DST_ClearStoreOperation:00000000 $t
+     /tmp/ccuy40jU.s:655    .text.HAL_RTC_DST_ClearStoreOperation:00000000 HAL_RTC_DST_ClearStoreOperation
+     /tmp/ccuy40jU.s:690    .text.HAL_RTC_DST_ReadStoreOperation:00000000 $t
+     /tmp/ccuy40jU.s:696    .text.HAL_RTC_DST_ReadStoreOperation:00000000 HAL_RTC_DST_ReadStoreOperation
+     /tmp/ccuy40jU.s:716    .text.HAL_RTC_GetState:00000000 $t
+     /tmp/ccuy40jU.s:722    .text.HAL_RTC_GetState:00000000 HAL_RTC_GetState
+     /tmp/ccuy40jU.s:740    .text.RTC_EnterInitMode:00000000 $t
+     /tmp/ccuy40jU.s:746    .text.RTC_EnterInitMode:00000000 RTC_EnterInitMode
+     /tmp/ccuy40jU.s:831    .text.RTC_ExitInitMode:00000000 $t
+     /tmp/ccuy40jU.s:837    .text.RTC_ExitInitMode:00000000 RTC_ExitInitMode
+     /tmp/ccuy40jU.s:896    .text.HAL_RTC_Init:00000000 $t
+     /tmp/ccuy40jU.s:902    .text.HAL_RTC_Init:00000000 HAL_RTC_Init
+     /tmp/ccuy40jU.s:1088   .text.HAL_RTC_DeInit:00000000 $t
+     /tmp/ccuy40jU.s:1094   .text.HAL_RTC_DeInit:00000000 HAL_RTC_DeInit
+     /tmp/ccuy40jU.s:1251   .text.HAL_RTC_DeInit:00000084 $d
+     /tmp/ccuy40jU.s:1256   .text.RTC_ByteToBcd2:00000000 $t
+     /tmp/ccuy40jU.s:1262   .text.RTC_ByteToBcd2:00000000 RTC_ByteToBcd2
+     /tmp/ccuy40jU.s:1308   .text.HAL_RTC_SetTime:00000000 $t
+     /tmp/ccuy40jU.s:1314   .text.HAL_RTC_SetTime:00000000 HAL_RTC_SetTime
+     /tmp/ccuy40jU.s:1531   .text.HAL_RTC_SetDate:00000000 $t
+     /tmp/ccuy40jU.s:1537   .text.HAL_RTC_SetDate:00000000 HAL_RTC_SetDate
+     /tmp/ccuy40jU.s:1722   .text.HAL_RTC_SetAlarm:00000000 $t
+     /tmp/ccuy40jU.s:1728   .text.HAL_RTC_SetAlarm:00000000 HAL_RTC_SetAlarm
+     /tmp/ccuy40jU.s:2088   .text.HAL_RTC_SetAlarm_IT:00000000 $t
+     /tmp/ccuy40jU.s:2094   .text.HAL_RTC_SetAlarm_IT:00000000 HAL_RTC_SetAlarm_IT
+     /tmp/ccuy40jU.s:2505   .text.HAL_RTC_SetAlarm_IT:000001ac $d
+     /tmp/ccuy40jU.s:2512   .text.RTC_Bcd2ToByte:00000000 $t
+     /tmp/ccuy40jU.s:2518   .text.RTC_Bcd2ToByte:00000000 RTC_Bcd2ToByte
+     /tmp/ccuy40jU.s:2546   .text.HAL_RTC_GetTime:00000000 $t
+     /tmp/ccuy40jU.s:2552   .text.HAL_RTC_GetTime:00000000 HAL_RTC_GetTime
+     /tmp/ccuy40jU.s:2648   .text.HAL_RTC_GetDate:00000000 $t
+     /tmp/ccuy40jU.s:2654   .text.HAL_RTC_GetDate:00000000 HAL_RTC_GetDate
+     /tmp/ccuy40jU.s:2734   .text.HAL_RTC_GetAlarm:00000000 $t
+ARM GAS  /tmp/ccuy40jU.s 			page 101
 
 
-     /tmp/ccCWJzP2.s:2740   .text.HAL_RTC_GetAlarm:00000000 HAL_RTC_GetAlarm
+     /tmp/ccuy40jU.s:2740   .text.HAL_RTC_GetAlarm:00000000 HAL_RTC_GetAlarm
 
 UNDEFINED SYMBOLS
 HAL_GetTick

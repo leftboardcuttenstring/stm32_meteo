@@ -64,9 +64,9 @@ int32_t bmp180_get_pressure(void) {
 	unsigned long B7 = ((unsigned long)UP - B3) * (50000UL >> OSS);
 	long p;
 	if (B7 < 0x80000000)
-			p = (B7 << 1) / B4;
+		p = (B7 << 1) / B4;
 	else
-			p = (B7 / B4) << 1;
+		p = (B7 / B4) << 1;
 
 	X1 = (p >> 8) * (p >> 8);
 	X1 = (X1 * 3038L) >> 16;
