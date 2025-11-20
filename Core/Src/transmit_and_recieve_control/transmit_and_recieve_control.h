@@ -21,6 +21,8 @@ extern int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
 extern uint16_t AC4, AC5, AC6;
 extern int32_t X1, X2, B5;
 
+extern uint8_t calib_data[22];
+
 /*
  * @brief function for transmitting
  *        a data via I2C to 1602
@@ -51,11 +53,19 @@ HAL_StatusTypeDef lcd1602_transmit(uint8_t data, uint8_t flags);
 /*
  * @brief function of transmitting a
  *        string to show it on 1602
- * @param void
+ * @param char* sending string
  * @return void
  */
 void lcd1602_send_string(char *str);
 
+/*
+ * @brief function of getting the current
+          temperature from bmp180 sensor
+ * @param void
+ * @return int32_t
+ */
 int32_t bmp180_get_temperature(void);
 
 int32_t bmp180_get_pressure(void);
+
+void bmp180_get_global_coefficients(void);

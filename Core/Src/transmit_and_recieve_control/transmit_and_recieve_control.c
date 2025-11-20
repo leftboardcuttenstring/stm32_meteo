@@ -42,17 +42,6 @@ int32_t bmp180_get_temperature(void) {
 	X2 = (MC << 11) / (X1 + MD);
 	B5 = X1 + X2;
 	int32_t T = ((B5 + 8) >> 4) / 10.0;
-
-	if (T / 10.0 > MAX_TEMPERATURE) {
-		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is above the maximum! (38 celsius)\r\n", \
-			sizeof("The temperature is above the maximum! (38 celsius)\r\n")-1, HAL_MAX_DELAY);
-		return T;
-	} else if (T / 10.0 < MIN_TEMPERATURE) {
-		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is below the minimum! (-40 celsius)\r\n", \
-			sizeof("The temperature is below the minimum! (-40 celsius)\r\n")-1, HAL_MAX_DELAY);
-		return T;
-	}
-	
 	return T;
 }
 
@@ -80,16 +69,20 @@ int32_t bmp180_get_pressure(void) {
 	X1 = (X1 * 3038L) >> 16;
 	X2 = (-7357L * p) >> 16;
 	p = p + ((X1 + X2 + 3791L) >> 4);
-	
-	if (p / 133.322f > MAX_PRESSURE) {
-		HAL_UART_Transmit(&huart2, (const uint8_t*)"The pressure is above the maximum! (770 millimeters of mercury)\r\n", \
-			sizeof("The pressure is above the maximum! (770 millimeters of mercury)\r\n")-1, HAL_MAX_DELAY);
-		return p;
-	} else if (p / 133.322f < MIN_PRESSURE) {
-		HAL_UART_Transmit(&huart2, (const uint8_t*)"The pressure is below the minimum! (730 millimeters of mercury)\r\n", \
-			sizeof("The pressure is below the minimum! (730 millimeters of mercury)\r\n")-1, HAL_MAX_DELAY);
-		return p;
-	}
-	
 	return p;
+}
+
+void bmp180_get_global_coefficients(void) {
+	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xAA, 1, calib_data, 22, HAL_MAX_DELAY);
+	AC1 = (int16_t)((calib_data[0] << 8) | calib_data[1]);
+	AC2 = (int16_t)((calib_data[2] << 8) | calib_data[3]);
+	AC3 = (int16_t)((calib_data[4] << 8) | calib_data[5]);
+	AC4 = (uint16_t)((calib_data[6] << 8) | calib_data[7]);
+	AC5 = (uint16_t)((calib_data[8] << 8) | calib_data[9]);
+	AC6 = (uint16_t)((calib_data[10] << 8) | calib_data[11]);
+	B1  = (int16_t)((calib_data[12] << 8) | calib_data[13]);
+	B2  = (int16_t)((calib_data[14] << 8) | calib_data[15]);
+	MB  = (int16_t)((calib_data[16] << 8) | calib_data[17]);
+	MC  = (int16_t)((calib_data[18] << 8) | calib_data[19]);
+	MD  = (int16_t)((calib_data[20] << 8) | calib_data[21]);
 }

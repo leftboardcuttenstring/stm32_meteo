@@ -1,42 +1,14 @@
 #include "date.h"
 
-int rtc_set_time(
-        uint8_t year, uint8_t month, uint8_t day,
-        uint8_t hour, uint8_t min, uint8_t sec,
-        uint8_t dow) {
-    HAL_StatusTypeDef res;
-    RTC_TimeTypeDef time;
-    RTC_DateTypeDef date;
+void init_rtc_once(void) {
+  if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1) != RTC_INIT_MAGIC) {
+      RTC_TimeTypeDef sTime = { .Hours = 11, .Minutes = 10, .Seconds = 30 };
+      RTC_DateTypeDef sDate = { .WeekDay = RTC_WEEKDAY_SUNDAY, .Month = RTC_MONTH_OCTOBER,
+                                .Date = 19, .Year = 25 };
 
-    memset(&time, 0, sizeof(time));
-    memset(&date, 0, sizeof(date));
+      HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+      HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 
-    date.WeekDay = dow;
-    date.Year = year;
-    date.Month = month;
-    date.Date = day;
-    res = HAL_RTC_SetDate(&hrtc, &date, RTC_FORMAT_BIN);
-    if(res != HAL_OK) {
-        return -1;
-    }
-    time.Hours = hour;
-    time.Minutes = min;
-    time.Seconds = sec;
-
-    res = HAL_RTC_SetTime(&hrtc, &time, RTC_FORMAT_BIN);
-    if(res != HAL_OK) {
-        return -2;
-    }
-
-    return 0;
-}
-
-void rtc_get_time(void) {
-	res = HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
-	if(res != HAL_OK) {
-
-	}
-	sprintf(msg_time, "%d:%d", time.Hours, time.Minutes);
-	lcd1602_transmit_command(0b10000000);
-	lcd1602_send_string(msg_time);
+      HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, RTC_INIT_MAGIC);
+  }
 }

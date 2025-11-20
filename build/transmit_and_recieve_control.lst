@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc6r15BV.s 			page 1
+ARM GAS  /tmp/ccs2RMzB.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc6r15BV.s 			page 1
   14:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** HAL_StatusTypeDef lcd1602_transmit(uint8_t data, uint8_t flags) {
   35              		.loc 1 14 65 view -0
   36              		.cfi_startproc
-ARM GAS  /tmp/cc6r15BV.s 			page 2
+ARM GAS  /tmp/ccs2RMzB.s 			page 2
 
 
   37              		@ args = 0, pretend = 0, frame = 8
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc6r15BV.s 			page 1
   83 0030 4FF0FF33 		mov	r3, #-1
   84 0034 0093     		str	r3, [sp]
   85 0036 0423     		movs	r3, #4
-ARM GAS  /tmp/cc6r15BV.s 			page 3
+ARM GAS  /tmp/ccs2RMzB.s 			page 3
 
 
   86 0038 03AA     		add	r2, sp, #12
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc6r15BV.s 			page 1
  133              	.LFB136:
   29:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
   30:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** void lcd1602_transmit_data(uint8_t data) {
-ARM GAS  /tmp/cc6r15BV.s 			page 4
+ARM GAS  /tmp/ccs2RMzB.s 			page 4
 
 
  134              		.loc 1 30 42 is_stmt 1 view -0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc6r15BV.s 			page 1
  182              	.LVL13:
   10:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c ****   }
  183              		.loc 1 10 5 view .LVU36
-ARM GAS  /tmp/cc6r15BV.s 			page 5
+ARM GAS  /tmp/ccs2RMzB.s 			page 5
 
 
   10:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c ****   }
@@ -289,648 +289,647 @@ ARM GAS  /tmp/cc6r15BV.s 			page 1
  223 0008 08BD     		pop	{r3, pc}
  224              		.cfi_endproc
  225              	.LFE137:
- 227              		.section	.rodata.bmp180_get_temperature.str1.4,"aMS",%progbits,1
- 228              		.align	2
- 229              	.LC1:
- 230 0000 54686520 		.ascii	"The temperature is above the maximum! (38 celsius)\015"
- 230      74656D70 
- 230      65726174 
- 230      75726520 
- 230      69732061 
- 231 0033 0A00     		.ascii	"\012\000"
-ARM GAS  /tmp/cc6r15BV.s 			page 6
-
-
- 232 0035 000000   		.align	2
- 233              	.LC2:
- 234 0038 54686520 		.ascii	"The temperature is below the minimum! (-40 celsius)"
- 234      74656D70 
- 234      65726174 
- 234      75726520 
- 234      69732062 
- 235 006b 0D0A00   		.ascii	"\015\012\000"
- 236              		.section	.text.bmp180_get_temperature,"ax",%progbits
- 237              		.align	1
- 238              		.global	bmp180_get_temperature
- 239              		.syntax unified
- 240              		.thumb
- 241              		.thumb_func
- 243              	bmp180_get_temperature:
- 244              	.LFB138:
+ 227              		.section	.text.bmp180_get_temperature,"ax",%progbits
+ 228              		.align	1
+ 229              		.global	bmp180_get_temperature
+ 230              		.syntax unified
+ 231              		.thumb
+ 232              		.thumb_func
+ 234              	bmp180_get_temperature:
+ 235              	.LFB138:
   37:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
+ARM GAS  /tmp/ccs2RMzB.s 			page 6
+
+
   38:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** int32_t bmp180_get_temperature(void) {
- 245              		.loc 1 38 38 is_stmt 1 view -0
- 246              		.cfi_startproc
- 247              		@ args = 0, pretend = 0, frame = 0
- 248              		@ frame_needed = 0, uses_anonymous_args = 0
- 249 0000 D0B5     		push	{r4, r6, r7, lr}
- 250              	.LCFI7:
- 251              		.cfi_def_cfa_offset 16
- 252              		.cfi_offset 4, -16
- 253              		.cfi_offset 6, -12
- 254              		.cfi_offset 7, -8
- 255              		.cfi_offset 14, -4
- 256 0002 84B0     		sub	sp, sp, #16
- 257              	.LCFI8:
- 258              		.cfi_def_cfa_offset 32
+ 236              		.loc 1 38 38 is_stmt 1 view -0
+ 237              		.cfi_startproc
+ 238              		@ args = 0, pretend = 0, frame = 0
+ 239              		@ frame_needed = 0, uses_anonymous_args = 0
+ 240 0000 10B5     		push	{r4, lr}
+ 241              	.LCFI7:
+ 242              		.cfi_def_cfa_offset 8
+ 243              		.cfi_offset 4, -8
+ 244              		.cfi_offset 14, -4
+ 245 0002 84B0     		sub	sp, sp, #16
+ 246              	.LCFI8:
+ 247              		.cfi_def_cfa_offset 24
   39:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, temperature_buf, 2, HAL_MAX_DELAY); //i forgot what
- 259              		.loc 1 39 2 view .LVU46
- 260 0004 4FF0FF33 		mov	r3, #-1
- 261 0008 0293     		str	r3, [sp, #8]
- 262 000a 0223     		movs	r3, #2
- 263 000c 0193     		str	r3, [sp, #4]
- 264 000e 2C4C     		ldr	r4, .L26
- 265 0010 0094     		str	r4, [sp]
- 266 0012 0123     		movs	r3, #1
- 267 0014 F622     		movs	r2, #246
- 268 0016 2B49     		ldr	r1, .L26+4
- 269 0018 0988     		ldrh	r1, [r1]
- 270 001a 2B48     		ldr	r0, .L26+8
- 271 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 272              	.LVL17:
+ 248              		.loc 1 39 2 view .LVU46
+ 249 0004 4FF0FF33 		mov	r3, #-1
+ 250 0008 0293     		str	r3, [sp, #8]
+ 251 000a 0223     		movs	r3, #2
+ 252 000c 0193     		str	r3, [sp, #4]
+ 253 000e 194C     		ldr	r4, .L17
+ 254 0010 0094     		str	r4, [sp]
+ 255 0012 0123     		movs	r3, #1
+ 256 0014 F622     		movs	r2, #246
+ 257 0016 1849     		ldr	r1, .L17+4
+ 258 0018 0988     		ldrh	r1, [r1]
+ 259 001a 1848     		ldr	r0, .L17+8
+ 260 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 261              	.LVL17:
   40:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	int32_t UT = (temperature_buf[0] << 8) + temperature_buf[1];
- 273              		.loc 1 40 2 view .LVU47
- 274              		.loc 1 40 31 is_stmt 0 view .LVU48
- 275 0020 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
- 276              		.loc 1 40 58 view .LVU49
- 277 0022 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
- 278              		.loc 1 40 10 view .LVU50
- 279 0024 03EB0223 		add	r3, r3, r2, lsl #8
- 280              	.LVL18:
+ 262              		.loc 1 40 2 view .LVU47
+ 263              		.loc 1 40 31 is_stmt 0 view .LVU48
+ 264 0020 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 265              		.loc 1 40 58 view .LVU49
+ 266 0022 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 267              		.loc 1 40 10 view .LVU50
+ 268 0024 03EB0223 		add	r3, r3, r2, lsl #8
+ 269              	.LVL18:
   41:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = ((UT-AC6)*AC5) >> 15;
-ARM GAS  /tmp/cc6r15BV.s 			page 7
-
-
- 281              		.loc 1 41 2 is_stmt 1 view .LVU51
- 282              		.loc 1 41 11 is_stmt 0 view .LVU52
- 283 0028 284A     		ldr	r2, .L26+12
- 284 002a 1288     		ldrh	r2, [r2]
- 285 002c 9B1A     		subs	r3, r3, r2
- 286              	.LVL19:
- 287              		.loc 1 41 16 view .LVU53
- 288 002e 284A     		ldr	r2, .L26+16
- 289 0030 1088     		ldrh	r0, [r2]
- 290 0032 03FB00F0 		mul	r0, r3, r0
- 291              		.loc 1 41 22 view .LVU54
- 292 0036 C013     		asrs	r0, r0, #15
- 293              		.loc 1 41 5 view .LVU55
- 294 0038 264B     		ldr	r3, .L26+20
- 295 003a 1860     		str	r0, [r3]
+ 270              		.loc 1 41 2 is_stmt 1 view .LVU51
+ 271              		.loc 1 41 11 is_stmt 0 view .LVU52
+ 272 0028 154A     		ldr	r2, .L17+12
+ 273 002a 1288     		ldrh	r2, [r2]
+ 274 002c 9B1A     		subs	r3, r3, r2
+ 275              	.LVL19:
+ 276              		.loc 1 41 16 view .LVU53
+ 277 002e 154A     		ldr	r2, .L17+16
+ 278 0030 1088     		ldrh	r0, [r2]
+ 279 0032 03FB00F0 		mul	r0, r3, r0
+ 280              		.loc 1 41 22 view .LVU54
+ 281 0036 C013     		asrs	r0, r0, #15
+ 282              		.loc 1 41 5 view .LVU55
+ 283 0038 134B     		ldr	r3, .L17+20
+ 284 003a 1860     		str	r0, [r3]
   42:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X2 = (MC << 11) / (X1 + MD);
- 296              		.loc 1 42 2 is_stmt 1 view .LVU56
- 297              		.loc 1 42 11 is_stmt 0 view .LVU57
- 298 003c 264B     		ldr	r3, .L26+24
- 299 003e B3F90030 		ldrsh	r3, [r3]
- 300 0042 DB02     		lsls	r3, r3, #11
- 301              		.loc 1 42 24 view .LVU58
- 302 0044 254A     		ldr	r2, .L26+28
- 303 0046 B2F90020 		ldrsh	r2, [r2]
- 304 004a 0244     		add	r2, r2, r0
- 305              		.loc 1 42 18 view .LVU59
- 306 004c 93FBF2F3 		sdiv	r3, r3, r2
- 307              		.loc 1 42 5 view .LVU60
- 308 0050 234A     		ldr	r2, .L26+32
- 309 0052 1360     		str	r3, [r2]
+ 285              		.loc 1 42 2 is_stmt 1 view .LVU56
+ 286              		.loc 1 42 11 is_stmt 0 view .LVU57
+ 287 003c 134B     		ldr	r3, .L17+24
+ARM GAS  /tmp/ccs2RMzB.s 			page 7
+
+
+ 288 003e B3F90030 		ldrsh	r3, [r3]
+ 289 0042 DB02     		lsls	r3, r3, #11
+ 290              		.loc 1 42 24 view .LVU58
+ 291 0044 124A     		ldr	r2, .L17+28
+ 292 0046 B2F90020 		ldrsh	r2, [r2]
+ 293 004a 0244     		add	r2, r2, r0
+ 294              		.loc 1 42 18 view .LVU59
+ 295 004c 93FBF2F3 		sdiv	r3, r3, r2
+ 296              		.loc 1 42 5 view .LVU60
+ 297 0050 104A     		ldr	r2, .L17+32
+ 298 0052 1360     		str	r3, [r2]
   43:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	B5 = X1 + X2;
- 310              		.loc 1 43 2 is_stmt 1 view .LVU61
- 311              		.loc 1 43 10 is_stmt 0 view .LVU62
- 312 0054 1844     		add	r0, r0, r3
- 313              		.loc 1 43 5 view .LVU63
- 314 0056 234B     		ldr	r3, .L26+36
- 315 0058 1860     		str	r0, [r3]
+ 299              		.loc 1 43 2 is_stmt 1 view .LVU61
+ 300              		.loc 1 43 10 is_stmt 0 view .LVU62
+ 301 0054 1844     		add	r0, r0, r3
+ 302              		.loc 1 43 5 view .LVU63
+ 303 0056 104B     		ldr	r3, .L17+36
+ 304 0058 1860     		str	r0, [r3]
   44:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	int32_t T = ((B5 + 8) >> 4) / 10.0;
- 316              		.loc 1 44 2 is_stmt 1 view .LVU64
- 317              		.loc 1 44 19 is_stmt 0 view .LVU65
- 318 005a 0830     		adds	r0, r0, #8
- 319              		.loc 1 44 30 view .LVU66
- 320 005c 0011     		asrs	r0, r0, #4
- 321 005e FFF7FEFF 		bl	__aeabi_i2d
- 322              	.LVL20:
- 323              		.loc 1 44 30 view .LVU67
- 324 0062 0022     		movs	r2, #0
- 325 0064 204B     		ldr	r3, .L26+40
- 326 0066 FFF7FEFF 		bl	__aeabi_ddiv
- 327              	.LVL21:
- 328              		.loc 1 44 10 view .LVU68
- 329 006a FFF7FEFF 		bl	__aeabi_d2iz
- 330              	.LVL22:
- 331 006e 0446     		mov	r4, r0
- 332              	.LVL23:
-  45:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
-  46:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	if (T / 10.0 > MAX_TEMPERATURE) {
-ARM GAS  /tmp/cc6r15BV.s 			page 8
+ 305              		.loc 1 44 2 is_stmt 1 view .LVU64
+ 306              		.loc 1 44 19 is_stmt 0 view .LVU65
+ 307 005a 0830     		adds	r0, r0, #8
+ 308              		.loc 1 44 30 view .LVU66
+ 309 005c 0011     		asrs	r0, r0, #4
+ 310 005e FFF7FEFF 		bl	__aeabi_i2d
+ 311              	.LVL20:
+ 312              		.loc 1 44 30 view .LVU67
+ 313 0062 0022     		movs	r2, #0
+ 314 0064 0D4B     		ldr	r3, .L17+40
+ 315 0066 FFF7FEFF 		bl	__aeabi_ddiv
+ 316              	.LVL21:
+ 317              		.loc 1 44 10 view .LVU68
+ 318 006a FFF7FEFF 		bl	__aeabi_d2iz
+ 319              	.LVL22:
+  45:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	return T;
+ 320              		.loc 1 45 2 is_stmt 1 view .LVU69
+  46:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** }
+ 321              		.loc 1 46 1 is_stmt 0 view .LVU70
+ 322 006e 04B0     		add	sp, sp, #16
+ 323              	.LCFI9:
+ 324              		.cfi_def_cfa_offset 8
+ 325              		@ sp needed
+ 326 0070 10BD     		pop	{r4, pc}
+ 327              	.L18:
+ 328 0072 00BF     		.align	2
+ 329              	.L17:
+ 330 0074 00000000 		.word	temperature_buf
+ 331 0078 00000000 		.word	bmp180_addr
+ 332 007c 00000000 		.word	hi2c1
+ 333 0080 00000000 		.word	AC6
+ 334 0084 00000000 		.word	AC5
+ 335 0088 00000000 		.word	X1
+ 336 008c 00000000 		.word	MC
+ 337 0090 00000000 		.word	MD
+ 338 0094 00000000 		.word	X2
+ 339 0098 00000000 		.word	B5
+ 340 009c 00002440 		.word	1076101120
+ARM GAS  /tmp/ccs2RMzB.s 			page 8
 
 
- 333              		.loc 1 46 2 is_stmt 1 view .LVU69
- 334              		.loc 1 46 8 is_stmt 0 view .LVU70
- 335 0070 FFF7FEFF 		bl	__aeabi_i2d
- 336              	.LVL24:
- 337              		.loc 1 46 8 view .LVU71
- 338 0074 0022     		movs	r2, #0
- 339 0076 1C4B     		ldr	r3, .L26+40
- 340 0078 FFF7FEFF 		bl	__aeabi_ddiv
- 341              	.LVL25:
- 342 007c 0646     		mov	r6, r0
- 343 007e 0F46     		mov	r7, r1
- 344              		.loc 1 46 5 view .LVU72
- 345 0080 0022     		movs	r2, #0
- 346 0082 1A4B     		ldr	r3, .L26+44
- 347 0084 FFF7FEFF 		bl	__aeabi_dcmpgt
- 348              	.LVL26:
- 349 0088 48B9     		cbnz	r0, .L24
-  47:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is above the maximum! (38 celsius)\r\
-  48:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 			sizeof("The temperature is above the maximum! (38 celsius)\r\n")-1, HAL_MAX_DELAY);
-  49:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		return T;
-  50:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	} else if (T / 10.0 < MIN_TEMPERATURE) {
- 350              		.loc 1 50 9 is_stmt 1 view .LVU73
- 351              		.loc 1 50 12 is_stmt 0 view .LVU74
- 352 008a 0022     		movs	r2, #0
- 353 008c 184B     		ldr	r3, .L26+48
- 354 008e 3046     		mov	r0, r6
- 355 0090 3946     		mov	r1, r7
- 356 0092 FFF7FEFF 		bl	__aeabi_dcmplt
- 357              	.LVL27:
- 358 0096 50B9     		cbnz	r0, .L25
- 359              	.L15:
-  51:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is below the minimum! (-40 celsius)\r
-  52:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 			sizeof("The temperature is below the minimum! (-40 celsius)\r\n")-1, HAL_MAX_DELAY);
-  53:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		return T;
-  54:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	}
-  55:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	
-  56:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	return T;
-  57:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** }
- 360              		.loc 1 57 1 view .LVU75
- 361 0098 2046     		mov	r0, r4
- 362 009a 04B0     		add	sp, sp, #16
- 363              	.LCFI9:
- 364              		.cfi_remember_state
- 365              		.cfi_def_cfa_offset 16
- 366              		@ sp needed
- 367 009c D0BD     		pop	{r4, r6, r7, pc}
- 368              	.LVL28:
- 369              	.L24:
- 370              	.LCFI10:
- 371              		.cfi_restore_state
-  47:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is above the maximum! (38 celsius)\r\
- 372              		.loc 1 47 3 is_stmt 1 view .LVU76
- 373 009e 4FF0FF33 		mov	r3, #-1
- 374 00a2 3422     		movs	r2, #52
- 375 00a4 1349     		ldr	r1, .L26+52
- 376 00a6 1448     		ldr	r0, .L26+56
- 377 00a8 FFF7FEFF 		bl	HAL_UART_Transmit
-ARM GAS  /tmp/cc6r15BV.s 			page 9
+ 341              		.cfi_endproc
+ 342              	.LFE138:
+ 344              		.section	.text.bmp180_get_pressure,"ax",%progbits
+ 345              		.align	1
+ 346              		.global	bmp180_get_pressure
+ 347              		.syntax unified
+ 348              		.thumb
+ 349              		.thumb_func
+ 351              	bmp180_get_pressure:
+ 352              	.LFB139:
+  47:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
+  48:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** int32_t bmp180_get_pressure(void) {
+ 353              		.loc 1 48 35 is_stmt 1 view -0
+ 354              		.cfi_startproc
+ 355              		@ args = 0, pretend = 0, frame = 0
+ 356              		@ frame_needed = 0, uses_anonymous_args = 0
+ 357 0000 30B5     		push	{r4, r5, lr}
+ 358              	.LCFI10:
+ 359              		.cfi_def_cfa_offset 12
+ 360              		.cfi_offset 4, -12
+ 361              		.cfi_offset 5, -8
+ 362              		.cfi_offset 14, -4
+ 363 0002 85B0     		sub	sp, sp, #20
+ 364              	.LCFI11:
+ 365              		.cfi_def_cfa_offset 32
+  49:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, pressure_buf, 3, HAL_MAX_DELAY);
+ 366              		.loc 1 49 2 view .LVU72
+ 367 0004 4FF0FF33 		mov	r3, #-1
+ 368 0008 0293     		str	r3, [sp, #8]
+ 369 000a 0323     		movs	r3, #3
+ 370 000c 0193     		str	r3, [sp, #4]
+ 371 000e 364C     		ldr	r4, .L23
+ 372 0010 0094     		str	r4, [sp]
+ 373 0012 0123     		movs	r3, #1
+ 374 0014 F622     		movs	r2, #246
+ 375 0016 3549     		ldr	r1, .L23+4
+ 376 0018 0988     		ldrh	r1, [r1]
+ 377 001a 3548     		ldr	r0, .L23+8
+ 378 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 379              	.LVL23:
+  50:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long UP = (((long)pressure_buf[0] << 16) | ((long)pressure_buf[1] << 8) | (long)pressure_buf[2]) >
+ 380              		.loc 1 50 2 view .LVU73
+ 381              		.loc 1 50 32 is_stmt 0 view .LVU74
+ 382 0020 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 383              		.loc 1 50 64 view .LVU75
+ 384 0022 6278     		ldrb	r2, [r4, #1]	@ zero_extendqisi2
+ 385              		.loc 1 50 68 view .LVU76
+ 386 0024 1202     		lsls	r2, r2, #8
+ 387              		.loc 1 50 43 view .LVU77
+ 388 0026 42EA0342 		orr	r2, r2, r3, lsl #16
+ 389              	.LVL24:
+  51:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	
+  52:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long B6 = B5 - 4000;
+ 390              		.loc 1 52 2 is_stmt 1 view .LVU78
+ 391              		.loc 1 52 15 is_stmt 0 view .LVU79
+ 392 002a 324B     		ldr	r3, .L23+12
+ 393 002c 1968     		ldr	r1, [r3]
+ARM GAS  /tmp/ccs2RMzB.s 			page 9
 
 
- 378              	.LVL29:
-  49:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	} else if (T / 10.0 < MIN_TEMPERATURE) {
- 379              		.loc 1 49 3 view .LVU77
-  49:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	} else if (T / 10.0 < MIN_TEMPERATURE) {
- 380              		.loc 1 49 10 is_stmt 0 view .LVU78
- 381 00ac F4E7     		b	.L15
- 382              	.L25:
-  51:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The temperature is below the minimum! (-40 celsius)\r
- 383              		.loc 1 51 3 is_stmt 1 view .LVU79
- 384 00ae 4FF0FF33 		mov	r3, #-1
- 385 00b2 3522     		movs	r2, #53
- 386 00b4 1149     		ldr	r1, .L26+60
- 387 00b6 1048     		ldr	r0, .L26+56
- 388 00b8 FFF7FEFF 		bl	HAL_UART_Transmit
- 389              	.LVL30:
-  53:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	}
- 390              		.loc 1 53 3 view .LVU80
-  53:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	}
- 391              		.loc 1 53 10 is_stmt 0 view .LVU81
- 392 00bc ECE7     		b	.L15
- 393              	.L27:
- 394 00be 00BF     		.align	2
- 395              	.L26:
- 396 00c0 00000000 		.word	temperature_buf
- 397 00c4 00000000 		.word	bmp180_addr
- 398 00c8 00000000 		.word	hi2c1
- 399 00cc 00000000 		.word	AC6
- 400 00d0 00000000 		.word	AC5
- 401 00d4 00000000 		.word	X1
- 402 00d8 00000000 		.word	MC
- 403 00dc 00000000 		.word	MD
- 404 00e0 00000000 		.word	X2
- 405 00e4 00000000 		.word	B5
- 406 00e8 00002440 		.word	1076101120
- 407 00ec 00004340 		.word	1078132736
- 408 00f0 00003EC0 		.word	-1069678592
- 409 00f4 00000000 		.word	.LC1
- 410 00f8 00000000 		.word	huart2
- 411 00fc 38000000 		.word	.LC2
- 412              		.cfi_endproc
- 413              	.LFE138:
- 415              		.section	.rodata.bmp180_get_pressure.str1.4,"aMS",%progbits,1
- 416              		.align	2
- 417              	.LC3:
- 418 0000 54686520 		.ascii	"The pressure is above the maximum! (770 millimeters"
- 418      70726573 
- 418      73757265 
- 418      20697320 
- 418      61626F76 
- 419 0033 206F6620 		.ascii	" of mercury)\015\012\000"
- 419      6D657263 
- 419      75727929 
- 419      0D0A00
- 420 0042 0000     		.align	2
- 421              	.LC4:
- 422 0044 54686520 		.ascii	"The pressure is below the minimum! (730 millimeters"
- 422      70726573 
-ARM GAS  /tmp/cc6r15BV.s 			page 10
+ 394              		.loc 1 52 7 view .LVU80
+ 395 002e A1F57A61 		sub	r1, r1, #4000
+ 396              	.LVL25:
+  53:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = (B2 * ((B6 * B6) >> 12)) >> 11;
+ 397              		.loc 1 53 2 is_stmt 1 view .LVU81
+ 398              		.loc 1 53 18 is_stmt 0 view .LVU82
+ 399 0032 01FB01FC 		mul	ip, r1, r1
+ 400              		.loc 1 53 24 view .LVU83
+ 401 0036 4FEA2C3C 		asr	ip, ip, #12
+ 402              		.loc 1 53 11 view .LVU84
+ 403 003a 2F4B     		ldr	r3, .L23+16
+ 404 003c B3F90030 		ldrsh	r3, [r3]
+ 405 0040 0CFB03F3 		mul	r3, ip, r3
+ 406              		.loc 1 53 32 view .LVU85
+ 407 0044 DB12     		asrs	r3, r3, #11
+ 408              		.loc 1 53 5 view .LVU86
+ 409 0046 2D4D     		ldr	r5, .L23+20
+ 410 0048 2B60     		str	r3, [r5]
+  54:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X2 = (AC2 * B6) >> 11;
+ 411              		.loc 1 54 2 is_stmt 1 view .LVU87
+ 412              		.loc 1 54 12 is_stmt 0 view .LVU88
+ 413 004a 2D48     		ldr	r0, .L23+24
+ 414 004c B0F90000 		ldrsh	r0, [r0]
+ 415 0050 01FB00F0 		mul	r0, r1, r0
+ 416              		.loc 1 54 18 view .LVU89
+ 417 0054 C012     		asrs	r0, r0, #11
+ 418              		.loc 1 54 5 view .LVU90
+ 419 0056 2B4C     		ldr	r4, .L23+28
+ 420 0058 2060     		str	r0, [r4]
+  55:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long X3 = X1 + X2;
+ 421              		.loc 1 55 2 is_stmt 1 view .LVU91
+ 422              		.loc 1 55 7 is_stmt 0 view .LVU92
+ 423 005a 1844     		add	r0, r0, r3
+ 424              	.LVL26:
+  56:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long B3 = ((((long)AC1 * 4 + X3) << OSS) + 2) >> 2;
+ 425              		.loc 1 56 2 is_stmt 1 view .LVU93
+ 426              		.loc 1 56 15 is_stmt 0 view .LVU94
+ 427 005c 2A4B     		ldr	r3, .L23+32
+ 428 005e B3F90030 		ldrsh	r3, [r3]
+ 429              		.loc 1 56 35 view .LVU95
+ 430 0062 00EB8300 		add	r0, r0, r3, lsl #2
+ 431              	.LVL27:
+ 432              		.loc 1 56 43 view .LVU96
+ 433 0066 0230     		adds	r0, r0, #2
+ 434              		.loc 1 56 7 view .LVU97
+ 435 0068 8010     		asrs	r0, r0, #2
+ 436              	.LVL28:
+  57:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = (AC3 * B6) >> 13;
+ 437              		.loc 1 57 2 is_stmt 1 view .LVU98
+ 438              		.loc 1 57 12 is_stmt 0 view .LVU99
+ 439 006a 284B     		ldr	r3, .L23+36
+ 440 006c B3F90030 		ldrsh	r3, [r3]
+ 441 0070 01FB03F3 		mul	r3, r1, r3
+ 442              		.loc 1 57 18 view .LVU100
+ 443 0074 5B13     		asrs	r3, r3, #13
+ 444              		.loc 1 57 5 view .LVU101
+ 445 0076 2B60     		str	r3, [r5]
+ARM GAS  /tmp/ccs2RMzB.s 			page 10
 
 
- 422      73757265 
- 422      20697320 
- 422      62656C6F 
- 423 0077 206F6620 		.ascii	" of mercury)\015\012\000"
- 423      6D657263 
- 423      75727929 
- 423      0D0A00
- 424              		.section	.text.bmp180_get_pressure,"ax",%progbits
- 425              		.align	1
- 426              		.global	bmp180_get_pressure
- 427              		.syntax unified
- 428              		.thumb
- 429              		.thumb_func
- 431              	bmp180_get_pressure:
- 432              	.LFB139:
-  58:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
-  59:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** int32_t bmp180_get_pressure(void) {
- 433              		.loc 1 59 35 is_stmt 1 view -0
- 434              		.cfi_startproc
- 435              		@ args = 0, pretend = 0, frame = 0
- 436              		@ frame_needed = 0, uses_anonymous_args = 0
- 437 0000 70B5     		push	{r4, r5, r6, lr}
- 438              	.LCFI11:
- 439              		.cfi_def_cfa_offset 16
- 440              		.cfi_offset 4, -16
- 441              		.cfi_offset 5, -12
- 442              		.cfi_offset 6, -8
- 443              		.cfi_offset 14, -4
- 444 0002 84B0     		sub	sp, sp, #16
- 445              	.LCFI12:
- 446              		.cfi_def_cfa_offset 32
-  60:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xF6, 1, pressure_buf, 3, HAL_MAX_DELAY);
- 447              		.loc 1 60 2 view .LVU83
- 448 0004 4FF0FF33 		mov	r3, #-1
- 449 0008 0293     		str	r3, [sp, #8]
- 450 000a 0323     		movs	r3, #3
- 451 000c 0193     		str	r3, [sp, #4]
- 452 000e 494C     		ldr	r4, .L41
- 453 0010 0094     		str	r4, [sp]
- 454 0012 0123     		movs	r3, #1
- 455 0014 F622     		movs	r2, #246
- 456 0016 4849     		ldr	r1, .L41+4
- 457 0018 0988     		ldrh	r1, [r1]
- 458 001a 4848     		ldr	r0, .L41+8
- 459 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 460              	.LVL31:
-  61:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long UP = (((long)pressure_buf[0] << 16) | ((long)pressure_buf[1] << 8) | (long)pressure_buf[2]) >
- 461              		.loc 1 61 2 view .LVU84
- 462              		.loc 1 61 32 is_stmt 0 view .LVU85
- 463 0020 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
- 464              		.loc 1 61 64 view .LVU86
- 465 0022 6178     		ldrb	r1, [r4, #1]	@ zero_extendqisi2
- 466              		.loc 1 61 68 view .LVU87
- 467 0024 0902     		lsls	r1, r1, #8
- 468              		.loc 1 61 43 view .LVU88
- 469 0026 41EA0341 		orr	r1, r1, r3, lsl #16
- 470              	.LVL32:
-ARM GAS  /tmp/cc6r15BV.s 			page 11
+ 446              	.LVL29:
+  58:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X2 = (B1 * ((B6 * B6) >> 12)) >> 16;
+ 447              		.loc 1 58 2 is_stmt 1 view .LVU102
+ 448              		.loc 1 58 11 is_stmt 0 view .LVU103
+ 449 0078 2549     		ldr	r1, .L23+40
+ 450              	.LVL30:
+ 451              		.loc 1 58 11 view .LVU104
+ 452 007a B1F90010 		ldrsh	r1, [r1]
+ 453 007e 0CFB01F1 		mul	r1, ip, r1
+ 454              		.loc 1 58 32 view .LVU105
+ 455 0082 0914     		asrs	r1, r1, #16
+ 456              		.loc 1 58 5 view .LVU106
+ 457 0084 2160     		str	r1, [r4]
+ 458              	.LVL31:
+  59:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X3 = ((X1 + X2) + 2) >> 2;
+ 459              		.loc 1 59 2 is_stmt 1 view .LVU107
+ 460              		.loc 1 59 12 is_stmt 0 view .LVU108
+ 461 0086 0B44     		add	r3, r3, r1
+ 462              		.loc 1 59 18 view .LVU109
+ 463 0088 0233     		adds	r3, r3, #2
+ 464              		.loc 1 59 5 view .LVU110
+ 465 008a 9B10     		asrs	r3, r3, #2
+ 466              	.LVL32:
+  60:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	unsigned long B4 = (AC4 * (unsigned long)(X3 + 32768)) >> 15;
+ 467              		.loc 1 60 2 is_stmt 1 view .LVU111
+ 468              		.loc 1 60 47 is_stmt 0 view .LVU112
+ 469 008c 03F50043 		add	r3, r3, #32768
+ 470              	.LVL33:
+ 471              		.loc 1 60 26 view .LVU113
+ 472 0090 2049     		ldr	r1, .L23+44
+ 473 0092 0988     		ldrh	r1, [r1]
+ 474 0094 01FB03F3 		mul	r3, r1, r3
+ 475              	.LVL34:
+ 476              		.loc 1 60 16 view .LVU114
+ 477 0098 DB0B     		lsrs	r3, r3, #15
+ 478              	.LVL35:
+  61:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	unsigned long B7 = ((unsigned long)UP - B3) * (50000UL >> OSS);
+ 479              		.loc 1 61 2 is_stmt 1 view .LVU115
+ 480              		.loc 1 61 40 is_stmt 0 view .LVU116
+ 481 009a C0EB1220 		rsb	r0, r0, r2, lsr #8
+ 482              	.LVL36:
+ 483              		.loc 1 61 16 view .LVU117
+ 484 009e 4CF25032 		movw	r2, #50000
+ 485              	.LVL37:
+ 486              		.loc 1 61 16 view .LVU118
+ 487 00a2 02FB00F0 		mul	r0, r2, r0
+ 488              	.LVL38:
+  62:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long p;
+ 489              		.loc 1 62 2 is_stmt 1 view .LVU119
+  63:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	if (B7 < 0x80000000)
+ 490              		.loc 1 63 2 view .LVU120
+ 491              		.loc 1 63 5 is_stmt 0 view .LVU121
+ 492 00a6 0028     		cmp	r0, #0
+ 493 00a8 1ADB     		blt	.L20
+  64:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		p = (B7 << 1) / B4;
+ 494              		.loc 1 64 3 is_stmt 1 view .LVU122
+ 495              		.loc 1 64 11 is_stmt 0 view .LVU123
+ARM GAS  /tmp/ccs2RMzB.s 			page 11
 
 
-  62:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	
-  63:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long B6 = B5 - 4000;
- 471              		.loc 1 63 2 is_stmt 1 view .LVU89
- 472              		.loc 1 63 15 is_stmt 0 view .LVU90
- 473 002a 454B     		ldr	r3, .L41+12
- 474 002c 1868     		ldr	r0, [r3]
- 475              		.loc 1 63 7 view .LVU91
- 476 002e A0F57A60 		sub	r0, r0, #4000
- 477              	.LVL33:
-  64:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = (B2 * ((B6 * B6) >> 12)) >> 11;
- 478              		.loc 1 64 2 is_stmt 1 view .LVU92
- 479              		.loc 1 64 18 is_stmt 0 view .LVU93
- 480 0032 00FB00F4 		mul	r4, r0, r0
- 481              		.loc 1 64 24 view .LVU94
- 482 0036 2413     		asrs	r4, r4, #12
- 483              		.loc 1 64 11 view .LVU95
- 484 0038 424B     		ldr	r3, .L41+16
- 485 003a B3F90030 		ldrsh	r3, [r3]
- 486 003e 04FB03F3 		mul	r3, r4, r3
- 487              		.loc 1 64 32 view .LVU96
- 488 0042 DB12     		asrs	r3, r3, #11
- 489              		.loc 1 64 5 view .LVU97
- 490 0044 404E     		ldr	r6, .L41+20
- 491 0046 3360     		str	r3, [r6]
-  65:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X2 = (AC2 * B6) >> 11;
- 492              		.loc 1 65 2 is_stmt 1 view .LVU98
- 493              		.loc 1 65 12 is_stmt 0 view .LVU99
- 494 0048 404A     		ldr	r2, .L41+24
- 495 004a B2F90020 		ldrsh	r2, [r2]
- 496 004e 00FB02F2 		mul	r2, r0, r2
- 497              		.loc 1 65 18 view .LVU100
- 498 0052 D212     		asrs	r2, r2, #11
- 499              		.loc 1 65 5 view .LVU101
- 500 0054 3E4D     		ldr	r5, .L41+28
- 501 0056 2A60     		str	r2, [r5]
-  66:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long X3 = X1 + X2;
- 502              		.loc 1 66 2 is_stmt 1 view .LVU102
- 503              		.loc 1 66 7 is_stmt 0 view .LVU103
- 504 0058 1344     		add	r3, r3, r2
- 505              	.LVL34:
-  67:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long B3 = ((((long)AC1 * 4 + X3) << OSS) + 2) >> 2;
- 506              		.loc 1 67 2 is_stmt 1 view .LVU104
- 507              		.loc 1 67 15 is_stmt 0 view .LVU105
- 508 005a 3E4A     		ldr	r2, .L41+32
- 509 005c B2F90020 		ldrsh	r2, [r2]
- 510              		.loc 1 67 35 view .LVU106
- 511 0060 03EB8203 		add	r3, r3, r2, lsl #2
- 512              	.LVL35:
- 513              		.loc 1 67 43 view .LVU107
- 514 0064 0233     		adds	r3, r3, #2
- 515              		.loc 1 67 7 view .LVU108
- 516 0066 9B10     		asrs	r3, r3, #2
- 517              	.LVL36:
-  68:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = (AC3 * B6) >> 13;
- 518              		.loc 1 68 2 is_stmt 1 view .LVU109
- 519              		.loc 1 68 12 is_stmt 0 view .LVU110
- 520 0068 3B4A     		ldr	r2, .L41+36
-ARM GAS  /tmp/cc6r15BV.s 			page 12
+ 496 00aa 4000     		lsls	r0, r0, #1
+ 497              	.LVL39:
+ 498              		.loc 1 64 17 view .LVU124
+ 499 00ac B0FBF3F0 		udiv	r0, r0, r3
+ 500              	.LVL40:
+ 501              	.L21:
+  65:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	else
+  66:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		p = (B7 / B4) << 1;
+  67:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
+  68:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = (p >> 8) * (p >> 8);
+ 502              		.loc 1 68 2 is_stmt 1 view .LVU125
+ 503              		.loc 1 68 10 is_stmt 0 view .LVU126
+ 504 00b0 0312     		asrs	r3, r0, #8
+ 505              	.LVL41:
+ 506              		.loc 1 68 16 view .LVU127
+ 507 00b2 03FB03F3 		mul	r3, r3, r3
+ 508              		.loc 1 68 5 view .LVU128
+ 509 00b6 114A     		ldr	r2, .L23+20
+ 510              	.LVL42:
+ 511              		.loc 1 68 5 view .LVU129
+ 512 00b8 1360     		str	r3, [r2]
+ 513              	.LVL43:
+  69:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = (X1 * 3038L) >> 16;
+ 514              		.loc 1 69 2 is_stmt 1 view .LVU130
+ 515              		.loc 1 69 11 is_stmt 0 view .LVU131
+ 516 00ba 40F6DE31 		movw	r1, #3038
+ 517              	.LVL44:
+ 518              		.loc 1 69 11 view .LVU132
+ 519 00be 01FB03F3 		mul	r3, r1, r3
+ 520              		.loc 1 69 20 view .LVU133
+ 521 00c2 1B14     		asrs	r3, r3, #16
+ 522              		.loc 1 69 5 view .LVU134
+ 523 00c4 1360     		str	r3, [r2]
+  70:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X2 = (-7357L * p) >> 16;
+ 524              		.loc 1 70 2 is_stmt 1 view .LVU135
+ 525              		.loc 1 70 15 is_stmt 0 view .LVU136
+ 526 00c6 144A     		ldr	r2, .L23+48
+ 527 00c8 00FB02F2 		mul	r2, r0, r2
+ 528              		.loc 1 70 20 view .LVU137
+ 529 00cc 1214     		asrs	r2, r2, #16
+ 530              		.loc 1 70 5 view .LVU138
+ 531 00ce 0D49     		ldr	r1, .L23+28
+ 532 00d0 0A60     		str	r2, [r1]
+ 533              	.LVL45:
+  71:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	p = p + ((X1 + X2 + 3791L) >> 4);
+ 534              		.loc 1 71 2 is_stmt 1 view .LVU139
+ 535              		.loc 1 71 15 is_stmt 0 view .LVU140
+ 536 00d2 1344     		add	r3, r3, r2
+ 537              		.loc 1 71 20 view .LVU141
+ 538 00d4 03F6CF63 		addw	r3, r3, #3791
+ 539              	.LVL46:
+  72:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	return p;
+ 540              		.loc 1 72 2 is_stmt 1 view .LVU142
+  73:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** }
+ 541              		.loc 1 73 1 is_stmt 0 view .LVU143
+ 542 00d8 00EB2310 		add	r0, r0, r3, asr #4
+ 543              	.LVL47:
+ARM GAS  /tmp/ccs2RMzB.s 			page 12
 
 
- 521 006a B2F90020 		ldrsh	r2, [r2]
- 522 006e 00FB02F2 		mul	r2, r0, r2
- 523              		.loc 1 68 18 view .LVU111
- 524 0072 5213     		asrs	r2, r2, #13
- 525              		.loc 1 68 5 view .LVU112
- 526 0074 3260     		str	r2, [r6]
- 527              	.LVL37:
-  69:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X2 = (B1 * ((B6 * B6) >> 12)) >> 16;
- 528              		.loc 1 69 2 is_stmt 1 view .LVU113
- 529              		.loc 1 69 11 is_stmt 0 view .LVU114
- 530 0076 3948     		ldr	r0, .L41+40
- 531              	.LVL38:
- 532              		.loc 1 69 11 view .LVU115
- 533 0078 B0F90000 		ldrsh	r0, [r0]
- 534 007c 04FB00F0 		mul	r0, r4, r0
- 535              		.loc 1 69 32 view .LVU116
- 536 0080 0014     		asrs	r0, r0, #16
- 537              		.loc 1 69 5 view .LVU117
- 538 0082 2860     		str	r0, [r5]
- 539              	.LVL39:
-  70:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X3 = ((X1 + X2) + 2) >> 2;
- 540              		.loc 1 70 2 is_stmt 1 view .LVU118
- 541              		.loc 1 70 12 is_stmt 0 view .LVU119
- 542 0084 0244     		add	r2, r2, r0
- 543              		.loc 1 70 18 view .LVU120
- 544 0086 0232     		adds	r2, r2, #2
- 545              		.loc 1 70 5 view .LVU121
- 546 0088 9210     		asrs	r2, r2, #2
- 547              	.LVL40:
-  71:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	unsigned long B4 = (AC4 * (unsigned long)(X3 + 32768)) >> 15;
- 548              		.loc 1 71 2 is_stmt 1 view .LVU122
- 549              		.loc 1 71 47 is_stmt 0 view .LVU123
- 550 008a 02F50042 		add	r2, r2, #32768
- 551              	.LVL41:
- 552              		.loc 1 71 26 view .LVU124
- 553 008e 3448     		ldr	r0, .L41+44
- 554 0090 0088     		ldrh	r0, [r0]
- 555 0092 00FB02F2 		mul	r2, r0, r2
- 556              	.LVL42:
- 557              		.loc 1 71 16 view .LVU125
- 558 0096 D20B     		lsrs	r2, r2, #15
- 559              	.LVL43:
-  72:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	unsigned long B7 = ((unsigned long)UP - B3) * (50000UL >> OSS);
- 560              		.loc 1 72 2 is_stmt 1 view .LVU126
- 561              		.loc 1 72 40 is_stmt 0 view .LVU127
- 562 0098 C3EB1123 		rsb	r3, r3, r1, lsr #8
- 563              	.LVL44:
- 564              		.loc 1 72 16 view .LVU128
- 565 009c 4CF25031 		movw	r1, #50000
- 566              	.LVL45:
- 567              		.loc 1 72 16 view .LVU129
- 568 00a0 01FB03F3 		mul	r3, r1, r3
- 569              	.LVL46:
-  73:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	long p;
- 570              		.loc 1 73 2 is_stmt 1 view .LVU130
-  74:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	if (B7 < 0x80000000)
- 571              		.loc 1 74 2 view .LVU131
-ARM GAS  /tmp/cc6r15BV.s 			page 13
+ 544              		.loc 1 73 1 view .LVU144
+ 545 00dc 05B0     		add	sp, sp, #20
+ 546              	.LCFI12:
+ 547              		.cfi_remember_state
+ 548              		.cfi_def_cfa_offset 12
+ 549              		@ sp needed
+ 550 00de 30BD     		pop	{r4, r5, pc}
+ 551              	.LVL48:
+ 552              	.L20:
+ 553              	.LCFI13:
+ 554              		.cfi_restore_state
+  66:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
+ 555              		.loc 1 66 3 is_stmt 1 view .LVU145
+  66:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
+ 556              		.loc 1 66 11 is_stmt 0 view .LVU146
+ 557 00e0 B0FBF3F0 		udiv	r0, r0, r3
+ 558              	.LVL49:
+  66:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
+ 559              		.loc 1 66 5 view .LVU147
+ 560 00e4 4000     		lsls	r0, r0, #1
+ 561 00e6 E3E7     		b	.L21
+ 562              	.L24:
+ 563              		.align	2
+ 564              	.L23:
+ 565 00e8 00000000 		.word	pressure_buf
+ 566 00ec 00000000 		.word	bmp180_addr
+ 567 00f0 00000000 		.word	hi2c1
+ 568 00f4 00000000 		.word	B5
+ 569 00f8 00000000 		.word	B2
+ 570 00fc 00000000 		.word	X1
+ 571 0100 00000000 		.word	AC2
+ 572 0104 00000000 		.word	X2
+ 573 0108 00000000 		.word	AC1
+ 574 010c 00000000 		.word	AC3
+ 575 0110 00000000 		.word	B1
+ 576 0114 00000000 		.word	AC4
+ 577 0118 43E3FFFF 		.word	-7357
+ 578              		.cfi_endproc
+ 579              	.LFE139:
+ 581              		.section	.text.bmp180_get_global_coefficients,"ax",%progbits
+ 582              		.align	1
+ 583              		.global	bmp180_get_global_coefficients
+ 584              		.syntax unified
+ 585              		.thumb
+ 586              		.thumb_func
+ 588              	bmp180_get_global_coefficients:
+ 589              	.LFB140:
+  74:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
+  75:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** void bmp180_get_global_coefficients(void) {
+ 590              		.loc 1 75 43 is_stmt 1 view -0
+ 591              		.cfi_startproc
+ 592              		@ args = 0, pretend = 0, frame = 0
+ 593              		@ frame_needed = 0, uses_anonymous_args = 0
+ 594 0000 10B5     		push	{r4, lr}
+ 595              	.LCFI14:
+ 596              		.cfi_def_cfa_offset 8
+ 597              		.cfi_offset 4, -8
+ARM GAS  /tmp/ccs2RMzB.s 			page 13
 
 
- 572              		.loc 1 74 5 is_stmt 0 view .LVU132
- 573 00a4 002B     		cmp	r3, #0
- 574 00a6 31DB     		blt	.L29
-  75:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		p = (B7 << 1) / B4;
- 575              		.loc 1 75 3 is_stmt 1 view .LVU133
- 576              		.loc 1 75 11 is_stmt 0 view .LVU134
- 577 00a8 5B00     		lsls	r3, r3, #1
- 578              	.LVL47:
- 579              		.loc 1 75 17 view .LVU135
- 580 00aa B3FBF2F3 		udiv	r3, r3, r2
- 581              	.LVL48:
- 582              	.L30:
-  76:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	else
-  77:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		p = (B7 / B4) << 1;
-  78:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 
-  79:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = (p >> 8) * (p >> 8);
- 583              		.loc 1 79 2 is_stmt 1 view .LVU136
- 584              		.loc 1 79 10 is_stmt 0 view .LVU137
- 585 00ae 1A12     		asrs	r2, r3, #8
- 586              	.LVL49:
- 587              		.loc 1 79 16 view .LVU138
- 588 00b0 02FB02F2 		mul	r2, r2, r2
- 589              		.loc 1 79 5 view .LVU139
- 590 00b4 2449     		ldr	r1, .L41+20
- 591              	.LVL50:
- 592              		.loc 1 79 5 view .LVU140
- 593 00b6 0A60     		str	r2, [r1]
- 594              	.LVL51:
-  80:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X1 = (X1 * 3038L) >> 16;
- 595              		.loc 1 80 2 is_stmt 1 view .LVU141
- 596              		.loc 1 80 11 is_stmt 0 view .LVU142
- 597 00b8 40F6DE30 		movw	r0, #3038
- 598              	.LVL52:
- 599              		.loc 1 80 11 view .LVU143
- 600 00bc 00FB02F2 		mul	r2, r0, r2
- 601              		.loc 1 80 20 view .LVU144
- 602 00c0 1214     		asrs	r2, r2, #16
- 603              		.loc 1 80 5 view .LVU145
- 604 00c2 0A60     		str	r2, [r1]
-  81:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	X2 = (-7357L * p) >> 16;
- 605              		.loc 1 81 2 is_stmt 1 view .LVU146
- 606              		.loc 1 81 15 is_stmt 0 view .LVU147
- 607 00c4 2749     		ldr	r1, .L41+48
- 608 00c6 03FB01F1 		mul	r1, r3, r1
- 609              		.loc 1 81 20 view .LVU148
- 610 00ca 0914     		asrs	r1, r1, #16
- 611              		.loc 1 81 5 view .LVU149
- 612 00cc 2048     		ldr	r0, .L41+28
- 613 00ce 0160     		str	r1, [r0]
- 614              	.LVL53:
-  82:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	p = p + ((X1 + X2 + 3791L) >> 4);
- 615              		.loc 1 82 2 is_stmt 1 view .LVU150
- 616              		.loc 1 82 15 is_stmt 0 view .LVU151
- 617 00d0 0A44     		add	r2, r2, r1
- 618              		.loc 1 82 20 view .LVU152
- 619 00d2 02F6CF62 		addw	r2, r2, #3791
- 620              		.loc 1 82 4 view .LVU153
-ARM GAS  /tmp/cc6r15BV.s 			page 14
+ 598              		.cfi_offset 14, -4
+ 599 0002 84B0     		sub	sp, sp, #16
+ 600              	.LCFI15:
+ 601              		.cfi_def_cfa_offset 24
+  76:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	HAL_I2C_Mem_Read(&hi2c1, bmp180_addr, 0xAA, 1, calib_data, 22, HAL_MAX_DELAY);
+ 602              		.loc 1 76 2 view .LVU149
+ 603 0004 4FF0FF33 		mov	r3, #-1
+ 604 0008 0293     		str	r3, [sp, #8]
+ 605 000a 1623     		movs	r3, #22
+ 606 000c 0193     		str	r3, [sp, #4]
+ 607 000e 264C     		ldr	r4, .L27
+ 608 0010 0094     		str	r4, [sp]
+ 609 0012 0123     		movs	r3, #1
+ 610 0014 AA22     		movs	r2, #170
+ 611 0016 2549     		ldr	r1, .L27+4
+ 612 0018 0988     		ldrh	r1, [r1]
+ 613 001a 2548     		ldr	r0, .L27+8
+ 614 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 615              	.LVL50:
+  77:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	AC1 = (int16_t)((calib_data[0] << 8) | calib_data[1]);
+ 616              		.loc 1 77 2 view .LVU150
+ 617              		.loc 1 77 29 is_stmt 0 view .LVU151
+ 618 0020 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 619              		.loc 1 77 51 view .LVU152
+ 620 0022 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 621              		.loc 1 77 8 view .LVU153
+ 622 0024 43EA0223 		orr	r3, r3, r2, lsl #8
+ 623              		.loc 1 77 6 view .LVU154
+ 624 0028 224A     		ldr	r2, .L27+12
+ 625 002a 1380     		strh	r3, [r2]	@ movhi
+  78:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	AC2 = (int16_t)((calib_data[2] << 8) | calib_data[3]);
+ 626              		.loc 1 78 2 is_stmt 1 view .LVU155
+ 627              		.loc 1 78 29 is_stmt 0 view .LVU156
+ 628 002c A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
+ 629              		.loc 1 78 51 view .LVU157
+ 630 002e E378     		ldrb	r3, [r4, #3]	@ zero_extendqisi2
+ 631              		.loc 1 78 8 view .LVU158
+ 632 0030 43EA0223 		orr	r3, r3, r2, lsl #8
+ 633              		.loc 1 78 6 view .LVU159
+ 634 0034 204A     		ldr	r2, .L27+16
+ 635 0036 1380     		strh	r3, [r2]	@ movhi
+  79:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	AC3 = (int16_t)((calib_data[4] << 8) | calib_data[5]);
+ 636              		.loc 1 79 2 is_stmt 1 view .LVU160
+ 637              		.loc 1 79 29 is_stmt 0 view .LVU161
+ 638 0038 2279     		ldrb	r2, [r4, #4]	@ zero_extendqisi2
+ 639              		.loc 1 79 51 view .LVU162
+ 640 003a 6379     		ldrb	r3, [r4, #5]	@ zero_extendqisi2
+ 641              		.loc 1 79 8 view .LVU163
+ 642 003c 43EA0223 		orr	r3, r3, r2, lsl #8
+ 643              		.loc 1 79 6 view .LVU164
+ 644 0040 1E4A     		ldr	r2, .L27+20
+ 645 0042 1380     		strh	r3, [r2]	@ movhi
+  80:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	AC4 = (uint16_t)((calib_data[6] << 8) | calib_data[7]);
+ 646              		.loc 1 80 2 is_stmt 1 view .LVU165
+ 647              		.loc 1 80 30 is_stmt 0 view .LVU166
+ 648 0044 A279     		ldrb	r2, [r4, #6]	@ zero_extendqisi2
+ 649              		.loc 1 80 52 view .LVU167
+ARM GAS  /tmp/ccs2RMzB.s 			page 14
 
 
- 621 00d6 03EB2214 		add	r4, r3, r2, asr #4
- 622              	.LVL54:
-  83:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	
-  84:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	if (p / 133.322f > MAX_PRESSURE) {
- 623              		.loc 1 84 2 is_stmt 1 view .LVU154
- 624              		.loc 1 84 8 is_stmt 0 view .LVU155
- 625 00da 07EE904A 		vmov	s15, r4	@ int
- 626 00de F8EEE76A 		vcvt.f32.s32	s13, s15
- 627 00e2 9FED217A 		vldr.32	s14, .L41+52
- 628 00e6 C6EE877A 		vdiv.f32	s15, s13, s14
- 629              		.loc 1 84 5 view .LVU156
- 630 00ea 9FED207A 		vldr.32	s14, .L41+56
- 631 00ee F4EEC77A 		vcmpe.f32	s15, s14
- 632 00f2 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 633 00f6 0DDC     		bgt	.L39
-  85:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The pressure is above the maximum! (770 millimeters o
-  86:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 			sizeof("The pressure is above the maximum! (770 millimeters of mercury)\r\n")-1, HAL_MAX_DELAY);
-  87:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		return p;
-  88:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	} else if (p / 133.322f < MIN_PRESSURE) {
- 634              		.loc 1 88 9 is_stmt 1 view .LVU157
- 635              		.loc 1 88 12 is_stmt 0 view .LVU158
- 636 00f8 9FED1D7A 		vldr.32	s14, .L41+60
- 637 00fc F4EEC77A 		vcmpe.f32	s15, s14
- 638 0100 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 639 0104 0ED4     		bmi	.L40
- 640              	.LVL55:
- 641              	.L28:
-  89:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The pressure is below the minimum! (730 millimeters o
-  90:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 			sizeof("The pressure is below the minimum! (730 millimeters of mercury)\r\n")-1, HAL_MAX_DELAY);
-  91:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		return p;
-  92:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	}
-  93:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	
-  94:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	return p;
-  95:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** }...
- 642              		.loc 1 95 1 view .LVU159
- 643 0106 2046     		mov	r0, r4
- 644 0108 04B0     		add	sp, sp, #16
- 645              	.LCFI13:
- 646              		.cfi_remember_state
- 647              		.cfi_def_cfa_offset 16
- 648              		@ sp needed
- 649 010a 70BD     		pop	{r4, r5, r6, pc}
- 650              	.LVL56:
- 651              	.L29:
- 652              	.LCFI14:
- 653              		.cfi_restore_state
-  77:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		p = (B7 / B4) << 1;
- 654              		.loc 1 77 3 is_stmt 1 view .LVU160
-  77:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		p = (B7 / B4) << 1;
- 655              		.loc 1 77 11 is_stmt 0 view .LVU161
- 656 010c B3FBF2F3 		udiv	r3, r3, r2
- 657              	.LVL57:
-  77:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		p = (B7 / B4) << 1;
- 658              		.loc 1 77 5 view .LVU162
- 659 0110 5B00     		lsls	r3, r3, #1
- 660 0112 CCE7     		b	.L30
- 661              	.LVL58:
-ARM GAS  /tmp/cc6r15BV.s 			page 15
+ 650 0046 E379     		ldrb	r3, [r4, #7]	@ zero_extendqisi2
+ 651              		.loc 1 80 8 view .LVU168
+ 652 0048 43EA0223 		orr	r3, r3, r2, lsl #8
+ 653              		.loc 1 80 6 view .LVU169
+ 654 004c 1C4A     		ldr	r2, .L27+24
+ 655 004e 1380     		strh	r3, [r2]	@ movhi
+  81:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	AC5 = (uint16_t)((calib_data[8] << 8) | calib_data[9]);
+ 656              		.loc 1 81 2 is_stmt 1 view .LVU170
+ 657              		.loc 1 81 30 is_stmt 0 view .LVU171
+ 658 0050 227A     		ldrb	r2, [r4, #8]	@ zero_extendqisi2
+ 659              		.loc 1 81 52 view .LVU172
+ 660 0052 637A     		ldrb	r3, [r4, #9]	@ zero_extendqisi2
+ 661              		.loc 1 81 8 view .LVU173
+ 662 0054 43EA0223 		orr	r3, r3, r2, lsl #8
+ 663              		.loc 1 81 6 view .LVU174
+ 664 0058 1A4A     		ldr	r2, .L27+28
+ 665 005a 1380     		strh	r3, [r2]	@ movhi
+  82:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	AC6 = (uint16_t)((calib_data[10] << 8) | calib_data[11]);
+ 666              		.loc 1 82 2 is_stmt 1 view .LVU175
+ 667              		.loc 1 82 30 is_stmt 0 view .LVU176
+ 668 005c A27A     		ldrb	r2, [r4, #10]	@ zero_extendqisi2
+ 669              		.loc 1 82 53 view .LVU177
+ 670 005e E37A     		ldrb	r3, [r4, #11]	@ zero_extendqisi2
+ 671              		.loc 1 82 8 view .LVU178
+ 672 0060 43EA0223 		orr	r3, r3, r2, lsl #8
+ 673              		.loc 1 82 6 view .LVU179
+ 674 0064 184A     		ldr	r2, .L27+32
+ 675 0066 1380     		strh	r3, [r2]	@ movhi
+  83:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	B1  = (int16_t)((calib_data[12] << 8) | calib_data[13]);
+ 676              		.loc 1 83 2 is_stmt 1 view .LVU180
+ 677              		.loc 1 83 29 is_stmt 0 view .LVU181
+ 678 0068 227B     		ldrb	r2, [r4, #12]	@ zero_extendqisi2
+ 679              		.loc 1 83 52 view .LVU182
+ 680 006a 637B     		ldrb	r3, [r4, #13]	@ zero_extendqisi2
+ 681              		.loc 1 83 8 view .LVU183
+ 682 006c 43EA0223 		orr	r3, r3, r2, lsl #8
+ 683              		.loc 1 83 6 view .LVU184
+ 684 0070 164A     		ldr	r2, .L27+36
+ 685 0072 1380     		strh	r3, [r2]	@ movhi
+  84:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	B2  = (int16_t)((calib_data[14] << 8) | calib_data[15]);
+ 686              		.loc 1 84 2 is_stmt 1 view .LVU185
+ 687              		.loc 1 84 29 is_stmt 0 view .LVU186
+ 688 0074 A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ 689              		.loc 1 84 52 view .LVU187
+ 690 0076 E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
+ 691              		.loc 1 84 8 view .LVU188
+ 692 0078 43EA0223 		orr	r3, r3, r2, lsl #8
+ 693              		.loc 1 84 6 view .LVU189
+ 694 007c 144A     		ldr	r2, .L27+40
+ 695 007e 1380     		strh	r3, [r2]	@ movhi
+  85:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	MB  = (int16_t)((calib_data[16] << 8) | calib_data[17]);
+ 696              		.loc 1 85 2 is_stmt 1 view .LVU190
+ 697              		.loc 1 85 29 is_stmt 0 view .LVU191
+ 698 0080 227C     		ldrb	r2, [r4, #16]	@ zero_extendqisi2
+ 699              		.loc 1 85 52 view .LVU192
+ 700 0082 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
+ 701              		.loc 1 85 8 view .LVU193
+ARM GAS  /tmp/ccs2RMzB.s 			page 15
 
 
- 662              	.L39:
-  85:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The pressure is above the maximum! (770 millimeters o
- 663              		.loc 1 85 3 is_stmt 1 view .LVU163
- 664 0114 4FF0FF33 		mov	r3, #-1
- 665 0118 4122     		movs	r2, #65
- 666 011a 1649     		ldr	r1, .L41+64
- 667 011c 1648     		ldr	r0, .L41+68
- 668 011e FFF7FEFF 		bl	HAL_UART_Transmit
- 669              	.LVL59:
-  87:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		return p;
- 670              		.loc 1 87 3 view .LVU164
-  87:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		return p;
- 671              		.loc 1 87 10 is_stmt 0 view .LVU165
- 672 0122 F0E7     		b	.L28
- 673              	.LVL60:
- 674              	.L40:
-  89:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		HAL_UART_Transmit(&huart2, (const uint8_t*)"The pressure is below the minimum! (730 millimeters o
- 675              		.loc 1 89 3 is_stmt 1 view .LVU166
- 676 0124 4FF0FF33 		mov	r3, #-1
- 677 0128 4122     		movs	r2, #65
- 678 012a 1449     		ldr	r1, .L41+72
- 679 012c 1248     		ldr	r0, .L41+68
- 680 012e FFF7FEFF 		bl	HAL_UART_Transmit
- 681              	.LVL61:
-  91:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		return p;
- 682              		.loc 1 91 3 view .LVU167
-  91:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 		return p;
- 683              		.loc 1 91 10 is_stmt 0 view .LVU168
- 684 0132 E8E7     		b	.L28
- 685              	.L42:
- 686              		.align	2
- 687              	.L41:
- 688 0134 00000000 		.word	pressure_buf
- 689 0138 00000000 		.word	bmp180_addr
- 690 013c 00000000 		.word	hi2c1
- 691 0140 00000000 		.word	B5
- 692 0144 00000000 		.word	B2
- 693 0148 00000000 		.word	X1
- 694 014c 00000000 		.word	AC2
- 695 0150 00000000 		.word	X2
- 696 0154 00000000 		.word	AC1
- 697 0158 00000000 		.word	AC3
- 698 015c 00000000 		.word	B1
- 699 0160 00000000 		.word	AC4
- 700 0164 43E3FFFF 		.word	-7357
- 701 0168 6F520543 		.word	1124422255
- 702 016c 00804044 		.word	1145077760
- 703 0170 00803644 		.word	1144422400
- 704 0174 00000000 		.word	.LC3
- 705 0178 00000000 		.word	huart2
- 706 017c 44000000 		.word	.LC4
- 707              		.cfi_endproc
- 708              	.LFE139:
- 710              		.text
- 711              	.Letext0:
- 712              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
- 713              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
-ARM GAS  /tmp/cc6r15BV.s 			page 16
+ 702 0084 43EA0223 		orr	r3, r3, r2, lsl #8
+ 703              		.loc 1 85 6 view .LVU194
+ 704 0088 124A     		ldr	r2, .L27+44
+ 705 008a 1380     		strh	r3, [r2]	@ movhi
+  86:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	MC  = (int16_t)((calib_data[18] << 8) | calib_data[19]);
+ 706              		.loc 1 86 2 is_stmt 1 view .LVU195
+ 707              		.loc 1 86 29 is_stmt 0 view .LVU196
+ 708 008c A27C     		ldrb	r2, [r4, #18]	@ zero_extendqisi2
+ 709              		.loc 1 86 52 view .LVU197
+ 710 008e E37C     		ldrb	r3, [r4, #19]	@ zero_extendqisi2
+ 711              		.loc 1 86 8 view .LVU198
+ 712 0090 43EA0223 		orr	r3, r3, r2, lsl #8
+ 713              		.loc 1 86 6 view .LVU199
+ 714 0094 104A     		ldr	r2, .L27+48
+ 715 0096 1380     		strh	r3, [r2]	@ movhi
+  87:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** 	MD  = (int16_t)((calib_data[20] << 8) | calib_data[21]);
+ 716              		.loc 1 87 2 is_stmt 1 view .LVU200
+ 717              		.loc 1 87 29 is_stmt 0 view .LVU201
+ 718 0098 227D     		ldrb	r2, [r4, #20]	@ zero_extendqisi2
+ 719              		.loc 1 87 52 view .LVU202
+ 720 009a 637D     		ldrb	r3, [r4, #21]	@ zero_extendqisi2
+ 721              		.loc 1 87 8 view .LVU203
+ 722 009c 43EA0223 		orr	r3, r3, r2, lsl #8
+ 723              		.loc 1 87 6 view .LVU204
+ 724 00a0 0E4A     		ldr	r2, .L27+52
+ 725 00a2 1380     		strh	r3, [r2]	@ movhi
+  88:Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.c **** }...
+ 726              		.loc 1 88 1 view .LVU205
+ 727 00a4 04B0     		add	sp, sp, #16
+ 728              	.LCFI16:
+ 729              		.cfi_def_cfa_offset 8
+ 730              		@ sp needed
+ 731 00a6 10BD     		pop	{r4, pc}
+ 732              	.L28:
+ 733              		.align	2
+ 734              	.L27:
+ 735 00a8 00000000 		.word	calib_data
+ 736 00ac 00000000 		.word	bmp180_addr
+ 737 00b0 00000000 		.word	hi2c1
+ 738 00b4 00000000 		.word	AC1
+ 739 00b8 00000000 		.word	AC2
+ 740 00bc 00000000 		.word	AC3
+ 741 00c0 00000000 		.word	AC4
+ 742 00c4 00000000 		.word	AC5
+ 743 00c8 00000000 		.word	AC6
+ 744 00cc 00000000 		.word	B1
+ 745 00d0 00000000 		.word	B2
+ 746 00d4 00000000 		.word	MB
+ 747 00d8 00000000 		.word	MC
+ 748 00dc 00000000 		.word	MD
+ 749              		.cfi_endproc
+ 750              	.LFE140:
+ 752              		.text
+ 753              	.Letext0:
+ 754              		.file 2 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/mac
+ 755              		.file 3 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys
+ 756              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
+ARM GAS  /tmp/ccs2RMzB.s 			page 16
 
 
- 714              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
- 715              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 716              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 717              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 718              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 719              		.file 9 "Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.h"
- 720              		.file 10 "Core/Src/transmit_and_recieve_control/../../Inc/main.h"
-ARM GAS  /tmp/cc6r15BV.s 			page 17
+ 757              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 758              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 759              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 760              		.file 8 "Core/Src/transmit_and_recieve_control/transmit_and_recieve_control.h"
+ 761              		.file 9 "Core/Src/transmit_and_recieve_control/../../Inc/main.h"
+ARM GAS  /tmp/ccs2RMzB.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 transmit_and_recieve_control.c
-     /tmp/cc6r15BV.s:21     .rodata.lcd1602_transmit.str1.4:00000000 $d
-     /tmp/cc6r15BV.s:26     .text.lcd1602_transmit:00000000 $t
-     /tmp/cc6r15BV.s:32     .text.lcd1602_transmit:00000000 lcd1602_transmit
-     /tmp/cc6r15BV.s:118    .text.lcd1602_transmit:00000058 $d
-     /tmp/cc6r15BV.s:125    .text.lcd1602_transmit_data:00000000 $t
-     /tmp/cc6r15BV.s:131    .text.lcd1602_transmit_data:00000000 lcd1602_transmit_data
-     /tmp/cc6r15BV.s:154    .text.lcd1602_send_string:00000000 $t
-     /tmp/cc6r15BV.s:160    .text.lcd1602_send_string:00000000 lcd1602_send_string
-     /tmp/cc6r15BV.s:199    .text.lcd1602_transmit_command:00000000 $t
-     /tmp/cc6r15BV.s:205    .text.lcd1602_transmit_command:00000000 lcd1602_transmit_command
-     /tmp/cc6r15BV.s:228    .rodata.bmp180_get_temperature.str1.4:00000000 $d
-     /tmp/cc6r15BV.s:237    .text.bmp180_get_temperature:00000000 $t
-     /tmp/cc6r15BV.s:243    .text.bmp180_get_temperature:00000000 bmp180_get_temperature
-     /tmp/cc6r15BV.s:396    .text.bmp180_get_temperature:000000c0 $d
-     /tmp/cc6r15BV.s:416    .rodata.bmp180_get_pressure.str1.4:00000000 $d
-     /tmp/cc6r15BV.s:425    .text.bmp180_get_pressure:00000000 $t
-     /tmp/cc6r15BV.s:431    .text.bmp180_get_pressure:00000000 bmp180_get_pressure
-     /tmp/cc6r15BV.s:688    .text.bmp180_get_pressure:00000134 $d
+     /tmp/ccs2RMzB.s:21     .rodata.lcd1602_transmit.str1.4:00000000 $d
+     /tmp/ccs2RMzB.s:26     .text.lcd1602_transmit:00000000 $t
+     /tmp/ccs2RMzB.s:32     .text.lcd1602_transmit:00000000 lcd1602_transmit
+     /tmp/ccs2RMzB.s:118    .text.lcd1602_transmit:00000058 $d
+     /tmp/ccs2RMzB.s:125    .text.lcd1602_transmit_data:00000000 $t
+     /tmp/ccs2RMzB.s:131    .text.lcd1602_transmit_data:00000000 lcd1602_transmit_data
+     /tmp/ccs2RMzB.s:154    .text.lcd1602_send_string:00000000 $t
+     /tmp/ccs2RMzB.s:160    .text.lcd1602_send_string:00000000 lcd1602_send_string
+     /tmp/ccs2RMzB.s:199    .text.lcd1602_transmit_command:00000000 $t
+     /tmp/ccs2RMzB.s:205    .text.lcd1602_transmit_command:00000000 lcd1602_transmit_command
+     /tmp/ccs2RMzB.s:228    .text.bmp180_get_temperature:00000000 $t
+     /tmp/ccs2RMzB.s:234    .text.bmp180_get_temperature:00000000 bmp180_get_temperature
+     /tmp/ccs2RMzB.s:330    .text.bmp180_get_temperature:00000074 $d
+     /tmp/ccs2RMzB.s:345    .text.bmp180_get_pressure:00000000 $t
+     /tmp/ccs2RMzB.s:351    .text.bmp180_get_pressure:00000000 bmp180_get_pressure
+     /tmp/ccs2RMzB.s:565    .text.bmp180_get_pressure:000000e8 $d
+     /tmp/ccs2RMzB.s:582    .text.bmp180_get_global_coefficients:00000000 $t
+     /tmp/ccs2RMzB.s:588    .text.bmp180_get_global_coefficients:00000000 bmp180_get_global_coefficients
+     /tmp/ccs2RMzB.s:735    .text.bmp180_get_global_coefficients:000000a8 $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_Master_Transmit
@@ -941,9 +940,6 @@ HAL_I2C_Mem_Read
 __aeabi_i2d
 __aeabi_ddiv
 __aeabi_d2iz
-__aeabi_dcmpgt
-__aeabi_dcmplt
-HAL_UART_Transmit
 temperature_buf
 bmp180_addr
 AC6
@@ -953,7 +949,6 @@ MC
 MD
 X2
 B5
-huart2
 pressure_buf
 B2
 AC2
@@ -961,3 +956,5 @@ AC1
 AC3
 B1
 AC4
+calib_data
+MB

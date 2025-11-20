@@ -63,9 +63,9 @@ void Error_Handler(char* msg);
 
 /* USER CODE BEGIN Private defines */
 typedef struct {
-	short Temperature;
-	float Pressure;
-	unsigned short Humdity;
+  int32_t current_temperature;
+  int32_t current_pressure;
+  uint32_t current_humidity;
 } Data;
 /* USER CODE END Private defines */
 

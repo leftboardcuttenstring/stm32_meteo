@@ -4,6 +4,7 @@
         "cstdint": "c",
         "main.h": "c",
         "transmit_and_recieve_control.h": "c",
-        "functional": "c"
+        "functional": "c",
+        "init_peripherials.h": "c"
     }
 }
