@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccrUbNmw.s 			page 1
+ARM GAS  /tmp/ccrTlybW.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
   29:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
   30:Core/Src/main.c **** /* USER CODE BEGIN PTD */
   31:Core/Src/main.c **** 
-ARM GAS  /tmp/ccrUbNmw.s 			page 2
+ARM GAS  /tmp/ccrTlybW.s 			page 2
 
 
   32:Core/Src/main.c **** /* USER CODE END PTD */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
   86:Core/Src/main.c **** int32_t temperature = 0;
   87:Core/Src/main.c **** int32_t pressure = 0;
   88:Core/Src/main.c **** 
-ARM GAS  /tmp/ccrUbNmw.s 			page 3
+ARM GAS  /tmp/ccrTlybW.s 			page 3
 
 
   89:Core/Src/main.c **** RTC_TimeTypeDef time;
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  143:Core/Src/main.c **** {
  144:Core/Src/main.c ****   if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1) != RTC_INIT_MAGIC) {
  145:Core/Src/main.c ****       RTC_TimeTypeDef sTime = { .Hours = 11, .Minutes = 10, .Seconds = 30 };
-ARM GAS  /tmp/ccrUbNmw.s 			page 4
+ARM GAS  /tmp/ccrTlybW.s 			page 4
 
 
  146:Core/Src/main.c ****       RTC_DateTypeDef sDate = { .WeekDay = RTC_WEEKDAY_SUNDAY, .Month = RTC_MONTH_OCTOBER,
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  200:Core/Src/main.c ****   
  201:Core/Src/main.c **** 
  202:Core/Src/main.c ****   /* USER CODE END 2 */
-ARM GAS  /tmp/ccrUbNmw.s 			page 5
+ARM GAS  /tmp/ccrTlybW.s 			page 5
 
 
  203:Core/Src/main.c **** 
@@ -277,7 +277,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  236:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
  237:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
  238:Core/Src/main.c ****   {
- 239:Core/Src/main.c ****     Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (HSI 
+ 239:Core/Src/main.c ****     Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (some
  240:Core/Src/main.c ****   }
  241:Core/Src/main.c **** 
  242:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
@@ -291,14 +291,14 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  250:Core/Src/main.c **** 
  251:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
  252:Core/Src/main.c ****   {
- 253:Core/Src/main.c ****     Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (some
+ 253:Core/Src/main.c ****     Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (HSI 
  254:Core/Src/main.c ****   }
  255:Core/Src/main.c **** }
  256:Core/Src/main.c **** 
  257:Core/Src/main.c **** /**
  258:Core/Src/main.c ****   * @brief I2C1 Initialization Function
  259:Core/Src/main.c ****   * @param None
-ARM GAS  /tmp/ccrUbNmw.s 			page 6
+ARM GAS  /tmp/ccrTlybW.s 			page 6
 
 
  260:Core/Src/main.c ****   * @retval None
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  314:Core/Src/main.c ****   hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
  315:Core/Src/main.c ****   hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
  316:Core/Src/main.c ****   if (HAL_RTC_Init(&hrtc) != HAL_OK)
-ARM GAS  /tmp/ccrUbNmw.s 			page 7
+ARM GAS  /tmp/ccrTlybW.s 			page 7
 
 
  317:Core/Src/main.c ****   {
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  371:Core/Src/main.c **** }
  372:Core/Src/main.c **** 
  373:Core/Src/main.c **** /**
-ARM GAS  /tmp/ccrUbNmw.s 			page 8
+ARM GAS  /tmp/ccrTlybW.s 			page 8
 
 
  374:Core/Src/main.c ****   * @brief USART2 Initialization Function
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
   43              		.cfi_def_cfa_offset 64
  413:Core/Src/main.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
   44              		.loc 1 413 3 view .LVU1
-ARM GAS  /tmp/ccrUbNmw.s 			page 9
+ARM GAS  /tmp/ccrTlybW.s 			page 9
 
 
   45              		.loc 1 413 20 is_stmt 0 view .LVU2
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
   91 0040 1A6B     		ldr	r2, [r3, #48]
   92 0042 42F00102 		orr	r2, r2, #1
   93 0046 1A63     		str	r2, [r3, #48]
-ARM GAS  /tmp/ccrUbNmw.s 			page 10
+ARM GAS  /tmp/ccrTlybW.s 			page 10
 
 
   94              		.loc 1 421 3 view .LVU18
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  138 0084 2023     		movs	r3, #32
  139 0086 0593     		str	r3, [sp, #20]
  432:Core/Src/main.c ****   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-ARM GAS  /tmp/ccrUbNmw.s 			page 11
+ARM GAS  /tmp/ccrTlybW.s 			page 11
 
 
  140              		.loc 1 432 3 is_stmt 1 view .LVU36
@@ -615,56 +615,56 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  149 0092 FFF7FEFF 		bl	HAL_GPIO_Init
  150              	.LVL1:
  435:Core/Src/main.c **** 
- 436:Core/Src/main.c ****   /*Configure GPIO pin : PC7 */
- 437:Core/Src/main.c ****   GPIO_InitStruct.Pin = GPIO_PIN_7;
+ 436:Core/Src/main.c ****   /*Configure GPIO pins : PC7 PC8 */
+ 437:Core/Src/main.c ****   GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8;
  151              		.loc 1 437 3 view .LVU41
  152              		.loc 1 437 23 is_stmt 0 view .LVU42
- 153 0096 8023     		movs	r3, #128
- 154 0098 0593     		str	r3, [sp, #20]
+ 153 0096 4FF4C073 		mov	r3, #384
+ 154 009a 0593     		str	r3, [sp, #20]
  438:Core/Src/main.c ****   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
  155              		.loc 1 438 3 is_stmt 1 view .LVU43
  156              		.loc 1 438 24 is_stmt 0 view .LVU44
- 157 009a 0697     		str	r7, [sp, #24]
+ 157 009c 0697     		str	r7, [sp, #24]
  439:Core/Src/main.c ****   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
  158              		.loc 1 439 3 is_stmt 1 view .LVU45
  159              		.loc 1 439 24 is_stmt 0 view .LVU46
- 160 009c 0223     		movs	r3, #2
- 161 009e 0793     		str	r3, [sp, #28]
+ 160 009e 0223     		movs	r3, #2
+ 161 00a0 0793     		str	r3, [sp, #28]
  440:Core/Src/main.c ****   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
  162              		.loc 1 440 3 is_stmt 1 view .LVU47
- 163 00a0 2946     		mov	r1, r5
- 164 00a2 3046     		mov	r0, r6
- 165 00a4 FFF7FEFF 		bl	HAL_GPIO_Init
+ 163 00a2 2946     		mov	r1, r5
+ 164 00a4 3046     		mov	r0, r6
+ 165 00a6 FFF7FEFF 		bl	HAL_GPIO_Init
  166              	.LVL2:
  441:Core/Src/main.c **** 
  442:Core/Src/main.c ****   /* EXTI interrupt init*/
  443:Core/Src/main.c ****   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 8, 0);
  167              		.loc 1 443 3 view .LVU48
- 168 00a8 2246     		mov	r2, r4
- 169 00aa 0821     		movs	r1, #8
- 170 00ac 1720     		movs	r0, #23
- 171 00ae FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 168 00aa 2246     		mov	r2, r4
+ 169 00ac 0821     		movs	r1, #8
+ 170 00ae 1720     		movs	r0, #23
+ 171 00b0 FFF7FEFF 		bl	HAL_NVIC_SetPriority
  172              	.LVL3:
  444:Core/Src/main.c ****   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
  173              		.loc 1 444 3 view .LVU49
- 174 00b2 1720     		movs	r0, #23
- 175 00b4 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 174 00b4 1720     		movs	r0, #23
+ 175 00b6 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
  176              	.LVL4:
  445:Core/Src/main.c **** 
  446:Core/Src/main.c ****   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 10, 0);
  177              		.loc 1 446 3 view .LVU50
- 178 00b8 2246     		mov	r2, r4
- 179 00ba 0A21     		movs	r1, #10
- 180 00bc 2820     		movs	r0, #40
- 181 00be FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 178 00ba 2246     		mov	r2, r4
+ 179 00bc 0A21     		movs	r1, #10
+ 180 00be 2820     		movs	r0, #40
+ 181 00c0 FFF7FEFF 		bl	HAL_NVIC_SetPriority
  182              	.LVL5:
-ARM GAS  /tmp/ccrUbNmw.s 			page 12
+ARM GAS  /tmp/ccrTlybW.s 			page 12
 
 
  447:Core/Src/main.c ****   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
  183              		.loc 1 447 3 view .LVU51
- 184 00c2 2820     		movs	r0, #40
- 185 00c4 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 184 00c4 2820     		movs	r0, #40
+ 185 00c6 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
  186              	.LVL6:
  448:Core/Src/main.c **** 
  449:Core/Src/main.c ****   /* USER CODE BEGIN MX_GPIO_Init_2 */
@@ -672,13 +672,13 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  451:Core/Src/main.c ****   /* USER CODE END MX_GPIO_Init_2 */
  452:Core/Src/main.c **** }
  187              		.loc 1 452 1 is_stmt 0 view .LVU52
- 188 00c8 0AB0     		add	sp, sp, #40
+ 188 00ca 0AB0     		add	sp, sp, #40
  189              	.LCFI2:
  190              		.cfi_def_cfa_offset 24
  191              		@ sp needed
- 192 00ca BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 192 00cc BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  193              	.L4:
- 194 00ce 00BF     		.align	2
+ 194              		.align	2
  195              	.L3:
  196 00d0 00380240 		.word	1073887232
  197 00d4 00080240 		.word	1073874944
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  229              		.loc 1 115 7 is_stmt 0 view .LVU55
  230 0004 4022     		movs	r2, #64
  231 0006 0021     		movs	r1, #0
-ARM GAS  /tmp/ccrUbNmw.s 			page 13
+ARM GAS  /tmp/ccrTlybW.s 			page 13
 
 
  232 0008 6846     		mov	r0, sp
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  274 003e 3F22     		movs	r2, #63
  275 0040 6946     		mov	r1, sp
  276 0042 0548     		ldr	r0, .L11+8
-ARM GAS  /tmp/ccrUbNmw.s 			page 14
+ARM GAS  /tmp/ccrTlybW.s 			page 14
 
 
  277 0044 FFF7FEFF 		bl	HAL_UART_Transmit
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  329 0018 0988     		ldrh	r1, [r1]
  330 001a 2548     		ldr	r0, .L15+8
  331 001c FFF7FEFF 		bl	HAL_I2C_Mem_Read
-ARM GAS  /tmp/ccrUbNmw.s 			page 15
+ARM GAS  /tmp/ccrTlybW.s 			page 15
 
 
  332              	.LVL15:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  130:Core/Src/main.c **** 	AC5 = (uint16_t)((calib_data[8] << 8) | calib_data[9]);
  368              		.loc 1 130 8 view .LVU90
  369 0048 43EA0223 		orr	r3, r3, r2, lsl #8
-ARM GAS  /tmp/ccrUbNmw.s 			page 16
+ARM GAS  /tmp/ccrTlybW.s 			page 16
 
 
  130:Core/Src/main.c **** 	AC5 = (uint16_t)((calib_data[8] << 8) | calib_data[9]);
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  134:Core/Src/main.c **** 	MB  = (int16_t)((calib_data[16] << 8) | calib_data[17]);
  406              		.loc 1 134 52 view .LVU109
  407 0076 E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
-ARM GAS  /tmp/ccrUbNmw.s 			page 17
+ARM GAS  /tmp/ccrTlybW.s 			page 17
 
 
  134:Core/Src/main.c **** 	MB  = (int16_t)((calib_data[16] << 8) | calib_data[17]);
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  444 00a4 04B0     		add	sp, sp, #16
  445              	.LCFI8:
  446              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccrUbNmw.s 			page 18
+ARM GAS  /tmp/ccrTlybW.s 			page 18
 
 
  447              		@ sp needed
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  499 0010 9842     		cmp	r0, r3
  500 0012 01D1     		bne	.L20
  501              	.L17:
-ARM GAS  /tmp/ccrUbNmw.s 			page 19
+ARM GAS  /tmp/ccrTlybW.s 			page 19
 
 
  154:Core/Src/main.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  548 0058 2846     		mov	r0, r5
  549 005a FFF7FEFF 		bl	HAL_RTCEx_BKUPWrite
  550              	.LVL19:
-ARM GAS  /tmp/ccrUbNmw.s 			page 20
+ARM GAS  /tmp/ccrTlybW.s 			page 20
 
 
  551              	.LBE8:
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  593 0012 FFF7FEFF 		bl	HAL_UART_Transmit
  594              	.LVL22:
  466:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
-ARM GAS  /tmp/ccrUbNmw.s 			page 21
+ARM GAS  /tmp/ccrTlybW.s 			page 21
 
 
  467:Core/Src/main.c ****   __disable_irq();
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
   50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
   51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
-ARM GAS  /tmp/ccrUbNmw.s 			page 22
+ARM GAS  /tmp/ccrTlybW.s 			page 22
 
 
   53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
  108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
  109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  /tmp/ccrUbNmw.s 			page 23
+ARM GAS  /tmp/ccrTlybW.s 			page 23
 
 
  110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  165:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
-ARM GAS  /tmp/ccrUbNmw.s 			page 24
+ARM GAS  /tmp/ccrTlybW.s 			page 24
 
 
  167:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  221:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "r" (r)
  222:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  223:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccrUbNmw.s 			page 25
+ARM GAS  /tmp/ccrTlybW.s 			page 25
 
 
  224:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  278:Drivers/CMSIS/Include/cmsis_gcc.h ****            and after the instruction, without ensuring their completion.
  279:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  280:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __DMB(void)
-ARM GAS  /tmp/ccrUbNmw.s 			page 26
+ARM GAS  /tmp/ccrTlybW.s 			page 26
 
 
  281:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  335:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  336:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  337:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccrUbNmw.s 			page 27
+ARM GAS  /tmp/ccrTlybW.s 			page 27
 
 
  338:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  392:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  393:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
  394:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  /tmp/ccrUbNmw.s 			page 28
+ARM GAS  /tmp/ccrTlybW.s 			page 28
 
 
  395:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  449:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   LDR Exclusive (16 bit)
  450:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 16 bit values.
  451:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
-ARM GAS  /tmp/ccrUbNmw.s 			page 29
+ARM GAS  /tmp/ccrTlybW.s 			page 29
 
 
  452:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  506:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
  507:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
  508:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
-ARM GAS  /tmp/ccrUbNmw.s 			page 30
+ARM GAS  /tmp/ccrTlybW.s 			page 30
 
 
  509:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  563:Drivers/CMSIS/Include/cmsis_gcc.h **** ({                          \
  564:Drivers/CMSIS/Include/cmsis_gcc.h ****   int32_t __RES, __ARG1 = (ARG1); \
  565:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("ssat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
-ARM GAS  /tmp/ccrUbNmw.s 			page 31
+ARM GAS  /tmp/ccrTlybW.s 			page 31
 
 
  566:Drivers/CMSIS/Include/cmsis_gcc.h ****   __RES; \
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  620:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);    /* Add explicit type cast here */
  621:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  622:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccrUbNmw.s 			page 32
+ARM GAS  /tmp/ccrTlybW.s 			page 32
 
 
  623:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  677:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
  678:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  679:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STRHT(uint16_t value, volatile uint16_t *ptr)
-ARM GAS  /tmp/ccrUbNmw.s 			page 33
+ARM GAS  /tmp/ccrTlybW.s 			page 33
 
 
  680:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  734:Drivers/CMSIS/Include/cmsis_gcc.h ****   if (sat <= 31U)
  735:Drivers/CMSIS/Include/cmsis_gcc.h ****   {
  736:Drivers/CMSIS/Include/cmsis_gcc.h ****     const uint32_t max = ((1U << sat) - 1U);
-ARM GAS  /tmp/ccrUbNmw.s 			page 34
+ARM GAS  /tmp/ccrTlybW.s 			page 34
 
 
  737:Drivers/CMSIS/Include/cmsis_gcc.h ****     if (val > (int32_t)max)
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  791:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  792:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDA(volatile uint32_t *ptr)
  793:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  /tmp/ccrUbNmw.s 			page 35
+ARM GAS  /tmp/ccrTlybW.s 			page 35
 
 
  794:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t result;
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  848:Drivers/CMSIS/Include/cmsis_gcc.h ****    return ((uint8_t) result);
  849:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  850:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccrUbNmw.s 			page 36
+ARM GAS  /tmp/ccrTlybW.s 			page 36
 
 
  851:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  905:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          1  Function failed
  906:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  907:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEXH(uint16_t value, volatile uint16_t *ptr)
-ARM GAS  /tmp/ccrUbNmw.s 			page 37
+ARM GAS  /tmp/ccrTlybW.s 			page 37
 
 
  908:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  600              	.LBB10:
  961:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  962:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
-ARM GAS  /tmp/ccrUbNmw.s 			page 38
+ARM GAS  /tmp/ccrTlybW.s 			page 38
 
 
  601              		.loc 2 962 3 view .LVU148
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  272:Core/Src/main.c ****   hi2c1.Init.ClockSpeed = 100000;
  644              		.loc 1 272 3 view .LVU153
  272:Core/Src/main.c ****   hi2c1.Init.ClockSpeed = 100000;
-ARM GAS  /tmp/ccrUbNmw.s 			page 39
+ARM GAS  /tmp/ccrTlybW.s 			page 39
 
 
  645              		.loc 1 272 18 is_stmt 0 view .LVU154
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  680              		.loc 1 281 6 discriminator 1 view .LVU173
  681 0024 00B9     		cbnz	r0, .L31
  289:Core/Src/main.c **** 
-ARM GAS  /tmp/ccrUbNmw.s 			page 40
+ARM GAS  /tmp/ccrTlybW.s 			page 40
 
 
  682              		.loc 1 289 1 view .LVU174
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  310:Core/Src/main.c ****   hrtc.Init.AsynchPrediv = 127;
  726              		.loc 1 310 3 is_stmt 1 view .LVU179
  310:Core/Src/main.c ****   hrtc.Init.AsynchPrediv = 127;
-ARM GAS  /tmp/ccrUbNmw.s 			page 41
+ARM GAS  /tmp/ccrTlybW.s 			page 41
 
 
  727              		.loc 1 310 24 is_stmt 0 view .LVU180
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  766              		.cfi_endproc
  767              	.LFE143:
  769              		.section	.rodata.MX_USART2_UART_Init.str1.4,"aMS",%progbits,1
-ARM GAS  /tmp/ccrUbNmw.s 			page 42
+ARM GAS  /tmp/ccrTlybW.s 			page 42
 
 
  770              		.align	2
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  807              		.loc 1 392 3 is_stmt 1 view .LVU205
  392:Core/Src/main.c ****   huart2.Init.Mode = UART_MODE_TX_RX;
  808              		.loc 1 392 22 is_stmt 0 view .LVU206
-ARM GAS  /tmp/ccrUbNmw.s 			page 43
+ARM GAS  /tmp/ccrTlybW.s 			page 43
 
 
  809 0014 0361     		str	r3, [r0, #16]
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  846      6374696F 
  846      6E202874 
  847 0052 0000     		.align	2
-ARM GAS  /tmp/ccrUbNmw.s 			page 44
+ARM GAS  /tmp/ccrTlybW.s 			page 44
 
 
  848              	.LC6:
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  882              		.loc 1 339 27 is_stmt 0 view .LVU222
  883 000e 0093     		str	r3, [sp]
  884 0010 0193     		str	r3, [sp, #4]
-ARM GAS  /tmp/ccrUbNmw.s 			page 45
+ARM GAS  /tmp/ccrTlybW.s 			page 45
 
 
  344:Core/Src/main.c ****   htim3.Init.Prescaler = 720;
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  920 0038 0E48     		ldr	r0, .L54
  921 003a FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
  922              	.LVL30:
-ARM GAS  /tmp/ccrUbNmw.s 			page 46
+ARM GAS  /tmp/ccrTlybW.s 			page 46
 
 
  355:Core/Src/main.c ****   {
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  363:Core/Src/main.c ****   }
  965              		.loc 1 363 5 view .LVU254
  966 006c 0548     		ldr	r0, .L54+16
-ARM GAS  /tmp/ccrUbNmw.s 			page 47
+ARM GAS  /tmp/ccrTlybW.s 			page 47
 
 
  967 006e FFF7FEFF 		bl	Error_Handler
@@ -2781,19 +2781,19 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  983      6E206572 
  983      726F7220 
  983      6F636375 
- 984 0033 6D436C6F 		.ascii	"mClock_Config' function (HSI init)\012\000"
+ 984 0033 6D436C6F 		.ascii	"mClock_Config' function (something other)\012\000"
  984      636B5F43 
  984      6F6E6669 
  984      67272066 
  984      756E6374 
- 985 0057 00       		.align	2
+ 985 005e 0000     		.align	2
  986              	.LC9:
- 987 0058 4572726F 		.ascii	"Error: an error occurred while executing the 'Syste"
+ 987 0060 4572726F 		.ascii	"Error: an error occurred while executing the 'Syste"
  987      723A2061 
  987      6E206572 
  987      726F7220 
  987      6F636375 
- 988 008b 6D436C6F 		.ascii	"mClock_Config' function (something other)\012\000"
+ 988 0093 6D436C6F 		.ascii	"mClock_Config' function (HSI init)\012\000"
  988      636B5F43 
  988      6F6E6669 
  988      67272066 
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1006              		.cfi_offset 14, -4
  1007 0002 94B0     		sub	sp, sp, #80
  1008              	.LCFI22:
-ARM GAS  /tmp/ccrUbNmw.s 			page 48
+ARM GAS  /tmp/ccrTlybW.s 			page 48
 
 
  1009              		.cfi_def_cfa_offset 88
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1050 0038 22F44042 		bic	r2, r2, #49152
  1051 003c 42F40042 		orr	r2, r2, #32768
  1052 0040 0A60     		str	r2, [r1]
-ARM GAS  /tmp/ccrUbNmw.s 			page 49
+ARM GAS  /tmp/ccrTlybW.s 			page 49
 
 
  227:Core/Src/main.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1089 0066 0393     		str	r3, [sp, #12]
  246:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
  1090              		.loc 1 246 3 is_stmt 1 view .LVU287
-ARM GAS  /tmp/ccrUbNmw.s 			page 50
+ARM GAS  /tmp/ccrTlybW.s 			page 50
 
 
  246:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
@@ -2998,10 +2998,10 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1132 008c 00380240 		.word	1073887232
  1133 0090 00700040 		.word	1073770496
  1134 0094 00000000 		.word	.LC8
-ARM GAS  /tmp/ccrUbNmw.s 			page 51
+ARM GAS  /tmp/ccrTlybW.s 			page 51
 
 
- 1135 0098 58000000 		.word	.LC9
+ 1135 0098 60000000 		.word	.LC9
  1136              		.cfi_endproc
  1137              	.LFE141:
  1139              		.section	.text.main,"ax",%progbits
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  194:Core/Src/main.c ****   aht10_init(); //strange stuff
  1182              		.loc 1 194 3 view .LVU310
  1183 0022 FFF7FEFF 		bl	bmp180_init
-ARM GAS  /tmp/ccrUbNmw.s 			page 52
+ARM GAS  /tmp/ccrTlybW.s 			page 52
 
 
  1184              	.LVL48:
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1241              		.global	temperature
  1242              		.section	.bss.temperature,"aw",%nobits
  1243              		.align	2
-ARM GAS  /tmp/ccrUbNmw.s 			page 53
+ARM GAS  /tmp/ccrTlybW.s 			page 53
 
 
  1246              	temperature:
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1316              	MB:
  1317 0000 0000     		.space	2
  1318              		.global	B2
-ARM GAS  /tmp/ccrUbNmw.s 			page 54
+ARM GAS  /tmp/ccrTlybW.s 			page 54
 
 
  1319              		.section	.bss.B2,"aw",%nobits
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1383              		.align	2
  1386              	AHT10_TmpHum_Cmd:
  1387 0000 AC3300   		.ascii	"\2543\000"
-ARM GAS  /tmp/ccrUbNmw.s 			page 55
+ARM GAS  /tmp/ccrTlybW.s 			page 55
 
 
  1388              		.global	AHT10_Humidity
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1457 0000 AC3300   		.ascii	"\2543\000"
  1458              		.global	aht10_init_command
  1459              		.section	.data.aht10_init_command,"aw"
-ARM GAS  /tmp/ccrUbNmw.s 			page 56
+ARM GAS  /tmp/ccrTlybW.s 			page 56
 
 
  1460              		.align	2
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1508              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
  1509              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
  1510              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
-ARM GAS  /tmp/ccrUbNmw.s 			page 57
+ARM GAS  /tmp/ccrTlybW.s 			page 57
 
 
  1511              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
@@ -3377,137 +3377,137 @@ ARM GAS  /tmp/ccrUbNmw.s 			page 1
  1524              		.file 24 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h"
  1525              		.file 25 "/home/mike/bin/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/st
  1526              		.file 26 "<built-in>"
-ARM GAS  /tmp/ccrUbNmw.s 			page 58
+ARM GAS  /tmp/ccrTlybW.s 			page 58
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/ccrUbNmw.s:21     .text.MX_GPIO_Init:00000000 $t
-     /tmp/ccrUbNmw.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-     /tmp/ccrUbNmw.s:196    .text.MX_GPIO_Init:000000d0 $d
-     /tmp/ccrUbNmw.s:203    .rodata.FindAddress.str1.4:00000000 $d
-     /tmp/ccrUbNmw.s:207    .text.FindAddress:00000000 $t
-     /tmp/ccrUbNmw.s:213    .text.FindAddress:00000000 FindAddress
-     /tmp/ccrUbNmw.s:292    .text.FindAddress:00000050 $d
-     /tmp/ccrUbNmw.s:1491   .bss.hi2c1:00000000 hi2c1
-     /tmp/ccrUbNmw.s:1470   .bss.huart2:00000000 huart2
-     /tmp/ccrUbNmw.s:299    .text.bmp180_get_global_coefficients:00000000 $t
-     /tmp/ccrUbNmw.s:305    .text.bmp180_get_global_coefficients:00000000 bmp180_get_global_coefficients
-     /tmp/ccrUbNmw.s:452    .text.bmp180_get_global_coefficients:000000a8 $d
-     /tmp/ccrUbNmw.s:1379   .bss.calib_data:00000000 calib_data
-     /tmp/ccrUbNmw.s:1428   .data.bmp180_addr:00000000 bmp180_addr
-     /tmp/ccrUbNmw.s:1351   .bss.AC1:00000000 AC1
-     /tmp/ccrUbNmw.s:1344   .bss.AC2:00000000 AC2
-     /tmp/ccrUbNmw.s:1337   .bss.AC3:00000000 AC3
-     /tmp/ccrUbNmw.s:1295   .bss.AC4:00000000 AC4
-     /tmp/ccrUbNmw.s:1288   .bss.AC5:00000000 AC5
-     /tmp/ccrUbNmw.s:1281   .bss.AC6:00000000 AC6
-     /tmp/ccrUbNmw.s:1330   .bss.B1:00000000 B1
-     /tmp/ccrUbNmw.s:1323   .bss.B2:00000000 B2
-     /tmp/ccrUbNmw.s:1316   .bss.MB:00000000 MB
-     /tmp/ccrUbNmw.s:1309   .bss.MC:00000000 MC
-     /tmp/ccrUbNmw.s:1302   .bss.MD:00000000 MD
-     /tmp/ccrUbNmw.s:470    .text.init_rtc_once:00000000 $t
-     /tmp/ccrUbNmw.s:476    .text.init_rtc_once:00000000 init_rtc_once
-     /tmp/ccrUbNmw.s:557    .text.init_rtc_once:00000060 $d
-     /tmp/ccrUbNmw.s:1484   .bss.hrtc:00000000 hrtc
-     /tmp/ccrUbNmw.s:563    .text.Error_Handler:00000000 $t
-     /tmp/ccrUbNmw.s:569    .text.Error_Handler:00000000 Error_Handler
-     /tmp/ccrUbNmw.s:618    .text.Error_Handler:0000001c $d
-     /tmp/ccrUbNmw.s:623    .rodata.MX_I2C1_Init.str1.4:00000000 $d
-     /tmp/ccrUbNmw.s:628    .text.MX_I2C1_Init:00000000 $t
-     /tmp/ccrUbNmw.s:633    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
-     /tmp/ccrUbNmw.s:692    .text.MX_I2C1_Init:00000030 $d
-     /tmp/ccrUbNmw.s:700    .rodata.MX_RTC_Init.str1.4:00000000 $d
-     /tmp/ccrUbNmw.s:705    .text.MX_RTC_Init:00000000 $t
-     /tmp/ccrUbNmw.s:710    .text.MX_RTC_Init:00000000 MX_RTC_Init
-     /tmp/ccrUbNmw.s:763    .text.MX_RTC_Init:00000028 $d
-     /tmp/ccrUbNmw.s:770    .rodata.MX_USART2_UART_Init.str1.4:00000000 $d
-     /tmp/ccrUbNmw.s:775    .text.MX_USART2_UART_Init:00000000 $t
-     /tmp/ccrUbNmw.s:780    .text.MX_USART2_UART_Init:00000000 MX_USART2_UART_Init
-     /tmp/ccrUbNmw.s:836    .text.MX_USART2_UART_Init:0000002c $d
-     /tmp/ccrUbNmw.s:843    .rodata.MX_TIM3_Init.str1.4:00000000 $d
-     /tmp/ccrUbNmw.s:856    .text.MX_TIM3_Init:00000000 $t
-     /tmp/ccrUbNmw.s:861    .text.MX_TIM3_Init:00000000 MX_TIM3_Init
-     /tmp/ccrUbNmw.s:972    .text.MX_TIM3_Init:00000074 $d
-     /tmp/ccrUbNmw.s:1477   .bss.htim3:00000000 htim3
-     /tmp/ccrUbNmw.s:981    .rodata.SystemClock_Config.str1.4:00000000 $d
-     /tmp/ccrUbNmw.s:990    .text.SystemClock_Config:00000000 $t
-     /tmp/ccrUbNmw.s:996    .text.SystemClock_Config:00000000 SystemClock_Config
-     /tmp/ccrUbNmw.s:1132   .text.SystemClock_Config:0000008c $d
-     /tmp/ccrUbNmw.s:1140   .text.main:00000000 $t
-     /tmp/ccrUbNmw.s:1146   .text.main:00000000 main
-ARM GAS  /tmp/ccrUbNmw.s 			page 59
+     /tmp/ccrTlybW.s:21     .text.MX_GPIO_Init:00000000 $t
+     /tmp/ccrTlybW.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+     /tmp/ccrTlybW.s:196    .text.MX_GPIO_Init:000000d0 $d
+     /tmp/ccrTlybW.s:203    .rodata.FindAddress.str1.4:00000000 $d
+     /tmp/ccrTlybW.s:207    .text.FindAddress:00000000 $t
+     /tmp/ccrTlybW.s:213    .text.FindAddress:00000000 FindAddress
+     /tmp/ccrTlybW.s:292    .text.FindAddress:00000050 $d
+     /tmp/ccrTlybW.s:1491   .bss.hi2c1:00000000 hi2c1
+     /tmp/ccrTlybW.s:1470   .bss.huart2:00000000 huart2
+     /tmp/ccrTlybW.s:299    .text.bmp180_get_global_coefficients:00000000 $t
+     /tmp/ccrTlybW.s:305    .text.bmp180_get_global_coefficients:00000000 bmp180_get_global_coefficients
+     /tmp/ccrTlybW.s:452    .text.bmp180_get_global_coefficients:000000a8 $d
+     /tmp/ccrTlybW.s:1379   .bss.calib_data:00000000 calib_data
+     /tmp/ccrTlybW.s:1428   .data.bmp180_addr:00000000 bmp180_addr
+     /tmp/ccrTlybW.s:1351   .bss.AC1:00000000 AC1
+     /tmp/ccrTlybW.s:1344   .bss.AC2:00000000 AC2
+     /tmp/ccrTlybW.s:1337   .bss.AC3:00000000 AC3
+     /tmp/ccrTlybW.s:1295   .bss.AC4:00000000 AC4
+     /tmp/ccrTlybW.s:1288   .bss.AC5:00000000 AC5
+     /tmp/ccrTlybW.s:1281   .bss.AC6:00000000 AC6
+     /tmp/ccrTlybW.s:1330   .bss.B1:00000000 B1
+     /tmp/ccrTlybW.s:1323   .bss.B2:00000000 B2
+     /tmp/ccrTlybW.s:1316   .bss.MB:00000000 MB
+     /tmp/ccrTlybW.s:1309   .bss.MC:00000000 MC
+     /tmp/ccrTlybW.s:1302   .bss.MD:00000000 MD
+     /tmp/ccrTlybW.s:470    .text.init_rtc_once:00000000 $t
+     /tmp/ccrTlybW.s:476    .text.init_rtc_once:00000000 init_rtc_once
+     /tmp/ccrTlybW.s:557    .text.init_rtc_once:00000060 $d
+     /tmp/ccrTlybW.s:1484   .bss.hrtc:00000000 hrtc
+     /tmp/ccrTlybW.s:563    .text.Error_Handler:00000000 $t
+     /tmp/ccrTlybW.s:569    .text.Error_Handler:00000000 Error_Handler
+     /tmp/ccrTlybW.s:618    .text.Error_Handler:0000001c $d
+     /tmp/ccrTlybW.s:623    .rodata.MX_I2C1_Init.str1.4:00000000 $d
+     /tmp/ccrTlybW.s:628    .text.MX_I2C1_Init:00000000 $t
+     /tmp/ccrTlybW.s:633    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+     /tmp/ccrTlybW.s:692    .text.MX_I2C1_Init:00000030 $d
+     /tmp/ccrTlybW.s:700    .rodata.MX_RTC_Init.str1.4:00000000 $d
+     /tmp/ccrTlybW.s:705    .text.MX_RTC_Init:00000000 $t
+     /tmp/ccrTlybW.s:710    .text.MX_RTC_Init:00000000 MX_RTC_Init
+     /tmp/ccrTlybW.s:763    .text.MX_RTC_Init:00000028 $d
+     /tmp/ccrTlybW.s:770    .rodata.MX_USART2_UART_Init.str1.4:00000000 $d
+     /tmp/ccrTlybW.s:775    .text.MX_USART2_UART_Init:00000000 $t
+     /tmp/ccrTlybW.s:780    .text.MX_USART2_UART_Init:00000000 MX_USART2_UART_Init
+     /tmp/ccrTlybW.s:836    .text.MX_USART2_UART_Init:0000002c $d
+     /tmp/ccrTlybW.s:843    .rodata.MX_TIM3_Init.str1.4:00000000 $d
+     /tmp/ccrTlybW.s:856    .text.MX_TIM3_Init:00000000 $t
+     /tmp/ccrTlybW.s:861    .text.MX_TIM3_Init:00000000 MX_TIM3_Init
+     /tmp/ccrTlybW.s:972    .text.MX_TIM3_Init:00000074 $d
+     /tmp/ccrTlybW.s:1477   .bss.htim3:00000000 htim3
+     /tmp/ccrTlybW.s:981    .rodata.SystemClock_Config.str1.4:00000000 $d
+     /tmp/ccrTlybW.s:990    .text.SystemClock_Config:00000000 $t
+     /tmp/ccrTlybW.s:996    .text.SystemClock_Config:00000000 SystemClock_Config
+     /tmp/ccrTlybW.s:1132   .text.SystemClock_Config:0000008c $d
+     /tmp/ccrTlybW.s:1140   .text.main:00000000 $t
+     /tmp/ccrTlybW.s:1146   .text.main:00000000 main
+ARM GAS  /tmp/ccrTlybW.s 			page 59
 
 
-     /tmp/ccrUbNmw.s:1206   .data.aht10_soft_reset_command:00000000 aht10_soft_reset_command
-     /tmp/ccrUbNmw.s:1212   .data.aht10_trigger_measurment_command:00000000 aht10_trigger_measurment_command
-     /tmp/ccrUbNmw.s:1218   .data.aht10_initialization_command:00000000 aht10_initialization_command
-     /tmp/ccrUbNmw.s:1225   .bss.date:00000000 date
-     /tmp/ccrUbNmw.s:1222   .bss.date:00000000 $d
-     /tmp/ccrUbNmw.s:1232   .bss.time:00000000 time
-     /tmp/ccrUbNmw.s:1229   .bss.time:00000000 $d
-     /tmp/ccrUbNmw.s:1239   .bss.pressure:00000000 pressure
-     /tmp/ccrUbNmw.s:1236   .bss.pressure:00000000 $d
-     /tmp/ccrUbNmw.s:1246   .bss.temperature:00000000 temperature
-     /tmp/ccrUbNmw.s:1243   .bss.temperature:00000000 $d
-     /tmp/ccrUbNmw.s:1253   .bss.msg_time:00000000 msg_time
-     /tmp/ccrUbNmw.s:1250   .bss.msg_time:00000000 $d
-     /tmp/ccrUbNmw.s:1260   .bss.B5:00000000 B5
-     /tmp/ccrUbNmw.s:1257   .bss.B5:00000000 $d
-     /tmp/ccrUbNmw.s:1267   .bss.X2:00000000 X2
-     /tmp/ccrUbNmw.s:1264   .bss.X2:00000000 $d
-     /tmp/ccrUbNmw.s:1274   .bss.X1:00000000 X1
-     /tmp/ccrUbNmw.s:1271   .bss.X1:00000000 $d
-     /tmp/ccrUbNmw.s:1278   .bss.AC6:00000000 $d
-     /tmp/ccrUbNmw.s:1285   .bss.AC5:00000000 $d
-     /tmp/ccrUbNmw.s:1292   .bss.AC4:00000000 $d
-     /tmp/ccrUbNmw.s:1299   .bss.MD:00000000 $d
-     /tmp/ccrUbNmw.s:1306   .bss.MC:00000000 $d
-     /tmp/ccrUbNmw.s:1313   .bss.MB:00000000 $d
-     /tmp/ccrUbNmw.s:1320   .bss.B2:00000000 $d
-     /tmp/ccrUbNmw.s:1327   .bss.B1:00000000 $d
-     /tmp/ccrUbNmw.s:1334   .bss.AC3:00000000 $d
-     /tmp/ccrUbNmw.s:1341   .bss.AC2:00000000 $d
-     /tmp/ccrUbNmw.s:1348   .bss.AC1:00000000 $d
-     /tmp/ccrUbNmw.s:1358   .bss.GLOBAL_MESSAGE_BUFFER:00000000 GLOBAL_MESSAGE_BUFFER
-     /tmp/ccrUbNmw.s:1355   .bss.GLOBAL_MESSAGE_BUFFER:00000000 $d
-     /tmp/ccrUbNmw.s:1365   .bss.pressure_buf:00000000 pressure_buf
-     /tmp/ccrUbNmw.s:1362   .bss.pressure_buf:00000000 $d
-     /tmp/ccrUbNmw.s:1372   .bss.temperature_buf:00000000 temperature_buf
-     /tmp/ccrUbNmw.s:1369   .bss.temperature_buf:00000000 $d
-     /tmp/ccrUbNmw.s:1376   .bss.calib_data:00000000 $d
-     /tmp/ccrUbNmw.s:1386   .data.AHT10_TmpHum_Cmd:00000000 AHT10_TmpHum_Cmd
-     /tmp/ccrUbNmw.s:1383   .data.AHT10_TmpHum_Cmd:00000000 $d
-     /tmp/ccrUbNmw.s:1393   .bss.AHT10_Humidity:00000000 AHT10_Humidity
-     /tmp/ccrUbNmw.s:1390   .bss.AHT10_Humidity:00000000 $d
-     /tmp/ccrUbNmw.s:1400   .bss.AHT10_Temperature:00000000 AHT10_Temperature
-     /tmp/ccrUbNmw.s:1397   .bss.AHT10_Temperature:00000000 $d
-     /tmp/ccrUbNmw.s:1407   .bss.AHT10_ADC_Raw:00000000 AHT10_ADC_Raw
-     /tmp/ccrUbNmw.s:1404   .bss.AHT10_ADC_Raw:00000000 $d
-     /tmp/ccrUbNmw.s:1414   .bss.AHT10_RX_Data:00000000 AHT10_RX_Data
-     /tmp/ccrUbNmw.s:1411   .bss.AHT10_RX_Data:00000000 $d
-     /tmp/ccrUbNmw.s:1421   .data.aht10_addr:00000000 aht10_addr
-     /tmp/ccrUbNmw.s:1418   .data.aht10_addr:00000000 $d
-     /tmp/ccrUbNmw.s:1425   .data.bmp180_addr:00000000 $d
-     /tmp/ccrUbNmw.s:1435   .data.lcd1604_addr:00000000 lcd1604_addr
-     /tmp/ccrUbNmw.s:1432   .data.lcd1604_addr:00000000 $d
-     /tmp/ccrUbNmw.s:1442   .bss.count:00000000 count
-     /tmp/ccrUbNmw.s:1439   .bss.count:00000000 $d
-     /tmp/ccrUbNmw.s:1449   .bss.journal:00000000 journal
-     /tmp/ccrUbNmw.s:1446   .bss.journal:00000000 $d
-     /tmp/ccrUbNmw.s:1456   .data.aht10_measurement_command:00000000 aht10_measurement_command
-ARM GAS  /tmp/ccrUbNmw.s 			page 60
+     /tmp/ccrTlybW.s:1206   .data.aht10_soft_reset_command:00000000 aht10_soft_reset_command
+     /tmp/ccrTlybW.s:1212   .data.aht10_trigger_measurment_command:00000000 aht10_trigger_measurment_command
+     /tmp/ccrTlybW.s:1218   .data.aht10_initialization_command:00000000 aht10_initialization_command
+     /tmp/ccrTlybW.s:1225   .bss.date:00000000 date
+     /tmp/ccrTlybW.s:1222   .bss.date:00000000 $d
+     /tmp/ccrTlybW.s:1232   .bss.time:00000000 time
+     /tmp/ccrTlybW.s:1229   .bss.time:00000000 $d
+     /tmp/ccrTlybW.s:1239   .bss.pressure:00000000 pressure
+     /tmp/ccrTlybW.s:1236   .bss.pressure:00000000 $d
+     /tmp/ccrTlybW.s:1246   .bss.temperature:00000000 temperature
+     /tmp/ccrTlybW.s:1243   .bss.temperature:00000000 $d
+     /tmp/ccrTlybW.s:1253   .bss.msg_time:00000000 msg_time
+     /tmp/ccrTlybW.s:1250   .bss.msg_time:00000000 $d
+     /tmp/ccrTlybW.s:1260   .bss.B5:00000000 B5
+     /tmp/ccrTlybW.s:1257   .bss.B5:00000000 $d
+     /tmp/ccrTlybW.s:1267   .bss.X2:00000000 X2
+     /tmp/ccrTlybW.s:1264   .bss.X2:00000000 $d
+     /tmp/ccrTlybW.s:1274   .bss.X1:00000000 X1
+     /tmp/ccrTlybW.s:1271   .bss.X1:00000000 $d
+     /tmp/ccrTlybW.s:1278   .bss.AC6:00000000 $d
+     /tmp/ccrTlybW.s:1285   .bss.AC5:00000000 $d
+     /tmp/ccrTlybW.s:1292   .bss.AC4:00000000 $d
+     /tmp/ccrTlybW.s:1299   .bss.MD:00000000 $d
+     /tmp/ccrTlybW.s:1306   .bss.MC:00000000 $d
+     /tmp/ccrTlybW.s:1313   .bss.MB:00000000 $d
+     /tmp/ccrTlybW.s:1320   .bss.B2:00000000 $d
+     /tmp/ccrTlybW.s:1327   .bss.B1:00000000 $d
+     /tmp/ccrTlybW.s:1334   .bss.AC3:00000000 $d
+     /tmp/ccrTlybW.s:1341   .bss.AC2:00000000 $d
+     /tmp/ccrTlybW.s:1348   .bss.AC1:00000000 $d
+     /tmp/ccrTlybW.s:1358   .bss.GLOBAL_MESSAGE_BUFFER:00000000 GLOBAL_MESSAGE_BUFFER
+     /tmp/ccrTlybW.s:1355   .bss.GLOBAL_MESSAGE_BUFFER:00000000 $d
+     /tmp/ccrTlybW.s:1365   .bss.pressure_buf:00000000 pressure_buf
+     /tmp/ccrTlybW.s:1362   .bss.pressure_buf:00000000 $d
+     /tmp/ccrTlybW.s:1372   .bss.temperature_buf:00000000 temperature_buf
+     /tmp/ccrTlybW.s:1369   .bss.temperature_buf:00000000 $d
+     /tmp/ccrTlybW.s:1376   .bss.calib_data:00000000 $d
+     /tmp/ccrTlybW.s:1386   .data.AHT10_TmpHum_Cmd:00000000 AHT10_TmpHum_Cmd
+     /tmp/ccrTlybW.s:1383   .data.AHT10_TmpHum_Cmd:00000000 $d
+     /tmp/ccrTlybW.s:1393   .bss.AHT10_Humidity:00000000 AHT10_Humidity
+     /tmp/ccrTlybW.s:1390   .bss.AHT10_Humidity:00000000 $d
+     /tmp/ccrTlybW.s:1400   .bss.AHT10_Temperature:00000000 AHT10_Temperature
+     /tmp/ccrTlybW.s:1397   .bss.AHT10_Temperature:00000000 $d
+     /tmp/ccrTlybW.s:1407   .bss.AHT10_ADC_Raw:00000000 AHT10_ADC_Raw
+     /tmp/ccrTlybW.s:1404   .bss.AHT10_ADC_Raw:00000000 $d
+     /tmp/ccrTlybW.s:1414   .bss.AHT10_RX_Data:00000000 AHT10_RX_Data
+     /tmp/ccrTlybW.s:1411   .bss.AHT10_RX_Data:00000000 $d
+     /tmp/ccrTlybW.s:1421   .data.aht10_addr:00000000 aht10_addr
+     /tmp/ccrTlybW.s:1418   .data.aht10_addr:00000000 $d
+     /tmp/ccrTlybW.s:1425   .data.bmp180_addr:00000000 $d
+     /tmp/ccrTlybW.s:1435   .data.lcd1604_addr:00000000 lcd1604_addr
+     /tmp/ccrTlybW.s:1432   .data.lcd1604_addr:00000000 $d
+     /tmp/ccrTlybW.s:1442   .bss.count:00000000 count
+     /tmp/ccrTlybW.s:1439   .bss.count:00000000 $d
+     /tmp/ccrTlybW.s:1449   .bss.journal:00000000 journal
+     /tmp/ccrTlybW.s:1446   .bss.journal:00000000 $d
+     /tmp/ccrTlybW.s:1456   .data.aht10_measurement_command:00000000 aht10_measurement_command
+ARM GAS  /tmp/ccrTlybW.s 			page 60
 
 
-     /tmp/ccrUbNmw.s:1453   .data.aht10_measurement_command:00000000 $d
-     /tmp/ccrUbNmw.s:1463   .data.aht10_init_command:00000000 aht10_init_command
-     /tmp/ccrUbNmw.s:1460   .data.aht10_init_command:00000000 $d
-     /tmp/ccrUbNmw.s:1467   .bss.huart2:00000000 $d
-     /tmp/ccrUbNmw.s:1474   .bss.htim3:00000000 $d
-     /tmp/ccrUbNmw.s:1481   .bss.hrtc:00000000 $d
-     /tmp/ccrUbNmw.s:1488   .bss.hi2c1:00000000 $d
-     /tmp/ccrUbNmw.s:1494   .rodata:00000000 $d
+     /tmp/ccrTlybW.s:1453   .data.aht10_measurement_command:00000000 $d
+     /tmp/ccrTlybW.s:1463   .data.aht10_init_command:00000000 aht10_init_command
+     /tmp/ccrTlybW.s:1460   .data.aht10_init_command:00000000 $d
+     /tmp/ccrTlybW.s:1467   .bss.huart2:00000000 $d
+     /tmp/ccrTlybW.s:1474   .bss.htim3:00000000 $d
+     /tmp/ccrTlybW.s:1481   .bss.hrtc:00000000 $d
+     /tmp/ccrTlybW.s:1488   .bss.hi2c1:00000000 $d
+     /tmp/ccrTlybW.s:1494   .rodata:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

@@ -236,7 +236,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
-    Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (HSI init)\n");
+    Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (something other)\n");
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
@@ -250,7 +250,7 @@ void SystemClock_Config(void)
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
   {
-    Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (something other)\n");
+    Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (HSI init)\n");
   }
 }
 
@@ -433,8 +433,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PC7 */
-  GPIO_InitStruct.Pin = GPIO_PIN_7;
+  /*Configure GPIO pins : PC7 PC8 */
+  GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);

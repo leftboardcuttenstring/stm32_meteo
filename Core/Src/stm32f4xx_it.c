@@ -326,6 +326,7 @@ void EXTI9_5_IRQHandler(void)
 
   /* USER CODE END EXTI9_5_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8);
   /* USER CODE BEGIN EXTI9_5_IRQn 1 */
 
   /* USER CODE END EXTI9_5_IRQn 1 */
@@ -375,18 +376,13 @@ int modifying_hours = 0;
 int modifying_minutes = 0;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-  if(GPIO_Pin == GPIO_PIN_13) {
+  if(GPIO_Pin == GPIO_PIN_8) {
     current_mode++;
     if (current_mode > 2) {
       current_mode = 0;
     }
     //HAL_TIM_Base_Start_IT(&htim3); 
   } else if (GPIO_Pin == GPIO_PIN_7) {
-    /*HAL_RTC_GetTime(&hrtc, &local_modifying_time, RTC_FORMAT_BIN);
-    HAL_RTC_GetDate(&hrtc, &local_modifying_date, RTC_FORMAT_BIN);
-    modifying_hours = local_modifying_time.Hours;
-    modifying_minutes = local_modifying_time.Minutes;*/
-
     if (current_mode == 1) {
       modifying_hours++;
       if (modifying_hours >= 23) {
