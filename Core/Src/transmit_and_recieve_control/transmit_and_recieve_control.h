@@ -1,4 +1,5 @@
 #include "../../Inc/main.h"
+#include <string.h>
 
 #define PIN_RS (1 << 0)
 #define PIN_EN (1 << 2)
@@ -45,7 +46,7 @@ void lcd1602_transmit_command(uint8_t cmd);
  * @param uint8_t flags - flags of transmitting
  * @return void
  */
-void lcd1602_transmit(uint8_t data, uint8_t flags);
+HAL_StatusTypeDef lcd1602_transmit(uint8_t data, uint8_t flags);
 
 /*
  * @brief function of transmitting a

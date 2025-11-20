@@ -73,7 +73,7 @@ uint8_t AHT10_TmpHum_Cmd[3] = {0xAC, 0x33, 0x00};
 uint8_t calib_data[22];
 uint8_t temperature_buf[2];
 uint8_t pressure_buf[3];
-char GLOBAL_MESSAGE_BUFFER[60] = {0};
+char GLOBAL_MESSAGE_BUFFER[70] = {0};
 int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
 uint16_t AC4, AC5, AC6;
 int32_t X1 = 0;
@@ -236,7 +236,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (HSI init)\n");
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
@@ -250,7 +250,7 @@ void SystemClock_Config(void)
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler("Error: an error occurred while executing the 'SystemClock_Config' function (something other)\n");
   }
 }
 
@@ -280,7 +280,7 @@ static void MX_I2C1_Init(void)
   hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
   if (HAL_I2C_Init(&hi2c1) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler("Error: an error occurred while executing the 'MX_I2C1_Init' function\n");
   }
   /* USER CODE BEGIN I2C1_Init 2 */
 
@@ -315,7 +315,7 @@ static void MX_RTC_Init(void)
   hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
   if (HAL_RTC_Init(&hrtc) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler("Error: an error occurred while executing the 'MX_RTC_Init' function\n");
   }
   /* USER CODE BEGIN RTC_Init 2 */
 
@@ -344,23 +344,23 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 720;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 5000;
+  htim3.Init.Period = 30000;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler("Error: an error occurred while executing the 'MX_TIM3_Init' function (tim3 init)\n");
   }
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
   if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler("Error: an error occurred while executing the 'MX_TIM3_Init' function (tim3 init clocksource)\n");
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler("Error: an error occurred while executing the 'MX_TIM3_Init' function (tim3 init master)\n");
   }
   /* USER CODE BEGIN TIM3_Init 2 */
 
@@ -395,7 +395,7 @@ static void MX_USART2_UART_Init(void)
   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
   if (HAL_UART_Init(&huart2) != HAL_OK)
   {
-    Error_Handler();
+    Error_Handler("Error: an error occurred while executing the 'MX_USART2_UART_Init' function\n");
   }
   /* USER CODE BEGIN USART2_Init 2 */
 
@@ -427,7 +427,22 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : PA5 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PC7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_7;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
   /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 8, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 10, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
@@ -444,9 +459,10 @@ static void MX_GPIO_Init(void)
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
-void Error_Handler(void)
+void Error_Handler(char* msg)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
+  HAL_UART_Transmit(&huart2, (const uint8_t*)msg, strlen((char *)msg), HAL_MAX_DELAY);
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)

@@ -1,22 +1,30 @@
 #include "transmit_and_recieve_control.h"
 
 void lcd1602_send_string(char *str) {
-    while(*str) {
-        lcd1602_transmit_data((uint8_t)(*str));
-        str++;
-    }
+  if (sizeof(*str) == 0) {
+    HAL_UART_Transmit(&huart2, (const uint8_t*)"Warning: in the send function 'lcd1602_send_string' you pass an empty string\n", \
+    strlen((char *)"Warning: in the send function 'lcd1602_send_string' you pass an empty string\n"), HAL_MAX_DELAY);
+  }
+  while(*str) {
+    lcd1602_transmit_data((uint8_t)(*str));
+    str++;
+  }
 }
 
-void lcd1602_transmit(uint8_t data, uint8_t flags) {
-	uint8_t up = data & 0xF0;
-	uint8_t lo = (data << 4) & 0xF0;
-	
+HAL_StatusTypeDef lcd1602_transmit(uint8_t data, uint8_t flags) {
+	uint8_t upper_bits = data & 0xF0;
+	uint8_t lower_bits = (data << 4) & 0xF0;
 	uint8_t data_arr[4];                              
-	data_arr[0] = up|flags|BACKLIGHT|PIN_EN; 
-	data_arr[1] = up|flags|BACKLIGHT;         
-	data_arr[2] = lo|flags|BACKLIGHT|PIN_EN;
-	data_arr[3] = lo|flags|BACKLIGHT;
-	HAL_I2C_Master_Transmit(&hi2c1, lcd1604_addr, data_arr, sizeof(data_arr), HAL_MAX_DELAY);
+	data_arr[0] = upper_bits | flags | BACKLIGHT | PIN_EN; 
+	data_arr[1] = upper_bits | flags | BACKLIGHT;         
+	data_arr[2] = lower_bits | flags | BACKLIGHT | PIN_EN;
+	data_arr[3] = lower_bits | flags | BACKLIGHT;
+	if(HAL_I2C_Master_Transmit(&hi2c1, lcd1604_addr, data_arr, sizeof(data_arr), HAL_MAX_DELAY) != HAL_OK) {
+    Error_Handler("Error: an error occurred while executing the 'lcd1602_transmit' function\n");
+    return HAL_ERROR;
+  } else {
+    return HAL_OK;
+  }
 }
 
 void lcd1602_transmit_data(uint8_t data) {

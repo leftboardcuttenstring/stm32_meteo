@@ -9,7 +9,7 @@ extern uint8_t calib_data[22];
 extern UART_HandleTypeDef huart2;
 extern int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
 extern uint16_t AC4, AC5, AC6;
-extern char GLOBAL_MESSAGE_BUFFER[60];
+extern char GLOBAL_MESSAGE_BUFFER[70];
 extern uint16_t aht10_addr;
 extern uint8_t aht10_init_command[1];
 

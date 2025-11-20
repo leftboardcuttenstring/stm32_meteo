@@ -55,15 +55,19 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 static unsigned int SysTick_20Sec_Counter = 0;
-static unsigned int SysTick_1Sec_Counter_mode0 = 0;
+static unsigned int SysTick_1Sec_Counter_mode = 0;
 static unsigned int SysTick_1Sec_Counter_mode1 = 0;
 static unsigned int SysTick_1Sec_Counter_mode2 = 0;
 static unsigned int SysTick_30Msec_Counter = 0;
+char hour_modifying_string[10] = {0};
+char minutes_modifying_string[10] = {0};
 //static unsigned int SysTick_1Minute_Counter = 0;
 //static Data Log[LOG_SIZE] = {0};
 //static unsigned char LogCounter = 0;
 extern RTC_TimeTypeDef time;
+RTC_TimeTypeDef local_modifying_time;
 extern RTC_DateTypeDef date;
+RTC_DateTypeDef local_modifying_date;
 extern RTC_HandleTypeDef hrtc;
 extern UART_HandleTypeDef huart2;
 extern char msg_time[32];
@@ -243,6 +247,8 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 1 */
 
   if (current_mode == 0) {
+    SysTick_1Sec_Counter_mode1 = 0;
+    SysTick_1Sec_Counter_mode2 = 0;
     if (SysTick_20Sec_Counter == HUMIDITY_PUT) {
       HAL_I2C_Master_Transmit(&hi2c1, aht10_addr, (uint8_t*)aht10_measurement_command, 3, HAL_MAX_DELAY);
     }
@@ -265,8 +271,8 @@ void SysTick_Handler(void)
       pressure_result = bmp180_get_pressure() / 133.322f;
     }
     SysTick_20Sec_Counter++;
-    if (SysTick_1Sec_Counter_mode0 == 1000) {
-      SysTick_1Sec_Counter_mode0 = 0;
+    if (SysTick_1Sec_Counter_mode == 1000) {
+      SysTick_1Sec_Counter_mode = 0;
       HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
       HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
       lcd1602_transmit_command(0b10000000);
@@ -278,33 +284,28 @@ void SysTick_Handler(void)
         pressure_result, temperature_result, ((float)AHT10_ADC_Raw / 1048576.0) * 100.0);
       lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
     }
-    SysTick_1Sec_Counter_mode0++;
+    SysTick_1Sec_Counter_mode++;
   } 
   if (current_mode == 1) {
-    if (SysTick_1Sec_Counter_mode1 == 1000) {
-      SysTick_1Sec_Counter_mode1 = 0;
-      lcd1602_transmit_command(0b00000001);
-      lcd1602_transmit_command(0b10000000);
-      HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
-      snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Hours);
-      lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+    SysTick_1Sec_Counter_mode = 0;
+    if (SysTick_1Sec_Counter_mode1 == 100) {
+      /*Here works other block of code. If ya wanna see
+        - look at 'HAL_GPIO_EXTI_Callback' function
+      */
     }
     SysTick_1Sec_Counter_mode1++;
   }
   if (current_mode == 2) {
-    if (SysTick_1Sec_Counter_mode2 == 1000) {
+    SysTick_1Sec_Counter_mode = 0;
+    SysTick_1Sec_Counter_mode1 = 0;
+    if (SysTick_1Sec_Counter_mode2 == 100) {
       SysTick_1Sec_Counter_mode2 = 0;
-      lcd1602_transmit_command(0b00000001);
-      lcd1602_transmit_command(0b10000000);
-      HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
-      snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "  %02d", time.Minutes);
-      lcd1602_send_string(GLOBAL_MESSAGE_BUFFER);
+      /*Here works other block of code. If ya wanna see
+        - look at 'HAL_GPIO_EXTI_Callback' function
+      */
     }
     SysTick_1Sec_Counter_mode2++;
   }
-
-  //CAUTION
-    //EVERYTHING WHAT'S BELOW IS...UM...COMMENTARIED?
 
   /* USER CODE END SysTick_IRQn 1 */
 }
@@ -315,6 +316,20 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f4xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles EXTI line[9:5] interrupts.
+  */
+void EXTI9_5_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+
+  /* USER CODE END EXTI9_5_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
+  /* USER CODE BEGIN EXTI9_5_IRQn 1 */
+
+  /* USER CODE END EXTI9_5_IRQn 1 */
+}
 
 /**
   * @brief This function handles TIM3 global interrupt.
@@ -353,14 +368,60 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (current_mode > 2) {
       current_mode = 0;
     }
-    snprintf(GLOBAL_MESSAGE_BUFFER, sizeof(GLOBAL_MESSAGE_BUFFER), "%d\n", current_mode);
-    HAL_UART_Transmit(&huart2, (const uint8_t *)GLOBAL_MESSAGE_BUFFER, strlen((char *)GLOBAL_MESSAGE_BUFFER), HAL_MAX_DELAY);
   }
 }
 
+int modifying_hours = 0;
+int modifying_minutes = 0;
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
   if(GPIO_Pin == GPIO_PIN_13) {
-    HAL_TIM_Base_Start_IT(&htim3); 
+    current_mode++;
+    if (current_mode > 2) {
+      current_mode = 0;
+    }
+    //HAL_TIM_Base_Start_IT(&htim3); 
+  } else if (GPIO_Pin == GPIO_PIN_7) {
+    /*HAL_RTC_GetTime(&hrtc, &local_modifying_time, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &local_modifying_date, RTC_FORMAT_BIN);
+    modifying_hours = local_modifying_time.Hours;
+    modifying_minutes = local_modifying_time.Minutes;*/
+
+    if (current_mode == 1) {
+      modifying_hours++;
+      if (modifying_hours >= 23) {
+        modifying_hours = 0;
+      }
+      snprintf(hour_modifying_string, sizeof(hour_modifying_string), "  %d", modifying_hours);
+      lcd1602_transmit_command(0b00000001);
+      lcd1602_transmit_command(0b10000000);
+      lcd1602_send_string(hour_modifying_string);
+    } else if (current_mode == 2) {
+      modifying_minutes++;
+      if (modifying_minutes >= 59) {
+        modifying_minutes = 0;
+      }
+      snprintf(minutes_modifying_string, sizeof(minutes_modifying_string), "  %d", modifying_minutes);
+      lcd1602_transmit_command(0b00000001);
+      lcd1602_transmit_command(0b10000000);
+      lcd1602_send_string(minutes_modifying_string);
+    } else if (current_mode == 0) {
+      RTC_TimeTypeDef sTime = { .Hours = modifying_hours, .Minutes = modifying_minutes, .Seconds = 0 };
+      RTC_DateTypeDef sDate = { .WeekDay = RTC_WEEKDAY_SUNDAY, .Month = RTC_MONTH_OCTOBER,
+                                .Date = 19, .Year = 25 };
+
+      HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+      HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
+
+      time.Hours = modifying_hours;
+      time.Minutes = modifying_minutes;
+      time.Seconds = 0;
+    } else {
+      current_mode = 0;
+    }
+  } else {
+    __NOP();
   }
 }
 
