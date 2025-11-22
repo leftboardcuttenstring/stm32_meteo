@@ -5,6 +5,13 @@
         "main.h": "c",
         "transmit_and_recieve_control.h": "c",
         "functional": "c",
-        "init_peripherials.h": "c"
+        "init_peripherials.h": "c",
+        "mbport.h": "c",
+        "mb.h": "c",
+        "mt_port.h": "c",
+        "mbframe.h": "c",
+        "mbproto.h": "c",
+        "mbfunc.h": "c",
+        "port.h": "c"
     }
 }
